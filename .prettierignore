@@ -1,0 +1,7 @@
+dist
+node_modules
+
+# files
+package-lock.json
+LICENSE
+.gitignore
