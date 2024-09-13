@@ -34,12 +34,10 @@ export const buttonVariants = cva("flex items-center justify-center border focus
 	},
 })
 
-export const Button = forwardRef<HTMLButtonElement, ButtonProps<typeof buttonVariants>>(
-	({ className, size, fullWidth, fullRounded, children }, ref) => {
-		return (
-			<button className={buttonVariants({ className, size, fullWidth, fullRounded })} ref={ref}>
-				{children}
-			</button>
-		)
-	}
-)
+export const Button = forwardRef<HTMLButtonElement, ButtonProps<typeof buttonVariants>>(({ className, size, fullWidth, fullRounded, children }, ref) => {
+	return (
+		<button className={buttonVariants({ className, size, fullWidth, fullRounded })} ref={ref}>
+			{children}
+		</button>
+	)
+})

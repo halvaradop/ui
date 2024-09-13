@@ -35,6 +35,7 @@
   "homepage": "https://github.com/halvaradop/ui#readme",
   "devDependencies": {
     "@halvaradop/tailwindcss-utilities": "^0.2.2",
+    "@halvaradop/ts-utility-types": "^0.10.0",
     "@types/node": "^22.5.4",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
@@ -55,7 +56,7 @@
     "semi": false,
     "jsxSingleQuote": false,
     "singleQuote": false,
-    "printWidth": 130,
+    "printWidth": 300,
     "tabWidth": 4,
     "useTabs": true,
     "trailingComma": "es5",

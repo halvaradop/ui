@@ -1,14 +1,15 @@
 {
   "name": "@halvaradop/ui-button",
   "version": "0.1.0",
-  "description": "Button component",
+  "description": "A customizable button component for @halvaradop/ui library with Tailwind CSS styling.",
   "main": "dist/index.ts",
   "types": "dist/index.d.ts",
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "format": "npx --no-cache prettier --write .",
-    "format:chech": "npx --no-cache prettier --check ."
+    "clean:node_modules": "rm -rf node_modules",
+    "format": "npx prettier --write . && npm run clean:node_modules",
+    "format:check": "npx prettier --check . && npm run clean:node_modules"
   },
   "repository": {
     "type": "git",
