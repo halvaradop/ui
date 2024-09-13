@@ -1,0 +1,35 @@
+{
+  "name": "@halvaradop/ui-button",
+  "version": "0.1.0",
+  "description": "Button component",
+  "main": "dist/index.ts",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "format": "npx --no-cache prettier --write .",
+    "format:chech": "npx --no-cache prettier --check ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/halvaradop/ui.git"
+  },
+  "keywords": [
+    "button",
+    "react",
+    "component",
+    "tailwindcss",
+    "react",
+    "ui",
+    "library"
+  ],
+  "author": "Hernan Alvarado <hernanvid123@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/halvaradop/ui/issues"
+  },
+  "homepage": "https://github.com/halvaradop/ui#readme",
+  "files": [
+    "dist"
+  ]
+}
