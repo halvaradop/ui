@@ -2,7 +2,7 @@
   "name": "@halvaradop/ui-button",
   "version": "0.1.0",
   "description": "A customizable button component for @halvaradop/ui library with Tailwind CSS styling.",
-  "main": "dist/index.ts",
+  "main": "dist/index.jsx",
   "types": "dist/index.d.ts",
   "type": "module",
   "scripts": {

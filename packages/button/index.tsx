@@ -1,13 +1,13 @@
-import { forwardRef, ButtonHTMLAttributes } from "react"
+import { forwardRef, ComponentProps } from "react"
 import type { ArgsFunction } from "@halvaradop/ts-utility-types"
 import { cva, type VariantProps } from "class-variance-authority"
 
-export type ButtonProps<T extends ArgsFunction> = Omit<ButtonHTMLAttributes<HTMLButtonElement>, "size"> & VariantProps<T>
+export type ButtonProps<T extends ArgsFunction> = Omit<ComponentProps<"button">, "size"> & VariantProps<T>
 
-export const buttonVariants = cva("flex items-center justify-center border focus-visible:outline-none", {
+export const buttonVariants = cva("flex items-center justify-center border focus-visible:outline-none base:px-8", {
 	variants: {
 		variant: {
-			base: "text-white border-black focus-visible:ring-1 focus:ring-black bg-red-400",
+			base: "text-white border-black focus-visible:ring-1 focus:ring-black",
 			ghost: "text-black border-transparent bg-transparent",
 			link: "text-black border-none bg-transparent",
 		},
