@@ -5,6 +5,7 @@
     "declaration": true,
     "jsx": "preserve",
     "module": "Node16",
+    "outDir": "dist",
     "moduleResolution": "Node16",
     "moduleDetection": "force",
     "allowJs": true,
@@ -14,5 +15,6 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true
   },
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "include": ["vite.config.ts"]
 }

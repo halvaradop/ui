@@ -2,6 +2,7 @@
   "name": "@halvaradop/ui",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "description": "A comprehensive UI library for React, built with Tailwind CSS and CVA (Class Variance Authority). It provides reusable components and supports JSX syntax.",
   "scripts": {
     "format": "npx prettier --write .",
@@ -37,13 +38,15 @@
     "@types/node": "^22.5.4",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react-swc": "^3.7.0",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.45",
     "prettier": "^3.3.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tailwindcss": "^3.4.11",
-    "typescript": "^5.6.2"
+    "typescript": "^5.6.2",
+    "vite": "^5.4.5"
   },
   "peerDependencies": {
     "react": ">=18",
