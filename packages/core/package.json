@@ -2,8 +2,8 @@
   "name": "@halvaradop/ui-core",
   "version": "0.1.0",
   "description": "The core of the @halvaradop/ui library, providing customizable components with Tailwind CSS styling.",
-  "main": "dist/index.jsx",
-  "types": "dist/index.d.ts",
+  "main": "dist/utils.js",
+  "types": "dist/utils.d.ts",
   "type": "module",
   "scripts": {
     "dev": "tsc -w",
