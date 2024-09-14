@@ -5,6 +5,7 @@
   "type": "module",
   "description": "A comprehensive UI library for React, built with Tailwind CSS and CVA (Class Variance Authority). It provides reusable components and supports JSX syntax.",
   "scripts": {
+    "build:ui": "npm run build --workspaces",
     "format": "npx prettier --write . --workspaces",
     "format:check": "npx prettier --check . --workspaces"
   },

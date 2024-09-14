@@ -11,5 +11,5 @@ import { twMerge } from "tw-merge"
  * merge("text-blue-500 text-red-500")
  */
 export const merge = (...classes: ClassValue[]): string => {
-	return twMerge(clsx(classes))
+	return twMerge(clsx(classes.filter(Boolean)))
 }
