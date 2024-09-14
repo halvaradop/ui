@@ -1,0 +1,35 @@
+{
+  "name": "@halvaradop/ui-core",
+  "version": "0.1.0",
+  "description": "The core of the @halvaradop/ui library, providing customizable components with Tailwind CSS styling.",
+  "main": "dist/index.jsx",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc",
+    "clean:node_modules": "rm -rf node_modules",
+    "format": "npx prettier --write . && npm run clean:node_modules",
+    "format:check": "npx prettier --check . && npm run clean:node_modules"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/halvaradop/ui.git"
+  },
+  "keywords": [
+    "react",
+    "component",
+    "tailwindcss",
+    "react",
+    "ui library"
+  ],
+  "author": "Hernan Alvarado <hernanvid123@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/halvaradop/ui/issues"
+  },
+  "homepage": "https://github.com/halvaradop/ui#readme",
+  "files": [
+    "dist"
+  ]
+}
