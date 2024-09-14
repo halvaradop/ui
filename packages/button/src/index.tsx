@@ -9,10 +9,10 @@ export const buttonVariants = cva("flex items-center justify-center font-semibol
 	variants: {
 		variant: {
 			base: "text-white border-black bg-black focus-visible:ring-black",
-			ghost: "text-black border-transparent bg-transparent bg-blend-difference focus-visible:ring-0 focus-visible:ring-offset-0",
-			link: "text-black underline underline-offset-4 decoration-black border-none focus-visible:ring-0 focus-visible:ring-offset-0",
+			ghost: "text-black border-transparent bg-transparent hover:text-white hover:bg-black/90 focus-visible:text-white focus-visible:bg-black/90 focus-visible:ring-0 focus-visible:ring-offset-0 ",
+			link: "text-black border-none hover:underline hover:underline-offset-4 hover:decoration-black focus-visible:underline focus-visible:underline-offset-4 focus:decoration-black focus-visible:ring-0 focus-visible:ring-offset-0",
 			destructive: "text-white border-red-500 bg-red-500 focus-visible:ring-red-500",
-			outline: "text-black border-black focus-visible:ring-black",
+			outline: "text-black border-black hover:border-black focus-visible:ring-black",
 		},
 		size: {
 			sm: "h-9 px-3 text-sm rounded-md",
