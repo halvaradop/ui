@@ -6,6 +6,9 @@
       "dependsOn": ["^build"],
       "outputs": ["dist/**/*"],
       "inputs": ["packages/**/src/**"]
+    },
+    "dev": {
+      "cache": false
     }
   },
   "cacheDir": ".turbo/cache"

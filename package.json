@@ -7,8 +7,8 @@
   "scripts": {
     "dev": "turbo run dev --parallel",
     "build": "turbo run build",
-    "format": "npx prettier --write . --workspaces",
-    "format:check": "npx prettier --check . --workspaces"
+    "format": "prettier --write . --workspaces",
+    "format:check": "prettier --check . --workspaces"
   },
   "repository": {
     "type": "git",

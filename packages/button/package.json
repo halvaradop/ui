@@ -8,9 +8,8 @@
   "scripts": {
     "dev": "tsc -w",
     "build": "tsc",
-    "clean:node_modules": "rm -rf node_modules",
-    "format": "npx prettier --write . && pnpm run clean:node_modules",
-    "format:check": "npx prettier --check . && pnpm run clean:node_modules"
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "repository": {
     "type": "git",
