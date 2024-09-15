@@ -1,6 +1,6 @@
 {
   "name": "@halvaradop/ui-core",
-  "version": "0.1.0-beta.3",
+  "version": "0.1.0-beta.6",
   "description": "The core of the @halvaradop/ui library, providing customizable components with Tailwind CSS styling.",
   "main": "dist/utils.js",
   "types": "dist/utils.d.ts",
@@ -33,6 +33,6 @@
   ],
   "devDependencies": {
     "clsx": "^2.1.1",
-    "tw-merge": "^0.0.1-alpha.3"
+    "tw-merge": "0.0.1-alpha.3"
   }
 }
