@@ -46,6 +46,9 @@ importers:
       tailwindcss:
         specifier: ^3.4.11
         version: 3.4.11
+      turbo:
+        specifier: ^2.1.2
+        version: 2.1.2
       tw-merge:
         specifier: ^0.0.1-alpha.3
         version: 0.0.1-alpha.3
@@ -55,6 +58,21 @@ importers:
       vite:
         specifier: ^5.4.5
         version: 5.4.5(@types/node@22.5.4)
+
+  packages/button:
+    devDependencies:
+      "@halvaradop/ui-core":
+        specifier: ^0.1.0
+        version: 0.1.0
+
+  packages/core:
+    devDependencies:
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      tw-merge:
+        specifier: ^0.0.1-alpha.3
+        version: 0.0.1-alpha.3
 
 packages:
   "@alloc/quick-lru@5.2.0":
@@ -201,6 +219,9 @@ packages:
 
   "@halvaradop/ts-utility-types@0.10.0":
     resolution: { integrity: sha512-U0j+zJJYC4d81JRQH57rvvjgVgArHkfPA3MA6qCHNX8aD1O+Pn6ZCYekBICz6wpzkJDnE5lrfWDnkd4G3/63RA== }
+
+  "@halvaradop/ui-core@0.1.0":
+    resolution: { integrity: sha512-ahEErXNYSnpculIx6R/aQXUFfjFWaXLvGa5VNWFOaGtYmZFj5o7v1DHs87Nn/605qMbiPVd9n4r+GZ4kLy6QuQ== }
 
   "@isaacs/cliui@8.0.2":
     resolution: { integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA== }
@@ -852,6 +873,40 @@ packages:
   ts-interface-checker@0.1.13:
     resolution: { integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA== }
 
+  turbo-darwin-64@2.1.2:
+    resolution: { integrity: sha512-3TEBxHWh99h2yIzkuIigMEOXt/ItYQp0aPiJjPd1xN4oDcsKK5AxiFKPH9pdtfIBzYsY59kQhZiFj0ELnSP7Bw== }
+    cpu: [x64]
+    os: [darwin]
+
+  turbo-darwin-arm64@2.1.2:
+    resolution: { integrity: sha512-he0miWNq2WxJzsH82jS2Z4MXpnkzn9SH8a79iPXiJkq25QREImucscM4RPasXm8wARp91pyysJMq6aasD45CeA== }
+    cpu: [arm64]
+    os: [darwin]
+
+  turbo-linux-64@2.1.2:
+    resolution: { integrity: sha512-fKUBcc0rK8Vdqv5a/E3CSpMBLG1bzwv+Q0Q83F8fG2ZfNCNKGbcEYABdonNZkkx141Rj03cZQFCgxu3MVEGU+A== }
+    cpu: [x64]
+    os: [linux]
+
+  turbo-linux-arm64@2.1.2:
+    resolution: { integrity: sha512-sV8Bpmm0WiuxgbhxymcC7wSsuxfBBieI98GegSwbr/bs1ANAgzCg93urIrdKdQ3/b31zZxQwcaP4FBF1wx1Qdg== }
+    cpu: [arm64]
+    os: [linux]
+
+  turbo-windows-64@2.1.2:
+    resolution: { integrity: sha512-wcmIJZI9ORT9ykHGliFE6kWRQrlH930QGSjSgWC8uFChFFuOyUlvC7ttcxuSvU9VqC7NF4C+GVAcFJQ8lTjN7g== }
+    cpu: [x64]
+    os: [win32]
+
+  turbo-windows-arm64@2.1.2:
+    resolution: { integrity: sha512-zdnXjrhk7YO6CP+Q5wPueEvOCLH4lDa6C4rrwiakcWcPgcQGbVozJlo4uaQ6awo8HLWQEvOwu84RkWTdLAc/Hw== }
+    cpu: [arm64]
+    os: [win32]
+
+  turbo@2.1.2:
+    resolution: { integrity: sha512-Jb0rbU4iHEVQ18An/YfakdIv9rKnd3zUfSE117EngrfWXFHo3RndVH96US3GsT8VHpwTncPePDBT2t06PaFLrw== }
+    hasBin: true
+
   tw-merge@0.0.1-alpha.3:
     resolution: { integrity: sha512-HvuKdaUWjJKFlUa/DKDGnicPXill0bUZnzoK/BoTWn0OkKLfIrMMn97VXW6fFdArA40FeBkitWjr7SJRuaDvCg== }
 
@@ -994,6 +1049,8 @@ snapshots:
     optional: true
 
   "@halvaradop/ts-utility-types@0.10.0": {}
+
+  "@halvaradop/ui-core@0.1.0": {}
 
   "@isaacs/cliui@8.0.2":
     dependencies:
@@ -1609,6 +1666,33 @@ snapshots:
       is-number: 7.0.0
 
   ts-interface-checker@0.1.13: {}
+
+  turbo-darwin-64@2.1.2:
+    optional: true
+
+  turbo-darwin-arm64@2.1.2:
+    optional: true
+
+  turbo-linux-64@2.1.2:
+    optional: true
+
+  turbo-linux-arm64@2.1.2:
+    optional: true
+
+  turbo-windows-64@2.1.2:
+    optional: true
+
+  turbo-windows-arm64@2.1.2:
+    optional: true
+
+  turbo@2.1.2:
+    optionalDependencies:
+      turbo-darwin-64: 2.1.2
+      turbo-darwin-arm64: 2.1.2
+      turbo-linux-64: 2.1.2
+      turbo-linux-arm64: 2.1.2
+      turbo-windows-64: 2.1.2
+      turbo-windows-arm64: 2.1.2
 
   tw-merge@0.0.1-alpha.3: {}
 
