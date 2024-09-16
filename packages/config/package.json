@@ -1,0 +1,26 @@
+{
+  "name": "@halvaradop/ui-config",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "description": "A shared configuration package for @halvaradop/ui library.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/halvaradop/ui.git"
+  },
+  "keywords": [
+    "config",
+    "shared",
+    "tailwindcss",
+    "react",
+    "ui library"
+  ],
+  "author": "Hernan Alvarado <hernanvid123@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/halvaradop/ui/issues"
+  },
+  "homepage": "https://github.com/halvaradop/ui#readme",
+  "files": [
+    "tsconfig.base.json"
+  ]
+}

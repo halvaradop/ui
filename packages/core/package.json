@@ -1,6 +1,6 @@
 {
   "name": "@halvaradop/ui-core",
-  "version": "0.1.0-beta.6",
+  "version": "0.1.0-beta.8",
   "description": "The core of the @halvaradop/ui library, providing customizable components with Tailwind CSS styling.",
   "type": "module",
   "scripts": {
@@ -27,11 +27,13 @@
   },
   "homepage": "https://github.com/halvaradop/ui#readme",
   "files": [
-    "dist",
     "index.ts",
+    "index.js",
+    "index.d.ts",
     "tsconfig.json"
   ],
   "devDependencies": {
-    "tailwind-merge": "^2.5.2"
+    "tailwind-merge": "^2.5.2",
+    "@halvaradop/ui-config": "workspace:*"
   }
 }

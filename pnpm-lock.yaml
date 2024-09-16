@@ -52,12 +52,17 @@ importers:
 
   packages/button:
     devDependencies:
-      "@halvaradop/ui-core":
+      "@halvaradop/ui-config":
         specifier: workspace:*
-        version: link:../core
+        version: link:../config
+
+  packages/config: {}
 
   packages/core:
     devDependencies:
+      "@halvaradop/ui-config":
+        specifier: workspace:*
+        version: link:../config
       tailwind-merge:
         specifier: ^2.5.2
         version: 2.5.2
