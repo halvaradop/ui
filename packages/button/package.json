@@ -34,6 +34,6 @@
     "dist"
   ],
   "devDependencies": {
-    "@halvaradop/ui-core": "^0.1.0"
+    "@halvaradop/ui-core": "workspace:*"
   }
 }
