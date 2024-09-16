@@ -1,5 +1,4 @@
-import { clsx, ClassValue } from "clsx"
-import { twMerge } from "tw-merge"
+import { twMerge } from "tailwind-merge"
 
 /**
  * Merge multiple classes into a single class string. It prioritizes the
@@ -10,6 +9,4 @@ import { twMerge } from "tw-merge"
  * // Expected: "text-red-500"
  * merge("text-blue-500 text-red-500")
  */
-export const merge = (...classes: ClassValue[]): string => {
-	return twMerge(clsx(classes))
-}
+export const merge = twMerge

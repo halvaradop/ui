@@ -1,16 +1,13 @@
 {
   "name": "@halvaradop/ui-core",
-  "version": "0.1.0-beta.2",
+  "version": "0.1.0-beta.6",
   "description": "The core of the @halvaradop/ui library, providing customizable components with Tailwind CSS styling.",
-  "main": "dist/utils.js",
-  "types": "dist/utils.d.ts",
   "type": "module",
   "scripts": {
     "dev": "tsc -w",
     "build": "tsc",
-    "clean:node_modules": "rm -rf node_modules",
-    "format": "npx prettier --write . && pnpm run clean:node_modules",
-    "format:check": "npx prettier --check . && pnpm run clean:node_modules"
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "repository": {
     "type": "git",
@@ -30,10 +27,11 @@
   },
   "homepage": "https://github.com/halvaradop/ui#readme",
   "files": [
-    "dist"
+    "dist",
+    "index.ts",
+    "tsconfig.json"
   ],
   "devDependencies": {
-    "clsx": "^2.1.1",
-    "tw-merge": "^0.0.1-alpha.3"
+    "tailwind-merge": "^2.5.2"
   }
 }

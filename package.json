@@ -5,8 +5,10 @@
   "type": "module",
   "description": "A comprehensive UI library for React, built with Tailwind CSS and CVA (Class Variance Authority). It provides reusable components and supports JSX syntax.",
   "scripts": {
-    "format": "npx prettier --write . --workspaces",
-    "format:check": "npx prettier --check . --workspaces"
+    "dev": "turbo run dev --parallel",
+    "build": "turbo run build",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "repository": {
     "type": "git",
@@ -41,19 +43,21 @@
     "@vitejs/plugin-react-swc": "^3.7.0",
     "autoprefixer": "^10.4.20",
     "class-variance-authority": "^0.7.0",
-    "clsx": "^2.1.1",
     "postcss": "^8.4.45",
     "prettier": "^3.3.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tailwindcss": "^3.4.11",
-    "tw-merge": "^0.0.1-alpha.3",
-    "typescript": "^5.6.2",
-    "vite": "^5.4.5"
+    "turbo": "^2.1.2",
+    "typescript": "^5.6.2"
   },
   "peerDependencies": {
     "react": ">=18",
     "react-dom": ">=18"
+  },
+  "packageManager": "pnpm@9.0.0-rc.0",
+  "engines": {
+    "node": ">=18"
   },
   "prettier": {
     "semi": false,

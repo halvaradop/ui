@@ -17,6 +17,5 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true
   },
-  "exclude": ["dist"],
-  "include": ["src"]
+  "include": ["./**/*.ts"]
 }
