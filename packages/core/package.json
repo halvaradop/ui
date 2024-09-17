@@ -1,11 +1,11 @@
 {
   "name": "@halvaradop/ui-core",
-  "version": "0.1.0-beta.10",
+  "version": "0.1.0-beta.13",
   "description": "The core of the @halvaradop/ui library, providing customizable components with Tailwind CSS styling.",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "tsup --watch",
+    "build": "tsup",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
@@ -27,16 +27,16 @@
   },
   "homepage": "https://github.com/halvaradop/ui#readme",
   "files": [
-    "dist",
-    "tsconfig.base.json",
-    "vite.config.default.ts"
+    "dist"
   ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     },
-    "./tsconfig.base.json": "./tsconfig.base.json"
+    "./package.json": "./package.json",
+    "./tsconfig.base.json": "./tsconfig.base.json",
+    "./tsup.config.base.ts": "./tsup.config.base.ts"
   },
   "devDependencies": {
     "tailwind-merge": "^2.5.2"
