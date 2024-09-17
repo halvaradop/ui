@@ -70,7 +70,7 @@
     "overrides": [
       {
         "files": [
-          "*.json",
+          "**/*.json",
           "README.md",
           "*.yaml"
         ],
