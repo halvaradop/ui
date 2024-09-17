@@ -2,7 +2,7 @@ import { Options } from "tsup"
 
 export const tsupConfig: Options = {
 	entry: ["src"],
-	format: ["esm"],
+	format: ["esm", "cjs"],
 	dts: true,
 	clean: true,
 	splitting: false,
