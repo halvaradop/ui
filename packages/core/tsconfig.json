@@ -1,5 +1,5 @@
 {
-  "extends": "@halvaradop/ui-config/tsconfig.base.json",
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "outDir": "dist"
   },

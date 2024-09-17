@@ -8,6 +8,7 @@
     "module": "Node16",
     "moduleResolution": "Node16",
     "moduleDetection": "force",
+    "strict": true,
     "allowJs": true,
     "checkJs": true,
     "esModuleInterop": true,
@@ -15,7 +16,5 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true
-  },
-  "include": ["./"],
-  "exclude": ["node_modules", "dist"]
+  }
 }

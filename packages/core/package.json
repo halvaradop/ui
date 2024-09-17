@@ -20,21 +20,24 @@
     "react",
     "ui library"
   ],
-  "author": "Hernan Alvarado <hernanvid123@gmail.com>",
+  "author": "Hernan Alvarado <hernanvid123@gmail.com>",  
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/halvaradop/ui/issues"
   },
   "homepage": "https://github.com/halvaradop/ui#readme",
   "files": [
-    "index.ts",
-    "index.js",
-    "index.d.ts",
-    "tsconfig.json"
+    "src",
+    "tsconfig.base.json"
   ],
   "devDependencies": {
-    "@halvaradop/ui-config": "workspace:*",
-    "tailwind-merge": "^2.5.2",
-    "vite": "^5.4.5"
+    "tailwind-merge": "^2.5.2"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./tsconfig.base.json": "./tsconfig.base.json"
   }
 }

@@ -1,7 +1,6 @@
 import { forwardRef, ComponentProps } from "react"
 import type { ArgsFunction } from "@halvaradop/ts-utility-types"
 import { cva, type VariantProps } from "class-variance-authority"
-import { merge } from "@halvaradop/ui-core"
 
 export type ButtonProps<T extends ArgsFunction> = Omit<ComponentProps<"button">, "size"> & VariantProps<T>
 
@@ -39,7 +38,7 @@ export const buttonVariants = cva("flex items-center justify-center font-semibol
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps<typeof buttonVariants>>(({ className, variant, size, fullWidth, fullRounded, children, ...props }, ref) => {
 	return (
-		<button className={merge(buttonVariants({ className, variant, size, fullWidth, fullRounded }))} ref={ref} role="button" {...props}>
+		<button className={buttonVariants({ className, variant, size, fullWidth, fullRounded })} ref={ref} role="button" {...props}>
 			{children}
 		</button>
 	)
