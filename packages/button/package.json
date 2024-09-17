@@ -1,13 +1,11 @@
 {
   "name": "@halvaradop/ui-button",
-  "version": "0.1.0",
+  "version": "0.1.0-beta.3",
   "description": "A customizable button component for @halvaradop/ui library with Tailwind CSS styling.",
-  "main": "dist/index.jsx",
-  "types": "dist/index.d.ts",
   "type": "module",
   "scripts": {
-    "dev": "tsc -w",
-    "build": "tsc",
+    "dev": "tsup --watch",
+    "build": "tsup",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
@@ -33,6 +31,13 @@
   "files": [
     "dist"
   ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
   "devDependencies": {
     "@halvaradop/ui-core": "workspace:*"
   }

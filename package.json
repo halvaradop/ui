@@ -48,6 +48,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tailwindcss": "^3.4.11",
+    "tsup": "^8.3.0",
     "turbo": "^2.1.2",
     "typescript": "^5.6.2"
   },
@@ -70,7 +71,7 @@
     "overrides": [
       {
         "files": [
-          "*.json",
+          "**/*.json",
           "README.md",
           "*.yaml"
         ],
