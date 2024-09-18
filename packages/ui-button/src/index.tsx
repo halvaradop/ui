@@ -37,6 +37,10 @@ export const buttonVariants = cva("flex items-center justify-center font-semibol
 	},
 })
 
+/**
+ * The Button component is a versatile and customizable button element.
+ * It supports various variants, sizes, and additional props to enhance its appearance and functionality.
+ */
 export const Button = forwardRef<HTMLButtonElement, ButtonProps<typeof buttonVariants>>(({ className, variant, size, fullWidth, fullRounded, children, ...props }, ref) => {
 	return (
 		<button className={merge(buttonVariants({ className, variant, size, fullWidth, fullRounded }))} ref={ref} role="button" {...props}>
@@ -44,3 +48,5 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps<typeof buttonVar
 		</button>
 	)
 })
+
+Button.displayName = "Button"
