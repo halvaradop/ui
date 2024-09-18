@@ -78,7 +78,7 @@
     "semi": false,
     "jsxSingleQuote": false,
     "singleQuote": false,
-    "printWidth": 300,
+    "printWidth": 120,
     "tabWidth": 4,
     "useTabs": true,
     "trailingComma": "es5",
@@ -92,6 +92,14 @@
         "options": {
           "tabWidth": 2,
           "useTabs": false
+        }
+      },
+      {
+        "files": [
+          "**/*.tsx"
+        ],
+        "options": {
+          "printWidth": 300
         }
       }
     ]
