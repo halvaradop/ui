@@ -8,7 +8,9 @@
     "dev": "turbo run dev --parallel",
     "build": "turbo run build",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "repository": {
     "type": "git",
@@ -36,7 +38,17 @@
   },
   "homepage": "https://github.com/halvaradop/ui#readme",
   "devDependencies": {
+    "@chromatic-com/storybook": "1.9.0",
     "@halvaradop/ts-utility-types": "^0.10.0",
+    "@storybook/addon-essentials": "^8.3.1",
+    "@storybook/addon-interactions": "^8.3.1",
+    "@storybook/addon-links": "^8.3.1",
+    "@storybook/addon-onboarding": "^8.3.1",
+    "@storybook/addon-storysource": "^8.3.1",
+    "@storybook/blocks": "^8.3.1",
+    "@storybook/react": "^8.3.1",
+    "@storybook/react-vite": "^8.3.1",
+    "@storybook/test": "^8.3.1",
     "@types/node": "^22.5.4",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
@@ -47,10 +59,12 @@
     "prettier": "^3.3.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "storybook": "^8.3.1",
     "tailwindcss": "^3.4.11",
     "tsup": "^8.3.0",
     "turbo": "^2.1.2",
-    "typescript": "^5.6.2"
+    "typescript": "^5.6.2",
+    "vite": "^5.4.6"
   },
   "peerDependencies": {
     "react": ">=18",
