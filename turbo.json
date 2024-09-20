@@ -5,7 +5,8 @@
     "build": {
       "dependsOn": ["^build"],
       "outputs": ["dist/**/*"],
-      "inputs": ["packages/**/src/**"]
+      "inputs": ["packages/**/src/**"],
+      "cache": true
     },
     "dev": {
       "cache": false
