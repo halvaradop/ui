@@ -5,6 +5,5 @@
     "jsx": "preserve"
   },
   "include": ["src"],
-  "exclude": ["node_modules", "dist"],
-  "references": [{ "path": "../ui-core/tsconfig.json" }]
+  "exclude": ["node_modules", "dist"]
 }

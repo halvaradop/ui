@@ -4,6 +4,5 @@
     "outDir": "dist"
   },
   "include": ["src"],
-  "exclude": ["node_modules", "dist"],
-  "references": [{ "path": "./tsconfig.base.json" }]
+  "exclude": ["node_modules", "dist"]
 }
