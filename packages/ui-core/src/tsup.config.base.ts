@@ -9,5 +9,5 @@ export const tsupConfig: Options = {
 	dts: true,
 	clean: true,
 	minify: true,
-	external: ["vite", "react", "react-dom", "tailwindcss"],
+	external: ["vite", "tailwindcss"],
 }
