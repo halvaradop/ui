@@ -1,6 +1,6 @@
 {
   "name": "@halvaradop/ui-button",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A customizable button component for @halvaradop/ui library with Tailwind CSS styling.",
   "type": "module",
   "scripts": {
