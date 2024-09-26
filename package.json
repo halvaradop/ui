@@ -87,7 +87,7 @@
         "files": [
           "**/*.json",
           "README.md",
-          "*.yaml"
+          "**/*.yaml"
         ],
         "options": {
           "tabWidth": 2,

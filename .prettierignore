@@ -3,6 +3,5 @@ node_modules
 
 # files
 package-lock.json
-pnpm-lock.yaml
 LICENSE
 .gitignore
