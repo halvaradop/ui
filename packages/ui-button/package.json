@@ -7,9 +7,7 @@
     "dev": "tsup --watch",
     "build": "tsup",
     "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "clean:dist": "pnpm -r --parallel exec rm -rf dist",
-    "clean:modules": "pnpm -r --parallel exec rm -rf node_modules"
+    "format:check": "prettier --check ."
   },
   "repository": {
     "type": "git",
