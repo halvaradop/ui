@@ -1,8 +1,8 @@
 {
-  "name": "@halvaradop/ui-template",
+  "name": "@halvaradop/ui-input",
   "version": "0.1.0",
   "private": false,
-  "description": "A template package for @halvaradop/ui library",
+  "description": "A customizable input component for @halvaradop/ui library with Tailwind CSS styling.",
   "type": "module",
   "scripts": {
     "dev": "tsup --watch",
@@ -15,7 +15,7 @@
     "url": "git+https://github.com/halvaradop/ui.git"
   },
   "keywords": [
-    "button",
+    "input",
     "react",
     "component",
     "tailwindcss",
