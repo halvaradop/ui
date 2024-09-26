@@ -10,7 +10,9 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "clean:dist": "pnpm -r --parallel exec rm -rf dist",
+    "clean:modules": "pnpm -r --parallel exec rm -rf node_modules"
   },
   "repository": {
     "type": "git",
