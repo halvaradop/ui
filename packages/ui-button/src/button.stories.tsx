@@ -68,7 +68,7 @@ export const AsAnchor: Story = {
 		<Button variant="link" asChild>
 			<a href="">Link</a>
 		</Button>
-	)
+	),
 }
 
 export default meta

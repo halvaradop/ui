@@ -10,9 +10,9 @@ export const Slot = ({ children, ...props }: { children: React.ReactNode }) => {
 	return null
 }
 
-export type SlotWithAsChild<T extends keyof React.JSX.IntrinsicElements | React.JSXElementConstructor<unknown>> =
-	| ({ asChild?: false } & ComponentProps<T>)
-	| { asChild: true; children: ReactNode }
+export type SlotWithAsChild<
+	Component extends keyof React.JSX.IntrinsicElements | React.JSXElementConstructor<unknown>,
+> = ({ asChild?: false } & ComponentProps<Component>) | { asChild: true; children: ReactNode }
 
 export type SlotProps<Component extends keyof React.JSX.IntrinsicElements | React.JSXElementConstructor<unknown>> =
 	SlotWithAsChild<Component> & { className?: string }
