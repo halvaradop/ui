@@ -63,4 +63,12 @@ export const Large: Story = {
 	},
 }
 
+export const AsAnchor: Story = {
+	render: () => (
+		<Button variant="link" asChild>
+			<a href="">Link</a>
+		</Button>
+	),
+}
+
 export default meta

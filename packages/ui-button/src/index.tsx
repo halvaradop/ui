@@ -1,9 +1,9 @@
-import { forwardRef, ComponentProps } from "react"
+import { forwardRef } from "react"
 import type { ArgsFunction } from "@halvaradop/ts-utility-types"
 import { cva, type VariantProps } from "class-variance-authority"
-import { merge } from "@halvaradop/ui-core"
+import { merge, Slot, SlotProps } from "@halvaradop/ui-core"
 
-export type ButtonProps<T extends ArgsFunction> = Omit<ComponentProps<"button">, "size"> & VariantProps<T>
+export type ButtonProps<T extends ArgsFunction> = SlotProps<"button"> & VariantProps<T>
 
 export const buttonVariants = cva("flex items-center justify-center font-semibold border transition hover:border-transparent hover:bg-opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2", {
 	variants: {
@@ -41,11 +41,12 @@ export const buttonVariants = cva("flex items-center justify-center font-semibol
  * The Button component is a versatile and customizable button element.
  * It supports various variants, sizes, and additional props to enhance its appearance and functionality.
  */
-export const Button = forwardRef<HTMLButtonElement, ButtonProps<typeof buttonVariants>>(({ className, variant, size, fullWidth, fullRounded, children, ...props }, ref) => {
+export const Button = forwardRef<HTMLButtonElement, ButtonProps<typeof buttonVariants>>(({ className, variant, size, fullWidth, fullRounded, asChild, children, ...props }, ref) => {
+	const SlotComponent = asChild ? Slot : "button"
 	return (
-		<button className={merge(buttonVariants({ className, variant, size, fullWidth, fullRounded }))} ref={ref} role="button" {...props}>
+		<SlotComponent className={merge(buttonVariants({ className, variant, size, fullWidth, fullRounded }))} ref={ref} role="button" {...props}>
 			{children}
-		</button>
+		</SlotComponent>
 	)
 })
 
