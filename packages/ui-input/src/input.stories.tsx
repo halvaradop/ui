@@ -66,6 +66,8 @@ export const Required: Story = {
 		size: "base",
 		variant: "required",
 		placeholder: "Required input",
+		type: "email",
+		required: true,
 	},
 }
 
