@@ -18,6 +18,10 @@ const config: Config = {
 		plugin(({ addVariant }) => {
 			addVariant("usinvalid", "&:user-invalid")
 			addVariant("usvalid", "&:user-valid")
+			addVariant(
+				"input-empty",
+				"&:is(:usvalid:placeholder-shown, :usinvalid:placeholder-shown, :placeholder-shown)"
+			)
 		}),
 	],
 }

@@ -11,7 +11,7 @@ export const inputVariants = cva("text-slate-600 border focus-within:outline-non
 			base: "caret-slate-600 border-gray-300",
 			outline: "focus-within:ring-1 focus-within:border-slate-700 focus-within:ring-slate-700",
 			required:
-				"focus-within:ring-1 focus-within:border-slate-700 focus-within:ring-slate-700 usinvalid:text-rose-300 usinvalid:placeholder-rose-400  usinvalid:border-rose-400 usinvalid:focus-within:ring-rose-400 usvalid:text-green-400 usvalid:border-green-400 usvalid:focus-within:ring-green-400 usvalid:placeholder-shown:border-slate-700 usvalid:focus-within:placeholder-shown:ring-slate-700 usvalid:placeholder-shown:caret-slate-600",
+				"focus-within:ring-1 focus-within:border-slate-700 focus-within:ring-slate-700 usinvalid:text-rose-300 usinvalid:placeholder-rose-400  usinvalid:border-rose-400 usinvalid:focus-within:ring-rose-400 usvalid:text-green-400 usvalid:border-green-400 usvalid:focus-within:ring-green-400 input-empty:border-slate-700 input-empty:focus-within:ring-slate-700 input-empty:caret-slate-600",
 		},
 		size: {
 			sm: "h-8 indent-2 text-sm rounded-md",
