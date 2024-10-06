@@ -21,7 +21,9 @@ const config: Config = {
 			addVariant(
 				"input-empty",
 				"&:is(:usvalid:placeholder-shown, :usinvalid:placeholder-shown, :placeholder-shown)"
-			)
+			),
+				addVariant("peer-usvalid", ".peer:user-invalid ~ &")
+			addVariant("peer-usvalid-empty", ".peer:user-invalid:placeholder-shown ~ &")
 		}),
 	],
 }

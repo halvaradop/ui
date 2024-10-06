@@ -1,0 +1,45 @@
+{
+  "name": "@halvaradop/ui-label",
+  "version": "0.1.0",
+  "private": false,
+  "description": "A label package for @halvaradop/ui library",
+  "type": "module",
+  "scripts": {
+    "dev": "tsup --watch",
+    "build": "tsup",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/halvaradop/ui.git"
+  },
+  "keywords": [
+    "button",
+    "react",
+    "component",
+    "tailwindcss",
+    "react",
+    "ui",
+    "library"
+  ],
+  "author": "Hernan Alvarado <hernanvid123@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/halvaradop/ui/issues"
+  },
+  "homepage": "https://github.com/halvaradop/ui#readme",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "devDependencies": {
+    "@halvaradop/ui-core": "workspace:*"
+  }
+}

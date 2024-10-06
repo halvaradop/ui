@@ -108,6 +108,12 @@ importers:
         specifier: workspace:*
         version: link:../ui-core
 
+  packages/ui-label:
+    devDependencies:
+      '@halvaradop/ui-core':
+        specifier: workspace:*
+        version: link:../ui-core
+
   packages/ui-template:
     devDependencies:
       '@halvaradop/ui-core':
