@@ -9,5 +9,5 @@ export const indexVariants = cva("", {
 })
 
 export const Index = () => {
-	return null
+	return <div></div>
 }
