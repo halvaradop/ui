@@ -16,7 +16,7 @@
   },
   "publishConfig": {
     "access": "public",
-     "registry": "https://registry.npmjs.org/@halvaradop/ui-input"
+    "registry": "https://registry.npmjs.org/@halvaradop/ui-input"
   },
   "keywords": [
     "input",
