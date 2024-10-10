@@ -78,11 +78,8 @@
   },
   "prettier": {
     "semi": false,
-    "jsxSingleQuote": false,
-    "singleQuote": false,
-    "printWidth": 120,
     "tabWidth": 4,
-    "useTabs": true,
+    "printWidth": 120,
     "trailingComma": "es5",
     "overrides": [
       {
@@ -92,8 +89,7 @@
           "**/*.yaml"
         ],
         "options": {
-          "tabWidth": 2,
-          "useTabs": false
+          "tabWidth": 2
         }
       },
       {

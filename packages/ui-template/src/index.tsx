@@ -5,9 +5,9 @@ import { cva, type VariantProps } from "class-variance-authority"
 export type IndexProps<T extends ArgsFunction> = VariantProps<T> & ComponentProps<"div">
 
 export const indexVariants = cva("", {
-	variants: {},
+    variants: {},
 })
 
 export const Index = () => {
-	return <div></div>
+    return <div></div>
 }
