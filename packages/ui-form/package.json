@@ -8,7 +8,9 @@
     "dev": "tsup --watch",
     "build": "tsup",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "clean:build": "rm -rf dist",
+    "clean:modules": "rm -rf node_modules"
   },
   "repository": {
     "type": "git",
