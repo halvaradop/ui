@@ -1,8 +1,8 @@
 {
-  "name": "@halvaradop/ui-modal",
+  "name": "@halvaradop/ui-dialog",
   "version": "0.1.0",
   "private": false,
-  "description": "A modal package for @halvaradop/ui library",
+  "description": "A customizable dialog component for @halvaradop/ui library with Tailwind CSS styling.",
   "type": "module",
   "scripts": {
     "dev": "tsup --watch",
