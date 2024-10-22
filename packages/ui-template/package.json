@@ -2,7 +2,7 @@
   "name": "@halvaradop/ui-template",
   "version": "0.1.0",
   "private": false,
-  "description": "A template package for @halvaradop/ui library",
+  "description": "A customizable {_} component for @halvaradop/ui library with Tailwind CSS styling.",
   "type": "module",
   "scripts": {
     "dev": "tsup --watch",
@@ -17,13 +17,12 @@
     "url": "git+https://github.com/halvaradop/ui.git"
   },
   "keywords": [
-    "button",
     "react",
     "component",
     "tailwindcss",
     "react",
     "ui",
-    "library"
+    "ui library"
   ],
   "author": "Hernan Alvarado <hernanvid123@gmail.com>",
   "license": "MIT",

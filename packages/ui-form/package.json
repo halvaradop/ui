@@ -21,13 +21,13 @@
     "registry": "https://registry.npmjs.org/@halvaradop/ui-form"
   },
   "keywords": [
-    "button",
+    "form",
     "react",
     "component",
     "tailwindcss",
     "react",
     "ui",
-    "library"
+    "ui library"
   ],
   "author": "Hernan Alvarado <hernanvid123@gmail.com>",
   "license": "MIT",
