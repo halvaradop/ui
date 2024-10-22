@@ -20,10 +20,12 @@
     "registry": "https://registry.npmjs.org/@halvaradop/ui-core"
   },
   "keywords": [
+    "core",
     "react",
     "component",
     "tailwindcss",
     "react",
+    "ui",
     "ui library"
   ],
   "author": "Hernan Alvarado <hernanvid123@gmail.com>",

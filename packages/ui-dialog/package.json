@@ -17,13 +17,13 @@
     "url": "git+https://github.com/halvaradop/ui.git"
   },
   "keywords": [
-    "button",
+    "dialog",
     "react",
     "component",
     "tailwindcss",
     "react",
     "ui",
-    "library"
+    "ui library"
   ],
   "author": "Hernan Alvarado <hernanvid123@gmail.com>",
   "license": "MIT",

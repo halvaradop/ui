@@ -2,7 +2,7 @@
   "name": "@halvaradop/ui-label",
   "version": "0.1.0",
   "private": false,
-  "description": "A label package for @halvaradop/ui library",
+  "description": "A customizable label component for @halvaradop/ui library with Tailwind CSS styling.",
   "type": "module",
   "scripts": {
     "dev": "tsup --watch",
@@ -21,13 +21,13 @@
     "registry": "https://registry.npmjs.org/@halvaradop/ui-label"
   },
   "keywords": [
-    "button",
+    "label",
     "react",
     "component",
     "tailwindcss",
     "react",
     "ui",
-    "library"
+    "ui library"
   ],
   "author": "Hernan Alvarado <hernanvid123@gmail.com>",
   "license": "MIT",
