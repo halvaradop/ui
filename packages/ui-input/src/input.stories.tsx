@@ -71,4 +71,19 @@ export const Required: Story = {
     },
 }
 
+export const Disabled: Story = {
+    args: {
+        disabled: true,
+        placeholder: "Disabled input",
+    },
+}
+
+export const DisabledVariant: Story = {
+    args: {
+        variant: "disabled",
+        placeholder: "Disabled variant input",
+        disabled: true,
+    },
+}
+
 export default meta

@@ -18,11 +18,8 @@ const config: Config = {
         plugin(({ addVariant }) => {
             addVariant("usinvalid", "&:user-invalid")
             addVariant("usvalid", "&:user-valid")
-            addVariant(
-                "input-empty",
-                "&:is(:usvalid:placeholder-shown, :usinvalid:placeholder-shown, :placeholder-shown)"
-            ),
-                addVariant("peer-usvalid", ".peer:user-invalid ~ &")
+            addVariant("input-empty", "&:is(:usinvalid:placeholder-shown, :placeholder-shown)")
+            addVariant("peer-usvalid", ".peer:user-invalid ~ &")
             addVariant("peer-usvalid-empty", ".peer:user-invalid:placeholder-shown ~ &")
         }),
     ],
