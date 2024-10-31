@@ -11,9 +11,6 @@ importers:
       '@chromatic-com/storybook':
         specifier: 1.9.0
         version: 1.9.0(react@18.3.1)
-      '@halvaradop/ts-utility-types':
-        specifier: ^0.10.0
-        version: 0.10.0
       '@storybook/addon-essentials':
         specifier: ^8.3.1
         version: 8.3.5(storybook@8.3.5)
@@ -56,9 +53,6 @@ importers:
       autoprefixer:
         specifier: ^10.4.20
         version: 10.4.20(postcss@8.4.47)
-      class-variance-authority:
-        specifier: ^0.7.0
-        version: 0.7.0
       postcss:
         specifier: ^8.4.45
         version: 8.4.47
@@ -115,10 +109,16 @@ importers:
         version: link:../ui-core
 
   packages/ui-input:
-    devDependencies:
+    dependencies:
+      '@halvaradop/ts-utility-types':
+        specifier: 0.11.1
+        version: 0.11.1
       '@halvaradop/ui-core':
         specifier: workspace:*
         version: link:../ui-core
+      class-variance-authority:
+        specifier: 0.7.0
+        version: 0.7.0
 
   packages/ui-label:
     devDependencies:
@@ -509,8 +509,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@halvaradop/ts-utility-types@0.10.0':
-    resolution: {integrity: sha512-U0j+zJJYC4d81JRQH57rvvjgVgArHkfPA3MA6qCHNX8aD1O+Pn6ZCYekBICz6wpzkJDnE5lrfWDnkd4G3/63RA==}
+  '@halvaradop/ts-utility-types@0.11.1':
+    resolution: {integrity: sha512-7t86TIg5cKxPweNMR6olMtZkeTJ6uoXN+hjTu+A9t1nvWh5bS0LtWO3yjOZ1hobjcgH+uy6gM7ApoIkpx/6BeA==}
 
   '@isaacs/cliui@8.0.2':
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
@@ -2873,7 +2873,7 @@ snapshots:
   '@esbuild/win32-x64@0.23.1':
     optional: true
 
-  '@halvaradop/ts-utility-types@0.10.0': {}
+  '@halvaradop/ts-utility-types@0.11.1': {}
 
   '@isaacs/cliui@8.0.2':
     dependencies:
