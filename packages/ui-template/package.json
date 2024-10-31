@@ -40,7 +40,9 @@
       "require": "./dist/index.cjs"
     }
   },
-  "devDependencies": {
-    "@halvaradop/ui-core": "workspace:*"
+  "dependencies": {
+    "@halvaradop/ui-core": "workspace:*",
+    "class-variance-authority": "0.7.0",
+    "@halvaradop/ts-utility-types": "0.11.1"
   }
 }
