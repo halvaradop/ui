@@ -85,10 +85,16 @@ importers:
         version: 5.4.8(@types/node@22.7.4)
 
   packages/ui-button:
-    devDependencies:
+    dependencies:
+      '@halvaradop/ts-utility-types':
+        specifier: 0.11.1
+        version: 0.11.1
       '@halvaradop/ui-core':
         specifier: workspace:*
         version: link:../ui-core
+      class-variance-authority:
+        specifier: 0.7.0
+        version: 0.7.0
 
   packages/ui-core:
     devDependencies:
@@ -97,16 +103,28 @@ importers:
         version: 2.5.3
 
   packages/ui-dialog:
-    devDependencies:
+    dependencies:
+      '@halvaradop/ts-utility-types':
+        specifier: 0.11.1
+        version: 0.11.1
       '@halvaradop/ui-core':
         specifier: workspace:*
         version: link:../ui-core
+      class-variance-authority:
+        specifier: 0.7.0
+        version: 0.7.0
 
   packages/ui-form:
-    devDependencies:
+    dependencies:
+      '@halvaradop/ts-utility-types':
+        specifier: 0.11.1
+        version: 0.11.1
       '@halvaradop/ui-core':
         specifier: workspace:*
         version: link:../ui-core
+      class-variance-authority:
+        specifier: 0.7.0
+        version: 0.7.0
 
   packages/ui-input:
     dependencies:
@@ -121,16 +139,28 @@ importers:
         version: 0.7.0
 
   packages/ui-label:
-    devDependencies:
+    dependencies:
+      '@halvaradop/ts-utility-types':
+        specifier: 0.11.1
+        version: 0.11.1
       '@halvaradop/ui-core':
         specifier: workspace:*
         version: link:../ui-core
+      class-variance-authority:
+        specifier: 0.7.0
+        version: 0.7.0
 
   packages/ui-template:
-    devDependencies:
+    dependencies:
+      '@halvaradop/ts-utility-types':
+        specifier: 0.11.1
+        version: 0.11.1
       '@halvaradop/ui-core':
         specifier: workspace:*
         version: link:../ui-core
+      class-variance-authority:
+        specifier: 0.7.0
+        version: 0.7.0
 
 packages:
 
