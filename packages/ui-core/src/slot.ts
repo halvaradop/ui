@@ -2,7 +2,8 @@ import { type ReactNode, Children, isValidElement, cloneElement, ComponentProps 
 
 export const Slot = ({ children, ...props }: { children: React.ReactNode }) => {
     if (isValidElement(children)) {
-        return cloneElement(children, { ...props, ...children.props })
+        const chilProps = children.props ?? {}
+        return cloneElement(children, { ...props, ...chilProps })
     }
     if (Children.count(children) > 1) {
         Children.only(null)
