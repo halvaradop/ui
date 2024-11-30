@@ -1,6 +1,6 @@
 import type { ArgsFunction } from "@halvaradop/ts-utility-types"
 import { cva, type VariantProps } from "class-variance-authority"
-import { merge, Slot, SlotProps, SlotWithAsChild } from "@halvaradop/ui-core"
+import { merge, Slot, type SlotProps } from "@halvaradop/ui-core"
 
 export type LabelProps<T extends ArgsFunction> = SlotProps<"label"> & VariantProps<T>
 
@@ -23,10 +23,10 @@ export const labelVariants = cva("font-medium relative leading-none", {
     },
 })
 
-export const Label = ({ className, variant, size, children, asChild, ...props }: LabelProps<typeof labelVariants>) => {
+export const Label = ({ className, variant, size, children, asChild, ref, ...props }: LabelProps<typeof labelVariants>) => {
     const SlotComponent = asChild ? Slot : "label"
     return (
-        <SlotComponent className={merge(labelVariants({ className, variant, size }))} {...props}>
+        <SlotComponent className={merge(labelVariants({ className, variant, size }))} ref={ref} {...props}>
             {children}
         </SlotComponent>
     )

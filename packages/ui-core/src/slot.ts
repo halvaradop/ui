@@ -11,9 +11,17 @@ export const Slot = ({ children, ...props }: { children: React.ReactNode }) => {
     return null
 }
 
-export type SlotWithAsChild<
+/**
+ * @internal
+ */
+type SlotWithAsChild<
     Component extends keyof React.JSX.IntrinsicElements | React.JSXElementConstructor<unknown>,
-> = ({ asChild?: false } & ComponentProps<Component>) | { asChild: true; children: ReactNode }
+    Element extends HTMLElement,
+> =
+    | ({ asChild?: false } & ComponentProps<Component>)
+    | { asChild: true; children: ReactNode; ref: React.Ref<Element> | undefined }
 
-export type SlotProps<Component extends keyof React.JSX.IntrinsicElements | React.JSXElementConstructor<unknown>> =
-    SlotWithAsChild<Component> & { className?: string }
+export type SlotProps<
+    Component extends keyof React.JSX.IntrinsicElements | React.JSXElementConstructor<unknown>,
+    Element extends HTMLElement = never,
+> = SlotWithAsChild<Component, Element> & { className?: string }
