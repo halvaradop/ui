@@ -13,76 +13,35 @@ const meta: Meta = {
 
 type Story = StoryObj<typeof meta>
 
+const Template = ({ ...props }: Parameters<typeof Form>[0]) => (
+    <Form {...props}>
+        <Input />
+        <Input />
+    </Form>
+)
+
 export const Base: Story = {
-    render: () => (
-        <Form>
-            <Input />
-            <Input />
-        </Form>
-    ),
+    render: Template,
 }
 
 export const Outline: Story = {
-    args: {
-        variant: "outline",
-    },
-    render: ({ variant }) => (
-        <Form variant={variant}>
-            <Input />
-            <Input />
-        </Form>
-    ),
+    render: () => <Template variant="outline" />,
 }
 
 export const Filled: Story = {
-    args: {
-        variant: "filled",
-    },
-    render: ({ variant }) => (
-        <Form variant={variant}>
-            <Input />
-            <Input />
-        </Form>
-    ),
+    render: () => <Template variant="filled" />,
 }
 
 export const Small: Story = {
-    args: {
-        size: "sm",
-        variant: "outline",
-    },
-    render: ({ variant, size }) => (
-        <Form variant={variant} size={size}>
-            <Input />
-            <Input />
-        </Form>
-    ),
+    render: () => <Template variant="outline" size="sm" />,
 }
 
 export const Medium: Story = {
-    args: {
-        size: "md",
-        variant: "outline",
-    },
-    render: ({ variant, size }) => (
-        <Form variant={variant} size={size}>
-            <Input />
-            <Input />
-        </Form>
-    ),
+    render: () => <Template variant="outline" size="md" />,
 }
 
 export const Large: Story = {
-    args: {
-        size: "lg",
-        variant: "outline",
-    },
-    render: ({ variant, size }) => (
-        <Form variant={variant} size={size}>
-            <Input />
-            <Input />
-        </Form>
-    ),
+    render: () => <Template variant="outline" size="lg" />,
 }
 
 export default meta
