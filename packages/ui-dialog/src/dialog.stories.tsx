@@ -36,7 +36,9 @@ const DialogStory = ({ size, variant }: DialogStoryProps) => {
             <Modal ref={modalRef}>
                 <div className={innerDialogVariants({ size, variant })}>
                     <div>Modal content</div>
-                    <Button onClick={() => handleToggleModal(false)}>Close</Button>
+                    <Button className="mt-4" onClick={() => handleToggleModal(false)}>
+                        Close
+                    </Button>
                 </div>
             </Modal>
         </>
