@@ -130,11 +130,14 @@ importers:
         specifier: workspace:*
         version: link:../ui-core
 
+  packages/ui-submit:
+    dependencies:
+      '@halvaradop/ui-core':
+        specifier: workspace:*
+        version: link:../ui-core
+
   packages/ui-template:
     dependencies:
-      '@halvaradop/ts-utility-types':
-        specifier: 0.11.1
-        version: 0.11.1
       '@halvaradop/ui-core':
         specifier: workspace:*
         version: link:../ui-core
@@ -504,9 +507,6 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
-
-  '@halvaradop/ts-utility-types@0.11.1':
-    resolution: {integrity: sha512-7t86TIg5cKxPweNMR6olMtZkeTJ6uoXN+hjTu+A9t1nvWh5bS0LtWO3yjOZ1hobjcgH+uy6gM7ApoIkpx/6BeA==}
 
   '@halvaradop/ts-utility-types@0.15.0':
     resolution: {integrity: sha512-e3AC/OnD6xn27ukp86UtdQlQKd82HLVSlNgk5JS6cKWWHWH5eTC860M6qm1RAILuIdL/a5r4BCdFxPgJAnY5qw==}
@@ -2439,8 +2439,6 @@ snapshots:
 
   '@esbuild/win32-x64@0.24.0':
     optional: true
-
-  '@halvaradop/ts-utility-types@0.11.1': {}
 
   '@halvaradop/ts-utility-types@0.15.0': {}
 
