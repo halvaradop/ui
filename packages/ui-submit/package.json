@@ -1,8 +1,8 @@
 {
-  "name": "@halvaradop/ui-template",
+  "name": "@halvaradop/ui-submit",
   "version": "0.1.0",
   "private": false,
-  "description": "A customizable {_} component for @halvaradop/ui library with Tailwind CSS styling.",
+  "description": "A customizable submit component for @halvaradop/ui library with Tailwind CSS styling.",
   "type": "module",
   "scripts": {
     "dev": "tsup --watch",
