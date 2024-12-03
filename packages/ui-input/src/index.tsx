@@ -1,7 +1,5 @@
 import type { ComponentProps } from "react"
-import type { ArgsFunction } from "@halvaradop/ts-utility-types"
-import { cva, type VariantProps } from "class-variance-authority"
-import { merge } from "@halvaradop/ui-core"
+import { merge, cva, type VariantProps, type ArgsFunction } from "@halvaradop/ui-core"
 
 export type InputProps<T extends ArgsFunction> = Omit<ComponentProps<"input">, "size"> & VariantProps<T>
 
@@ -39,3 +37,5 @@ export const inputVariants = cva("text-slate-600 border focus-within:outline-non
 export const Input = ({ className, variant, size, fullWidth, fullRounded, type, ref, ...props }: InputProps<typeof inputVariants>) => {
     return <input className={merge(inputVariants({ className, variant, size, fullWidth, fullRounded }))} type={type} ref={ref} {...props} />
 }
+
+Input.displayName = "input"

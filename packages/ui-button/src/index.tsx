@@ -1,6 +1,4 @@
-import type { ArgsFunction } from "@halvaradop/ts-utility-types"
-import { cva, type VariantProps } from "class-variance-authority"
-import { merge, Slot, type SlotProps } from "@halvaradop/ui-core"
+import { cva, merge, Slot, type SlotProps, type VariantProps, ArgsFunction } from "@halvaradop/ui-core"
 
 export type ButtonProps<T extends ArgsFunction> = SlotProps<"button"> & VariantProps<T>
 
@@ -36,10 +34,6 @@ export const buttonVariants = cva("flex items-center justify-center font-semibol
     },
 })
 
-/**
- * The Button component is a versatile and customizable button element.
- * It supports various variants, sizes, and additional props to enhance its appearance and functionality.
- */
 export const Button = ({ className, variant, size, fullWidth, fullRounded, asChild, children, ref, ...props }: ButtonProps<typeof buttonVariants>) => {
     const SlotComponent = asChild ? Slot : "button"
     return (

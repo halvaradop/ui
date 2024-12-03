@@ -1,6 +1,4 @@
-import type { ArgsFunction } from "@halvaradop/ts-utility-types"
-import { cva, type VariantProps } from "class-variance-authority"
-import { merge, Slot, type SlotProps } from "@halvaradop/ui-core"
+import { merge, cva, Slot, type SlotProps, type VariantProps, type ArgsFunction } from "@halvaradop/ui-core"
 
 export type LabelProps<T extends ArgsFunction> = SlotProps<"label"> & VariantProps<T>
 
@@ -31,3 +29,5 @@ export const Label = ({ className, variant, size, children, asChild, ref, ...pro
         </SlotComponent>
     )
 }
+
+Label.displayName = "label"

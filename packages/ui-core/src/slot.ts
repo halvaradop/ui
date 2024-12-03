@@ -19,7 +19,7 @@ type SlotWithAsChild<
     Element extends HTMLElement,
 > =
     | ({ asChild?: false } & ComponentProps<Component>)
-    | { asChild: true; children: ReactNode; ref: React.Ref<Element> | undefined }
+    | { asChild: true; children: ReactNode; ref?: React.Ref<Element> | undefined }
 
 export type SlotProps<
     Component extends keyof React.JSX.IntrinsicElements | React.JSXElementConstructor<unknown>,

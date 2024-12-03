@@ -34,6 +34,12 @@
     "url": "https://github.com/halvaradop/ui/issues"
   },
   "homepage": "https://github.com/halvaradop/ui#readme",
+  "devDependencies": {
+    "@halvaradop/ts-utility-types": "0.15.0",
+    "class-variance-authority": "0.7.0",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^2.5.2"
+  },
   "files": [
     "dist"
   ],
@@ -54,9 +60,9 @@
       "types": "./dist/slot.d.ts",
       "import": "./dist/slot.js",
       "require": "./dist/slot.cjs"
+    },
+    "./utility-types": {
+      "types": "./dist/utility-types.d.ts"
     }
-  },
-  "devDependencies": {
-    "tailwind-merge": "^2.5.2"
   }
 }

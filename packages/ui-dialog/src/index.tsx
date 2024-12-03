@@ -1,7 +1,5 @@
 import type { ComponentProps } from "react"
-import type { ArgsFunction } from "@halvaradop/ts-utility-types"
-import { cva, type VariantProps } from "class-variance-authority"
-import { merge } from "@halvaradop/ui-core"
+import { merge, cva, type VariantProps, type ArgsFunction } from "@halvaradop/ui-core"
 
 export type DialogProps<T extends ArgsFunction> = ComponentProps<"dialog"> & VariantProps<T>
 
@@ -25,12 +23,12 @@ export const innerDialogVariants = cva("flex items-center justify-center", {
     },
 })
 
-const classNameDialog = "w-full min-h-screen max-w-none max-h-none items-center justify-center relative inset-0 bg-transparent backdrop:bg-slate-500/50 open:flex"
-
 export const Modal = ({ className, children, ref, ...props }: DialogProps<typeof innerDialogVariants>) => {
     return (
-        <dialog className={merge(classNameDialog, className)} ref={ref} {...props}>
+        <dialog className={merge("w-full min-h-screen max-w-none max-h-none items-center justify-center relative inset-0 bg-transparent backdrop:bg-slate-500/50 open:flex", className)} ref={ref} {...props}>
             {children}
         </dialog>
     )
 }
+
+Modal.displayName = "dialog"

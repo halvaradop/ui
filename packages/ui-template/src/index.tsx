@@ -1,6 +1,6 @@
 import { ComponentProps } from "react"
 import type { ArgsFunction } from "@halvaradop/ts-utility-types"
-import { cva, type VariantProps } from "class-variance-authority"
+import { merge, cva, type VariantProps } from "@halvaradop/ui-core"
 
 export type IndexProps<T extends ArgsFunction> = VariantProps<T> & ComponentProps<"div">
 
