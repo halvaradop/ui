@@ -8,6 +8,7 @@
     "build": "tsup",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "clean": "pnpm clean:build && pnpm clean:modules",
     "clean:build": "rm -rf dist",
     "clean:modules": "rm -rf node_modules"
   },

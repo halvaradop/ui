@@ -12,6 +12,10 @@
       "dependsOn": ["^dev"],
       "cache": false
     },
+    "clean": {
+      "cache": false,
+      "inputs": ["dist", "node_modules"]
+    },
     "clean:build": {
       "cache": false
     },

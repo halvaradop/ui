@@ -12,6 +12,7 @@
     "format:check": "prettier --check .",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
+    "clean": "turbo run clean --parallel",
     "clean:build": "turbo run clean:build --parallel",
     "clean:modules": "turbo run clean:modules --parallel"
   },

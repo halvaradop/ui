@@ -6,7 +6,7 @@ export const labelVariants = cva("font-medium relative leading-none", {
     variants: {
         variant: {
             base: "text-slate-700",
-            error: "hidden text-rose-400 absolute top-0 peer-usvalid:block peer-usvalid-empty:hidden",
+            error: "hidden text-rose-400 absolute top-0 peer-usinvalid:block peer-usinvalid-empty:hidden",
             flex: "flex flex-col items-start",
         },
         size: {
