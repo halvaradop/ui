@@ -17,6 +17,10 @@
     "type": "git",
     "url": "git+https://github.com/halvaradop/ui.git"
   },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/@halvaradop/ui-checkbox"
+  },
   "keywords": [
     "react",
     "component",
