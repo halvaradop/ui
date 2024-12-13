@@ -91,6 +91,12 @@ importers:
         specifier: workspace:*
         version: link:../ui-core
 
+  packages/ui-checkbox:
+    dependencies:
+      '@halvaradop/ui-core':
+        specifier: workspace:*
+        version: link:../ui-core
+
   packages/ui-core:
     devDependencies:
       '@halvaradop/ts-utility-types':

@@ -2,7 +2,12 @@ import type { Config } from "tailwindcss"
 import plugin from "tailwindcss/plugin"
 
 const config: Config = {
-    content: ["./ui/**/*.{js,ts,jsx,tsx,mdx}", "./app/**/*.{js,ts,jsx,tsx,mdx}", "./packages/**/*.{js,ts,jsx,tsx,mdx}"],
+    content: [
+        "./ui/**/*.{js,ts,jsx,tsx,mdx}",
+        "./app/**/*.{js,ts,jsx,tsx,mdx}",
+        "./packages/**/*.{js,ts,jsx,tsx,mdx}",
+        "!./node_modules/**",
+    ],
     darkMode: "class",
     future: {
         hoverOnlyWhenSupported: true,
