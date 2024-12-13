@@ -92,9 +92,10 @@
     "overrides": [
       {
         "files": [
-          "**/*.json",
-          "README.md",
-          "**/*.yaml"
+          "*.json",
+          "*.md",
+          "*.yaml",
+          "*.yml"
         ],
         "options": {
           "tabWidth": 2
