@@ -1,5 +1,6 @@
 import type { ComponentProps } from "react"
-import { merge, cva, type VariantProps, type ArgsFunction } from "@halvaradop/ui-core"
+import { merge, type ArgsFunction } from "@halvaradop/ui-core"
+import { cva, type VariantProps } from "class-variance-authority"
 
 export type FormProps<T extends ArgsFunction> = VariantProps<T> & ComponentProps<"form">
 
@@ -32,4 +33,4 @@ export const Form = ({ className, variant, size, children, ref, ...props }: Form
     )
 }
 
-Form.displayName = "form"
+Form.displayName = "Form"

@@ -1,6 +1,7 @@
 "use client"
 import { ComponentProps } from "react"
-import { ArgsFunction, merge } from "@halvaradop/ui-core"
+import { useFormStatus } from "react-dom"
+import { type ArgsFunction, merge } from "@halvaradop/ui-core"
 import { cva, VariantProps } from "class-variance-authority"
 
 export type SubmitProps<T extends ArgsFunction> = VariantProps<T> & Omit<ComponentProps<"input">, "type" | "size"> & { pending?: string }
@@ -9,7 +10,7 @@ export const submitVariants = cva("font-medium border focus-within:outline-none 
     variants: {
         variant: {
             base: "text-white border-black bg-black ring-black disabled:bg-opacity-90",
-            inverted: " inverted text-black border-white bg-white ring-white ring-offset-black disabled:border-black disabled:bg-opacity-90",
+            inverted: "text-black border-white bg-white ring-white ring-offset-black disabled:border-black disabled:bg-opacity-90",
         },
         size: {
             sm: "h-9 px-3 text-sm rounded",
@@ -33,8 +34,10 @@ export const submitVariants = cva("font-medium border focus-within:outline-none 
     },
 })
 
-export const Submit = ({ className, value = "Submit", pending = "Submitting..." }: SubmitProps<typeof submitVariants>) => {
-    const { pending: status } = { pending: false }
+export const Submit = ({ className, variant, size, fullWidth, fullRounded, value = "Submit", pending = "Submitting...", ref, ...props }: SubmitProps<typeof submitVariants>) => {
+    const { pending: status } = useFormStatus()
     const message = status ? pending : value
-    return <input className={merge(submitVariants({ className }))} type="submit" value={message} disabled={status} aria-disabled={status} />
+    return <input className={merge(submitVariants({ className, variant, size, fullWidth, fullRounded }))} type="submit" value={message} disabled={status} aria-disabled={status} ref={ref} {...props} />
 }
+
+Submit.displayName = "Input"

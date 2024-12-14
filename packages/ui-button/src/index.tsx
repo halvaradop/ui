@@ -1,5 +1,5 @@
-import { merge, Slot, type SlotProps, ArgsFunction, cva, VariantProps } from "@halvaradop/ui-core"
-//import { cva, type VariantProps } from "class-variance-authority"
+import { merge, Slot, type SlotProps, ArgsFunction } from "@halvaradop/ui-core"
+import { cva, type VariantProps } from "class-variance-authority"
 
 export type ButtonProps<T extends ArgsFunction> = SlotProps<"button"> & VariantProps<T>
 
