@@ -35,6 +35,32 @@ yarn add @halvaradop/ui-component@beta
 pnpm add @halvaradop/ui-component@beta
 ```
 
+Import components and start building your application:
+
+```tsx
+import { Button } from "@halvaradop/ui-button"
+
+export default function App() {
+  return <Button variant="outline">Click Me</Button>
+}
+```
+
+Check the full list of components in the [packages directory](https://github.com/halvaradop/ui/tree/master/packages).
+
+## Styles
+
+To add styles from the library to any of the components in your project, you need to add the pattern `"./node_modules/@halvaradop/ui-*/**/*.{js,ts,jsx,tsx,mdx}"` within the `tailwind.config.ts` file. This will allow TailwindCSS to recognize the classes used in the library and apply the styles to the components.
+
+```ts
+import type { Config } from "tailwindcss"
+
+const config: Config = {
+  content: ["./node_modules/@halvaradop/ui-*/**/*.{js,ts,jsx,tsx,mdx}"],
+}
+
+export default config
+```
+
 ## Notes
 
 The beta version works, however, it may have minor changes or issues compared to the stable version. If you find a problem or issue, please report it in an [Issue](https://github.com/halvaradop/ui/issues) with the details.
