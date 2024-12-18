@@ -35,6 +35,8 @@ yarn add @halvaradop/ui-component@beta
 pnpm add @halvaradop/ui-component@beta
 ```
 
+## Usage
+
 Import components and start building your application:
 
 ```tsx
