@@ -42,6 +42,7 @@
     }
   },
   "dependencies": {
-    "@halvaradop/ui-core": "workspace:*"
+    "@halvaradop/ui-core": "workspace:*",
+    "class-variance-authority": "0.7.0"
   }
 }
