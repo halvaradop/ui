@@ -1,5 +1,6 @@
 import type { ComponentProps } from "react"
-import { merge, cva, type VariantProps, type ArgsFunction } from "@halvaradop/ui-core"
+import { merge, type ArgsFunction } from "@halvaradop/ui-core"
+import { cva, type VariantProps } from "class-variance-authority"
 
 export type DialogProps<T extends ArgsFunction> = ComponentProps<"dialog"> & VariantProps<T>
 
@@ -31,4 +32,4 @@ export const Modal = ({ className, children, ref, ...props }: DialogProps<typeof
     )
 }
 
-Modal.displayName = "dialog"
+Modal.displayName = "Dialog"

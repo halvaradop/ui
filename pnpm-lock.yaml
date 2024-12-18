@@ -89,63 +89,85 @@ importers:
       '@halvaradop/ui-core':
         specifier: workspace:*
         version: link:../ui-core
+      class-variance-authority:
+        specifier: 0.7.0
+        version: 0.7.0
 
   packages/ui-checkbox:
     dependencies:
       '@halvaradop/ui-core':
         specifier: workspace:*
         version: link:../ui-core
+      class-variance-authority:
+        specifier: 0.7.0
+        version: 0.7.0
 
   packages/ui-core:
+    dependencies:
+      tailwind-merge:
+        specifier: ^2.5.2
+        version: 2.5.3
     devDependencies:
       '@halvaradop/ts-utility-types':
         specifier: 0.15.0
         version: 0.15.0
-      class-variance-authority:
-        specifier: 0.7.0
-        version: 0.7.0
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
-      tailwind-merge:
-        specifier: ^2.5.2
-        version: 2.5.3
 
   packages/ui-dialog:
     dependencies:
       '@halvaradop/ui-core':
         specifier: workspace:*
         version: link:../ui-core
+      class-variance-authority:
+        specifier: 0.7.0
+        version: 0.7.0
 
   packages/ui-form:
     dependencies:
       '@halvaradop/ui-core':
         specifier: workspace:*
         version: link:../ui-core
+      class-variance-authority:
+        specifier: 0.7.0
+        version: 0.7.0
 
   packages/ui-input:
     dependencies:
       '@halvaradop/ui-core':
         specifier: workspace:*
         version: link:../ui-core
+      class-variance-authority:
+        specifier: 0.7.0
+        version: 0.7.0
 
   packages/ui-label:
     dependencies:
       '@halvaradop/ui-core':
         specifier: workspace:*
         version: link:../ui-core
+      class-variance-authority:
+        specifier: 0.7.0
+        version: 0.7.0
 
   packages/ui-submit:
     dependencies:
       '@halvaradop/ui-core':
         specifier: workspace:*
         version: link:../ui-core
+      class-variance-authority:
+        specifier: 0.7.0
+        version: 0.7.0
 
   packages/ui-template:
     dependencies:
       '@halvaradop/ui-core':
         specifier: workspace:*
         version: link:../ui-core
+      class-variance-authority:
+        specifier: 0.7.0
+        version: 0.7.0
 
 packages:
 
