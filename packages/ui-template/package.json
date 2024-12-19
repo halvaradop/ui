@@ -1,6 +1,6 @@
 {
   "name": "@halvaradop/ui-template",
-  "version": "0.1.0",
+  "version": "0.1.0-beta.0",
   "private": false,
   "description": "A customizable {_} component for @halvaradop/ui library with Tailwind CSS styling.",
   "type": "module",
