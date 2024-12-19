@@ -1,4 +1,4 @@
-# @halvaradop/ui
+# @halvaradop/ui@beta
 
 This is a library of accessible, reusable, and customizable UI components for web applications built with React and styled using TailwindCSS. It provides a set of pre-styled components designed to streamline and accelerate the development of user interfaces.
 
