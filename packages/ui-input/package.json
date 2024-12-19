@@ -1,6 +1,6 @@
 {
   "name": "@halvaradop/ui-input",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "private": false,
   "description": "A customizable input component for @halvaradop/ui library with Tailwind CSS styling.",
   "type": "module",
