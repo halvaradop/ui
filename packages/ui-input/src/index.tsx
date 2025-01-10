@@ -1,8 +1,7 @@
-import type { ComponentProps } from "react"
-import { merge, type ArgsFunction } from "@halvaradop/ui-core"
+import { merge, type ComponentProps, type ArgsFunction } from "@halvaradop/ui-core"
 import { cva, type VariantProps } from "class-variance-authority"
 
-export type InputProps<T extends ArgsFunction> = Omit<ComponentProps<"input">, "size"> & VariantProps<T>
+export type InputProps<T extends ArgsFunction> = VariantProps<T> & ComponentProps<"input", "size">
 
 export const inputVariants = cva("text-slate-600 border focus-within:outline-none disabled:cursor-not-allowed disabled:text-gray-400 disabled:border-gray-300 disabled:bg-gray-100", {
     variants: {
