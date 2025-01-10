@@ -160,6 +160,15 @@ importers:
         specifier: 0.7.0
         version: 0.7.0
 
+  packages/ui-radio-group:
+    dependencies:
+      '@halvaradop/ui-core':
+        specifier: workspace:*
+        version: link:../ui-core
+      class-variance-authority:
+        specifier: 0.7.0
+        version: 0.7.0
+
   packages/ui-submit:
     dependencies:
       '@halvaradop/ui-core':
