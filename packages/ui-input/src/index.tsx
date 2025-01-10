@@ -1,3 +1,4 @@
+import { forwardRef } from "react"
 import { merge, type ComponentProps, type ArgsFunction } from "@halvaradop/ui-core"
 import { cva, type VariantProps } from "class-variance-authority"
 
@@ -34,8 +35,8 @@ export const inputVariants = cva("text-slate-600 border focus-within:outline-non
     },
 })
 
-export const Input = ({ className, variant, size, fullWidth, fullRounded, type, ref, ...props }: InputProps<typeof inputVariants>) => {
+export const Input = forwardRef<HTMLInputElement, InputProps<typeof inputVariants>>(({ className, variant, size, fullWidth, fullRounded, type, ...props }, ref) => {
     return <input className={merge(inputVariants({ className, variant, size, fullWidth, fullRounded }))} type={type} ref={ref} {...props} />
-}
+})
 
 Input.displayName = "Input"

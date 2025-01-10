@@ -1,3 +1,4 @@
+import { forwardRef } from "react"
 import { merge, type ComponentProps, type ArgsFunction } from "@halvaradop/ui-core"
 import { cva, type VariantProps } from "class-variance-authority"
 
@@ -42,15 +43,15 @@ export const checkboxVariants = cva("appearance-none border border-gray-400 focu
     },
 })
 
-export const Checkbox = ({ className, size, color, name, ref }: CheckboxProps<typeof checkboxVariants>) => {
+export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps<typeof checkboxVariants>>(({ className, size, color, name, ...props }, ref) => {
     return (
         <label className="flex items-center justify-center relative" htmlFor={name}>
-            <input className={merge(checkboxVariants({ className, size, color }), "peer")} type="checkbox" name={name} ref={ref} />
+            <input className={merge(checkboxVariants({ className, size, color }), "peer")} type="checkbox" name={name} ref={ref} {...props} />
             <svg className={internalVariants({ size })} xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#fff">
                 <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
             </svg>
         </label>
     )
-}
+})
 
 Checkbox.displayName = "Checkbox"

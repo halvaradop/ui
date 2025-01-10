@@ -1,3 +1,4 @@
+import { forwardRef } from "react"
 import { merge, Slot, type SlotProps, type ArgsFunction } from "@halvaradop/ui-core"
 import { cva, type VariantProps } from "class-variance-authority"
 
@@ -35,13 +36,13 @@ export const buttonVariants = cva("flex items-center justify-center font-semibol
     },
 })
 
-export const Button = ({ className, variant, size, fullWidth, fullRounded, asChild, children, ref, ...props }: ButtonProps<typeof buttonVariants>) => {
+export const Button = forwardRef<HTMLButtonElement, ButtonProps<typeof buttonVariants>>(({ className, variant, size, fullWidth, fullRounded, asChild, children, ...props }, ref) => {
     const SlotComponent = asChild ? Slot : "button"
     return (
         <SlotComponent className={merge(buttonVariants({ className, variant, size, fullWidth, fullRounded }))} ref={ref} role="button" {...props}>
             {children}
         </SlotComponent>
     )
-}
+})
 
 Button.displayName = "Button"

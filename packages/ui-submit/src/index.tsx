@@ -1,4 +1,4 @@
-"use client"
+import { forwardRef } from "react"
 import { merge, type ComponentProps, type ArgsFunction } from "@halvaradop/ui-core"
 import { cva, VariantProps } from "class-variance-authority"
 
@@ -36,9 +36,9 @@ export const submitVariants = cva("font-medium border focus-within:outline-none 
     },
 })
 
-export const Submit = ({ className, variant, size, fullWidth, fullRounded, value = "Submit", pending = "Submitting...", disabled, ref, ...props }: SubmitProps<typeof submitVariants>) => {
+export const Submit = forwardRef<HTMLInputElement, SubmitProps<typeof submitVariants>>(({ className, variant, size, fullWidth, fullRounded, value = "Submit", pending = "Submitting...", disabled, ...props }, ref) => {
     const message = disabled ? pending : value
     return <input className={merge(submitVariants({ className, variant, size, fullWidth, fullRounded }))} type="submit" value={message} disabled={disabled} aria-disabled={disabled} ref={ref} {...props} />
-}
+})
 
 Submit.displayName = "Input"
