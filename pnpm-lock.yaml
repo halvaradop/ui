@@ -108,9 +108,6 @@ importers:
         specifier: ^2.5.2
         version: 2.6.0
     devDependencies:
-      '@halvaradop/ts-utility-types':
-        specifier: 0.15.0
-        version: 0.15.0
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -558,9 +555,6 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
-
-  '@halvaradop/ts-utility-types@0.15.0':
-    resolution: {integrity: sha512-e3AC/OnD6xn27ukp86UtdQlQKd82HLVSlNgk5JS6cKWWHWH5eTC860M6qm1RAILuIdL/a5r4BCdFxPgJAnY5qw==}
 
   '@isaacs/cliui@8.0.2':
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
@@ -2469,8 +2463,6 @@ snapshots:
 
   '@esbuild/win32-x64@0.24.2':
     optional: true
-
-  '@halvaradop/ts-utility-types@0.15.0': {}
 
   '@isaacs/cliui@8.0.2':
     dependencies:
