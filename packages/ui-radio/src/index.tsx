@@ -1,3 +1,4 @@
+import { forwardRef } from "react"
 import { merge, type ComponentProps, type ArgsFunction } from "@halvaradop/ui-core"
 import { cva, type VariantProps } from "class-variance-authority"
 
@@ -47,13 +48,13 @@ const internalVariants = cva("block absolute rounded-full", {
     },
 })
 
-export const Radio = ({ className, size, color, name, ...props }: RadioProps<typeof radioVariants & typeof internalVariants>) => {
+export const Radio = forwardRef<HTMLInputElement, RadioProps<typeof radioVariants & typeof internalVariants>>(({ className, size, color, name, ...props }, ref) => {
     return (
         <label className="w-min inline-flex items-center justify-center relative" htmlFor={name}>
-            <input className={merge(radioVariants({ className, size, color }))} type="radio" name={name} {...props} />
+            <input className={merge(radioVariants({ className, size, color }))} type="radio" name={name} ref={ref} {...props} />
             <span className={internalVariants({ size, color })} />
         </label>
     )
-}
+})
 
 Radio.displayName = "Radio"

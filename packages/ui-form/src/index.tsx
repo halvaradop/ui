@@ -1,3 +1,4 @@
+import { forwardRef } from "react"
 import { merge, type WithChildrenProps, type ComponentProps, type ArgsFunction } from "@halvaradop/ui-core"
 import { cva, type VariantProps } from "class-variance-authority"
 
@@ -24,12 +25,12 @@ export const formVariants = cva("mx-auto flex items-center flex-col relative", {
     },
 })
 
-export const Form = ({ className, variant, size, children, ref, ...props }: FormProps<typeof formVariants>) => {
+export const Form = forwardRef<HTMLFormElement, FormProps<typeof formVariants>>(({ className, variant, size, children, ...props }, ref) => {
     return (
         <form className={merge(formVariants({ className, variant, size }))} ref={ref} {...props}>
             {children}
         </form>
     )
-}
+})
 
 Form.displayName = "Form"

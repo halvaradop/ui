@@ -1,3 +1,4 @@
+import { forwardRef } from "react"
 import { merge, type ArgsFunction, type ComponentProps } from "@halvaradop/ui-core"
 import { cva, type VariantProps } from "class-variance-authority"
 
@@ -7,6 +8,6 @@ export const indexVariants = cva("", {
     variants: {},
 })
 
-export const Index = () => {
+export const Index = forwardRef(() => {
     return <div></div>
-}
+})
