@@ -44,8 +44,6 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./package.json": "./package.json",
-    "./tsconfig.base.json": "./tsconfig.base.json",
     "./tsup.config.base": {
       "types": "./dist/tsup.config.base.d.ts",
       "import": "./dist/tsup.config.base.js",
@@ -56,15 +54,16 @@
       "import": "./dist/slot.js",
       "require": "./dist/slot.cjs"
     },
-    "./utility-types": {
-      "types": "./dist/utility-types.d.ts"
-    }
+    "./types": {
+      "types": "./dist/types.d.ts"
+    },
+    "./package.json": "./package.json",
+    "./tsconfig.base.json": "./tsconfig.base.json"
   },
   "dependencies": {
     "tailwind-merge": "^2.5.2"
   },
   "devDependencies": {
-    "@halvaradop/ts-utility-types": "0.15.0",
     "clsx": "^2.1.1"
   }
 }

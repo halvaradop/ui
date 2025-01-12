@@ -1,8 +1,7 @@
-import type { ComponentProps } from "react"
-import { merge, type ArgsFunction } from "@halvaradop/ui-core"
+import { merge, type WithChildrenProps, type ComponentProps, type ArgsFunction } from "@halvaradop/ui-core"
 import { cva, type VariantProps } from "class-variance-authority"
 
-export type FormProps<T extends ArgsFunction> = VariantProps<T> & ComponentProps<"form">
+export type FormProps<T extends ArgsFunction> = VariantProps<T> & WithChildrenProps<ComponentProps<"form">>
 
 export const formVariants = cva("mx-auto flex items-center flex-col relative", {
     variants: {

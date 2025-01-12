@@ -1,8 +1,7 @@
-import type { ComponentProps } from "react"
-import { merge, type ArgsFunction } from "@halvaradop/ui-core"
+import { merge, type ComponentProps, type WithChildrenProps, type ArgsFunction } from "@halvaradop/ui-core"
 import { cva, type VariantProps } from "class-variance-authority"
 
-export type DialogProps<T extends ArgsFunction> = ComponentProps<"dialog"> & VariantProps<T>
+export type DialogProps<T extends ArgsFunction> = VariantProps<T> & WithChildrenProps<ComponentProps<"dialog">>
 
 export const innerDialogVariants = cva("flex items-center justify-center", {
     variants: {

@@ -1,12 +1,9 @@
 "use client"
-import { ComponentProps, forwardRef, useEffect, useRef } from "react"
-import { merge, type ArgsFunction } from "@halvaradop/ui-core"
+import { forwardRef, useEffect, useRef } from "react"
+import { merge, type ComponentProps, type WithChildrenProps, type ArgsFunction } from "@halvaradop/ui-core"
 import { cva, type VariantProps } from "class-variance-authority"
 
-export type RadioGroupProps<T extends ArgsFunction> = VariantProps<T> &
-    Omit<ComponentProps<"fieldset">, "children"> & {
-        children: React.ReactNode
-    }
+export type RadioGroupProps<T extends ArgsFunction> = VariantProps<T> & WithChildrenProps<ComponentProps<"fieldset">>
 
 export const radioGroupVariants = cva("flex", {
     variants: {
