@@ -1,7 +1,8 @@
 {
-  "name": "@halvaradop/ui-core",
-  "version": "0.2.1-beta.0",
-  "description": "The core of the @halvaradop/ui library, providing customizable components with Tailwind CSS styling.",
+  "name": "@halvaradop/ui-radio",
+  "version": "0.1.0-beta.0",
+  "private": false,
+  "description": "A customizable radio button component for @halvaradop/ui library with Tailwind CSS styling.",
   "type": "module",
   "scripts": {
     "dev": "tsup --watch",
@@ -16,12 +17,7 @@
     "type": "git",
     "url": "git+https://github.com/halvaradop/ui.git"
   },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/@halvaradop/ui-core"
-  },
   "keywords": [
-    "core",
     "react",
     "component",
     "tailwindcss",
@@ -43,27 +39,10 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
-    },
-    "./tsup.config.base": {
-      "types": "./dist/tsup.config.base.d.ts",
-      "import": "./dist/tsup.config.base.js",
-      "require": "./dist/tsup.config.base.cjs"
-    },
-    "./slot": {
-      "types": "./dist/slot.d.ts",
-      "import": "./dist/slot.js",
-      "require": "./dist/slot.cjs"
-    },
-    "./types": {
-      "types": "./dist/types.d.ts"
-    },
-    "./package.json": "./package.json",
-    "./tsconfig.base.json": "./tsconfig.base.json"
+    }
   },
   "dependencies": {
-    "tailwind-merge": "^2.5.2"
-  },
-  "devDependencies": {
-    "clsx": "^2.1.1"
+    "@halvaradop/ui-core": "workspace:*",
+    "class-variance-authority": "0.7.0"
   }
 }

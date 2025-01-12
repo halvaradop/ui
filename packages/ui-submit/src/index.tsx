@@ -1,10 +1,13 @@
 "use client"
-import { ComponentProps } from "react"
 import { useFormStatus } from "react-dom"
-import { type ArgsFunction, merge } from "@halvaradop/ui-core"
+import { merge, type ComponentProps, type ArgsFunction } from "@halvaradop/ui-core"
 import { cva, VariantProps } from "class-variance-authority"
 
-export type SubmitProps<T extends ArgsFunction> = VariantProps<T> & Omit<ComponentProps<"input">, "type" | "size"> & { pending?: string }
+interface InternalSubmitProps {
+    pending?: string
+}
+
+export type SubmitProps<T extends ArgsFunction> = VariantProps<T> & ComponentProps<"input", "type" | "size"> & InternalSubmitProps
 
 export const submitVariants = cva("font-medium border focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 disabled:hover:cursor-progress", {
     variants: {

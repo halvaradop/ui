@@ -1,4 +1,5 @@
-import { type ReactNode, Children, isValidElement, cloneElement, ComponentProps } from "react"
+import { type ReactNode, type ComponentProps, Children, isValidElement, cloneElement } from "react"
+import type { HTMLTag } from "./types.js"
 
 export const Slot = ({ children, ...props }: { children: React.ReactNode }) => {
     if (isValidElement(children)) {
@@ -14,14 +15,11 @@ export const Slot = ({ children, ...props }: { children: React.ReactNode }) => {
 /**
  * @internal
  */
-type SlotWithAsChild<
-    Component extends keyof React.JSX.IntrinsicElements | React.JSXElementConstructor<unknown>,
-    Element extends HTMLElement,
-> =
+type SlotWithAsChild<Component extends HTMLTag, Element extends HTMLElement> =
     | ({ asChild?: false } & ComponentProps<Component>)
     | { asChild: true; children: ReactNode; ref?: React.Ref<Element> | undefined }
 
-export type SlotProps<
-    Component extends keyof React.JSX.IntrinsicElements | React.JSXElementConstructor<unknown>,
-    Element extends HTMLElement = never,
-> = SlotWithAsChild<Component, Element> & { className?: string }
+export type SlotProps<Component extends HTMLTag, Element extends HTMLElement = never> = SlotWithAsChild<
+    Component,
+    Element
+> & { className?: string }
