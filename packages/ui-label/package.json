@@ -1,6 +1,6 @@
 {
   "name": "@halvaradop/ui-label",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": false,
   "description": "A customizable label component for @halvaradop/ui library with Tailwind CSS styling.",
   "type": "module",
