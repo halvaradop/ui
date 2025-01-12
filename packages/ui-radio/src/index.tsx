@@ -47,10 +47,10 @@ const internalVariants = cva("block absolute rounded-full", {
     },
 })
 
-export const Radio = ({ className, size, color, name, ...props }: RadioProps<typeof radioVariants & typeof internalVariants>) => {
+export const Radio = ({ className, size, color, name, ref, ...props }: RadioProps<typeof radioVariants & typeof internalVariants>) => {
     return (
         <label className="w-min inline-flex items-center justify-center relative" htmlFor={name}>
-            <input className={merge(radioVariants({ className, size, color }))} type="radio" name={name} {...props} />
+            <input className={merge(radioVariants({ className, size, color }))} type="radio" name={name} ref={ref} {...props} />
             <span className={internalVariants({ size, color })} />
         </label>
     )

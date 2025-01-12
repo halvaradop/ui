@@ -1,5 +1,5 @@
 "use client"
-import { forwardRef, useEffect, useRef } from "react"
+import { useEffect, useRef } from "react"
 import { merge, type ComponentProps, type WithChildrenProps, type ArgsFunction } from "@halvaradop/ui-core"
 import { cva, type VariantProps } from "class-variance-authority"
 
@@ -17,7 +17,7 @@ export const radioGroupVariants = cva("flex", {
     },
 })
 
-export const RadioGroup = forwardRef<HTMLFieldSetElement, RadioGroupProps<typeof radioGroupVariants>>(({ className, variant, name, defaultValue, children, ...props }, ref) => {
+export const RadioGroup = ({ className, variant, name, defaultValue, children, ref, ...props }: RadioGroupProps<typeof radioGroupVariants>) => {
     // @ts-ignore
     const reference = useRef<HTMLFieldSetElement>(ref?.current)
 
@@ -37,4 +37,4 @@ export const RadioGroup = forwardRef<HTMLFieldSetElement, RadioGroupProps<typeof
             {children}
         </fieldset>
     )
-})
+}
