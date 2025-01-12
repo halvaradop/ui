@@ -4,11 +4,22 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**/*"],
-      "inputs": ["packages/**/src/**"],
+      "outputs": ["dist"],
+      "inputs": ["src"],
       "cache": true
     },
     "dev": {
+      "dependsOn": ["^dev"],
+      "cache": false
+    },
+    "clean": {
+      "cache": false,
+      "inputs": ["dist", "node_modules"]
+    },
+    "clean:build": {
+      "cache": false
+    },
+    "clean:modules": {
       "cache": false
     }
   },

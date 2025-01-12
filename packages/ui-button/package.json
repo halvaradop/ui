@@ -1,6 +1,6 @@
 {
   "name": "@halvaradop/ui-button",
-  "version": "0.2.1",
+  "version": "0.4.0",
   "description": "A customizable button component for @halvaradop/ui library with Tailwind CSS styling.",
   "type": "module",
   "scripts": {
@@ -8,12 +8,17 @@
     "build": "tsup",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "clean:dist": "pnpm -r --parallel exec rm -rf dist",
-    "clean:modules": "pnpm -r --parallel exec rm -rf node_modules"
+    "clean": "pnpm clean:build && pnpm clean:modules",
+    "clean:build": "rm -rf dist",
+    "clean:modules": "rm -rf node_modules"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/halvaradop/ui.git"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/@halvaradop/ui-button"
   },
   "keywords": [
     "button",
@@ -22,7 +27,7 @@
     "tailwindcss",
     "react",
     "ui",
-    "library"
+    "ui library"
   ],
   "author": "Hernan Alvarado <hernanvid123@gmail.com>",
   "license": "MIT",
@@ -40,7 +45,8 @@
       "require": "./dist/index.cjs"
     }
   },
-  "devDependencies": {
-    "@halvaradop/ui-core": "workspace:*"
+  "dependencies": {
+    "@halvaradop/ui-core": "workspace:*",
+    "class-variance-authority": "0.7.0"
   }
 }

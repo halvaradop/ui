@@ -1,12 +1,15 @@
 import { twMerge } from "tailwind-merge"
+import { clsx, ClassValue } from "clsx"
 
 /**
  * Merge multiple classes into a single class string. It prioritizes the
  * last class in case of conflicts.
- * @params classes - The classes to merge.
- * @returns The merged class string.
+ * @param {string} classes - The classes to merge.
+ * @returns {string} The merged class string.
  * @example
  * // Expected: "text-red-500"
- * merge("text-blue-500 text-red-500")
+ * merge("text-blue-500", " text-red-500")
  */
-export const merge = twMerge
+export const merge = (...classes: ClassValue[]): string => {
+    return twMerge(clsx(classes))
+}
