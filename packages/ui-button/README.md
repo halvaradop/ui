@@ -1,6 +1,6 @@
 # @halvaradop/ui-button
 
-The `@halvaradop/ui-button` is an accessible, reusable, and customizable button component that is part of the `@halvaradop/ui` library for React. Built with `React` and styled using `TailwindCSS`, it provides a set of pre-styled components designed to streamline and accelerate the development of user interfaces.
+The `@halvaradop/ui-button` is an accessible, reusable, and customizable `Button` component that is part of the `@halvaradop/ui` library for React. Built with `React` and styled using `TailwindCSS`, it provides a set of pre-styled components designed to streamline and accelerate the development of user interfaces.
 
 ## Installation
 
