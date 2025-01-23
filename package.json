@@ -12,6 +12,9 @@
     "format:check": "prettier --check .",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test",
+    "test:e2e:report": "playwright show-report",
     "clean": "turbo run clean --parallel",
     "clean:build": "turbo run clean:build --parallel",
     "clean:modules": "turbo run clean:modules --parallel"
@@ -43,6 +46,7 @@
   "homepage": "https://github.com/halvaradop/ui#readme",
   "devDependencies": {
     "@chromatic-com/storybook": "1.9.0",
+    "@playwright/test": "^1.50.0",
     "@storybook/addon-essentials": "^8.4.5",
     "@storybook/addon-interactions": "^8.4.5",
     "@storybook/addon-links": "^8.4.5",
