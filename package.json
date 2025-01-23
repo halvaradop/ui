@@ -46,6 +46,7 @@
   "homepage": "https://github.com/halvaradop/ui#readme",
   "devDependencies": {
     "@chromatic-com/storybook": "1.9.0",
+    "@playwright/test": "^1.50.0",
     "@storybook/addon-essentials": "^8.4.7",
     "@storybook/addon-interactions": "^8.4.7",
     "@storybook/addon-links": "^8.4.7",
