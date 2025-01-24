@@ -95,6 +95,12 @@ importers:
       class-variance-authority:
         specifier: 0.7.0
         version: 0.7.0
+      react:
+        specifier: ^18
+        version: 18.3.1
+      react-dom:
+        specifier: ^18
+        version: 18.3.1(react@18.3.1)
 
   packages/ui-checkbox:
     dependencies:
@@ -104,6 +110,12 @@ importers:
       class-variance-authority:
         specifier: 0.7.0
         version: 0.7.0
+      react:
+        specifier: ^18
+        version: 18.3.1
+      react-dom:
+        specifier: ^18
+        version: 18.3.1(react@18.3.1)
 
   packages/ui-core:
     dependencies:
@@ -123,6 +135,12 @@ importers:
       class-variance-authority:
         specifier: 0.7.0
         version: 0.7.0
+      react:
+        specifier: ^18
+        version: 18.3.1
+      react-dom:
+        specifier: ^18
+        version: 18.3.1(react@18.3.1)
 
   packages/ui-form:
     dependencies:
@@ -132,6 +150,12 @@ importers:
       class-variance-authority:
         specifier: 0.7.0
         version: 0.7.0
+      react:
+        specifier: ^18
+        version: 18.3.1
+      react-dom:
+        specifier: ^18
+        version: 18.3.1(react@18.3.1)
 
   packages/ui-input:
     dependencies:
@@ -141,6 +165,12 @@ importers:
       class-variance-authority:
         specifier: 0.7.0
         version: 0.7.0
+      react:
+        specifier: ^18
+        version: 18.3.1
+      react-dom:
+        specifier: ^18
+        version: 18.3.1(react@18.3.1)
 
   packages/ui-label:
     dependencies:
@@ -150,6 +180,12 @@ importers:
       class-variance-authority:
         specifier: 0.7.0
         version: 0.7.0
+      react:
+        specifier: ^18
+        version: 18.3.1
+      react-dom:
+        specifier: ^18
+        version: 18.3.1(react@18.3.1)
 
   packages/ui-radio:
     dependencies:
@@ -159,6 +195,12 @@ importers:
       class-variance-authority:
         specifier: 0.7.0
         version: 0.7.0
+      react:
+        specifier: ^18
+        version: 18.3.1
+      react-dom:
+        specifier: ^18
+        version: 18.3.1(react@18.3.1)
 
   packages/ui-radio-group:
     dependencies:
@@ -168,6 +210,12 @@ importers:
       class-variance-authority:
         specifier: 0.7.0
         version: 0.7.0
+      react:
+        specifier: ^18
+        version: 18.3.1
+      react-dom:
+        specifier: ^18
+        version: 18.3.1(react@18.3.1)
 
   packages/ui-submit:
     dependencies:
@@ -177,6 +225,12 @@ importers:
       class-variance-authority:
         specifier: 0.7.0
         version: 0.7.0
+      react:
+        specifier: ^18
+        version: 18.3.1
+      react-dom:
+        specifier: ^18
+        version: 18.3.1(react@18.3.1)
 
   packages/ui-template:
     dependencies:
@@ -186,6 +240,12 @@ importers:
       class-variance-authority:
         specifier: 0.7.0
         version: 0.7.0
+      react:
+        specifier: ^18
+        version: 18.3.1
+      react-dom:
+        specifier: ^18
+        version: 18.3.1(react@18.3.1)
 
 packages:
 
