@@ -1,6 +1,6 @@
 # @halvaradop/ui-label
 
-The `@halvaradop/ui-label` is an accessible, reusable, and customizable label component that is part of the `@halvaradop/ui` library for React. Built with `React` and styled using `TailwindCSS`, it provides a set of pre-styled components designed to streamline and accelerate the development of user interfaces.
+The `@halvaradop/ui-label` is an accessible, reusable, and customizable `Label` component that is part of the `@halvaradop/ui` library for React. Built with `React` and styled using `TailwindCSS`, it provides a set of pre-styled components designed to streamline and accelerate the development of user interfaces.
 
 ## Installation
 
@@ -65,6 +65,7 @@ export default function App() {
 | ------- | ----------------------- | ------- |
 | variant | "base", "error", "flex" | "base"  |
 | size    | "sm", "base", "md"      | "base"  |
+| asChild | true, false             | false   |
 
 ## Styles
 
