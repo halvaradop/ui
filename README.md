@@ -9,7 +9,7 @@ This library supports both `React 18` and `React 19`. Refer to the table below t
 | React version | Library version            |
 | ------------- | -------------------------- |
 | React 18      | Latest version ^x.y.z      |
-| React 19      | Beta version ^x.y.x-beta.n |
+| React 19      | Beta version ^x.y.z-beta.n |
 
 ## Installation
 
