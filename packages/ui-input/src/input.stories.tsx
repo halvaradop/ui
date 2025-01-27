@@ -73,19 +73,4 @@ export const Sizes: Story = {
     ),
 }
 
-export const FullWidth: Story = {
-    render: () => (
-        <>
-            <div>
-                <span className="font-medium">FullWidth</span>
-                <Input fullWidth placeholder="FullWidth input" />
-            </div>
-            <div>
-                <span className="font-medium">FullRounded</span>
-                <Input fullWidth={false} placeholder="FullRounded input" />
-            </div>
-        </>
-    ),
-}
-
 export default meta

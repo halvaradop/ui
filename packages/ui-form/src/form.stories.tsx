@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react"
 import { Form } from "./index.js"
 import { Input } from "../../ui-input/src/index.js"
+import { Label } from "../../ui-label/src/index.js"
 
 const meta: Meta = {
     title: "ui-form",
@@ -15,8 +16,14 @@ type Story = StoryObj<typeof meta>
 
 const Template = ({ ...props }: Omit<Parameters<typeof Form>[0], "children">) => (
     <Form {...props}>
-        <Input />
-        <Input />
+        <Label>
+            Username
+            <Input />
+        </Label>
+        <Label>
+            Password
+            <Input />
+        </Label>
     </Form>
 )
 
