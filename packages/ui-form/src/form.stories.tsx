@@ -13,7 +13,7 @@ const meta: Meta = {
 
 type Story = StoryObj<typeof meta>
 
-const Template = ({ ...props }: Parameters<typeof Form>[0]) => (
+const Template = ({ ...props }: Omit<Parameters<typeof Form>[0], "children">) => (
     <Form {...props}>
         <Input />
         <Input />
