@@ -7,59 +7,74 @@ const meta: Meta = {
     component: Checkbox,
     parameters: {
         layout: "centered",
+        backgrounds: {
+            default: "light",
+            grid: true,
+        },
     },
+    decorators: [
+        (Story) => (
+            <div className="w-full h-full mx-auto flex items-center justify-center absolute inset-0">
+                <div className="w-full">
+                    <section className="story-container">
+                        <Story />
+                    </section>
+                </div>
+            </div>
+        ),
+    ],
 } satisfies Meta<typeof Checkbox>
 
 type Story = StoryObj<typeof meta>
 
-export const Small: Story = {
-    args: {
-        size: "sm",
-    },
+export const Sizes: Story = {
+    render: () => (
+        <>
+            <div>
+                <span className="font-medium">sm</span>
+                <Checkbox size="sm" />
+            </div>
+            <div>
+                <span className="font-medium">base</span>
+                <Checkbox size="base" />
+            </div>
+            <div>
+                <span className="font-medium">mg</span>
+                <Checkbox size="md" />
+            </div>
+            <div>
+                <span className="font-medium">lg</span>
+                <Checkbox size="lg" />
+            </div>
+        </>
+    ),
 }
 
-export const Base: Story = {}
-
-export const Medium: Story = {
-    args: {
-        size: "md",
-    },
-}
-
-export const Large: Story = {
-    args: {
-        size: "lg",
-    },
-}
-
-export const Green: Story = {
-    args: {
-        color: "green",
-    },
-}
-
-export const Blue: Story = {
-    args: {
-        color: "blue",
-    },
-}
-
-export const Red: Story = {
-    args: {
-        color: "red",
-    },
-}
-
-export const Yellow: Story = {
-    args: {
-        color: "yellow",
-    },
-}
-
-export const Black: Story = {
-    args: {
-        color: "black",
-    },
+export const Colors: Story = {
+    render: () => (
+        <>
+            <div>
+                <span className="font-medium">Green</span>
+                <Checkbox color="green" />
+            </div>
+            <div>
+                <span className="font-medium">Blue</span>
+                <Checkbox color="blue" />
+            </div>
+            <div>
+                <span className="font-medium">Red</span>
+                <Checkbox color="red" />
+            </div>
+            <div>
+                <span className="font-medium">Yellow</span>
+                <Checkbox color="yellow" />
+            </div>
+            <div>
+                <span className="font-medium">Black</span>
+                <Checkbox color="black" />
+            </div>
+        </>
+    ),
 }
 
 export default meta
