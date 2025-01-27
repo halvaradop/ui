@@ -1,3 +1,4 @@
+"use client"
 import { forwardRef, useEffect, useRef } from "react"
 import { merge, type ComponentProps, type WithChildrenProps, type ArgsFunction } from "@halvaradop/ui-core"
 import { cva, type VariantProps } from "class-variance-authority"
