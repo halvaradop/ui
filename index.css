@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind utilities;
 @tailwind components;
+
+@layer base {
+    .story-container {
+        @apply w-11/12 h-full mx-auto flex items-center flex-wrap gap-5 text-center;
+    }
+}

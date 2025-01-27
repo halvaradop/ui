@@ -8,6 +8,10 @@ const meta: Meta = {
     component: Label,
     parameters: {
         layout: "centered",
+        backgrounds: {
+            default: "light",
+            grid: true,
+        },
     },
 } satisfies Meta<typeof Label>
 

@@ -3,87 +3,74 @@ import { Input } from "./index.jsx"
 
 const meta: Meta = {
     title: "ui-input",
-    component: Input,
     tags: ["autodocs"],
+    component: Input,
     parameters: {
         layout: "centered",
+        backgrounds: {
+            default: "light",
+            grid: true,
+        },
     },
+    decorators: [
+        (Story) => (
+            <div className="w-full h-full mx-auto flex items-center justify-center absolute inset-0">
+                <div className="w-full">
+                    <section className="story-container">
+                        <Story />
+                    </section>
+                </div>
+            </div>
+        ),
+    ],
 } satisfies Meta<typeof Input>
 
 type Story = StoryObj<typeof meta>
 
-export const Base: Story = {
-    args: {
-        placeholder: "Base input",
-    },
+export const Variants: Story = {
+    render: () => (
+        <>
+            <div>
+                <span className="font-medium">base</span>
+                <Input variant="base" />
+            </div>
+            <div>
+                <span className="font-medium">outline</span>
+                <Input variant="outline" />
+            </div>
+            <div>
+                <span className="font-medium">disabled</span>
+                <Input variant="disabled" />
+            </div>
+            <div>
+                <span className="font-medium">required</span>
+                <Input variant="required" />
+            </div>
+        </>
+    ),
 }
 
-export const Small: Story = {
-    args: {
-        size: "sm",
-        placeholder: "Small input",
-    },
-}
-
-export const Medium: Story = {
-    args: {
-        size: "md",
-        placeholder: "Medium input",
-    },
-}
-
-export const Large: Story = {
-    args: {
-        size: "lg",
-        placeholder: "Large input",
-    },
-}
-
-export const FullWidth: Story = {
-    args: {
-        fullWidth: true,
-        placeholder: "FullWidth input",
-    },
-}
-
-export const FullRounded: Story = {
-    args: {
-        fullRounded: true,
-        placeholder: "FullRounded input",
-    },
-}
-
-export const Outline: Story = {
-    args: {
-        size: "sm",
-        variant: "outline",
-        placeholder: "Outline input",
-    },
-}
-
-export const Required: Story = {
-    args: {
-        size: "base",
-        variant: "required",
-        placeholder: "Required input",
-        type: "email",
-        required: true,
-    },
-}
-
-export const Disabled: Story = {
-    args: {
-        disabled: true,
-        placeholder: "Disabled input",
-    },
-}
-
-export const DisabledVariant: Story = {
-    args: {
-        variant: "disabled",
-        placeholder: "Disabled variant input",
-        disabled: true,
-    },
+export const Sizes: Story = {
+    render: () => (
+        <>
+            <div>
+                <span className="font-medium">small</span>
+                <Input size="sm" />
+            </div>
+            <div>
+                <span className="font-medium">base</span>
+                <Input size="base" />
+            </div>
+            <div>
+                <span className="font-medium">medium</span>
+                <Input size="md" />
+            </div>
+            <div>
+                <span className="font-medium">large</span>
+                <Input size="lg" />
+            </div>
+        </>
+    ),
 }
 
 export default meta

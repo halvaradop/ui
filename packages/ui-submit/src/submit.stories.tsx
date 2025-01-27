@@ -1,3 +1,5 @@
+"use client"
+import { FormEvent, useTransition } from "react"
 import type { Meta, StoryObj } from "@storybook/react"
 import { Submit } from "./index.js"
 
@@ -7,39 +9,87 @@ const meta: Meta = {
     component: Submit,
     parameters: {
         layout: "centered",
+        backgrounds: {
+            default: "light",
+            grid: true,
+        },
     },
+    decorators: [
+        (Story) => (
+            <div className="w-full h-full mx-auto flex items-center justify-center absolute inset-0">
+                <div className="w-full">
+                    <section className="story-container">
+                        <Story />
+                    </section>
+                </div>
+            </div>
+        ),
+    ],
 } satisfies Meta<typeof Submit>
 
 type Story = StoryObj<typeof meta>
 
+/**
+ * Note: The `useTransition` hook doesn't support async callbacks directly. As a result,
+ * the pending state will only be visible momentarily.
+ * To observe the pending state for a longer duration, consider using React 19 (available in the beta branch)
+ * or frameworks like Next.js that support Server-Side Rendering.
+ */
 const Template = ({ className, ...props }: Parameters<typeof Submit>[0]) => {
-    const action = async () => await new Promise((resolve) => setTimeout(resolve, 2000))
+    const [isPending, startTransition] = useTransition()
+
+    const wait = async () => await new Promise<string>((resolve) => setTimeout(resolve, 2000))
+
+    const handleSubmit = async (event: FormEvent) => {
+        event.preventDefault()
+        startTransition(() => {
+            wait()
+        })
+    }
 
     return (
-        <form className={className} action={action}>
-            <Submit {...props} />
+        <form className={className} onSubmit={handleSubmit}>
+            <Submit disabled={isPending} aria-disabled={isPending} {...props} />
         </form>
     )
 }
 
-export const Base: Story = {
-    render: () => <Template />,
+export const Variants: Story = {
+    render: () => (
+        <>
+            <div>
+                <span className="font-medium">base</span>
+                <Template />
+            </div>
+            <div>
+                <span className="font-medium">inverted</span>
+                <Template variant="inverted" />
+            </div>
+        </>
+    ),
 }
 
-export const Inverted: Story = {
-    render: () => <Template className="p-10 bg-black" variant="inverted" />,
-}
-
-export const Small: Story = {
-    render: () => <Template size="sm" />,
-}
-
-export const Medium: Story = {
-    render: () => <Template size="md" />,
-}
-
-export const Large: Story = {
-    render: () => <Template size="lg" />,
+export const Sizes: Story = {
+    render: () => (
+        <>
+            <div>
+                <span className="font-medium">sm</span>
+                <Template size="sm" />
+            </div>
+            <div>
+                <span className="font-medium">base</span>
+                <Template size="base" />
+            </div>
+            <div>
+                <span className="font-medium">md</span>
+                <Template size="md" />
+            </div>
+            <div>
+                <span className="font-medium">lg</span>
+                <Template size="lg" />
+            </div>
+        </>
+    ),
 }
 
 export default meta

@@ -9,7 +9,22 @@ const meta: Meta = {
     component: Modal,
     parameters: {
         layout: "centered",
+        backgrounds: {
+            default: "light",
+            grid: true,
+        },
     },
+    decorators: [
+        (Story) => (
+            <div className="w-full h-full mx-auto flex items-center justify-center absolute inset-0">
+                <div className="w-full">
+                    <section className="story-container">
+                        <Story />
+                    </section>
+                </div>
+            </div>
+        ),
+    ],
 } satisfies Meta<typeof Modal>
 
 type Story = StoryObj<typeof meta>
@@ -45,28 +60,38 @@ const DialogStory = ({ size, variant }: DialogStoryProps) => {
     )
 }
 
-export const Base: Story = {
-    render: () => <DialogStory />,
+export const Variants: Story = {
+    render: () => (
+        <>
+            <div>
+                <span className="font-medium">inner</span>
+                <DialogStory variant="inner" />
+            </div>
+            <div>
+                <span className="font-medium">fixed</span>
+                <DialogStory variant="fixed" />
+            </div>
+        </>
+    ),
 }
 
-export const Small: Story = {
-    render: () => <DialogStory size="sm" />,
-}
-
-export const Medium: Story = {
-    render: () => <DialogStory size="md" />,
-}
-
-export const Large: Story = {
-    render: () => <DialogStory size="lg" />,
-}
-
-export const Inner: Story = {
-    render: () => <DialogStory variant="inner" />,
-}
-
-export const Fixed: Story = {
-    render: () => <DialogStory variant="fixed" />,
+export const Sizes: Story = {
+    render: () => (
+        <>
+            <div>
+                <span className="font-medium">sm</span>
+                <DialogStory size="sm" />
+            </div>
+            <div>
+                <span className="font-medium">md</span>
+                <DialogStory size="md" />
+            </div>
+            <div>
+                <span className="font-medium">lg</span>
+                <DialogStory size="lg" />
+            </div>
+        </>
+    ),
 }
 
 export default meta
