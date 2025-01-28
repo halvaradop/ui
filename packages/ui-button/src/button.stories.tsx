@@ -38,6 +38,10 @@ export const Variants: Story = {
                 <Button variant="base">Click me!</Button>
             </div>
             <div>
+                <span className="font-medium">Secondary</span>
+                <Button variant="secondary">Click me!</Button>
+            </div>
+            <div>
                 <span className="font-medium">Ghost</span>
                 <Button variant="ghost">Click me!</Button>
             </div>
@@ -52,6 +56,10 @@ export const Variants: Story = {
             <div>
                 <span className="font-medium">Outline</span>
                 <Button variant="outline">Click me!</Button>
+            </div>
+            <div>
+                <span className="font-medium">Plain</span>
+                <Button variant="plain">Click me!</Button>
             </div>
         </>
     ),

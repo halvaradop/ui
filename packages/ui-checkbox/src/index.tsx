@@ -18,20 +18,20 @@ const internalVariants = cva("hidden absolute peer-checked:block", {
     },
 })
 
-export const checkboxVariants = cva("appearance-none border border-gray-400 focus-within:outline-none  focus-within:ring-gray-400", {
+export const checkboxVariants = cva("appearance-none border border-gray-400 focus-visible:[outline-style:solid] focus-visible:outline-gray-400", {
     variants: {
         size: {
-            sm: "size-3 rounded-[1px] focus-within:ring-1 focus-within:ring-offset-1",
-            base: "size-4 rounded-sm focus-within:ring-1 focus-within:ring-offset-1",
-            md: "size-5 p-0.5 rounded-[4px] focus-within:ring-2 focus-within:ring-offset-2",
-            lg: "size-6 p-0.5 rounded-[5px] focus-within:ring-2 focus-within:ring-offset-2",
+            sm: "size-3 rounded-[1px] focus-visible:outline focus-visible:outline-offset-1",
+            base: "size-4 rounded-sm focus-visible:outline focus-visible:outline-offset-1",
+            md: "size-5 p-0.5 rounded-[4px] focus-visible:outline-2 focus-visible:outline-offset-2",
+            lg: "size-6 p-0.5 rounded-[5px] focus-visible:outline-2 focus-visible:outline-offset-2",
         },
         color: {
-            green: "checked:border-green-500 checked:bg-green-500 checked:focus-within:ring-green-500",
-            blue: "checked:border-blue-500 checked:bg-blue-500 checked:focus-within:ring-blue-500",
-            red: "checked:border-red-500 checked:bg-red-500 checked:focus-within:ring-red-500",
-            yellow: "checked:border-yellow-500 checked:bg-yellow-500 checked:focus-within:ring-yellow-500",
-            black: "checked:border-black checked:bg-black checked:focus-within:ring-black",
+            green: "checked:border-green checked:bg-green checked:focus-visible:outline-green",
+            blue: "checked:border-blue checked:bg-blue checked:focus-visible:outline-blue",
+            red: "checked:border-red checked:bg-red checked:focus-visible:outline-red",
+            yellow: "checked:border-yellow checked:bg-yellow checked:focus-visible:outline-yellow",
+            black: "checked:border-primary checked:bg-primary checked:focus-visible:outline-primary",
         },
         fullRounded: {
             true: "rounded-full",

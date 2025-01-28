@@ -15,8 +15,8 @@ export const formVariants = cva("mx-auto flex items-center flex-col relative", {
         },
         variant: {
             base: "items-start",
-            outline: "border border-gray-300 shadow",
-            filled: "border border-gray-300 shadow-inner",
+            outline: "border border-border shadow",
+            filled: "border border-border shadow-inner",
         },
     },
     defaultVariants: {

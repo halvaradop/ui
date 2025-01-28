@@ -17,6 +17,38 @@ const config: Config = {
             screens: {
                 base: "900px",
             },
+            colors: {
+                primary: "var(--color-primary)",
+                "primary-hover": "var(--color-primary-hover)",
+                secondary: "var(--color-secondary)",
+                "secondary-hover": "var(--color-secondary-hover)",
+                "secondary-light": "var(--color-secondary-light)",
+                ghost: "var(--color-ghost)",
+                background: "var(--color-background)",
+                color: {
+                    100: "var(--color-color-100)",
+                    200: "var(--color-color-200)",
+                },
+                modal: "var(--color-modal)",
+                dialog: "var(--color-dialog)",
+                border: "var(--color-border)",
+                red: {
+                    DEFAULT: "var(--color-red)",
+                    hover: "var(--color-red-hover)",
+                },
+                blue: {
+                    DEFAULT: "var(--color-blue)",
+                    hover: "var(--color-blue-hover)",
+                },
+                green: {
+                    DEFAULT: "var(--color-green)",
+                    hover: "var(--color-green-hover)",
+                },
+                yellow: {
+                    DEFAULT: "var(--color-yellow)",
+                    hover: "var(--color-yellow-hover)",
+                },
+            },
         },
     },
     plugins: [
