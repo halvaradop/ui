@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react"
 import { Radio } from "./index.js"
+import { Label } from "../../ui-label/src/index.js"
 
 const meta: Meta = {
     title: "ui-radio",
@@ -30,22 +31,22 @@ type Story = StoryObj<typeof meta>
 export const Sizes: Story = {
     render: () => (
         <>
-            <div>
-                <span className="font-medium">sm</span>
+            <Label className="flex items-center gap-x-2">
+                sm
                 <Radio size="sm" />
-            </div>
-            <div>
-                <span className="font-medium">base</span>
+            </Label>
+            <Label className="flex items-center gap-x-2">
+                base
                 <Radio size="base" />
-            </div>
-            <div>
-                <span className="font-medium">md</span>
+            </Label>
+            <Label className="flex items-center gap-x-2">
+                md
                 <Radio size="md" />
-            </div>
-            <div>
-                <span className="font-medium">lg</span>
+            </Label>
+            <Label className="flex items-center gap-x-2">
+                lg
                 <Radio size="lg" />
-            </div>
+            </Label>
         </>
     ),
 }
@@ -53,26 +54,26 @@ export const Sizes: Story = {
 export const Colors: Story = {
     render: () => (
         <>
-            <div>
-                <span className="font-medium">green</span>
+            <Label className="flex items-center gap-x-2">
+                green
                 <Radio color="green" />
-            </div>
-            <div>
-                <span className="font-medium">blue</span>
+            </Label>
+            <Label className="flex items-center gap-x-2">
+                blue
                 <Radio color="blue" />
-            </div>
-            <div>
-                <span className="font-medium">red</span>
+            </Label>
+            <Label className="flex items-center gap-x-2">
+                red
                 <Radio color="red" />
-            </div>
-            <div>
-                <span className="font-medium">yellow</span>
+            </Label>
+            <Label className="flex items-center gap-x-2">
+                yellow
                 <Radio color="yellow" />
-            </div>
-            <div>
-                <span className="font-medium">black</span>
+            </Label>
+            <Label className="flex items-center gap-x-2">
+                black
                 <Radio color="black" />
-            </div>
+            </Label>
         </>
     ),
 }

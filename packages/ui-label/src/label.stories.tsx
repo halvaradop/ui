@@ -17,10 +17,14 @@ const meta: Meta = {
 
 type Story = StoryObj<typeof meta>
 
-export const Base: Story = {
-    args: {
-        children: "Name",
-    },
+export const Sizes: Story = {
+    render: () => (
+        <div className="flex items-center gap-x-5">
+            <Label size="sm">Small</Label>
+            <Label size="base">Base</Label>
+            <Label size="md">Medium</Label>
+        </div>
+    ),
 }
 
 export const Flex: Story = {
@@ -36,7 +40,7 @@ export const Error: Story = {
     render: () => (
         <Label>
             <Label htmlFor="error-story">Name</Label>
-            <Input className="peer" variant="required" placeholder="John@doe.com" type="email" id="error-story" required />
+            <Input className="peer" variant="sensitive" placeholder="John@doe.com" type="email" id="error-story" required />
             <Label className="right-0" variant="error" size="sm" asChild>
                 <span>Invalid email address</span>
             </Label>
@@ -50,20 +54,6 @@ export const WithAsChild: Story = {
             <span>Name</span>
         </Label>
     ),
-}
-
-export const Small: Story = {
-    args: {
-        size: "sm",
-        children: "Name",
-    },
-}
-
-export const Medium: Story = {
-    args: {
-        size: "md",
-        children: "Name",
-    },
 }
 
 export default meta

@@ -7,7 +7,7 @@ export type ButtonProps<T extends ArgsFunction> = SlotProps<"button"> & VariantP
 export const buttonVariants = cva("flex items-center justify-center font-semibold border border-solid transition-colors hover:bg-opacity-90 focus-visible:[outline-style:solid] focus-visible:outline-2 focus-visible:outline-offset-2", {
     variants: {
         variant: {
-            base: "text-color-100 border-background bg-background hover:border-primary-hover hover:bg-primary-hover focus-visible:outline-primary-hover",
+            base: "text-color-100 border-primary bg-primary hover:border-primary-hover hover:bg-primary-hover focus-visible:outline-primary-hover",
             secondary: "text-color-200 border-secondary bg-secondary hover:border-secondary-hover hover:bg-secondary-hover focus-visible:outline-secondary",
             ghost: "text-color-200 border-transparent bg-transparent hover:bg-ghost",
             link: "text-color-200 border-none hover:underline hover:underline-offset-8 hover:decoration-primary focus-visible:underline focus-visible:underline-offset-8 focus-visible:outline-none",

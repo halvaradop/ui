@@ -62,6 +62,10 @@ export const Variants: Story = {
                 <Template />
             </div>
             <div>
+                <span className="font-medium">seconday</span>
+                <Template variant="secondary" />
+            </div>
+            <div>
                 <span className="font-medium">inverted</span>
                 <Template variant="inverted" />
             </div>

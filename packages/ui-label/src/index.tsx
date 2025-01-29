@@ -7,14 +7,14 @@ export type LabelProps<T extends ArgsFunction> = SlotProps<"label"> & VariantPro
 export const labelVariants = cva("font-medium relative leading-none", {
     variants: {
         variant: {
-            base: "text-slate-700",
-            error: "hidden text-rose-400 absolute top-0 peer-usinvalid:block peer-usinvalid-empty:hidden",
+            base: "text-primary",
+            error: "hidden text-red absolute top-0 peer-usinvalid:block peer-usinvalid-empty:hidden",
             flex: "flex flex-col items-start",
         },
         size: {
-            sm: "text-sm",
-            base: "text-base",
-            md: "text-lg",
+            sm: "text-xs",
+            base: "text-sm",
+            md: "text-base",
         },
     },
     defaultVariants: {

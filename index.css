@@ -28,6 +28,9 @@
     --color-green-hover: oklch(100% 0.32 147);
     --color-yellow: oklch(87% 0.2 90);
     --color-yellow-hover: oklch(100% 0.2 90);
+
+    --color-input: oklch(13% 0 100);
+    --color-disabled: oklch(92% 0 0);
 }
 
 @layer base {

@@ -16,7 +16,7 @@ const meta: Meta = {
         (Story) => (
             <div className="w-full h-full mx-auto flex items-center justify-center absolute inset-0">
                 <div className="w-full">
-                    <section className="story-container">
+                    <section className="story-container bg-green-">
                         <Story />
                     </section>
                 </div>
@@ -32,19 +32,19 @@ export const Variants: Story = {
         <>
             <div>
                 <span className="font-medium">base</span>
-                <Input variant="base" />
+                <Input variant="base" placeholder="John Doe." />
             </div>
             <div>
-                <span className="font-medium">outline</span>
-                <Input variant="outline" />
+                <span className="font-medium">line</span>
+                <Input variant="line" placeholder="John Doe." />
+            </div>
+            <div>
+                <span className="font-medium">sensitive</span>
+                <Input variant="sensitive" placeholder="John Doe." />
             </div>
             <div>
                 <span className="font-medium">disabled</span>
-                <Input variant="disabled" />
-            </div>
-            <div>
-                <span className="font-medium">required</span>
-                <Input variant="required" />
+                <Input variant="base" placeholder="John Doe." disabled />
             </div>
         </>
     ),
@@ -55,19 +55,19 @@ export const Sizes: Story = {
         <>
             <div>
                 <span className="font-medium">small</span>
-                <Input size="sm" />
+                <Input size="sm" placeholder="John Doe." />
             </div>
             <div>
                 <span className="font-medium">base</span>
-                <Input size="base" />
+                <Input size="base" placeholder="John Doe." />
             </div>
             <div>
                 <span className="font-medium">medium</span>
-                <Input size="md" />
+                <Input size="md" placeholder="John Doe." />
             </div>
             <div>
                 <span className="font-medium">large</span>
-                <Input size="lg" />
+                <Input size="lg" placeholder="John Doe." />
             </div>
         </>
     ),

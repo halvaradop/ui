@@ -32,6 +32,10 @@ const config: Config = {
                 modal: "var(--color-modal)",
                 dialog: "var(--color-dialog)",
                 border: "var(--color-border)",
+                input: {
+                    DEFAULT: "var(--color-input)",
+                },
+                disabled: "var(--color-disabled)",
                 red: {
                     DEFAULT: "var(--color-red)",
                     hover: "var(--color-red-hover)",
@@ -53,6 +57,9 @@ const config: Config = {
     },
     plugins: [
         plugin(({ addVariant }) => {
+            /**
+             * These variants are unstables and may be removed in the future or must be implemented by the user
+             */
             addVariant("usinvalid", "&:user-invalid")
             addVariant("usvalid", "&:user-valid")
             addVariant("input-empty", "&:is(:usinvalid:placeholder-shown, :placeholder-shown)")
