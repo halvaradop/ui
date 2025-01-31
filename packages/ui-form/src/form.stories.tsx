@@ -39,6 +39,10 @@ export const Filled: Story = {
     render: () => <Template variant="filled" />,
 }
 
+export const Ghost: Story = {
+    render: () => <Template variant="ghost" />,
+}
+
 export const Small: Story = {
     render: () => <Template variant="outline" size="sm" />,
 }
