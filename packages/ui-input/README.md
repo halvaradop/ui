@@ -32,25 +32,47 @@ The `Input` component offers four additional props for customization: `variant`,
 
 ```tsx
 import { Input } from "@halvaradop/ui-input"
+import { Label } from "@halvaradop/ui-label"
 
 export default function App() {
   return (
     <Label>
       Username
-      <Input value="pizza" />
+      <Input name="username" />
     </Label>
   )
 }
 ```
 
+### Advanced Usage
+
+The `sensitive` variant uses the pseudo-selectors `:user-invalid` and `:user-valid`, which is not supported by `TailwindCSS` by default. To use this variant, you need to extend TailwindCSS with a custom plugin. Below is an example of how to set up this plugin:
+
+```ts
+import type { Config } from "tailwindcss"
+import plugin from "tailwindcss/plugin"
+
+const config: Config = {
+  plugins: [
+    plugin(({ addVariant }) => {
+      addVariant("usinvalid", "&:user-invalid")
+      addVariant("usvalid", "&:user-valid")
+      addVariant("input-empty", "&:is(:usinvalid:placeholder-shown, :placeholder-shown)")
+    }),
+  ],
+}
+
+export default config
+```
+
 ### Prop Values
 
-| Prop        | Values                                    | Default |
-| ----------- | ----------------------------------------- | ------- |
-| variant     | "base", "outline", "required", "disabled" | "base"  |
-| size        | "sm", "base", "md", "lg"                  | "base"  |
-| fullWidth   | true, false                               | false   |
-| fullRounded | true, false                               | false   |
+| Prop        | Values                      | Default |
+| ----------- | --------------------------- | ------- |
+| variant     | "base", "line", "sensitive" | "base"  |
+| size        | "sm", "base", "md", "lg"    | "base"  |
+| fullWidth   | true, false                 | true    |
+| fullRounded | true, false                 | false   |
 
 ## Styles
 

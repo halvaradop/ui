@@ -37,7 +37,7 @@ export default function App() {
   return (
     <Label>
       Username
-      <Label value="pizza" />
+      <Input name="username" />
     </Label>
   )
 }
@@ -45,18 +45,39 @@ export default function App() {
 
 ### Advanced Usage
 
-The `Label` component utilizes the `Slot` component from [`@halvaradop/ui-core`](https://github.com/halvaradop/ui/blob/master/packages/ui-core/src/slot.ts). This allows you to replace the button's HTML tag with the tag of its children. To enable this functionality, set the `asChild` prop to `true`.
+The `Label` component leverages the `Slot` component from [`@halvaradop/ui-core`](https://github.com/halvaradop/ui/blob/master/packages/ui-core/src/slot.ts). This feature allows you to replace the label's HTML tag with the tag of its children. To enable this functionality, set the `asChild` prop to `true`.
 
 ```tsx
 import { Label } from "@halvaradop/ui-label"
 
 export default function App() {
   return (
-    <Label variant="outline" size="md" asChild>
+    <Label variant="base" size="md" asChild>
       <span>Username</span>
     </Label>
   )
 }
+```
+
+The `error` variant uses the pseudo-selectors `:user-valid` and `:user-invalid`, which are not supported by `TailwindCSS` by default. To use this variant, you need to extend TailwindCSS with a custom plugin. Below is an example of how to set up this plugin:
+
+```ts
+import type { Config } from "tailwindcss"
+import plugin from "tailwindcss/plugin"
+
+const config: Config = {
+  plugins: [
+    plugin(({ addVariant }) => {
+      addVariant("usinvalid", "&:user-invalid")
+      addVariant("usvalid", "&:user-valid")
+      addVariant("input-empty", "&:is(:usinvalid:placeholder-shown, :placeholder-shown)")
+      addVariant("peer-usinvalid", ".peer:user-invalid ~ &")
+      addVariant("peer-usinvalid-empty", ".peer:user-invalid:placeholder-shown ~ &")
+    }),
+  ],
+}
+
+export default config
 ```
 
 ### Prop Values

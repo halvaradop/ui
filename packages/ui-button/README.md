@@ -60,13 +60,13 @@ export default function App() {
 
 ### Prop Values
 
-| Prop        | Values                                            | Default |
-| ----------- | ------------------------------------------------- | ------- |
-| variant     | "base", "ghost", "link", "destructive", "outline" | "base"  |
-| size        | "sm", "base", "md", "lg"                          | "base"  |
-| fullWidth   | true, false                                       | false   |
-| fullRounded | true, false                                       | false   |
-| asChild     | true, false                                       | false   |
+| Prop        | Values                                                                  | Default |
+| ----------- | ----------------------------------------------------------------------- | ------- |
+| variant     | "base", "secondary", "ghost", "link", "destructive", "outline", "plain" | "base"  |
+| size        | "sm", "base", "md", "lg"                                                | "base"  |
+| fullWidth   | true, false                                                             | false   |
+| fullRounded | true, false                                                             | false   |
+| asChild     | true, false                                                             | false   |
 
 ## Styles
 
