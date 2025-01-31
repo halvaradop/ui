@@ -6,16 +6,17 @@ export type FormProps<T extends ArgsFunction> = VariantProps<T> & WithChildrenPr
 export const formVariants = cva("mx-auto flex items-center flex-col relative", {
     variants: {
         size: {
-            sm: "w-11/12 max-w-sm pt-6 pb-4 px-3 gap-y-3 rounded-md",
-            base: "w-11/12 max-w-md pt-10 pb-6 px-4 gap-y-4 rounded-xl",
-            md: "w-11/12 max-w-lg pt-12 pb-8 px-5 gap-y-5 rounded-xl",
-            lg: "w-11/12 max-w-xl pt-14 pb-10 px-6 gap-y-6 rounded-2xl",
+            sm: "w-11/12 max-w-xs pt-6 pb-4 px-3 gap-y-3 rounded-md",
+            base: "w-11/12 max-w-sm pt-10 pb-6 px-4 gap-y-4 rounded-xl",
+            md: "w-11/12 max-w-md pt-12 pb-8 px-5 gap-y-5 rounded-xl",
+            lg: "w-11/12 max-w-lg pt-14 pb-10 px-6 gap-y-6 rounded-2xl",
             full: "w-fit",
         },
         variant: {
             base: "items-start",
-            outline: "border border-gray-300 shadow",
-            filled: "border border-gray-300 shadow-inner",
+            outline: "border border-border shadow",
+            inner: "border border-border shadow-inner",
+            ghost: "p-0",
         },
     },
     defaultVariants: {

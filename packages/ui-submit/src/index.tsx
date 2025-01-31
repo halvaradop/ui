@@ -9,11 +9,12 @@ interface InternalSubmitProps {
 
 export type SubmitProps<T extends ArgsFunction> = VariantProps<T> & ComponentProps<"input", "type" | "size"> & InternalSubmitProps
 
-export const submitVariants = cva("font-medium border focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 disabled:hover:cursor-progress", {
+export const submitVariants = cva("font-medium border focus-visible:[outline-style:solid] focus-visible:outline-2 focus-visible:outline-offset-2 hover:cursor-pointer disabled:hover:cursor-progress", {
     variants: {
         variant: {
-            base: "text-white border-black bg-black ring-black disabled:bg-opacity-90",
-            inverted: "text-black border-white bg-white ring-white ring-offset-black disabled:border-black disabled:bg-opacity-90",
+            base: "text-color-100 border-primary bg-primary focus-visible:outline-primary disabled:bg-primary-hover",
+            secondary: "text-color-200 border-secondary bg-secondary focus-visible:outline-secondary disabled:bg-secondary-hover",
+            inverted: "text-color-100 border-primary bg-primary focus-visible:outline-primary disabled:bg-primary-hover invert",
         },
         size: {
             sm: "h-9 px-3 text-sm rounded",
