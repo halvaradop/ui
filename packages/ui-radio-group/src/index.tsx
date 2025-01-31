@@ -17,24 +17,31 @@ export const radioGroupVariants = cva("flex", {
     },
 })
 
-export const RadioGroup = forwardRef<HTMLFieldSetElement, RadioGroupProps<typeof radioGroupVariants>>(({ className, variant, name, defaultValue, children, ...props }, ref) => {
-    // @ts-ignore
-    const reference = useRef<HTMLFieldSetElement>(ref?.current)
+export const RadioGroup = forwardRef<HTMLFieldSetElement, RadioGroupProps<typeof radioGroupVariants>>(
+    ({ className, variant, name, defaultValue, children, ...props }, ref) => {
+        // @ts-ignore
+        const reference = useRef<HTMLFieldSetElement>(ref?.current)
 
-    useEffect(() => {
-        if (!reference.current) return
-        const radioButtons = reference.current.querySelectorAll("input[type=radio]")
-        radioButtons.forEach((radio) => {
-            if (radio.getAttribute("value") === defaultValue) {
-                radio.setAttribute("checked", "checked")
-            }
-            radio.setAttribute("name", name ?? "default-radio-group")
-        })
-    }, [])
+        useEffect(() => {
+            if (!reference.current) return
+            const radioButtons = reference.current.querySelectorAll("input[type=radio]")
+            radioButtons.forEach((radio) => {
+                if (radio.getAttribute("value") === defaultValue) {
+                    radio.setAttribute("checked", "checked")
+                }
+                radio.setAttribute("name", name ?? "default-radio-group")
+            })
+        }, [])
 
-    return (
-        <fieldset className={merge(radioGroupVariants({ className, variant }))} defaultValue={defaultValue} ref={reference} {...props}>
-            {children}
-        </fieldset>
-    )
-})
+        return (
+            <fieldset
+                className={merge(radioGroupVariants({ className, variant }))}
+                defaultValue={defaultValue}
+                ref={reference}
+                {...props}
+            >
+                {children}
+            </fieldset>
+        )
+    }
+)
