@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react"
 import type { Meta, StoryObj } from "@storybook/react"
 import { Button } from "./index.jsx"
 
@@ -16,15 +17,31 @@ const meta: Meta = {
         },
     },
     decorators: [
-        (Story) => (
-            <div className="w-full h-full mx-auto flex items-center justify-center absolute inset-0">
-                <div className="w-full">
-                    <section className="story-container">
-                        <Story />
-                    </section>
+        (Story) => {
+            const [isDark, setIsDark] = useState<boolean>(false)
+
+            const handleToggleTheme = () => {
+                setIsDark((previous) => !previous)
+                document.querySelector("html")?.classList.toggle("dark", !isDark)
+            }
+
+            useEffect(() => {
+                setIsDark(document.querySelector("html")?.classList?.contains("dark") ?? false)
+            }, [])
+
+            return (
+                <div className="w-full h-full mx-auto flex items-center justify-center absolute inset-0 data-[dark='true']:bg-black" data-dark={isDark}>
+                    <div className="w-full dark:text-white">
+                        <Button className="absolute top-[4%] left-[4%]" onClick={handleToggleTheme}>
+                            Theme
+                        </Button>
+                        <section className="story-container">
+                            <Story />
+                        </section>
+                    </div>
                 </div>
-            </div>
-        ),
+            )
+        },
     ],
 } satisfies Meta<typeof Button>
 
@@ -36,6 +53,10 @@ export const Variants: Story = {
             <div>
                 <span className="font-medium">Base</span>
                 <Button variant="base">Click me!</Button>
+            </div>
+            <div>
+                <span className="font-medium">Secondary</span>
+                <Button variant="secondary">Click me!</Button>
             </div>
             <div>
                 <span className="font-medium">Ghost</span>
@@ -52,6 +73,10 @@ export const Variants: Story = {
             <div>
                 <span className="font-medium">Outline</span>
                 <Button variant="outline">Click me!</Button>
+            </div>
+            <div>
+                <span className="font-medium">Plain</span>
+                <Button variant="plain">Click me!</Button>
             </div>
         </>
     ),

@@ -4,20 +4,22 @@ import { cva, type VariantProps } from "class-variance-authority"
 
 export type ButtonProps<T extends ArgsFunction> = SlotProps<"button"> & VariantProps<T>
 
-export const buttonVariants = cva("flex items-center justify-center font-semibold border transition hover:border-transparent hover:bg-opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2", {
+export const buttonVariants = cva("flex items-center justify-center font-semibold border border-solid transition-colors hover:bg-opacity-90 focus-visible:[outline-style:solid] focus-visible:outline-2 focus-visible:outline-offset-2", {
     variants: {
         variant: {
-            base: "text-white border-black bg-black focus-visible:ring-black",
-            ghost: "text-black border-transparent bg-transparent hover:text-white hover:bg-black/90 focus-visible:text-white focus-visible:bg-black/90 focus-visible:ring-0 focus-visible:ring-offset-0 ",
-            link: "text-black border-none hover:underline hover:underline-offset-4 hover:decoration-black focus-visible:underline focus-visible:underline-offset-4 focus:decoration-black focus-visible:ring-0 focus-visible:ring-offset-0",
-            destructive: "text-white border-red-500 bg-red-500 focus-visible:ring-red-500",
-            outline: "text-black border-black hover:border-black focus-visible:ring-black",
+            base: "text-color-100 border-primary bg-primary hover:border-primary-hover hover:bg-primary-hover focus-visible:outline-primary-hover",
+            secondary: "text-color-200 border-secondary bg-secondary hover:border-secondary-hover hover:bg-secondary-hover focus-visible:outline-secondary",
+            ghost: "text-color-200 border-transparent bg-transparent hover:bg-ghost focus-visible:outline-ghost dark:hover:text-color-100",
+            link: "text-color-200 border-none hover:underline hover:underline-offset-8 hover:decoration-primary focus-visible:underline focus-visible:underline-offset-8 focus-visible:outline-none",
+            destructive: "text-white border-red bg-red hover:border-red-hover hover:bg-red-hover focus-visible:outline-red",
+            outline: "text-color-200 border-ghost hover:bg-ghost focus-visible:outline-ghost dark:hover:text-color-100",
+            plain: "text-color-200 border-transparent focus-visible:outline-primary",
         },
         size: {
             sm: "h-9 px-3 text-sm rounded-md",
             base: "h-10 px-4 text-base rounded-md",
-            md: "h-10 px-4 text-base rounded-md",
-            lg: "h-11 px-4 text-lg rounded-lg",
+            md: "h-11 px-4 text-base rounded-md",
+            lg: "h-12 px-4 text-lg rounded-lg",
         },
         fullWidth: {
             true: "w-full",
@@ -25,7 +27,6 @@ export const buttonVariants = cva("flex items-center justify-center font-semibol
         },
         fullRounded: {
             true: "rounded-full",
-            false: "rounded",
         },
     },
     defaultVariants: {

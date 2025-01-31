@@ -4,7 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 
 export type RadioProps<T extends ArgsFunction> = VariantProps<T> & ComponentProps<"input", "type" | "size">
 
-export const radioVariants = cva("peer appearance-none rounded-full", {
+export const radioVariants = cva("peer appearance-none rounded-full focus:outline-none", {
     variants: {
         size: {
             sm: "border size-3",
@@ -13,16 +13,16 @@ export const radioVariants = cva("peer appearance-none rounded-full", {
             lg: "border-2 size-6",
         },
         color: {
-            green: "border-green-500",
-            blue: "border-blue-500",
-            red: "border-red-500",
-            yellow: "border-yellow-500",
-            black: "border-black",
+            green: "border-green",
+            blue: "border-blue",
+            red: "border-red",
+            yellow: "border-yellow",
+            primary: "border-primary",
         },
     },
     defaultVariants: {
         size: "base",
-        color: "black",
+        color: "primary",
     },
 })
 
@@ -39,12 +39,12 @@ const internalVariants = cva("block absolute rounded-full", {
             blue: "peer-checked:bg-blue-500",
             red: "peer-checked:bg-red-500",
             yellow: "peer-checked:bg-yellow-500",
-            black: "peer-checked:bg-black",
+            primary: "peer-checked:bg-primary",
         },
     },
     defaultVariants: {
         size: "base",
-        color: "black",
+        color: "primary",
     },
 })
 

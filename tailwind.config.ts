@@ -17,10 +17,52 @@ const config: Config = {
             screens: {
                 base: "900px",
             },
+            colors: {
+                primary: {
+                    DEFAULT: "var(--color-primary)",
+                    hover: "var(--color-primary-hover)",
+                },
+                secondary: {
+                    DEFAULT: "var(--color-secondary)",
+                    hover: "var(--color-secondary-hover)",
+                },
+                color: {
+                    100: "var(--color-font-100)",
+                    200: "var(--color-font-200)",
+                },
+                red: {
+                    DEFAULT: "var(--color-red)",
+                    hover: "var(--color-red-hover)",
+                },
+                blue: {
+                    DEFAULT: "var(--color-blue)",
+                    hover: "var(--color-blue-hover)",
+                },
+                green: {
+                    DEFAULT: "var(--color-green)",
+                    hover: "var(--color-green-hover)",
+                },
+                yellow: {
+                    DEFAULT: "var(--color-yellow)",
+                    hover: "var(--color-yellow-hover)",
+                },
+                input: {
+                    DEFAULT: "var(--color-input)",
+                    background: "var(--color-input-background)",
+                },
+                modal: "var(--color-modal)",
+                ghost: "var(--color-ghost)",
+                dialog: "var(--color-dialog)",
+                border: "var(--color-border)",
+                disabled: "var(--color-disabled)",
+            },
         },
     },
     plugins: [
         plugin(({ addVariant }) => {
+            /**
+             * These variants are unstables and may be removed in the future or must be implemented by the user
+             */
             addVariant("usinvalid", "&:user-invalid")
             addVariant("usvalid", "&:user-valid")
             addVariant("input-empty", "&:is(:usinvalid:placeholder-shown, :placeholder-shown)")
