@@ -4,11 +4,15 @@ import { cva, type VariantProps } from "class-variance-authority"
 
 export type LabelProps<T extends ArgsFunction> = SlotProps<"label"> & VariantProps<T>
 
-export const labelVariants = cva("font-medium relative leading-none", {
+export const labelVariants = cva("font-medium text-left relative leading-none", {
     variants: {
+        fullWidth: {
+            true: "w-full",
+            false: "w-fit",
+        },
         variant: {
             base: "text-primary",
-            error: "hidden text-red absolute top-0 peer-usinvalid:block peer-usinvalid-empty:hidden",
+            error: "w-fit hidden text-red absolute top-0 right-0 peer-usinvalid:block peer-usinvalid-empty:hidden",
             flex: "flex flex-col items-start",
         },
         size: {
@@ -20,6 +24,7 @@ export const labelVariants = cva("font-medium relative leading-none", {
     defaultVariants: {
         variant: "base",
         size: "base",
+        fullWidth: true,
     },
 })
 

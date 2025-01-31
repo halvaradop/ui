@@ -4,7 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 
 export type InputProps<T extends ArgsFunction> = VariantProps<T> & ComponentProps<"input", "size">
 
-export const inputVariants = cva("text-primary border focus-visible:outline-none disabled:cursor-not-allowed disabled:text-disabled disabled:border-disabled disabled:bg-disabled", {
+export const inputVariants = cva("text-primary border bg-input-background focus-visible:outline-none disabled:cursor-not-allowed disabled:text-disabled disabled:border-disabled disabled:bg-disabled", {
     variants: {
         size: {
             sm: "h-8 indent-2 text-sm rounded-md",

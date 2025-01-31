@@ -31,7 +31,7 @@ export const checkboxVariants = cva("appearance-none border border-gray-400 focu
             blue: "checked:border-blue checked:bg-blue checked:focus-visible:outline-blue",
             red: "checked:border-red checked:bg-red checked:focus-visible:outline-red",
             yellow: "checked:border-yellow checked:bg-yellow checked:focus-visible:outline-yellow",
-            black: "checked:border-primary checked:bg-primary checked:focus-visible:outline-primary",
+            primary: "checked:border-primary checked:bg-primary checked:focus-visible:outline-primary",
         },
         fullRounded: {
             true: "rounded-full",

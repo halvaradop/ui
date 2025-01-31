@@ -17,12 +17,12 @@ export const radioVariants = cva("peer appearance-none rounded-full focus:outlin
             blue: "border-blue",
             red: "border-red",
             yellow: "border-yellow",
-            black: "border-primary",
+            primary: "border-primary",
         },
     },
     defaultVariants: {
         size: "base",
-        color: "black",
+        color: "primary",
     },
 })
 
@@ -39,12 +39,12 @@ const internalVariants = cva("block absolute rounded-full", {
             blue: "peer-checked:bg-blue-500",
             red: "peer-checked:bg-red-500",
             yellow: "peer-checked:bg-yellow-500",
-            black: "peer-checked:bg-black",
+            primary: "peer-checked:bg-primary",
         },
     },
     defaultVariants: {
         size: "base",
-        color: "black",
+        color: "primary",
     },
 })
 
