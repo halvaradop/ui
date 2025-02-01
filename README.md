@@ -69,7 +69,7 @@ The beta version works, however, it may have minor changes or issues compared to
 
 ## Contributing
 
-Welcome to contribute to `@halvaradop/ui library` if you have an idea, find an issue or you have an amazing advices, please feel free to open an issue or create a pull request. We offer a guide on how to contribute to the project and the necessary steps to do so. Here's how you can contribute, Read our [Contribuing Guideline](https://github.com/halvaradop/.github/blob/master/.github/CONTRIBUTING.md).
+We welcome contributions to the `@halvaradop/ui` library. If you have an idea, find an issue, or have any advice, please feel free to open an issue or create a pull request. We offer a guide on how to contribute to the project and the necessary steps to do so. Please read [Contributing Guide](https://github.com/halvaradop/ui/blob/master/.github/CONTRIBUTING.md).
 
 # Code Of Conduct
 
