@@ -73,9 +73,10 @@ cp -r ui-template ui-new-component
 
 After copying the template, update the default name of the package in the `package.json` of the new component:
 
-```json
+```diff
 {
-  "name": "@halvaradop/ui-new-component",
+- "name": "@halvaradop/ui-template",
++ "name": "@halvaradop/ui-new-component",
   "version": "0.1.0",
   "private": false,
   "description": "A customizable new-component for @halvaradop/ui library with Tailwind CSS styling."
@@ -86,8 +87,9 @@ After copying the template, update the default name of the package in the `packa
 
 In the `README.md` file within the folder of the new component, update the default documentation with the adjusted values, configuration, and more details about the new package.
 
-```md
+```diff
 - # @halvaradop/ui-template
-
-* # @halvaradop/ui-new-component
+- The `@halvaradop/ui-template` is an accessible, reusable, and customizable `Template` component that is part of the `@halvaradop/ui` library for React. Built with `React` and styled using `TailwindCSS`, it provides a set of pre-styled components designed to streamline and accelerate the development of user interfaces.
++ # @halvaradop/ui-new-component
++ The `@halvaradop/ui-new-component` is an accessible, reusable, and customizable `NewComponent` component that is part of the `@halvaradop/ui` library for React. Built with `React` and styled using `TailwindCSS`, it provides a set of pre-styled components designed to streamline and accelerate the development of user interfaces.
 ```
