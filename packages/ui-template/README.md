@@ -1,3 +1,6 @@
+> [!WARNING]
+> This is not a real component provided by the `@halvaradop/ui` library. It is a template to facilitate the creation of new components within the library, offering default configurations and documentation. This package helps reduce the time required to build a component from scratch, allowing you to focus on adding new styles and features. For more information, please read the [Contributing Guide](https://github.com/halvaradop/ui/blob/master/.github/CONTRIBUTING.md).
+
 # @halvaradop/ui-template
 
 The `@halvaradop/ui-template` is an accessible, reusable, and customizable `Template` component that is part of the `@halvaradop/ui` library for React. Built with `React` and styled using `TailwindCSS`, it provides a set of pre-styled components designed to streamline and accelerate the development of user interfaces.
@@ -28,10 +31,10 @@ pnpm add @halvaradop/ui-template@beta
 
 ## Usage
 
-The `Template` component offers {n} additional props for customization: {props}. Import the `Template` component as shown below:
+The `Template` component offers several additional props for customization. Import the `Template` component as shown below:
 
 ```tsx
-import { Template } from "@halvaradop/ui-Template"
+import { Template } from "@halvaradop/ui-template"
 
 export default function App() {
   return <Template />
