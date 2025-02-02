@@ -1,0 +1,15 @@
+name: Production Deployment
+
+on:
+  pull_request:
+    branches:
+      - master
+      - beta
+    types: [closed]
+jobs:
+  deploy:
+    if: github.event.pull_request.merged == true && (github.base_ref == 'master' || github.base_ref == 'beta') && startsWith(github.head_ref, 'release')
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - run: echo "Deploying to Production"
