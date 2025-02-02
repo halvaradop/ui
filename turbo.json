@@ -15,10 +15,13 @@
       "cache": false,
       "inputs": ["dist", "node_modules"]
     },
-    "clean:build": {
+    "clean:dist": {
       "cache": false
     },
     "clean:modules": {
+      "cache": false
+    },
+    "clean:turbo": {
       "cache": false
     }
   },
