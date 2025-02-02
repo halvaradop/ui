@@ -6,12 +6,13 @@
   "type": "module",
   "scripts": {
     "dev": "tsup --watch",
-    "build": "tsup",
+    "build": "tsup && pnpm clean:cts",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "clean": "pnpm clean:build && pnpm clean:modules",
     "clean:build": "rm -rf dist",
-    "clean:modules": "rm -rf node_modules"
+    "clean:modules": "rm -rf node_modules",
+    "clean:cts": "cd dist && rm -rf *.cts"
   },
   "repository": {
     "type": "git",
@@ -44,5 +45,9 @@
   "dependencies": {
     "@halvaradop/ui-core": "workspace:*",
     "class-variance-authority": "0.7.0"
+  },
+  "peerDependencies": {
+    "react": "^18",
+    "react-dom": "^18"
   }
 }
