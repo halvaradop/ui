@@ -34,13 +34,13 @@ export const Column: Story = {
 export const Row: Story = {
     render: () => {
         return (
-            <RadioGroup variant="row" name="food">
+            <RadioGroup variant="row" name="food-2">
                 <Label className="flex items-center gap-x-2">
-                    <Radio value="pizza" name="food" />
+                    <Radio value="pizza" />
                     Pizza
                 </Label>
                 <Label className="flex items-center gap-x-2">
-                    <Radio value="hamburger" name="food" />
+                    <Radio value="hamburger" />
                     Hamburger
                 </Label>
             </RadioGroup>
@@ -51,13 +51,13 @@ export const Row: Story = {
 export const DefaultChecked: Story = {
     render: () => {
         return (
-            <RadioGroup name="food" defaultValue="pizza">
+            <RadioGroup name="food-3" defaultValue="pizza">
                 <Label className="flex items-center gap-x-2">
-                    <Radio value="pizza" name="food" />
+                    <Radio value="pizza" name="food-3" />
                     Pizza
                 </Label>
                 <Label className="flex items-center gap-x-2">
-                    <Radio value="hamburger" name="food" />
+                    <Radio value="hamburger" name="food-3" />
                     Hamburger
                 </Label>
             </RadioGroup>
