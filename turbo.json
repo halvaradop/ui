@@ -1,6 +1,5 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalDependencies": ["tsconfig.json"],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
@@ -16,12 +15,17 @@
       "cache": false,
       "inputs": ["dist", "node_modules"]
     },
-    "clean:build": {
+    "clean:dist": {
       "cache": false
     },
     "clean:modules": {
       "cache": false
+    },
+    "clean:turbo": {
+      "cache": false
     }
   },
-  "cacheDir": ".turbo/cache"
+  "ui": "tui",
+  "cacheDir": ".turbo/cache",
+  "globalDependencies": ["tsconfig.json"]
 }
