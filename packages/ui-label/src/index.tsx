@@ -27,7 +27,15 @@ export const labelVariants = cva("font-medium text-left relative leading-none", 
     },
 })
 
-export const Label = ({ className, variant, size, children, asChild, ref, ...props }: LabelProps<typeof labelVariants>) => {
+export const Label = ({
+    className,
+    variant,
+    size,
+    children,
+    asChild,
+    ref,
+    ...props
+}: LabelProps<typeof labelVariants>) => {
     const SlotComponent = asChild ? Slot : "label"
     return (
         <SlotComponent className={merge(labelVariants({ className, variant, size }))} ref={ref} {...props}>

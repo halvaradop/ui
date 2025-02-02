@@ -25,7 +25,14 @@ export const innerDialogVariants = cva("flex items-center justify-center", {
 
 export const Modal = ({ className, children, ref, ...props }: DialogProps<typeof innerDialogVariants>) => {
     return (
-        <dialog className={merge("w-full min-h-screen max-w-none max-h-none items-center justify-center relative inset-0 bg-transparent backdrop:bg-dialog open:flex", className)} ref={ref} {...props}>
+        <dialog
+            className={merge(
+                "w-full min-h-screen max-w-none max-h-none items-center justify-center relative inset-0 bg-transparent backdrop:bg-dialog open:flex",
+                className
+            )}
+            ref={ref}
+            {...props}
+        >
             {children}
         </dialog>
     )

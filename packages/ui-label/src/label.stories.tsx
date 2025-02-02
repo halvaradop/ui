@@ -28,7 +28,10 @@ const meta: Meta = {
                 setIsDark(document.querySelector("html")?.classList?.contains("dark") ?? false)
             }, [])
             return (
-                <div className="w-full h-full mx-auto flex items-center justify-center absolute inset-0 data-[dark='true']:bg-black" data-dark={isDark}>
+                <div
+                    className="w-full h-full mx-auto flex items-center justify-center absolute inset-0 data-[dark='true']:bg-black"
+                    data-dark={isDark}
+                >
                     <div className="w-full dark:text-white">
                         <Button className="absolute top-[4%] left-[4%]" onClick={handleToggleTheme}>
                             Theme
@@ -68,7 +71,14 @@ export const Error: Story = {
     render: () => (
         <Label>
             <Label htmlFor="error-story">Name</Label>
-            <Input className="peer" variant="sensitive" placeholder="John@doe.com" type="email" id="error-story" required />
+            <Input
+                className="peer"
+                variant="sensitive"
+                placeholder="John@doe.com"
+                type="email"
+                id="error-story"
+                required
+            />
             <Label className="right-0" variant="error" size="sm" asChild>
                 <span>Invalid email address</span>
             </Label>

@@ -17,7 +17,15 @@ export const radioGroupVariants = cva("flex", {
     },
 })
 
-export const RadioGroup = ({ className, variant, name, defaultValue, children, ref, ...props }: RadioGroupProps<typeof radioGroupVariants>) => {
+export const RadioGroup = ({
+    className,
+    variant,
+    name,
+    defaultValue,
+    children,
+    ref,
+    ...props
+}: RadioGroupProps<typeof radioGroupVariants>) => {
     // @ts-ignore
     const reference = useRef<HTMLFieldSetElement>(ref?.current)
 
@@ -33,7 +41,12 @@ export const RadioGroup = ({ className, variant, name, defaultValue, children, r
     }, [])
 
     return (
-        <fieldset className={merge(radioGroupVariants({ className, variant }))} defaultValue={defaultValue} ref={reference} {...props}>
+        <fieldset
+            className={merge(radioGroupVariants({ className, variant }))}
+            defaultValue={defaultValue}
+            ref={reference}
+            {...props}
+        >
             {children}
         </fieldset>
     )
