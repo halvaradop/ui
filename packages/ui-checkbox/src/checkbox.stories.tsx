@@ -1,5 +1,7 @@
+import { useEffect, useState } from "react"
 import type { Meta, StoryObj } from "@storybook/react"
 import { Checkbox } from "./index.js"
+import { Button } from "../../ui-button/src/index.js"
 
 const meta: Meta = {
     title: "ui-checkbox",
@@ -13,15 +15,31 @@ const meta: Meta = {
         },
     },
     decorators: [
-        (Story) => (
-            <div className="w-full h-full mx-auto flex items-center justify-center absolute inset-0">
-                <div className="w-full">
-                    <section className="story-container">
-                        <Story />
-                    </section>
+        (Story) => {
+            const [isDark, setIsDark] = useState<boolean>(false)
+
+            const handleToggleTheme = () => {
+                setIsDark((previous) => !previous)
+                document.querySelector("html")?.classList.toggle("dark", !isDark)
+            }
+
+            useEffect(() => {
+                setIsDark(document.querySelector("html")?.classList?.contains("dark") ?? false)
+            }, [])
+
+            return (
+                <div className="w-full h-full mx-auto flex items-center justify-center absolute inset-0 data-[dark='true']:bg-black" data-dark={isDark}>
+                    <div className="w-full dark:text-white">
+                        <Button className="absolute top-[4%] left-[4%]" onClick={handleToggleTheme}>
+                            Theme
+                        </Button>
+                        <section className="story-container">
+                            <Story />
+                        </section>
+                    </div>
                 </div>
-            </div>
-        ),
+            )
+        },
     ],
 } satisfies Meta<typeof Checkbox>
 
@@ -70,8 +88,8 @@ export const Colors: Story = {
                 <Checkbox color="yellow" />
             </div>
             <div>
-                <span className="font-medium">Black</span>
-                <Checkbox color="black" />
+                <span className="font-medium">primary</span>
+                <Checkbox color="primary" />
             </div>
         </>
     ),
