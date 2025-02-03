@@ -1,7 +1,8 @@
 {
-  "name": "@halvaradop/ui-button",
-  "version": "0.5.0",
-  "description": "A customizable button component for @halvaradop/ui library with Tailwind CSS styling.",
+  "name": "@halvaradop/ui-utils",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Utility packagefor @halvaradop/ui library",
   "type": "module",
   "scripts": {
     "dev": "tsup --watch",
@@ -17,12 +18,7 @@
     "type": "git",
     "url": "git+https://github.com/halvaradop/ui.git"
   },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/@halvaradop/ui-button"
-  },
   "keywords": [
-    "button",
     "react",
     "component",
     "tailwindcss",
@@ -40,17 +36,16 @@
     "dist"
   ],
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    }
-  },
-  "dependencies": {
-    "@halvaradop/ui-core": "workspace:*",
-    "class-variance-authority": "0.7.0"
-  },
-  "devDependencies": {
-    "@halvaradop/ui-utils": "workspace:*"
+    "./decorator": {
+      "types": "./dist/decorator.d.ts",
+      "require": "./dist/decorator.cjs",
+      "import": "./dist/decorator.js"
+    },
+    "./tsup.config.base": {
+      "types": "./dist/tsup.config.base.d.ts",
+      "import": "./dist/tsup.config.base.js",
+      "require": "./dist/tsup.config.base.cjs"
+    },
+    "./tsconfig.base.json": "./tsconfig.base.json"
   }
 }

@@ -53,7 +53,7 @@ The `tsupConfig` object contains the basic configuration for building a package 
 
 ```ts
 import { defineConfig } from "tsup"
-import { tsupConfig } from "@halvaradop/ui-core/tsup.config.base"
+import { tsupConfig } from "@halvaradop/ui-utils/tsup.config.base"
 
 export default defineConfig(tsupConfig)
 ```
