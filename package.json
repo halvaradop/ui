@@ -97,14 +97,6 @@
         "options": {
           "tabWidth": 2
         }
-      },
-      {
-        "files": [
-          "**/*.tsx"
-        ],
-        "options": {
-          "printWidth": 300
-        }
       }
     ]
   }
