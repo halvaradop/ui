@@ -16,8 +16,9 @@
     "test:e2e:ui": "playwright test",
     "test:e2e:report": "playwright show-report",
     "clean": "turbo run clean --parallel",
-    "clean:build": "turbo run clean:build --parallel",
-    "clean:modules": "turbo run clean:modules --parallel"
+    "clean:dist": "turbo run clean:dist --parallel",
+    "clean:modules": "turbo run clean:modules --parallel",
+    "clean:turbo": "turbo run clean:turbo --parallel"
   },
   "repository": {
     "type": "git",
