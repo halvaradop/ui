@@ -1,39 +1,10 @@
-import { useEffect, useState } from "react"
 import type { Meta, StoryObj } from "@storybook/react"
 import { Button } from "./index.jsx"
-
-const decorator: Pick<Meta, "decorators">["decorators"] = (Story) => {
-    const [isDark, setIsDark] = useState(false)
-
-    const handleToggleTheme = () => {
-        setIsDark((previous) => !previous)
-        document.querySelector("html")?.classList.toggle("dark", !isDark)
-    }
-
-    useEffect(() => {
-        setIsDark(document.querySelector("html")?.classList?.contains("dark") ?? false)
-    }, [])
-
-    return (
-        <div
-            className="w-full h-full mx-auto flex items-center justify-center absolute inset-0 data-[dark='true']:bg-black"
-            data-dark={isDark}
-        >
-            <div className="w-full dark:text-white">
-                <Button className="absolute top-[4%] left-[4%]" onClick={handleToggleTheme}>
-                    Theme
-                </Button>
-                <section className="story-container">
-                    <Story />
-                </section>
-            </div>
-        </div>
-    )
-}
+import { decorator } from "@halvaradop/ui-utils/decorator"
 
 const meta: Meta = {
     title: "ui-button",
-    //tags: ["autodocs"],
+    tags: ["autodocs"],
     component: Button,
     args: {
         children: "Button",
@@ -51,10 +22,8 @@ const meta: Meta = {
             default: "light",
             grid: true,
         },
-        docs: {
-            toc: false,
-        },
     },
+    decorators: [decorator],
 } satisfies Meta<typeof Button>
 
 type Story = StoryObj<typeof meta>
@@ -62,7 +31,6 @@ type Story = StoryObj<typeof meta>
 export const Base: Story = {}
 
 export const Variants: Story = {
-    decorators: [decorator],
     render: () => (
         <>
             <div>

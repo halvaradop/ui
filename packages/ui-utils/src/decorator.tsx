@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 import { Button } from "@halvaradop/ui-button"
-import type { Meta } from "@storybook/react"
+import type { Decorator } from "@storybook/react"
 
-export const decorator: Pick<Meta, "decorators">["decorators"] = (Story) => {
+export const decorator: Decorator = (Story) => {
     const [isDark, setIsDark] = useState(false)
 
     const handleToggleTheme = () => {

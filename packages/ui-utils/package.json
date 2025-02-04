@@ -36,11 +36,7 @@
     "dist"
   ],
   "exports": {
-    "./decorator": {
-      "types": "./dist/decorator.d.ts",
-      "require": "./dist/decorator.cjs",
-      "import": "./dist/decorator.js"
-    },
+    "./decorator": "./src/decorator.tsx",
     "./tsup.config.base": {
       "types": "./dist/tsup.config.base.d.ts",
       "import": "./dist/tsup.config.base.js",
