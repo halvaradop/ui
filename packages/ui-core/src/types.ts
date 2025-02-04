@@ -1,3 +1,6 @@
+/**
+ * These types are used by users of the library ? otherwise move them to @halvaradop/ui-utils package
+ */
 export type HTMLTag = keyof JSX.IntrinsicElements | React.JSXElementConstructor<unknown>
 
 export type WithChildrenProps<Props extends object> = Omit<Props, "children"> & { children: React.ReactNode }

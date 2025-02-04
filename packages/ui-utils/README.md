@@ -40,6 +40,9 @@ export default defineConfig(tsupConfig)
 
 The `decorator` is a custom decorator used by component stories to create custom styles for the story wrappers. This decorator includes logic and UI to switch between light and dark themes.
 
+> [!WARNING]
+> This file is not compiled directly due to errors such as unrecognized hooks like `useState` and `useEffect`. Therefore, it is not included in the package build. Instead, it is exported directly, and its types are declared in the `globals.d.ts` file using module augmentation. This approach will be used until a better solution is found.
+
 ```tsx
 import { decorator } from "@halvaradop/ui-utils/decorator"
 import type { Meta, StoryObj } from "@storybook/react"

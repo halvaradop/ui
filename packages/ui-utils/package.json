@@ -2,7 +2,7 @@
   "name": "@halvaradop/ui-utils",
   "version": "0.0.0",
   "private": true,
-  "description": "Utility packagefor @halvaradop/ui library",
+  "description": "Utility functions and helpers for the @halvaradop/ui library",
   "type": "module",
   "scripts": {
     "dev": "tsup --watch",
