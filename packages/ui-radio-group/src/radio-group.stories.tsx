@@ -3,68 +3,109 @@ import { RadioGroup } from "./index.js"
 import { Label } from "../../ui-label/src/index.js"
 import { Radio } from "../../ui-radio/src/index.js"
 import { decorator } from "@halvaradop/ui-utils/decorator"
+import { Title, Canvas, Subtitle, Controls } from "@storybook/blocks"
 
 const meta: Meta = {
     title: "ui-radio-group",
     tags: ["autodocs"],
     component: RadioGroup,
+    args: {
+        variant: "column",
+    },
+    argTypes: {
+        variant: {
+            control: "radio",
+            options: ["column", "row"],
+            description: "Flex direction of the radio group",
+            table: {
+                type: {
+                    summary: "column | row",
+                },
+                defaultValue: {
+                    summary: "column",
+                },
+            },
+        },
+    },
     parameters: {
         layout: "centered",
+        docs: {
+            page: () => (
+                <>
+                    <Title />
+                    <Subtitle>Dialog component powered by React & TailwindCSS</Subtitle>
+                    <Canvas />
+                    <Controls />
+                </>
+            ),
+        },
     },
     decorators: [decorator],
 } satisfies Meta<typeof RadioGroup>
 
 type Story = StoryObj<typeof meta>
 
-export const Column: Story = {
-    render: () => {
-        return (
-            <RadioGroup name="food">
-                <Label className="flex items-center gap-x-2">
-                    <Radio value="pizza" name="food" />
-                    Pizza
-                </Label>
-                <Label className="flex items-center gap-x-2">
-                    <Radio value="hamburger" name="food" />
-                    Hamburger
-                </Label>
-            </RadioGroup>
-        )
+export const Base: Story = {
+    parameters: {
+        skipDecorator: true,
     },
+    render: (args) => (
+        <RadioGroup name="food" {...args}>
+            <Label className="flex items-center gap-x-2">
+                <Radio value="pizza" name="food" />
+                Pizza
+            </Label>
+            <Label className="flex items-center gap-x-2">
+                <Radio value="hamburger" name="food" />
+                Hamburger
+            </Label>
+        </RadioGroup>
+    ),
+}
+
+export const Column: Story = {
+    render: () => (
+        <RadioGroup name="food">
+            <Label className="flex items-center gap-x-2">
+                <Radio value="pizza" name="food" />
+                Pizza
+            </Label>
+            <Label className="flex items-center gap-x-2">
+                <Radio value="hamburger" name="food" />
+                Hamburger
+            </Label>
+        </RadioGroup>
+    ),
 }
 
 export const Row: Story = {
-    render: () => {
-        return (
-            <RadioGroup variant="row" name="food-2">
-                <Label className="flex items-center gap-x-2">
-                    <Radio value="pizza" />
-                    Pizza
-                </Label>
-                <Label className="flex items-center gap-x-2">
-                    <Radio value="hamburger" />
-                    Hamburger
-                </Label>
-            </RadioGroup>
-        )
-    },
+    render: () => (
+        <RadioGroup variant="row" name="food-2">
+            <Label className="flex items-center gap-x-2">
+                <Radio value="pizza" />
+                Pizza
+            </Label>
+            <Label className="flex items-center gap-x-2">
+                <Radio value="hamburger" />
+                Hamburger
+            </Label>
+        </RadioGroup>
+    ),
 }
 
 export const DefaultChecked: Story = {
-    render: () => {
-        return (
-            <RadioGroup name="food-3" defaultValue="pizza">
-                <Label className="flex items-center gap-x-2">
-                    <Radio value="pizza" name="food-3" />
-                    Pizza
-                </Label>
-                <Label className="flex items-center gap-x-2">
-                    <Radio value="hamburger" name="food-3" />
-                    Hamburger
-                </Label>
-            </RadioGroup>
-        )
-    },
+    render: () => (
+        <RadioGroup name="food-3" defaultValue="pizza">
+            <Label className="flex items-center gap-x-2">
+                <Radio value="pizza" name="food-3" />
+                Pizza
+            </Label>
+            <Label className="flex items-center gap-x-2">
+                <Radio value="hamburger" name="food-3" />
+                Hamburger
+            </Label>
+        </RadioGroup>
+    ),
 }
 
 export default meta

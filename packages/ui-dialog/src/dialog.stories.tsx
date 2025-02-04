@@ -3,7 +3,11 @@ import type { Meta, StoryObj } from "@storybook/react"
 import { Modal, innerDialogVariants } from "./index.js"
 import { Button } from "../../ui-button/src/index.js"
 import { decorator } from "@halvaradop/ui-utils/decorator"
+import { Title, Canvas, Subtitle, Controls } from "@storybook/blocks"
 
+/**
+ * TODO: Implement Documentation
+ */
 const meta: Meta = {
     title: "ui-dialog",
     tags: ["autodocs"],
@@ -13,6 +17,16 @@ const meta: Meta = {
         backgrounds: {
             default: "light",
             grid: true,
+        },
+        docs: {
+            page: () => (
+                <>
+                    <Title />
+                    <Subtitle>Dialog component powered by React & TailwindCSS</Subtitle>
+                    <Canvas />
+                    <Controls />
+                </>
+            ),
         },
     },
     decorators: [decorator],
@@ -49,6 +63,12 @@ const DialogStory = ({ size, variant }: DialogStoryProps) => {
             </Modal>
         </>
     )
+}
+
+export const Base: Story = {
+    parameters: {
+        skipDectorator: true,
+    },
 }
 
 export const Variants: Story = {

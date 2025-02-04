@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react"
 import { Button } from "./index.jsx"
 import { decorator } from "@halvaradop/ui-utils/decorator"
+import { Title, Canvas, Subtitle, Controls } from "@storybook/blocks"
 
 const meta: Meta = {
     title: "ui-button",
@@ -11,9 +12,54 @@ const meta: Meta = {
         variant: "base",
     },
     argTypes: {
+        children: {
+            description: "The content of the Component",
+            control: {
+                type: "text",
+            },
+            table: {
+                type: {
+                    summary: "ReactNode | String",
+                },
+            },
+        },
         variant: {
             control: "select",
+            description: "The variant of the button",
             options: ["base", "secondary", "ghost", "link", "destructive", "outline", "plain"],
+            table: {
+                type: {
+                    summary: "base | secondary | ghost | link | destructive | outline | plain",
+                },
+                defaultValue: {
+                    summary: "base",
+                },
+            },
+        },
+        size: {
+            control: "select",
+            description: "Size of the button",
+            options: ["sm", "base", "md", "lg"],
+            table: {
+                type: {
+                    summary: "sm | base | md | lg",
+                },
+                defaultValue: {
+                    summary: "base",
+                },
+            },
+        },
+        fullRounded: {
+            control: "boolean",
+            description: "Make the button full rounded",
+            table: {
+                type: {
+                    summary: "boolean",
+                },
+                defaultValue: {
+                    summary: "false",
+                },
+            },
         },
     },
     parameters: {
@@ -22,13 +68,30 @@ const meta: Meta = {
             default: "light",
             grid: true,
         },
+        docs: {
+            page: () => (
+                <>
+                    <Title />
+                    <Subtitle>Button Component powered by React & TailwindCSS</Subtitle>
+                    <Canvas />
+                    <Controls />
+                </>
+            ),
+        },
     },
     decorators: [decorator],
 } satisfies Meta<typeof Button>
 
 type Story = StoryObj<typeof meta>
 
-export const Base: Story = {}
+export const Base: Story = {
+    args: {
+        size: "base",
+    },
+    parameters: {
+        skipDecorator: true,
+    },
+}
 
 export const Variants: Story = {
     render: () => (

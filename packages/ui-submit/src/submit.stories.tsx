@@ -3,16 +3,43 @@ import { FormEvent, useTransition } from "react"
 import type { Meta, StoryObj } from "@storybook/react"
 import { Submit } from "./index.js"
 import { decorator } from "@halvaradop/ui-utils/decorator"
+import { Title, Canvas, Subtitle, Controls } from "@storybook/blocks"
 
 const meta: Meta = {
     title: "ui-submit",
     tags: ["autodocs"],
     component: Submit,
+    args: {
+        value: "Submit",
+        pending: "Submitting...",
+        disabled: false,
+    },
+    argTypes: {
+        value: {
+            description: "The text to display on the button",
+        },
+        pending: {
+            description: "The text to display on the button when it's in a pending state",
+        },
+        disabled: {
+            description: "Whether the button is disabled",
+        },
+    },
     parameters: {
         layout: "centered",
         backgrounds: {
             default: "light",
             grid: true,
+        },
+        docs: {
+            page: () => (
+                <>
+                    <Title />
+                    <Subtitle>Dialog component powered by React & TailwindCSS</Subtitle>
+                    <Canvas />
+                    <Controls />
+                </>
+            ),
         },
     },
     decorators: [decorator],
@@ -43,6 +70,12 @@ const Template = ({ className, ...props }: Parameters<typeof Submit>[0]) => {
             <Submit disabled={isPending} aria-disabled={isPending} {...props} />
         </form>
     )
+}
+
+export const Base: Story = {
+    parameters: {
+        skipDecorator: true,
+    },
 }
 
 export const Variants: Story = {
