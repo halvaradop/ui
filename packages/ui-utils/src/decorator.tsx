@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Button } from "../../ui-button/src/index.js"
+import { Button } from "@halvaradop/ui-button"
 import type { Meta } from "@storybook/react"
 
 export const decorator: Pick<Meta, "decorators">["decorators"] = (Story) => {

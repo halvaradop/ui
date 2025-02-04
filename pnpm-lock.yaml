@@ -11,6 +11,9 @@ importers:
       '@chromatic-com/storybook':
         specifier: 1.9.0
         version: 1.9.0(react@18.3.1)
+      '@halvaradop/ui-button':
+        specifier: ^0.5.0
+        version: 0.5.0
       '@playwright/test':
         specifier: ^1.50.0
         version: 1.50.1
@@ -603,6 +606,12 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
+
+  '@halvaradop/ui-button@0.5.0':
+    resolution: {integrity: sha512-Zk8YDtmzWKOSWPJsy9dsAfIuuDax1Xbc8hOVXicQAC40gY8YStZIXTDpEqptJN/wXfwdudnbgtrR/gTs9BVtLA==}
+
+  '@halvaradop/ui-core@0.3.0':
+    resolution: {integrity: sha512-Ev9g9A5Op4JLRVXiWd/LD8lZw9Iy+D+3CjB/DqnQ0mSgV2FsiBqHE153keqT2vrXYMG/be0qpsteFmutL47skA==}
 
   '@isaacs/cliui@8.0.2':
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
@@ -2536,6 +2545,15 @@ snapshots:
 
   '@esbuild/win32-x64@0.24.2':
     optional: true
+
+  '@halvaradop/ui-button@0.5.0':
+    dependencies:
+      '@halvaradop/ui-core': 0.3.0
+      class-variance-authority: 0.7.0
+
+  '@halvaradop/ui-core@0.3.0':
+    dependencies:
+      tailwind-merge: 2.6.0
 
   '@isaacs/cliui@8.0.2':
     dependencies:
