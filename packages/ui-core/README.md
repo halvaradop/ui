@@ -1,6 +1,6 @@
 # @halvaradop/ui-core
 
-The `@halvaradop/ui-core` package centralizes shared configurations, types, and utilities for the `@halvaradop/ui` library, ensuring consistent functionality across all its packages.
+The `@halvaradop/ui-core` package provides shared types and utilities for the `@halvaradop/ui` library. It ensures consistent functionality across all packages by centralizing these resources, which are included in the build process.
 
 ## Installation
 
@@ -28,7 +28,7 @@ pnpm add @halvaradop/ui-core@beta
 
 ## Usage
 
-The core package offers four main resources: the `Slot` component, `tsupConfig` configuration, `merge` function, and various types.
+The core package offers three main resources: the `Slot` component, `merge` function, and various types.
 
 ### Slot
 
@@ -45,17 +45,6 @@ export const Card = ({ className, children, asChild }: CardProps) => {
     const SlotComponent = asChild ? "article" : Slot
     return <SlotComponent>{children}</SlotComponent>
 }
-```
-
-### TsupConfig
-
-The `tsupConfig` object contains the basic configuration for building a package using the `tsup` dependency. It is exported from the index entry point or the `/tsup.config.base` dedicated export. The following code shows how components use this configuration in their `tsup.config.ts` file:
-
-```ts
-import { defineConfig } from "tsup"
-import { tsupConfig } from "@halvaradop/ui-utils/tsup.config.base"
-
-export default defineConfig(tsupConfig)
 ```
 
 ### Types
