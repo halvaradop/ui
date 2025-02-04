@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "turbo run dev --parallel",
     "build": "pnpm build:core && turbo build --parallel --filter=!*core --filter=!*template",
-    "build:core": "turbo run build --filter=*core",
+    "build:core": "turbo run build --filter=*utils --filter=*core",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "storybook": "storybook dev -p 6006",
