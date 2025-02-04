@@ -24,12 +24,21 @@ export const innerDialogVariants = cva("flex items-center justify-center", {
     },
 })
 
-export const Modal = forwardRef<HTMLDialogElement, DialogProps<typeof innerDialogVariants>>(({ className, children, ...props }, ref) => {
-    return (
-        <dialog className={merge("w-full min-h-screen max-w-none max-h-none items-center justify-center relative inset-0 bg-transparent backdrop:bg-dialog open:flex", className)} ref={ref} {...props}>
-            {children}
-        </dialog>
-    )
-})
+export const Modal = forwardRef<HTMLDialogElement, DialogProps<typeof innerDialogVariants>>(
+    ({ className, children, ...props }, ref) => {
+        return (
+            <dialog
+                className={merge(
+                    "w-full min-h-screen max-w-none max-h-none items-center justify-center relative inset-0 bg-transparent backdrop:bg-dialog open:flex",
+                    className
+                )}
+                ref={ref}
+                {...props}
+            >
+                {children}
+            </dialog>
+        )
+    }
+)
 
 Modal.displayName = "Dialog"

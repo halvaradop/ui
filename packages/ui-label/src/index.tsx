@@ -28,13 +28,15 @@ export const labelVariants = cva("font-medium text-left relative leading-none", 
     },
 })
 
-export const Label = forwardRef<HTMLLabelElement, LabelProps<typeof labelVariants>>(({ className, variant, size, children, asChild, ...props }, ref) => {
-    const SlotComponent = asChild ? Slot : "label"
-    return (
-        <SlotComponent className={merge(labelVariants({ className, variant, size }))} ref={ref} {...props}>
-            {children}
-        </SlotComponent>
-    )
-})
+export const Label = forwardRef<HTMLLabelElement, LabelProps<typeof labelVariants>>(
+    ({ className, variant, size, children, asChild, ...props }, ref) => {
+        const SlotComponent = asChild ? Slot : "label"
+        return (
+            <SlotComponent className={merge(labelVariants({ className, variant, size }))} ref={ref} {...props}>
+                {children}
+            </SlotComponent>
+        )
+    }
+)
 
 Label.displayName = "Label"

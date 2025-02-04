@@ -9,9 +9,10 @@
     "build": "tsup",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "clean": "pnpm clean:build && pnpm clean:modules",
-    "clean:build": "rm -rf dist",
-    "clean:modules": "rm -rf node_modules"
+    "clean": "turbo run clean:dist clean:modules clean:turbo --parallel",
+    "clean:dist": "rm -rf dist",
+    "clean:modules": "rm -rf node_modules",
+    "clean:turbo": "rm -rf .turbo"
   },
   "repository": {
     "type": "git",
@@ -44,5 +45,8 @@
   "dependencies": {
     "@halvaradop/ui-core": "workspace:*",
     "class-variance-authority": "0.7.0"
+  },
+  "devDependencies": {
+    "@halvaradop/ui-utils": "workspace:*"
   }
 }

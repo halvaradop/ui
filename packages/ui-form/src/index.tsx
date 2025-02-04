@@ -26,12 +26,14 @@ export const formVariants = cva("mx-auto flex items-center flex-col relative", {
     },
 })
 
-export const Form = forwardRef<HTMLFormElement, FormProps<typeof formVariants>>(({ className, variant, size, children, ...props }, ref) => {
-    return (
-        <form className={merge(formVariants({ className, variant, size }))} ref={ref} {...props}>
-            {children}
-        </form>
-    )
-})
+export const Form = forwardRef<HTMLFormElement, FormProps<typeof formVariants>>(
+    ({ className, variant, size, children, ...props }, ref) => {
+        return (
+            <form className={merge(formVariants({ className, variant, size }))} ref={ref} {...props}>
+                {children}
+            </form>
+        )
+    }
+)
 
 Form.displayName = "Form"

@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react"
 import type { Meta, StoryObj } from "@storybook/react"
 import { Label } from "./index.js"
 import { Input } from "../../ui-input/src/index.js"
-import { Button } from "../../ui-button/src/index.js"
+import { decorator } from "@halvaradop/ui-utils/decorator"
 
 const meta: Meta = {
     title: "ui-label",
@@ -15,32 +14,7 @@ const meta: Meta = {
             grid: true,
         },
     },
-    decorators: [
-        (Story) => {
-            const [isDark, setIsDark] = useState<boolean>(false)
-
-            const handleToggleTheme = () => {
-                setIsDark((previous) => !previous)
-                document.querySelector("html")?.classList.toggle("dark", !isDark)
-            }
-
-            useEffect(() => {
-                setIsDark(document.querySelector("html")?.classList?.contains("dark") ?? false)
-            }, [])
-            return (
-                <div className="w-full h-full mx-auto flex items-center justify-center absolute inset-0 data-[dark='true']:bg-black" data-dark={isDark}>
-                    <div className="w-full dark:text-white">
-                        <Button className="absolute top-[4%] left-[4%]" onClick={handleToggleTheme}>
-                            Theme
-                        </Button>
-                        <section className="story-container justify-center">
-                            <Story />
-                        </section>
-                    </div>
-                </div>
-            )
-        },
-    ],
+    decorators: [decorator],
 } satisfies Meta<typeof Label>
 
 type Story = StoryObj<typeof meta>
@@ -68,7 +42,14 @@ export const Error: Story = {
     render: () => (
         <Label>
             <Label htmlFor="error-story">Name</Label>
-            <Input className="peer" variant="sensitive" placeholder="John@doe.com" type="email" id="error-story" required />
+            <Input
+                className="peer"
+                variant="sensitive"
+                placeholder="John@doe.com"
+                type="email"
+                id="error-story"
+                required
+            />
             <Label className="right-0" variant="error" size="sm" asChild>
                 <span>Invalid email address</span>
             </Label>

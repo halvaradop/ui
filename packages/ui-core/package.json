@@ -8,9 +8,10 @@
     "build": "tsup",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "clean": "pnpm clean:build && pnpm clean:modules",
-    "clean:build": "rm -rf dist",
-    "clean:modules": "rm -rf node_modules"
+    "clean": "turbo run clean:dist clean:modules clean:turbo --parallel",
+    "clean:dist": "rm -rf dist",
+    "clean:modules": "rm -rf node_modules",
+    "clean:turbo": "rm -rf .turbo"
   },
   "repository": {
     "type": "git",
@@ -44,11 +45,6 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./tsup.config.base": {
-      "types": "./dist/tsup.config.base.d.ts",
-      "import": "./dist/tsup.config.base.js",
-      "require": "./dist/tsup.config.base.cjs"
-    },
     "./slot": {
       "types": "./dist/slot.d.ts",
       "import": "./dist/slot.js",
@@ -57,13 +53,13 @@
     "./types": {
       "types": "./dist/types.d.ts"
     },
-    "./package.json": "./package.json",
-    "./tsconfig.base.json": "./tsconfig.base.json"
+    "./package.json": "./package.json"
   },
   "dependencies": {
     "tailwind-merge": "^2.5.2"
   },
   "devDependencies": {
-    "clsx": "^2.1.1"
+    "clsx": "^2.1.1",
+    "@halvaradop/ui-utils": "workspace:*"
   }
 }

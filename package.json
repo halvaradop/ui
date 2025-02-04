@@ -6,8 +6,8 @@
   "description": "A comprehensive UI library for React, built with Tailwind CSS and CVA (Class Variance Authority). It provides reusable components and supports JSX syntax.",
   "scripts": {
     "dev": "turbo run dev --parallel",
-    "build": "pnpm build:core && turbo build --parallel --filter=!*core --filter=!*template",
-    "build:core": "turbo run build --filter=*core",
+    "build": "pnpm build:core && turbo build --parallel --filter=!*core --filter=!*utils --filter=!*template",
+    "build:core": "turbo run build --filter=*utils --filter=*core",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "storybook": "storybook dev -p 6006",
@@ -16,8 +16,9 @@
     "test:e2e:ui": "playwright test",
     "test:e2e:report": "playwright show-report",
     "clean": "turbo run clean --parallel",
-    "clean:build": "turbo run clean:build --parallel",
-    "clean:modules": "turbo run clean:modules --parallel"
+    "clean:dist": "turbo run clean:dist --parallel",
+    "clean:modules": "turbo run clean:modules --parallel",
+    "clean:turbo": "turbo run clean:turbo --parallel"
   },
   "repository": {
     "type": "git",
@@ -57,6 +58,7 @@
     "@storybook/react-vite": "^8.5.2",
     "@storybook/test": "^8.5.2",
     "@types/node": "^22.13.0",
+    "@halvaradop/ui-button": "^0.5.0",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react-swc": "^3.7.2",
@@ -95,14 +97,6 @@
         ],
         "options": {
           "tabWidth": 2
-        }
-      },
-      {
-        "files": [
-          "**/*.tsx"
-        ],
-        "options": {
-          "printWidth": 300
         }
       }
     ]
