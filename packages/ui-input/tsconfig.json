@@ -1,5 +1,5 @@
 {
-  "extends": "@halvaradop/ui-core/tsconfig.base.json",
+  "extends": "@halvaradop/ui-utils/tsconfig.base.json",
   "compilerOptions": {
     "outDir": "dist",
     "jsx": "react-jsx"
