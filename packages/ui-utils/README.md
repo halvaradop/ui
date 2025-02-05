@@ -7,7 +7,12 @@ The `@halvaradop/ui-utils` package centralizes shared configurations and utiliti
 
 ## Usage
 
-The `@halvaradop/ui-utils` package offers three main files that are mandatory for most of the library's packages: `tsupConfig`, `tsconfig`, and `decorator`.
+The `@halvaradop/ui-utils` package provides essential configurations and components that are commonly required across the library's packages. These include:
+
+- `tsupConfig`: A configuration object for building packages using the `tsup` dependency.
+- `tsconfig`: A TypeScript configuration file that sets default compiler options.
+- `decorator`: A custom Storybook decorator for applying styles and theme switching.
+- `DocsPage` component: A component for enhancing Storybook documentation with Doc Blocks.
 
 ### TypeScript Configuration
 
@@ -53,20 +58,6 @@ const meta: Meta = {
 ### Docs Page Component
 
 The `DocsPage` component abstracts the default documentation of Base Story using Doc Blocks documentation in Storybook. It includes Doc Blocks such as Title, Subtitle, Canvas, and Controls. This component is exported from the `/docs-page` entry point of the module, which can be imported using `@halvaradop/ui-utils/docs-page`.
-
-```tsx
-import { DocsPage } from "@halvaradop/ui-utils/docs-page"
-
-const meta: Meta = {
-  title: "ui-component",
-  parameters: {
-    layout: "centered",
-    docs: {
-      page: () => <DocsPage subtitle="Button Component powered by React & TailwindCSS" />,
-    },
-  },
-}
-```
 
 ```tsx
 import { DocsPage } from "@halvaradop/ui-utils/docs-page"
