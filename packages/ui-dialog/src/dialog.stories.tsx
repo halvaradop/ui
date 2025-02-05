@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react"
 import { Modal, innerDialogVariants } from "./index.js"
 import { Button } from "../../ui-button/src/index.js"
 import { decorator } from "@halvaradop/ui-utils/decorator"
-import { Title, Canvas, Subtitle, Controls } from "@storybook/blocks"
+import { DocsPage } from "@halvaradop/ui-utils/docs-page"
 
 const meta: Meta = {
     title: "ui-dialog",
@@ -47,14 +47,7 @@ const meta: Meta = {
             grid: true,
         },
         docs: {
-            page: () => (
-                <>
-                    <Title />
-                    <Subtitle>Dialog component powered by React & TailwindCSS</Subtitle>
-                    <Canvas />
-                    <Controls />
-                </>
-            ),
+            page: () => <DocsPage subtitle="Dialog component powered by React & TailwindCSS" />,
         },
     },
     decorators: [decorator],

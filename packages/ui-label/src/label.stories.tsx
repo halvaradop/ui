@@ -2,7 +2,7 @@ import type { ArgTypes, Meta, StoryObj } from "@storybook/react"
 import { Label } from "./index.js"
 import { Input } from "../../ui-input/src/index.js"
 import { decorator } from "@halvaradop/ui-utils/decorator"
-import { Title, Canvas, Subtitle, Controls } from "@storybook/blocks"
+import { DocsPage } from "@halvaradop/ui-utils/docs-page"
 
 const size: ArgTypes["size"] = {
     control: "select",
@@ -51,14 +51,7 @@ const meta: Meta = {
             grid: true,
         },
         docs: {
-            page: () => (
-                <>
-                    <Title />
-                    <Subtitle>Dialog component powered by React & TailwindCSS</Subtitle>
-                    <Canvas />
-                    <Controls />
-                </>
-            ),
+            page: () => <DocsPage subtitle="Dialog component powered by React & TailwindCSS" />,
         },
     },
     decorators: [decorator],

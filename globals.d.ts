@@ -6,6 +6,6 @@
  * This file will be used until a better solution is found.
  */
 declare module "@halvaradop/ui-utils" {
-    import { Decorator } from "@storybook/react"
-    export const decorator: Decorator
+    //import { Decorator } from "@storybook/react"
+    //export const decorator: Decorator
 }
