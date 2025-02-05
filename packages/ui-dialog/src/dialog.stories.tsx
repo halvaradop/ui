@@ -5,17 +5,45 @@ import { Button } from "../../ui-button/src/index.js"
 import { decorator } from "@halvaradop/ui-utils/decorator"
 import { Title, Canvas, Subtitle, Controls } from "@storybook/blocks"
 
-/**
- * TODO: Implement Documentation
- */
 const meta: Meta = {
     title: "ui-dialog",
     tags: ["autodocs"],
     component: Modal,
+    args: {
+        size: "base",
+        variant: "base",
+    },
+    argTypes: {
+        size: {
+            control: "select",
+            options: ["sm", "base", "md", "lg"],
+            description: "Size of the dialog",
+            table: {
+                type: {
+                    summary: "sm | base | md | lg",
+                },
+                defaultValue: {
+                    summary: "base",
+                },
+            },
+        },
+        variant: {
+            control: "select",
+            options: ["base", "inner", "fixed"],
+            description: "Variant of the dialog",
+            table: {
+                type: {
+                    summary: "base | inner | fixed",
+                },
+                defaultValue: {
+                    summary: "base",
+                },
+            },
+        },
+    },
     parameters: {
         layout: "centered",
         backgrounds: {
-            default: "light",
             grid: true,
         },
         docs: {
@@ -34,75 +62,35 @@ const meta: Meta = {
 
 type Story = StoryObj<typeof meta>
 
-interface DialogStoryProps {
-    size?: "sm" | "md" | "lg"
-    variant?: "inner" | "fixed"
-}
-
-const DialogStory = ({ size, variant }: DialogStoryProps) => {
-    const modalRef = useRef<HTMLDialogElement>(null)
-
-    const handleToggleModal = (isOpen: boolean): void => {
-        if (isOpen) {
-            modalRef.current?.showModal()
-        } else {
-            modalRef.current?.close()
-        }
-    }
-
-    return (
-        <>
-            <Button onClick={() => handleToggleModal(true)}>Open</Button>
-            <Modal ref={modalRef}>
-                <div className={innerDialogVariants({ size, variant })}>
-                    <div>Modal content</div>
-                    <Button className="mt-4" onClick={() => handleToggleModal(false)}>
-                        Close
-                    </Button>
-                </div>
-            </Modal>
-        </>
-    )
-}
-
 export const Base: Story = {
     parameters: {
-        skipDectorator: true,
+        skipDecorator: true,
     },
-}
+    render: ({ size, variant }) => {
+        const modalRef = useRef<HTMLDialogElement>(null)
 
-export const Variants: Story = {
-    render: () => (
-        <>
-            <div>
-                <span className="font-medium">inner</span>
-                <DialogStory variant="inner" />
-            </div>
-            <div>
-                <span className="font-medium">fixed</span>
-                <DialogStory variant="fixed" />
-            </div>
-        </>
-    ),
-}
+        const handleToggleModal = (isOpen: boolean): void => {
+            if (isOpen) {
+                modalRef.current?.showModal()
+            } else {
+                modalRef.current?.close()
+            }
+        }
 
-export const Sizes: Story = {
-    render: () => (
-        <>
-            <div>
-                <span className="font-medium">sm</span>
-                <DialogStory size="sm" />
-            </div>
-            <div>
-                <span className="font-medium">md</span>
-                <DialogStory size="md" />
-            </div>
-            <div>
-                <span className="font-medium">lg</span>
-                <DialogStory size="lg" />
-            </div>
-        </>
-    ),
+        return (
+            <>
+                <Button onClick={() => handleToggleModal(true)}>Open</Button>
+                <Modal ref={modalRef}>
+                    <div className={innerDialogVariants({ size, variant })}>
+                        <div>Modal content</div>
+                        <Button className="mt-4" onClick={() => handleToggleModal(false)}>
+                            Close
+                        </Button>
+                    </div>
+                </Modal>
+            </>
+        )
+    },
 }
 
 export default meta

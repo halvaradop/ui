@@ -59,52 +59,22 @@ const meta: Meta = {
 
 type Story = StoryObj<typeof meta>
 
-const Template = ({ ...props }: Omit<Parameters<typeof Form>[0], "children">) => (
-    <Form {...props}>
-        <Label>
-            Username
-            <Input />
-        </Label>
-        <Label>
-            Password
-            <Input />
-        </Label>
-    </Form>
-)
-
 export const Base: Story = {
     parameters: {
         skipDecorator: true,
     },
-    render: (args) => <Template {...args} />,
-}
-
-export const Default: Story = {
-    render: () => <Template />,
-}
-
-export const Outline: Story = {
-    render: () => <Template variant="outline" />,
-}
-
-export const Inner: Story = {
-    render: () => <Template variant="inner" />,
-}
-
-export const Ghost: Story = {
-    render: () => <Template variant="ghost" />,
-}
-
-export const Small: Story = {
-    render: () => <Template size="sm" />,
-}
-
-export const Medium: Story = {
-    render: () => <Template size="md" />,
-}
-
-export const Large: Story = {
-    render: () => <Template size="lg" />,
+    render: ({ size, variant }) => (
+        <Form size={size} variant={variant}>
+            <Label>
+                Username
+                <Input />
+            </Label>
+            <Label>
+                Password
+                <Input />
+            </Label>
+        </Form>
+    ),
 }
 
 export default meta

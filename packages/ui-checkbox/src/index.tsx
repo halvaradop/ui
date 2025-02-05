@@ -46,15 +46,12 @@ export const checkboxVariants = cva(
     }
 )
 
-/**
- * TODO: implement `fullRounded` variant
- */
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps<typeof checkboxVariants>>(
-    ({ className, size, color, name, ...props }, ref) => {
+    ({ className, size, color, fullRounded, name, ...props }, ref) => {
         return (
             <label className="flex items-center justify-center relative" htmlFor={name}>
                 <input
-                    className={merge(checkboxVariants({ className, size, color }), "peer")}
+                    className={merge(checkboxVariants({ className, size, color, fullRounded }), "peer")}
                     type="checkbox"
                     name={name}
                     ref={ref}

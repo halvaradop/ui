@@ -49,44 +49,14 @@ export const Base: Story = {
     parameters: {
         skipDecorator: true,
     },
-    render: (args) => (
-        <RadioGroup name="food" {...args}>
+    render: ({ variant }) => (
+        <RadioGroup name="food" variant={variant}>
             <Label className="flex items-center gap-x-2">
                 <Radio value="pizza" name="food" />
                 Pizza
             </Label>
             <Label className="flex items-center gap-x-2">
                 <Radio value="hamburger" name="food" />
-                Hamburger
-            </Label>
-        </RadioGroup>
-    ),
-}
-
-export const Column: Story = {
-    render: () => (
-        <RadioGroup name="food">
-            <Label className="flex items-center gap-x-2">
-                <Radio value="pizza" name="food" />
-                Pizza
-            </Label>
-            <Label className="flex items-center gap-x-2">
-                <Radio value="hamburger" name="food" />
-                Hamburger
-            </Label>
-        </RadioGroup>
-    ),
-}
-
-export const Row: Story = {
-    render: () => (
-        <RadioGroup variant="row" name="food-2">
-            <Label className="flex items-center gap-x-2">
-                <Radio value="pizza" />
-                Pizza
-            </Label>
-            <Label className="flex items-center gap-x-2">
-                <Radio value="hamburger" />
                 Hamburger
             </Label>
         </RadioGroup>

@@ -1,45 +1,46 @@
 import { Input } from "./index.jsx"
-import type { Meta, StoryObj } from "@storybook/react"
+import type { ArgTypes, Meta, StoryObj } from "@storybook/react"
 import { decorator } from "@halvaradop/ui-utils/decorator"
 import { Title, Canvas, Subtitle, Controls } from "@storybook/blocks"
+
+const size: ArgTypes["size"] = {
+    control: "select",
+    options: ["sm", "base", "md", "lg"],
+    description: "Size of the input",
+    table: {
+        type: {
+            summary: "sm | base | md | lg",
+        },
+        defaultValue: {
+            summary: "base",
+        },
+    },
+}
+
+const variant: ArgTypes["variant"] = {
+    control: "select",
+    options: ["base", "line", "sensitive"],
+    description: "Variant of the input",
+    table: {
+        type: {
+            summary: "base | line | sensitive",
+        },
+        defaultValue: {
+            summary: "base",
+        },
+    },
+}
 
 const meta: Meta = {
     title: "ui-input",
     tags: ["autodocs"],
     component: Input,
     args: {
-        placeholder: "John Doe.",
-        size: "base",
-        variant: "base",
         fullRounded: false,
+        placeholder: "John Doe.",
+        disabled: false,
     },
     argTypes: {
-        variant: {
-            control: "select",
-            options: ["base", "line", "sensitive"],
-            description: "Variant of the input",
-            table: {
-                type: {
-                    summary: "base | line | sensitive",
-                },
-                defaultValue: {
-                    summary: "base",
-                },
-            },
-        },
-        size: {
-            control: "select",
-            options: ["sm", "base", "md", "lg"],
-            description: "Size of the input",
-            table: {
-                type: {
-                    summary: "sm | base | md | lg",
-                },
-                defaultValue: {
-                    summary: "base",
-                },
-            },
-        },
         placeholder: {
             control: "text",
             description: "Placeholder of the input",
@@ -56,11 +57,22 @@ const meta: Meta = {
                 },
             },
         },
+        disabled: {
+            control: "boolean",
+            description: "Disabled input",
+            table: {
+                type: {
+                    summary: "boolean",
+                },
+                defaultValue: {
+                    summary: "false",
+                },
+            },
+        },
     },
     parameters: {
         layout: "centered",
         backgrounds: {
-            default: "light",
             grid: true,
         },
         docs: {
@@ -80,55 +92,75 @@ const meta: Meta = {
 type Story = StoryObj<typeof meta>
 
 export const Base: Story = {
+    args: {
+        size: "base",
+        variant: "base",
+    },
+    argTypes: {
+        size,
+        variant,
+    },
     parameters: {
         skipDecorator: true,
     },
 }
 
 export const Variants: Story = {
-    render: () => (
-        <>
-            <div>
-                <span className="font-medium">base</span>
-                <Input variant="base" placeholder="John Doe." />
-            </div>
-            <div>
-                <span className="font-medium">line</span>
-                <Input variant="line" placeholder="John Doe." />
-            </div>
-            <div>
-                <span className="font-medium">sensitive</span>
-                <Input variant="sensitive" placeholder="John Doe." />
-            </div>
-            <div>
-                <span className="font-medium">disabled</span>
-                <Input variant="base" placeholder="John Doe." disabled />
-            </div>
-        </>
-    ),
+    args: {
+        size: "base",
+    },
+    argTypes: {
+        size,
+    },
+    render: ({ size, placeholder, disabled, fullRounded }) => {
+        const variants = ["base", "line", "sensitive"]
+
+        return (
+            <>
+                {variants.map((variant) => (
+                    <div key={variant}>
+                        <span className="font-medium">{variant}</span>
+                        <Input
+                            variant={variant as any}
+                            size={size}
+                            disabled={disabled}
+                            placeholder={placeholder}
+                            fullRounded={fullRounded}
+                        />
+                    </div>
+                ))}
+            </>
+        )
+    },
 }
 
 export const Sizes: Story = {
-    render: () => (
-        <>
-            <div>
-                <span className="font-medium">small</span>
-                <Input size="sm" placeholder="John Doe." />
-            </div>
-            <div>
-                <span className="font-medium">base</span>
-                <Input size="base" placeholder="John Doe." />
-            </div>
-            <div>
-                <span className="font-medium">medium</span>
-                <Input size="md" placeholder="John Doe." />
-            </div>
-            <div>
-                <span className="font-medium">large</span>
-                <Input size="lg" placeholder="John Doe." />
-            </div>
-        </>
-    ),
+    args: {
+        variant: "base",
+    },
+    argTypes: {
+        variant,
+    },
+    render: ({ variant, placeholder, disabled, fullRounded }) => {
+        const sizes = ["sm", "base", "md", "lg"]
+
+        return (
+            <>
+                {sizes.map((size) => (
+                    <div key={size}>
+                        <span className="font-medium">{size}</span>
+                        <Input
+                            size={size as any}
+                            variant={variant}
+                            disabled={disabled}
+                            placeholder={placeholder}
+                            fullRounded={fullRounded}
+                        />
+                    </div>
+                ))}
+            </>
+        )
+    },
 }
 
 export default meta
