@@ -51,7 +51,7 @@ const meta: Meta = {
             grid: true,
         },
         docs: {
-            page: () => <DocsPage subtitle="Dialog component powered by React & TailwindCSS" />,
+            page: () => <DocsPage subtitle="Label component powered by React & TailwindCSS" />,
         },
     },
     decorators: [decorator],
