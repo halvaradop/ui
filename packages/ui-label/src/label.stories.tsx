@@ -1,17 +1,64 @@
-import type { Meta, StoryObj } from "@storybook/react"
+import type { ArgTypes, Meta, StoryObj } from "@storybook/react"
 import { Label } from "./index.js"
 import { Input } from "../../ui-input/src/index.js"
 import { decorator } from "@halvaradop/ui-utils/decorator"
+import { Title, Canvas, Subtitle, Controls } from "@storybook/blocks"
+
+const size: ArgTypes["size"] = {
+    control: "select",
+    options: ["sm", "base", "md"],
+    description: "Size of the label",
+    table: {
+        type: {
+            summary: "sm | base | md",
+        },
+        defaultValue: {
+            summary: "base",
+        },
+    },
+}
+
+const variant: ArgTypes["variant"] = {
+    control: "select",
+    options: ["base", "error", "flex"],
+    description: "Variant of the label",
+    table: {
+        type: {
+            summary: "base | error | flex",
+        },
+        defaultValue: {
+            summary: "base",
+        },
+    },
+}
 
 const meta: Meta = {
     title: "ui-label",
     tags: ["autodocs"],
     component: Label,
+    args: {
+        children: "Username",
+    },
+    argTypes: {
+        children: {
+            control: "text",
+            description: "Label text",
+        },
+    },
     parameters: {
         layout: "centered",
         backgrounds: {
-            default: "light",
             grid: true,
+        },
+        docs: {
+            page: () => (
+                <>
+                    <Title />
+                    <Subtitle>Dialog component powered by React & TailwindCSS</Subtitle>
+                    <Canvas />
+                    <Controls />
+                </>
+            ),
         },
     },
     decorators: [decorator],
@@ -19,22 +66,39 @@ const meta: Meta = {
 
 type Story = StoryObj<typeof meta>
 
-export const Sizes: Story = {
-    render: () => (
-        <div className="flex items-center gap-x-5">
-            <Label size="sm">Small</Label>
-            <Label size="base">Base</Label>
-            <Label size="md">Medium</Label>
-        </div>
-    ),
+export const Base: Story = {
+    args: {
+        size: "base",
+        variant: "base",
+    },
+    argTypes: {
+        size,
+        variant,
+    },
+    parameters: {
+        skipDecorator: true,
+    },
 }
 
-export const Flex: Story = {
-    render: () => (
-        <Label className="gap-y-5" variant="flex">
-            <Label>Name</Label>
-            <Label>Lastname</Label>
-        </Label>
+export const Sizes: Story = {
+    args: {
+        variant: "base",
+    },
+    argTypes: {
+        variant,
+    },
+    render: ({ children, variant }) => (
+        <div className="w-full flex items-center gap-x-5">
+            <Label size="sm" variant={variant}>
+                {children}
+            </Label>
+            <Label size="base" variant={variant}>
+                {children}
+            </Label>
+            <Label size="md" variant={variant}>
+                {children}
+            </Label>
+        </div>
     ),
 }
 
@@ -57,7 +121,7 @@ export const Error: Story = {
     ),
 }
 
-export const WithAsChild: Story = {
+export const AsSpan: Story = {
     render: () => (
         <Label asChild>
             <span>Name</span>
