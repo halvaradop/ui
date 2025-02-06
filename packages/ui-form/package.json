@@ -1,6 +1,6 @@
 {
   "name": "@halvaradop/ui-form",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": false,
   "description": "A customizable form component for @halvaradop/ui library with Tailwind CSS styling.",
   "type": "module",
