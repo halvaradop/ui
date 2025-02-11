@@ -1,8 +1,8 @@
 {
-  "name": "@halvaradop/ui-dialog",
-  "version": "0.1.2-beta.1",
-  "private": false,
-  "description": "A customizable dialog component for @halvaradop/ui library with Tailwind CSS styling.",
+  "name": "@halvaradop/ui-utils",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Utility functions and helpers for the @halvaradop/ui library",
   "type": "module",
   "scripts": {
     "dev": "tsup --watch",
@@ -18,12 +18,7 @@
     "type": "git",
     "url": "git+https://github.com/halvaradop/ui.git"
   },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/@halvaradop/ui-dialog"
-  },
   "keywords": [
-    "dialog",
     "react",
     "component",
     "tailwindcss",
@@ -41,17 +36,12 @@
     "dist"
   ],
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    }
-  },
-  "dependencies": {
-    "@halvaradop/ui-core": "workspace:*",
-    "class-variance-authority": "0.7.0"
-  },
-  "devDependencies": {
-    "@halvaradop/ui-utils": "workspace:*"
+    "./decorator": "./src/decorator.tsx",
+    "./tsup.config.base": {
+      "types": "./dist/tsup.config.base.d.ts",
+      "import": "./dist/tsup.config.base.js",
+      "require": "./dist/tsup.config.base.cjs"
+    },
+    "./tsconfig.base.json": "./tsconfig.base.json"
   }
 }
