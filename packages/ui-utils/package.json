@@ -37,6 +37,7 @@
   ],
   "exports": {
     "./decorator": "./src/decorator.tsx",
+    "./docs-page": "./src/docs-page.tsx",
     "./tsup.config.base": {
       "types": "./dist/tsup.config.base.d.ts",
       "import": "./dist/tsup.config.base.js",

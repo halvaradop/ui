@@ -1,7 +1,7 @@
 import type { Meta, StoryObj, ArgTypes } from "@storybook/react"
 import { Button } from "./index.jsx"
 import { decorator } from "@halvaradop/ui-utils/decorator"
-import { Title, Canvas, Subtitle, Controls } from "@storybook/blocks"
+import { DocsPage } from "@halvaradop/ui-utils/docs-page"
 
 const variant: ArgTypes["variant"] = {
     control: "select",
@@ -70,14 +70,7 @@ const meta: Meta = {
             grid: true,
         },
         docs: {
-            page: () => (
-                <>
-                    <Title />
-                    <Subtitle>Button Component powered by React & TailwindCSS</Subtitle>
-                    <Canvas />
-                    <Controls />
-                </>
-            ),
+            page: () => <DocsPage subtitle="Button Component powered by React & TailwindCSS" />,
         },
     },
     decorators: [decorator],

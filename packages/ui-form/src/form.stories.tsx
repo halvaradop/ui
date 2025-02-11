@@ -3,7 +3,7 @@ import { Form } from "./index.js"
 import { Input } from "../../ui-input/src/index.js"
 import { Label } from "../../ui-label/src/index.js"
 import { decorator } from "@halvaradop/ui-utils/decorator"
-import { Title, Canvas, Subtitle, Controls } from "@storybook/blocks"
+import { DocsPage } from "@halvaradop/ui-utils/docs-page"
 
 const meta: Meta = {
     title: "ui-form",
@@ -44,14 +44,7 @@ const meta: Meta = {
     parameters: {
         layout: "centered",
         docs: {
-            page: () => (
-                <>
-                    <Title />
-                    <Subtitle>Form component powered by React & TailwindCSS</Subtitle>
-                    <Canvas />
-                    <Controls />
-                </>
-            ),
+            page: () => <DocsPage subtitle="Form component powered by React & TailwindCSS" />,
         },
     },
     decorators: [decorator],

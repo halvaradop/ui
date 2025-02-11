@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react"
 import { Index } from "./index.jsx"
 import { decorator } from "@halvaradop/ui-utils/decorator"
-import { Title, Canvas, Subtitle, Controls } from "@storybook/blocks"
+import { DocsPage } from "@halvaradop/ui-utils/docs-page"
 
 const meta: Meta = {
     title: "ui-index",
@@ -16,14 +16,7 @@ const meta: Meta = {
             grid: true,
         },
         docs: {
-            page: () => (
-                <>
-                    <Title />
-                    <Subtitle>Template component powered by React & TailwindCSS</Subtitle>
-                    <Canvas />
-                    <Controls />
-                </>
-            ),
+            page: () => <DocsPage subtitle="Template component powered by React & TailwindCSS" />,
         },
     },
     decorators: [decorator],
