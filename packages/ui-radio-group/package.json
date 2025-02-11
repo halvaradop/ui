@@ -48,7 +48,6 @@
   },
   "devDependencies": {
     "@halvaradop/ui-utils": "workspace:*",
-    "@halvaradop/ui-label": "workspace:*",
-    "@halvaradop/ui-radio": "workspace:*"
+    "@halvaradop/ui-label": "workspace:*"
   }
 }

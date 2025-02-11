@@ -224,9 +224,6 @@ importers:
       '@halvaradop/ui-label':
         specifier: workspace:*
         version: link:../ui-label
-      '@halvaradop/ui-radio':
-        specifier: workspace:*
-        version: link:../ui-radio
       '@halvaradop/ui-utils':
         specifier: workspace:*
         version: link:../ui-utils
