@@ -3,7 +3,7 @@ import { RadioGroup } from "./index.js"
 import { Label } from "../../ui-label/src/index.js"
 import { Radio } from "../../ui-radio/src/index.js"
 import { decorator } from "@halvaradop/ui-utils/decorator"
-import { Title, Canvas, Subtitle, Controls } from "@storybook/blocks"
+import { DocsPage } from "@halvaradop/ui-utils/docs-page"
 
 const meta: Meta = {
     title: "ui-radio-group",
@@ -30,14 +30,7 @@ const meta: Meta = {
     parameters: {
         layout: "centered",
         docs: {
-            page: () => (
-                <>
-                    <Title />
-                    <Subtitle>Dialog component powered by React & TailwindCSS</Subtitle>
-                    <Canvas />
-                    <Controls />
-                </>
-            ),
+            page: () => <DocsPage subtitle="RadioGroup component powered by React & TailwindCSS" />,
         },
     },
     decorators: [decorator],
