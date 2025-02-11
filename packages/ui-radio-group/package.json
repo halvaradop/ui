@@ -1,6 +1,6 @@
 {
   "name": "@halvaradop/ui-radio-group",
-  "version": "0.1.0-beta.0",
+  "version": "0.2.0-beta.1",
   "private": false,
   "description": "A customizable Radio Group component for @halvaradop/ui library with Tailwind CSS styling.",
   "type": "module",
