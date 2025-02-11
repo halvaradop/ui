@@ -138,6 +138,9 @@ importers:
         specifier: 0.7.0
         version: 0.7.0
     devDependencies:
+      '@halvaradop/ui-button':
+        specifier: workspace:*
+        version: link:../ui-button
       '@halvaradop/ui-utils':
         specifier: workspace:*
         version: link:../ui-utils
@@ -151,6 +154,12 @@ importers:
         specifier: 0.7.0
         version: 0.7.0
     devDependencies:
+      '@halvaradop/ui-input':
+        specifier: workspace:*
+        version: link:../ui-input
+      '@halvaradop/ui-label':
+        specifier: workspace:*
+        version: link:../ui-label
       '@halvaradop/ui-utils':
         specifier: workspace:*
         version: link:../ui-utils
@@ -177,6 +186,9 @@ importers:
         specifier: 0.7.0
         version: 0.7.0
     devDependencies:
+      '@halvaradop/ui-input':
+        specifier: workspace:*
+        version: link:../ui-input
       '@halvaradop/ui-utils':
         specifier: workspace:*
         version: link:../ui-utils
@@ -190,6 +202,12 @@ importers:
         specifier: 0.7.0
         version: 0.7.0
     devDependencies:
+      '@halvaradop/ui-label':
+        specifier: workspace:*
+        version: link:../ui-label
+      '@halvaradop/ui-radio-group':
+        specifier: workspace:*
+        version: link:../ui-radio-group
       '@halvaradop/ui-utils':
         specifier: workspace:*
         version: link:../ui-utils
@@ -203,6 +221,12 @@ importers:
         specifier: 0.7.0
         version: 0.7.0
     devDependencies:
+      '@halvaradop/ui-label':
+        specifier: workspace:*
+        version: link:../ui-label
+      '@halvaradop/ui-radio':
+        specifier: workspace:*
+        version: link:../ui-radio
       '@halvaradop/ui-utils':
         specifier: workspace:*
         version: link:../ui-utils
