@@ -1,7 +1,7 @@
 import { merge, type ComponentProps, type ArgsFunction } from "@halvaradop/ui-core"
 import { cva, type VariantProps } from "class-variance-authority"
 
-export type CheckboxProps<T extends ArgsFunction> = VariantProps<T> & ComponentProps<"input", "type" | "size">
+export type CheckboxProps<T extends ArgsFunction> = ComponentProps<"input", "type" | "size"> & VariantProps<T>
 
 const internalVariants = cva("hidden absolute peer-checked:block", {
     variants: {
@@ -45,11 +45,19 @@ export const checkboxVariants = cva(
     }
 )
 
-export const Checkbox = ({ className, size, color, name, ref, ...props }: CheckboxProps<typeof checkboxVariants>) => {
+export const Checkbox = ({
+    className,
+    size,
+    color,
+    fullRounded,
+    name,
+    ref,
+    ...props
+}: CheckboxProps<typeof checkboxVariants>) => {
     return (
         <label className="flex items-center justify-center relative" htmlFor={name}>
             <input
-                className={merge(checkboxVariants({ className, size, color }), "peer")}
+                className={merge(checkboxVariants({ className, size, color, fullRounded }), "peer")}
                 type="checkbox"
                 name={name}
                 ref={ref}
