@@ -49,5 +49,8 @@
   "dependencies": {
     "@halvaradop/ui-core": "workspace:*",
     "class-variance-authority": "0.7.0"
+  },
+  "devDependencies": {
+    "@halvaradop/ui-utils": "workspace:*"
   }
 }

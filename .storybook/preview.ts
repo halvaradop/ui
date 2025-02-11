@@ -29,6 +29,9 @@ const preview: Preview = {
                 offsetY: 16,
             },
         },
+        docs: {
+            toc: true,
+        },
     },
 }
 
