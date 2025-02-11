@@ -2,7 +2,9 @@ import { useEffect, useState } from "react"
 import { Button } from "@halvaradop/ui-button"
 import type { Decorator } from "@storybook/react"
 
-export const decorator: Decorator = (Story) => {
+export const decorator: Decorator = (Story, { parameters }) => {
+    if (parameters.skipDecorator) return <Story />
+
     const [isDark, setIsDark] = useState(false)
 
     const handleToggleTheme = () => {

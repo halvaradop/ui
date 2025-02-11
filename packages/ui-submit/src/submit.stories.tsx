@@ -1,18 +1,77 @@
 "use client"
 import { FormEvent, useTransition } from "react"
-import type { Meta, StoryObj } from "@storybook/react"
+import type { ArgTypes, Meta, StoryObj } from "@storybook/react"
 import { Submit } from "./index.js"
 import { decorator } from "@halvaradop/ui-utils/decorator"
+import { Title, Canvas, Subtitle, Controls } from "@storybook/blocks"
+
+const size: ArgTypes["size"] = {
+    control: "select",
+    options: ["sm", "base", "md", "lg"],
+    description: "The size of the button",
+    table: {
+        type: {
+            summary: "sm | base | md | lg",
+        },
+        defaultValue: {
+            summary: "base",
+        },
+    },
+}
+
+const variant: ArgTypes["variant"] = {
+    control: "select",
+    options: ["base", "secondary", "inverted"],
+    description: "The variant of the button",
+    table: {
+        type: {
+            summary: "base | secondary | inverted",
+        },
+        defaultValue: {
+            summary: "base",
+        },
+    },
+}
 
 const meta: Meta = {
     title: "ui-submit",
     tags: ["autodocs"],
     component: Submit,
+    args: {
+        disabled: false,
+        value: "Submit",
+        pending: "Submitting...",
+    },
+    argTypes: {
+        value: {
+            description: "The text to display on the button",
+        },
+        pending: {
+            description: "The text to display on the button when it's in a pending state",
+        },
+        disabled: {
+            description: "Whether the button is disabled",
+            table: {
+                defaultValue: {
+                    summary: "false",
+                },
+            },
+        },
+    },
     parameters: {
         layout: "centered",
         backgrounds: {
-            default: "light",
             grid: true,
+        },
+        docs: {
+            page: () => (
+                <>
+                    <Title />
+                    <Subtitle>Dialog component powered by React & TailwindCSS</Subtitle>
+                    <Canvas />
+                    <Controls />
+                </>
+            ),
         },
     },
     decorators: [decorator],
@@ -20,71 +79,74 @@ const meta: Meta = {
 
 type Story = StoryObj<typeof meta>
 
-/**
- * Note: The `useTransition` hook doesn't support async callbacks directly. As a result,
- * the pending state will only be visible momentarily.
- * To observe the pending state for a longer duration, consider using React 19 (available in the beta branch)
- * or frameworks like Next.js that support Server-Side Rendering.
- */
-const Template = ({ className, ...props }: Parameters<typeof Submit>[0]) => {
-    const [isPending, startTransition] = useTransition()
-
-    const wait = async () => await new Promise<string>((resolve) => setTimeout(resolve, 2000))
-
-    const handleSubmit = async (event: FormEvent) => {
-        event.preventDefault()
-        startTransition(() => {
-            wait()
-        })
-    }
-
-    return (
-        <form className={className} onSubmit={handleSubmit}>
-            <Submit disabled={isPending} aria-disabled={isPending} {...props} />
-        </form>
-    )
+export const Base: Story = {
+    args: {
+        size: "base",
+        variant: "base",
+    },
+    argTypes: {
+        size,
+        variant,
+    },
+    parameters: {
+        skipDecorator: true,
+    },
 }
 
 export const Variants: Story = {
-    render: () => (
-        <>
-            <div>
-                <span className="font-medium">base</span>
-                <Template />
-            </div>
-            <div>
-                <span className="font-medium">seconday</span>
-                <Template variant="secondary" />
-            </div>
-            <div>
-                <span className="font-medium">inverted</span>
-                <Template variant="inverted" />
-            </div>
-        </>
-    ),
+    args: {
+        size: "base",
+    },
+    argTypes: {
+        size,
+    },
+    render: ({ size, disabled, pending, value }) => {
+        const variants = ["base", "secondary", "inverted"]
+        return (
+            <>
+                {variants.map((variant) => (
+                    <div key={variant}>
+                        <span className="font-medium block">{variant}</span>
+                        <Submit
+                            variant={variant as any}
+                            size={size}
+                            value={value}
+                            pending={pending}
+                            disabled={disabled}
+                        />
+                    </div>
+                ))}
+            </>
+        )
+    },
 }
 
 export const Sizes: Story = {
-    render: () => (
-        <>
-            <div>
-                <span className="font-medium">sm</span>
-                <Template size="sm" />
-            </div>
-            <div>
-                <span className="font-medium">base</span>
-                <Template size="base" />
-            </div>
-            <div>
-                <span className="font-medium">md</span>
-                <Template size="md" />
-            </div>
-            <div>
-                <span className="font-medium">lg</span>
-                <Template size="lg" />
-            </div>
-        </>
-    ),
+    args: {
+        variant: "base",
+    },
+    argTypes: {
+        variant,
+    },
+    render: ({ value, pending, disabled, variant }) => {
+        const sizes = ["sm", "base", "md", "lg"]
+        return (
+            <>
+                {sizes.map((size) => (
+                    <div key={size}>
+                        <span className="font-medium block">{size}</span>
+                        <Submit
+                            size={size as any}
+                            variant={variant}
+                            value={value}
+                            pending={pending}
+                            disabled={disabled}
+                        />
+                    </div>
+                ))}
+            </>
+        )
+    },
 }
 
 export default meta
