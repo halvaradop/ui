@@ -1,7 +1,7 @@
 import { useRef } from "react"
 import type { Meta, StoryObj } from "@storybook/react"
 import { Modal, innerDialogVariants } from "./index.js"
-import { Button } from "../../ui-button/src/index.js"
+import { Button } from "@halvaradop/ui-button"
 import { decorator } from "@halvaradop/ui-utils/decorator"
 import { DocsPage } from "@halvaradop/ui-utils/docs-page"
 
