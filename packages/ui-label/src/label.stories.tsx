@@ -1,6 +1,6 @@
 import type { ArgTypes, Meta, StoryObj } from "@storybook/react"
 import { Label } from "./index.js"
-import { Input } from "@halvaradop/ui-input"
+import { Input } from "../../ui-input/src/index.js"
 import { decorator } from "@halvaradop/ui-utils/decorator"
 import { DocsPage } from "@halvaradop/ui-utils/docs-page"
 
