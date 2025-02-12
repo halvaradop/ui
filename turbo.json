@@ -9,7 +9,10 @@
     },
     "dev": {
       "dependsOn": ["^dev"],
-      "cache": false
+      "outputs": ["dist"],
+      "inputs": ["src"],
+      "cache": false,
+      "persistent": false
     },
     "clean": {
       "cache": false,

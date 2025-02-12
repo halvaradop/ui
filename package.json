@@ -5,7 +5,7 @@
   "type": "module",
   "description": "A comprehensive UI library for React, built with Tailwind CSS and CVA (Class Variance Authority). It provides reusable components and supports JSX syntax.",
   "scripts": {
-    "dev": "turbo run dev --parallel",
+    "dev": "pnpm build:core && turbo run dev --parallel",
     "build": "pnpm build:core && turbo build --parallel --filter=!*core --filter=!*utils --filter=!*template",
     "build:core": "turbo run build --filter=*utils --filter=*core",
     "format": "prettier --write .",
@@ -70,7 +70,7 @@
     "storybook": "^8.5.2",
     "tailwindcss": "^3.4.17",
     "tsup": "^8.3.6",
-    "turbo": "^2.4.0",
+    "turbo": "^2.4.1",
     "typescript": "^5.7.3",
     "vite": "^6.0.11"
   },
@@ -78,7 +78,7 @@
     "react": ">=18",
     "react-dom": ">=18"
   },
-  "packageManager": "pnpm@9.0.0-rc.0",
+  "packageManager": "pnpm@10.3.0",
   "engines": {
     "node": ">=18"
   },
