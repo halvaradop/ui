@@ -1,6 +1,6 @@
 {
   "name": "@halvaradop/ui-checkbox",
-  "version": "0.1.0-beta.1",
+  "version": "0.2.0-beta.1",
   "private": false,
   "description": "A customizable Checkbox component for @halvaradop/ui library with Tailwind CSS styling.",
   "type": "module",
