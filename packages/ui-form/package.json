@@ -52,8 +52,6 @@
     "class-variance-authority": "0.7.0"
   },
   "devDependencies": {
-    "@halvaradop/ui-utils": "workspace:*",
-    "@halvaradop/ui-input": "workspace:*",
-    "@halvaradop/ui-label": "workspace:*"
+    "@halvaradop/ui-utils": "workspace:*"
   }
 }
