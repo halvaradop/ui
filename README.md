@@ -67,7 +67,7 @@ const config: Config = {
 export default config
 ```
 
-## CSS Variables
+### Customizing with CSS Variables
 
 The components support CSS variables to customize your components based on your application's design system. To set the CSS variables, define the required variables in your project's `.css` file. Then, extend the `colors` field in the `tailwind.config.ts` file to create new color names using the values of the previously defined CSS variables.
 
@@ -122,7 +122,7 @@ Below are some of the CSS variables used by the components of the `@halvaradop/u
 }
 ```
 
-### Multi theming
+### Multi-Theming Support
 
 The library supports only the `Dark Theme`. To update the CSS variables based on the dark theme, use the following code:
 
@@ -147,7 +147,7 @@ The library supports only the `Dark Theme`. To update the CSS variables based on
 }
 ```
 
-## Import CSS Variables in Tailwind Config
+### Integrating CSS Variables with TailwindCSS Configuration
 
 After defining the colors for your project using your design system or the default styles provided by the library, the next step is to create new color references using the CSS variables. The following code snippet demonstrates how to create some colors using these CSS variables. For more details, refer to the [tailwind.config.ts](https://github.com/halvaradop/ui/blob/master/tailwind.config.ts) file.
 
