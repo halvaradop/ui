@@ -95,7 +95,7 @@ export default config
 
 The `Modal` component supports CSS variables to customize its styles based on your design system. To set the CSS variables, define the required variables in your project's `.css` file. Then, extend the `colors` field in the `tailwind.config.ts` file to create new color names using the values of the previously defined CSS variables.
 
-Below are some of the CSS variables used by the `@halvaradop/ui-button` component. For a complete list of CSS variables, refer to the [index.css](https://github.com/halvaradop/ui/blob/master/index.css) file:
+Below are some of the CSS variables used by the `@halvaradop/ui-dialog` component. For a complete list of CSS variables, refer to the [index.css](https://github.com/halvaradop/ui/blob/master/index.css) file:
 
 ```css
 /* Default color scheme for light theme */
@@ -145,8 +145,6 @@ const config: Config = {
 
 export default config
 ```
-
-By following these steps, you can effectively document how to set and customize the CSS variables used by your library to define the design system.
 
 ## Notes
 

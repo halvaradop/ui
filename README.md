@@ -110,6 +110,7 @@ Below are some of the CSS variables used by the components of the `@halvaradop/u
   /* Input colors */
   --color-input: oklch(13% 0 100);
   --color-input-background: oklch(99% 0 0);
+
   /* Color for components with the disabled HTML attribute */
   --color-disabled: oklch(92% 0 0);
 

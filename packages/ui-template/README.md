@@ -1,9 +1,9 @@
-> [!WARNING]
-> This is not a real component provided by the `@halvaradop/ui` library. It is a template to facilitate the creation of new components within the library, offering default configurations and documentation. This package helps reduce the time required to build a component from scratch, allowing you to focus on adding new styles and features. For more information, please read the [Contributing Guide](https://github.com/halvaradop/ui/blob/master/.github/CONTRIBUTING.md).
-
 # @halvaradop/ui-template
 
 The `@halvaradop/ui-template` is an accessible, reusable, and customizable `Template` component that is part of the `@halvaradop/ui` library for React. Built with `React` and styled using `TailwindCSS`, it provides a set of pre-styled components designed to streamline and accelerate the development of user interfaces.
+
+> [!WARNING]
+> This is not a real component provided by the `@halvaradop/ui` library. It is a template to facilitate the creation of new components within the library, offering default configurations and documentation. This package helps reduce the time required to build a component from scratch, allowing you to focus on adding new styles and features. For more information, please read the [Contributing Guide](https://github.com/halvaradop/ui/blob/master/.github/CONTRIBUTING.md).
 
 ## Installation
 
@@ -57,38 +57,74 @@ import type { Config } from "tailwindcss"
 
 const config: Config = {
   content: ["./node_modules/@halvaradop/ui-*/**/*.{js,ts,jsx,tsx,mdx}"],
+  darkMode: "class",
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
 }
 
 export default config
 ```
 
-## Customizing The Design System
+### Customizing with CSS Variables
 
-The library uses CSS variables to define the design system. You can customize these variables to match your project's design requirements. Here are the available CSS variables and how to set them.
+The `Template` component supports CSS variables to customize its styles based on your design system. To set the CSS variables, define the required variables in your project's `.css` file. Then, extend the `colors` field in the `tailwind.config.ts` file to create new color names using the values of the previously defined CSS variables.
 
-### Available CSS Variables
-
-The following CSS variables are a few of the variables configured. If you want to see all of the CSS variables provided by the library, [please see](https://github.com/halvaradop/ui/blob/master/index.css).
-
-#### CSS Config
+Below are some of the CSS variables used by the `@halvaradop/ui-template` component. For a complete list of CSS variables, refer to the [index.css](https://github.com/halvaradop/ui/blob/master/index.css) file:
 
 ```css
+/* Default color scheme for light theme */
 :root {
+  /* Primary colors */
   --color-primary: oklch(13% 0 100);
+  --color-primary-hover: oklch(28% 0 100);
+
+  /* Secondary colors */
   --color-secondary: oklch(92% 0 0);
-  --color-ghost: oklch(92% 0 0);
+  --color-secondary-hover: oklch(95% 0 0);
+
+  /* Red color */
   --color-red: oklch(67% 0.2343 13);
+  --color-red-hover: oklch(81% 0.2343 13);
+
+  /* Blue color */
   --color-blue: oklch(62% 0.22 250);
+  --color-blue-hover: oklch(76% 0.22 250);
+
+  /* Green color */
   --color-green: oklch(86% 0.32 147);
+  --color-green-hover: oklch(100% 0.32 147);
+
+  /* Yellow color */
   --color-yellow: oklch(87% 0.2 90);
+  --color-yellow-hover: oklch(100% 0.2 90);
+
+  /* Text colors */
   --color-font-100: oklch(96% 0 360);
   --color-font-200: oklch(13% 0 100);
+
+  /* Ghost color used by the Button component */
+  --color-ghost: oklch(92% 0 0);
+
+  /* Input colors */
+  --color-input: oklch(13% 0 100);
+  --color-input-background: oklch(99% 0 0);
+
+  /* Color for components with the disabled HTML attribute */
+  --color-disabled: oklch(92% 0 0);
+
+  /* Modal colors */
+  --color-modal: oklch(99.7% 0.001 360);
+  --color-dialog: oklch(75.51% 0.001 360 / 50.27%);
+
+  /* Border colors */
+  --color-border: oklch(93.55% 0.001 360);
 }
 ```
 
-#### Multi-Theme Support
+### Multi-Theme Support
 
-If your application supports multiple themes, such as a dark theme, you can update the CSS variables accordingly. For example:
+The library supports only the `Dark Theme`. To update the CSS variables based on the dark theme, use the following code:
 
 ```css
 :is(html, body).dark {
@@ -97,9 +133,9 @@ If your application supports multiple themes, such as a dark theme, you can upda
 }
 ```
 
-#### Tailwind Config
+### Integrating CSS Variables with TailwindCSS Configuration
 
-Set the CSS variables in the `tailwind.config.{js|ts}` file as shown below
+After defining the colors for your project using your design system or the default styles provided by the library, the next step is to create new color references using the CSS variables. The following code snippet demonstrates how to create some colors using these CSS variables. For more details, refer to the [tailwind.config.ts](https://github.com/halvaradop/ui/blob/master/tailwind.config.ts) file.
 
 ```ts
 import type { Config } from "tailwindcss"
@@ -109,19 +145,50 @@ const config: Config = {
   theme: {
     extends: {
       colors: {
-        primary: "var(--color-primary)",
-        secondary: "var(--color-secondary)",
+        primary: {
+          DEFAULT: "var(--color-primary)",
+          hover: "var(--color-primary-hover)",
+        },
+        secondary: {
+          DEFAULT: "var(--color-secondary)",
+          hover: "var(--color-secondary-hover)",
+        },
+        color: {
+          100: "var(--color-font-100)",
+          200: "var(--color-font-200)",
+        },
+        red: {
+          DEFAULT: "var(--color-red)",
+          hover: "var(--color-red-hover)",
+        },
+        blue: {
+          DEFAULT: "var(--color-blue)",
+          hover: "var(--color-blue-hover)",
+        },
+        green: {
+          DEFAULT: "var(--color-green)",
+          hover: "var(--color-green-hover)",
+        },
+        yellow: {
+          DEFAULT: "var(--color-yellow)",
+          hover: "var(--color-yellow-hover)",
+        },
+        input: {
+          DEFAULT: "var(--color-input)",
+          background: "var(--color-input-background)",
+        },
+        modal: "var(--color-modal)",
         ghost: "var(--color-ghost)",
-        ...
-      }
-    }
-  }
+        dialog: "var(--color-dialog)",
+        border: "var(--color-border)",
+        disabled: "var(--color-disabled)",
+      },
+    },
+  },
 }
 
 export default config
 ```
-
-By following these steps, you can effectively document how to set and customize the CSS variables used by your library to define the design system.
 
 ## Notes
 
