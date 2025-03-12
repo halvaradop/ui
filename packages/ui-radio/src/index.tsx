@@ -4,7 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 
 export type RadioProps<T extends ArgsFunction> = VariantProps<T> & ComponentProps<"input", "type" | "size">
 
-export const radioVariants = cva("peer appearance-none rounded-full focus:outline-none", {
+export const radioVariants = cva("peer relative z-10 appearance-none rounded-full focus:outline-none", {
     variants: {
         size: {
             sm: "border size-3",
@@ -26,7 +26,7 @@ export const radioVariants = cva("peer appearance-none rounded-full focus:outlin
     },
 })
 
-const internalVariants = cva("block absolute rounded-full", {
+const internalVariants = cva("block absolute z-0 rounded-full", {
     variants: {
         size: {
             sm: "size-1",
@@ -49,13 +49,17 @@ const internalVariants = cva("block absolute rounded-full", {
 })
 
 export const Radio = forwardRef<HTMLInputElement, RadioProps<typeof radioVariants & typeof internalVariants>>(
-    ({ className, size, color, name, ...props }, ref) => {
+    ({ className, size, color, name, value, ...props }, ref) => {
         return (
-            <label className="w-min inline-flex items-center justify-center relative" htmlFor={name}>
+            <label
+                className="w-min inline-flex items-center justify-center relative hover:cursor-pointer"
+                htmlFor={name}
+            >
                 <input
                     className={merge(radioVariants({ className, size, color }))}
                     type="radio"
                     name={name}
+                    value={value}
                     ref={ref}
                     {...props}
                 />

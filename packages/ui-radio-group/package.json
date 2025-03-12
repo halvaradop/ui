@@ -44,10 +44,15 @@
   },
   "dependencies": {
     "@halvaradop/ui-core": "workspace:*",
+    "@halvaradop/ui-radio": "workspace:*",
     "class-variance-authority": "0.7.0"
   },
   "devDependencies": {
-    "@halvaradop/ui-utils": "workspace:*",
-    "@halvaradop/ui-label": "workspace:*"
+    "@halvaradop/ui-label": "workspace:*",
+    "@halvaradop/ui-utils": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   }
 }
