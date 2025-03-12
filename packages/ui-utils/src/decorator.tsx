@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import { Button } from "@halvaradop/ui-button"
 import type { Decorator } from "@storybook/react"
 
 export const decorator: Decorator = (Story, { parameters }) => {
@@ -22,9 +21,9 @@ export const decorator: Decorator = (Story, { parameters }) => {
             data-dark={isDark}
         >
             <div className="w-full dark:text-white">
-                <Button className="absolute top-[4%] left-[4%]" onClick={handleToggleTheme}>
+                <button className="absolute top-[4%] left-[4%]" onClick={handleToggleTheme}>
                     Theme
-                </Button>
+                </button>
                 <section className="story-container">
                     <Story />
                 </section>
