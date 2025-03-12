@@ -40,11 +40,6 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
-    },
-    "./radio": {
-      "types": "./dist/radio.d.ts",
-      "import": "./dist/radio.js",
-      "require": "./dist/radio.cjs"
     }
   },
   "dependencies": {

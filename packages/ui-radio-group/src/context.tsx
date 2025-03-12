@@ -1,12 +1,12 @@
 import { createContext, useContext, ChangeEventHandler } from "react"
 
-export interface RadioGroupContext {
+export interface RadioGroupContextType {
     name?: string
     selectedValue?: string
     onChange?: ChangeEventHandler<HTMLInputElement>
 }
 
-export const RadioGroupContext = createContext<RadioGroupContext>({
+export const RadioGroupContext = createContext<RadioGroupContextType>({
     name: "default",
     selectedValue: "",
     onChange: () => {},

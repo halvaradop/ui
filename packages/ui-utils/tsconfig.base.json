@@ -16,7 +16,8 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
-    "isolatedModules": true,
+    "skipDefaultLibCheck": true,
+    "isolatedModules": false,
     "baseUrl": "."
   },
   "include": ["src"]

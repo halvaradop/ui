@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react"
 import { RadioGroup } from "./index.js"
 import { Label } from "@halvaradop/ui-label"
-// This import is only need for this package to avoid cyclic dependencies
 import { Radio } from "./radio.js"
 import { decorator } from "@halvaradop/ui-utils/decorator"
 import { DocsPage } from "@halvaradop/ui-utils/docs-page"

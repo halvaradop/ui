@@ -4,6 +4,9 @@
   "private": false,
   "description": "A customizable radio button component for @halvaradop/ui library with Tailwind CSS styling.",
   "type": "module",
+  "types": "dist/index.d.ts",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
   "scripts": {
     "dev": "tsup --watch",
     "build": "tsup",
@@ -49,9 +52,5 @@
   "devDependencies": {
     "@halvaradop/ui-utils": "workspace:*",
     "@halvaradop/ui-label": "workspace:*"
-  },
-  "peerDependencies": {
-    "react": ">=18",
-    "react-dom": ">=18"
   }
 }

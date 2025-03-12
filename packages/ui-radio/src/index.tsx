@@ -49,7 +49,7 @@ const internalVariants = cva("block absolute z-0 rounded-full", {
 })
 
 export const Radio = forwardRef<HTMLInputElement, RadioProps<typeof radioVariants & typeof internalVariants>>(
-    ({ className, size, color, name, ...props }, ref) => {
+    ({ className, size, color, name, value, ...props }, ref) => {
         return (
             <label
                 className="w-min inline-flex items-center justify-center relative hover:cursor-pointer"
@@ -59,6 +59,7 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps<typeof radioVariant
                     className={merge(radioVariants({ className, size, color }))}
                     type="radio"
                     name={name}
+                    value={value}
                     ref={ref}
                     {...props}
                 />

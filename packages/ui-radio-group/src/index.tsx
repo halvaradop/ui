@@ -3,7 +3,6 @@ import { ChangeEvent, forwardRef, useState } from "react"
 import { merge, type ComponentProps, type WithChildrenProps, type ArgsFunction } from "@halvaradop/ui-core"
 import { cva, type VariantProps } from "class-variance-authority"
 import { RadioGroupContext } from "./context.js"
-export * from "./radio.js"
 
 export type RadioGroupProps<T extends ArgsFunction> = VariantProps<T> &
     WithChildrenProps<ComponentProps<"fieldset", "defaultValue">> & {
