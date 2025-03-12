@@ -48,7 +48,10 @@
   },
   "devDependencies": {
     "@halvaradop/ui-utils": "workspace:*",
-    "@halvaradop/ui-label": "workspace:*",
-    "@halvaradop/ui-radio-group": "workspace:*"
+    "@halvaradop/ui-label": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
   }
 }
