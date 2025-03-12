@@ -10,4 +10,5 @@ export const tsupConfig: Options = {
     clean: true,
     minify: true,
     external: ["vite", "tailwindcss"],
+    sourcemap: process.env.NODE_ENV !== "production",
 }

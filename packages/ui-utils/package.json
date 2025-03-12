@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "tsup --watch",
     "build": "tsup",
+    "build:release": "sh -c 'export NODE_ENV=production ; tsup'",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "clean": "turbo run clean:dist clean:modules clean:turbo --parallel",
@@ -33,7 +34,8 @@
   },
   "homepage": "https://github.com/halvaradop/ui#readme",
   "files": [
-    "dist"
+    "dist",
+    "scripts"
   ],
   "exports": {
     "./decorator": "./src/decorator.tsx",
