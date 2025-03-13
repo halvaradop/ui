@@ -28,7 +28,7 @@ pnpm add @halvaradop/ui-dialog@beta
 
 ## Usage
 
-The `Dialog` component offers two additional props for customization: `variant` and `size`. Import the `Dialog` component as shown below:
+The `Dialog` component does not accept any props; it simply applies default styles. Import the `Dialog` component as shown below:
 
 ```tsx
 "use client"
@@ -64,9 +64,9 @@ export default function App() {
 ```
 
 > [!TIP]
-> The `Dialog` component represents the dialog HTML tag to create the window at the top layer. The `modalVariants` function contains the styles for the content within the `Dialog` component.
+> The `Dialog` component represents the dialog HTML tag to create the window at the top layer. The `modalVariants` function contains the styles for the content within the `Dialog` component or just known as `modal`, the function exports a set of styles based in two variants called `variant` and `size`, this variants are similars that the receive like other components like `Button`, `Form`, `Input` and more.
 
-### Prop Values
+### Variant Values
 
 | Prop    | Values                   | Default |
 | ------- | ------------------------ | ------- |
