@@ -1,10 +1,10 @@
 import { forwardRef } from "react"
-import { merge, type ComponentProps, type WithChildrenProps, type ArgsFunction } from "@halvaradop/ui-core"
-import { cva, type VariantProps } from "class-variance-authority"
+import { merge, type ComponentProps, type WithChildrenProps } from "@halvaradop/ui-core"
+import { cva } from "class-variance-authority"
 
-export type DialogProps<T extends ArgsFunction> = VariantProps<T> & WithChildrenProps<ComponentProps<"dialog">>
+export type DialogProps = WithChildrenProps<ComponentProps<"dialog">>
 
-export const innerDialogVariants = cva("flex items-center justify-center", {
+export const modalVariants = cva("flex items-center justify-center", {
     variants: {
         variant: {
             base: "flex-col shadow bg-modal",
@@ -24,21 +24,19 @@ export const innerDialogVariants = cva("flex items-center justify-center", {
     },
 })
 
-export const Modal = forwardRef<HTMLDialogElement, DialogProps<typeof innerDialogVariants>>(
-    ({ className, children, ...props }, ref) => {
-        return (
-            <dialog
-                className={merge(
-                    "w-full min-h-screen max-w-none max-h-none items-center justify-center relative inset-0 bg-transparent backdrop:bg-dialog open:flex",
-                    className
-                )}
-                ref={ref}
-                {...props}
-            >
-                {children}
-            </dialog>
-        )
-    }
-)
+export const Dialog = forwardRef<HTMLDialogElement, DialogProps>(({ className, children, ...props }, ref) => {
+    return (
+        <dialog
+            className={merge(
+                "w-full min-h-screen max-w-none max-h-none items-center justify-center relative inset-0 bg-transparent backdrop:bg-dialog open:flex",
+                className
+            )}
+            ref={ref}
+            {...props}
+        >
+            {children}
+        </dialog>
+    )
+})
 
-Modal.displayName = "Dialog"
+Dialog.displayName = "Dialog"

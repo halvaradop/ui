@@ -1,6 +1,6 @@
 # @halvaradop/ui-dialog
 
-The `@halvaradop/ui-dialog` is an accessible, reusable, and customizable `Modal` component that is part of the `@halvaradop/ui` library for React. Built with `React` and styled using `TailwindCSS`, it provides a set of pre-styled components designed to streamline and accelerate the development of user interfaces.
+The `@halvaradop/ui-dialog` is an accessible, reusable, and customizable `Dialog` component that is part of the `@halvaradop/ui` library for React. Built with `React` and styled using `TailwindCSS`, it provides a set of pre-styled components designed to streamline and accelerate the development of user interfaces.
 
 ## Installation
 
@@ -28,13 +28,13 @@ pnpm add @halvaradop/ui-dialog@beta
 
 ## Usage
 
-The `Modal` component offers two additional props for customization: `variant` and `size`. Import the `Modal` component as shown below:
+The `Dialog` component does not accept any props; it simply applies default styles. Import the `Dialog` component as shown below:
 
 ```tsx
 "use client"
 import { useRef } from "react"
 import { Button } from "@halvaradop/ui-button"
-import { Modal, innerDialogVariants } from "@halvaradop/ui-dialog"
+import { Dialog, modalVariants } from "@halvaradop/ui-dialog"
 
 export default function App() {
   const modalRef = useRef<HTMLDialogElement>(null)
@@ -50,23 +50,23 @@ export default function App() {
   return (
     <>
       <Button onClick={() => handleToggleModal(true)}>Open</Button>
-      <Modal ref={modalRef}>
-        <div className={innerDialogVariants({ variant: "fixed" })}>
+      <Dialog ref={modalRef}>
+        <div className={modalVariants({ variant: "fixed" })}>
           <div>Modal content</div>
           <Button className="mt-4" onClick={() => handleToggleModal(false)}>
             Close
           </Button>
         </div>
-      </Modal>
+      </Dialog>
     </>
   )
 }
 ```
 
 > [!TIP]
-> The `Modal` component represents the dialog HTML tag to create the window at the top layer. The `innerDialogVariants` function contains the styles for the content within the `Modal` component.
+> The `Dialog` component represents the dialog HTML tag to create the window at the top layer. The `modalVariants` function contains the styles for the content within the `Dialog` component or just known as `modal`, the function exports a set of styles based in two variants called `variant` and `size`, this variants are similars that the receive like other components like `Button`, `Form`, `Input` and more.
 
-### Prop Values
+### Variant Values
 
 | Prop    | Values                   | Default |
 | ------- | ------------------------ | ------- |
@@ -93,7 +93,7 @@ export default config
 
 ### Customizing with CSS Variables
 
-The `Modal` component supports CSS variables to customize its styles based on your design system. To set the CSS variables, define the required variables in your project's `.css` file. Then, extend the `colors` field in the `tailwind.config.ts` file to create new color names using the values of the previously defined CSS variables.
+The `Dialog` component supports CSS variables to customize its styles based on your design system. To set the CSS variables, define the required variables in your project's `.css` file. Then, extend the `colors` field in the `tailwind.config.ts` file to create new color names using the values of the previously defined CSS variables.
 
 Below are some of the CSS variables used by the `@halvaradop/ui-dialog` component. For a complete list of CSS variables, refer to the [index.css](https://github.com/halvaradop/ui/blob/master/index.css) file:
 
