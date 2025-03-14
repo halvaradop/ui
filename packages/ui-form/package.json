@@ -56,5 +56,9 @@
     "@halvaradop/ui-utils": "workspace:*",
     "@halvaradop/ui-input": "workspace:*",
     "@halvaradop/ui-label": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   }
 }
