@@ -19,7 +19,7 @@ const internalVariants = cva("hidden absolute peer-checked:block", {
 })
 
 export const checkboxVariants = cva(
-    "appearance-none border border-gray-400 focus-visible:[outline-style:solid] focus-visible:outline-gray-400",
+    "appearance-none border border-base focus-visible:[outline-style:solid] focus-visible:outline-border",
     {
         variants: {
             size: {

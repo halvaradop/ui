@@ -15,11 +15,11 @@ export const submitVariants = cva(
     {
         variants: {
             variant: {
-                base: "text-color-100 border-primary bg-primary focus-visible:outline-primary disabled:bg-primary-hover",
+                base: "text-base border-primary bg-primary focus-visible:outline-primary disabled:bg-primary-hover",
                 secondary:
-                    "text-color-200 border-secondary bg-secondary focus-visible:outline-secondary disabled:bg-secondary-hover",
+                    "text-inverse border-secondary bg-secondary focus-visible:outline-secondary disabled:bg-secondary-hover",
                 inverted:
-                    "text-color-100 border-primary bg-primary focus-visible:outline-primary disabled:bg-primary-hover invert",
+                    "text-base border-primary bg-primary focus-visible:outline-primary disabled:bg-primary-hover invert",
             },
             size: {
                 sm: "h-9 px-3 text-sm rounded",
