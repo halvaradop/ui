@@ -76,8 +76,8 @@
     "vite": "^6.2.1"
   },
   "peerDependencies": {
-    "react": ">=18",
-    "react-dom": ">=18"
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
   "packageManager": "pnpm@10.3.0",
   "engines": {
