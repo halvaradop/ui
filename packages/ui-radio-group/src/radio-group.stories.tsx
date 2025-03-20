@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react"
 import { RadioGroup } from "./index.js"
-import { Label } from "../../ui-label/src/index.js"
-import { Radio } from "../../ui-radio/src/index.js"
+import { Label } from "@halvaradop/ui-label"
+import { Radio } from "./radio.js"
 import { decorator } from "@halvaradop/ui-utils/decorator"
 import { DocsPage } from "@halvaradop/ui-utils/docs-page"
 
