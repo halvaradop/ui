@@ -1,12 +1,13 @@
 "use client"
-import { ChangeEvent, useState } from "react"
+import { ChangeEvent, ChangeEventHandler, useState } from "react"
 import { merge, type ComponentProps, type WithChildrenProps, type ArgsFunction } from "@halvaradop/ui-core"
 import { cva, type VariantProps } from "class-variance-authority"
 import { RadioGroupContext } from "./context.js"
 
 export type RadioGroupProps<T extends ArgsFunction> = VariantProps<T> &
-    WithChildrenProps<ComponentProps<"fieldset", "defaultValue">> & {
+    WithChildrenProps<ComponentProps<"fieldset", "defaultValue" | "onChange">> & {
         defaultValue?: string
+        onChange?: ChangeEventHandler<HTMLInputElement>
     }
 
 export const radioGroupVariants = cva("flex", {
@@ -28,11 +29,13 @@ export const RadioGroup = ({
     defaultValue,
     children,
     ref,
+    onChange,
     ...props
 }: RadioGroupProps<typeof radioGroupVariants>) => {
     const [selectedValue, setSelectedValue] = useState(defaultValue)
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+        onChange?.(event)
         setSelectedValue(event.target.value)
     }
 
