@@ -53,6 +53,11 @@
     "class-variance-authority": "0.7.0"
   },
   "devDependencies": {
-    "@halvaradop/ui-utils": "workspace:*"
+    "@halvaradop/ui-utils": "workspace:*",
+    "@halvaradop/ui-input": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   }
 }
