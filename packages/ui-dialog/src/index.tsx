@@ -1,9 +1,9 @@
-import { merge, type ComponentProps, type WithChildrenProps, type ArgsFunction } from "@halvaradop/ui-core"
-import { cva, type VariantProps } from "class-variance-authority"
+import { merge, type ComponentProps, type WithChildrenProps } from "@halvaradop/ui-core"
+import { cva } from "class-variance-authority"
 
-export type DialogProps<T extends ArgsFunction> = VariantProps<T> & WithChildrenProps<ComponentProps<"dialog">>
+export type DialogProps = WithChildrenProps<ComponentProps<"dialog">>
 
-export const innerDialogVariants = cva("flex items-center justify-center", {
+export const modalVariants = cva("flex items-center justify-center", {
     variants: {
         variant: {
             base: "flex-col shadow bg-modal",
@@ -23,7 +23,7 @@ export const innerDialogVariants = cva("flex items-center justify-center", {
     },
 })
 
-export const Modal = ({ className, children, ref, ...props }: DialogProps<typeof innerDialogVariants>) => {
+export const Dialog = ({ className, children, ref, ...props }: DialogProps) => {
     return (
         <dialog
             className={merge(
@@ -38,4 +38,4 @@ export const Modal = ({ className, children, ref, ...props }: DialogProps<typeof
     )
 }
 
-Modal.displayName = "Dialog"
+Dialog.displayName = "Dialog"
