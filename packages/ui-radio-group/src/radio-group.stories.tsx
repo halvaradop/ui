@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react"
 import { RadioGroup } from "./index.js"
-import { Label } from "../../ui-label/src/index.js"
-import { Radio } from "../../ui-radio/src/index.js"
+import { Label } from "@halvaradop/ui-label"
+import { Radio } from "./radio.js"
 import { decorator } from "@halvaradop/ui-utils/decorator"
 import { DocsPage } from "@halvaradop/ui-utils/docs-page"
 
@@ -45,11 +45,11 @@ export const Base: Story = {
     render: ({ variant }) => (
         <RadioGroup name="food" variant={variant}>
             <Label className="flex items-center gap-x-2">
-                <Radio value="pizza" name="food" />
+                <Radio value="pizza" />
                 Pizza
             </Label>
             <Label className="flex items-center gap-x-2">
-                <Radio value="hamburger" name="food" />
+                <Radio value="hamburger" />
                 Hamburger
             </Label>
         </RadioGroup>

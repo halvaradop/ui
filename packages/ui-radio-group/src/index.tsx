@@ -1,9 +1,14 @@
 "use client"
-import { useEffect, useRef } from "react"
+import { ChangeEvent, ChangeEventHandler, useState } from "react"
 import { merge, type ComponentProps, type WithChildrenProps, type ArgsFunction } from "@halvaradop/ui-core"
 import { cva, type VariantProps } from "class-variance-authority"
+import { RadioGroupContext } from "./context.js"
 
-export type RadioGroupProps<T extends ArgsFunction> = VariantProps<T> & WithChildrenProps<ComponentProps<"fieldset">>
+export type RadioGroupProps<T extends ArgsFunction> = VariantProps<T> &
+    WithChildrenProps<ComponentProps<"fieldset", "defaultValue" | "onChange">> & {
+        defaultValue?: string
+        onChange?: ChangeEventHandler<HTMLInputElement>
+    }
 
 export const radioGroupVariants = cva("flex", {
     variants: {
@@ -24,30 +29,31 @@ export const RadioGroup = ({
     defaultValue,
     children,
     ref,
+    onChange,
     ...props
 }: RadioGroupProps<typeof radioGroupVariants>) => {
-    // @ts-ignore
-    const reference = useRef<HTMLFieldSetElement>(ref?.current)
+    const [selectedValue, setSelectedValue] = useState(defaultValue)
 
-    useEffect(() => {
-        if (!reference.current) return
-        const radioButtons = reference.current.querySelectorAll("input[type=radio]")
-        radioButtons.forEach((radio) => {
-            if (radio.getAttribute("value") === defaultValue) {
-                radio.setAttribute("checked", "checked")
-            }
-            radio.setAttribute("name", name ?? "default-radio-group")
-        })
-    }, [])
+    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+        onChange?.(event)
+        setSelectedValue(event.target.value)
+    }
 
     return (
-        <fieldset
-            className={merge(radioGroupVariants({ className, variant }))}
-            defaultValue={defaultValue}
-            ref={reference}
-            {...props}
-        >
-            {children}
-        </fieldset>
+        <RadioGroupContext.Provider value={{ name, selectedValue, onChange: handleChange }}>
+            <fieldset
+                className={merge(radioGroupVariants({ className, variant }))}
+                ref={ref}
+                name={name}
+                defaultValue={defaultValue}
+                data-value={selectedValue}
+                data-name={name}
+                {...props}
+            >
+                {children}
+            </fieldset>
+        </RadioGroupContext.Provider>
     )
 }
+
+RadioGroup.displayName = "RadioGroup"

@@ -2,6 +2,15 @@
 
 The `@halvaradop/ui-radio-group` is an accessible, reusable, and customizable `RadioGroup` component that is part of the `@halvaradop/ui` library for React. Built with `React` and styled using `TailwindCSS`, it provides a set of pre-styled components designed to streamline and accelerate the development of user interfaces.
 
+## Key Features
+
+- Implements the Compound Component Pattern for managing state and values between the `RadioGroup` and its child components.
+- Includes the `Radio` component from the `@halvaradop/ui-radio` package, re-exported for convenience.
+- Fully customizable and styled with TailwindCSS.
+
+> [!Note]
+> The `Radio` component is already included and re-exported from the `/radio` entry point of this package. You do not need to install `@halvaradop/ui-radio` separately. However, we recommend using the `Radio` component provided by this package to fully leverage the Compound Component Pattern and its associated logic.
+
 ## Installation
 
 This radio-group package offers two versions: one for React 18 and another for React 19.
@@ -28,15 +37,19 @@ pnpm add @halvaradop/ui-radio-group@beta
 
 ## Usage
 
-The `RadioGroup` component offers an additional prop for customization: `variant`. Import the `RadioGroup` component as shown below:
+The `@halvaradop/ui-radio-group` package simplifies the use of radio buttons by managing shared logic through the `RadioGroup` component. Some props, such as `variant`, `defaultValue`, and `onChange`, can be set directly on the `RadioGroup` component.
 
 ```tsx
-import { Radio } from "@halvaradop/ui-radio"
 import { RadioGroup } from "@halvaradop/ui-radio-group"
+import { Radio } from "@halvaradop/ui-radio-group/radio"
 
 export default function App() {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    console.log(event.target.value)
+  }
+
   return (
-    <RadioGroup>
+    <RadioGroup variant="row" name="food" onChange={handleChange}>
       <Radio value="pizza" />
       <Radio value="hamburger" />
     </RadioGroup>
@@ -46,9 +59,11 @@ export default function App() {
 
 ### Prop Values
 
-| Prop    | Values          | Default  |
-| ------- | --------------- | -------- |
-| variant | "row", "column" | "column" |
+| Prop         | Values               | Default   |
+| ------------ | -------------------- | --------- |
+| variant      | `"row", "column"`    | "column"  |
+| defaultValue | `string`             | undefined |
+| onChange     | `(e: Event) => void` | undefined |
 
 ## Styles
 
