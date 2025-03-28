@@ -63,7 +63,7 @@ export const Base: Story = {
         skipDecorator: true,
     },
     render: ({ size, color }) => (
-        <fieldset>
+        <fieldset className="space-y-2">
             <Label className="flex items-center gap-x-2">
                 <Radio size={size} color={color} />
             </Label>
