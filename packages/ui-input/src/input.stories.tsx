@@ -114,6 +114,7 @@ export const Variants: Story = {
                     <div key={variant}>
                         <span className="font-medium">{variant}</span>
                         <Input
+                            type={variant === "sensitive" ? "email" : "text"}
                             variant={variant as any}
                             size={size}
                             disabled={disabled}

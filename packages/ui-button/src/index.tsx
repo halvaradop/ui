@@ -8,16 +8,16 @@ export const buttonVariants = cva(
     {
         variants: {
             variant: {
-                base: "text-color-100 border-primary bg-primary hover:border-primary-hover hover:bg-primary-hover focus-visible:outline-primary-hover",
+                base: "text-base border-primary bg-primary hover:border-primary-hover hover:bg-primary-hover focus-visible:outline-primary-hover",
                 secondary:
-                    "text-color-200 border-secondary bg-secondary hover:border-secondary-hover hover:bg-secondary-hover focus-visible:outline-secondary",
-                ghost: "text-color-200 border-transparent bg-transparent hover:bg-ghost focus-visible:outline-ghost dark:hover:text-color-100",
-                link: "text-color-200 border-none hover:underline hover:underline-offset-8 hover:decoration-primary focus-visible:underline focus-visible:underline-offset-8 focus-visible:outline-none",
+                    "text-inverse border-secondary bg-secondary hover:border-secondary-hover hover:bg-secondary-hover focus-visible:outline-secondary",
+                ghost: "text-inverse border-transparent bg-transparent hover:bg-ghost focus-visible:outline-ghost dark:hover:text-color-100",
+                link: "text-inverse border-none hover:underline hover:underline-offset-8 hover:decoration-primary focus-visible:underline focus-visible:underline-offset-8 focus-visible:outline-none",
                 destructive:
-                    "text-white border-red bg-red hover:border-red-hover hover:bg-red-hover focus-visible:outline-red",
+                    "text-base border-red bg-red hover:border-red-hover hover:bg-red-hover focus-visible:outline-red",
                 outline:
-                    "text-color-200 border-ghost hover:bg-ghost focus-visible:outline-ghost dark:hover:text-color-100",
-                plain: "text-color-200 border-transparent focus-visible:outline-primary",
+                    "text-inverse border-ghost hover:bg-ghost focus-visible:outline-ghost dark:hover:text-color-100",
+                plain: "text-inverse border-transparent focus-visible:outline-primary",
             },
             size: {
                 sm: "h-9 px-3 text-sm rounded-md",
