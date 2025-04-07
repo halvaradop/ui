@@ -2,9 +2,6 @@
 
 The `@halvaradop/ui-select` is an accessible, reusable, and customizable `Select` component that is part of the `@halvaradop/ui` library for React. Built with `React` and styled using `TailwindCSS`, it provides a set of pre-styled components designed to streamline and accelerate the development of user interfaces.
 
-> [!WARNING]
-> This is not a real component provided by the `@halvaradop/ui` library. It is a select to facilitate the creation of new components within the library, offering default configurations and documentation. This package helps reduce the time required to build a component from scratch, allowing you to focus on adding new styles and features. For more information, please read the [Contributing Guide](https://github.com/halvaradop/ui/blob/master/.github/CONTRIBUTING.md).
-
 ## Installation
 
 This select package offers two versions: one for React 18 and another for React 19.
@@ -31,22 +28,56 @@ pnpm add @halvaradop/ui-select@beta
 
 ## Usage
 
-The `Select` component offers several additional props for customization. Import the `Select` component as shown below:
+The `Select` component is highly customizable and comes with several additional props to suit your needs. Below is an example of how to use the `Select` component along with its subcomponents:
 
 ```tsx
-import { Select } from "@halvaradop/ui-select"
+import { Select, SelectTrigger, SelectList, SelectOption } from "@halvaradop/ui-select"
 
 export default function App() {
-  return <Select />
+  return (
+    <Select name="example" defaultValue="option1">
+      <SelectTrigger>Select an option</SelectTrigger>
+      <SelectList>
+        <SelectOption value="option1">Option 1</SelectOption>
+        <SelectOption value="option2">Option 2</SelectOption>
+        <SelectOption value="option3">Option 3</SelectOption>
+      </SelectList>
+    </Select>
+  )
 }
 ```
 
-### Prop Values
+### Components Overview
 
-| Prop    | Values                   | Default |
-| ------- | ------------------------ | ------- |
-| variant |                          |         |
-| size    | "sm", "base", "md", "lg" | "base"  |
+The `@halvaradop/ui-select` package includes the following components, which can be imported either collectively or individually:
+
+- **`Select`**: The main wrapper component that provides context and state management for the select functionality.
+- **`SelectTrigger`**: The button that toggles the dropdown menu.
+- **`SelectList`**: The container that holds the list of selectable options.
+- **`SelectOption`**: Represents an individual option within the dropdown.
+
+#### Importing Components Individually
+
+For optimized imports, you can access each component directly by its entry point:
+
+```tsx
+import { Select } from "@halvaradop/ui-select/select"
+import { SelectTrigger } from "@halvaradop/ui-select/trigger"
+import { SelectList } from "@halvaradop/ui-select/list"
+import { SelectOption } from "@halvaradop/ui-select/option"
+```
+
+### Prop Reference
+
+The table below outlines the available props for each component, along with their accepted values and default settings:
+
+| Component       | Prop           | Accepted Values      | Default     |
+| --------------- | -------------- | -------------------- | ----------- |
+| `Select`        | `name`         | `string`             | `undefined` |
+| `Select`        | `defaultValue` | `string` or `number` | `undefined` |
+| `SelectTrigger` | `children`     | `ReactNode`          | `undefined` |
+| `SelectList`    | `children`     | `ReactNode`          | `undefined` |
+| `SelectOption`  | `value`        | `string` or `number` | `undefined` |
 
 ## Styles
 
