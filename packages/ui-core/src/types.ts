@@ -5,7 +5,9 @@ import { JSX } from "react"
  */
 export type HTMLTag = keyof JSX.IntrinsicElements | React.JSXElementConstructor<unknown>
 
-export type WithChildrenProps<Props extends object> = Omit<Props, "children"> & { children: React.ReactNode }
+export type WithChildrenProps<Props extends object> = Omit<Props, "children"> & {
+    children: React.ReactNode
+}
 
 /**
  * @unstable
