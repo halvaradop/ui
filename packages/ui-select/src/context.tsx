@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, type MouseEventHandler, type MouseEvent } from "react"
+import { createContext, useState, type MouseEventHandler, type MouseEvent, use } from "react"
 
 export interface SelectContextType {
     id: string
@@ -19,7 +19,7 @@ export const SelectContext = createContext<SelectContextType>({
 })
 
 export const useSelect = () => {
-    const context = useContext(SelectContext)
+    const context = use(SelectContext)
     if (!context) {
         throw new Error("useSelect must be used within a Select")
     }
@@ -47,11 +47,11 @@ export const SelectProvider = ({ name, defaultValue, children }: SelectProviderP
     }
 
     return (
-        <SelectContext.Provider
+        <SelectContext
             value={{ id: "select-id", name, selectedValue, open, onTrigger: handleTrigger, onChange: handleChange }}
         >
             {children}
-        </SelectContext.Provider>
+        </SelectContext>
     )
 }
 
