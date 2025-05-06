@@ -1,7 +1,7 @@
+import { useState } from "react"
 import type { Meta, StoryObj } from "@storybook/react"
-import { RadioGroup } from "./index.js"
+import { RadioGroup, Radio } from "./index.js"
 import { Label } from "@halvaradop/ui-label"
-import { Radio } from "./radio.js"
 import { decorator } from "@halvaradop/ui-utils/decorator"
 import { DocsPage } from "@halvaradop/ui-utils/docs-page"
 
@@ -26,6 +26,16 @@ const meta: Meta = {
                 },
             },
         },
+        color: {
+            control: "select",
+            options: ["green", "blue", "red", "yellow", "primary"],
+            description: "Color of the radio group",
+            table: {
+                type: {
+                    summary: "green | blue | red | yellow | primary",
+                },
+            },
+        },
     },
     parameters: {
         layout: "centered",
@@ -42,18 +52,21 @@ export const Base: Story = {
     parameters: {
         skipDecorator: true,
     },
-    render: ({ variant }) => (
-        <RadioGroup name="food" variant={variant}>
-            <Label className="flex items-center gap-x-2">
-                <Radio value="pizza" name="food" />
-                Pizza
-            </Label>
-            <Label className="flex items-center gap-x-2">
-                <Radio value="hamburger" name="food" />
-                Hamburger
-            </Label>
-        </RadioGroup>
-    ),
+    render: ({ variant, color }) => {
+        const [food, setFood] = useState<string>("")
+        return (
+            <RadioGroup value={food} name="food" variant={variant} onChange={(value) => setFood(value)}>
+                <Label className="flex items-center gap-x-2">
+                    <Radio value="pizza" name="food" color={color} />
+                    Pizza
+                </Label>
+                <Label className="flex items-center gap-x-2">
+                    <Radio value="hamburger" name="food" color={color} />
+                    Hamburger
+                </Label>
+            </RadioGroup>
+        )
+    },
 }
 
 export const DefaultChecked: Story = {
