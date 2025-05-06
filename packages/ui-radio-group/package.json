@@ -1,6 +1,6 @@
 {
   "name": "@halvaradop/ui-radio-group",
-  "version": "0.3.0",
+  "version": "0.3.2",
   "private": false,
   "description": "A customizable Radio Group component for @halvaradop/ui library with Tailwind CSS styling.",
   "type": "module",
@@ -46,6 +46,16 @@
       "types": "./dist/radio.d.ts",
       "import": "./dist/radio.js",
       "require": "./dist/radio.cjs"
+    },
+    "./radio-group": {
+      "types": "./dist/radio-group.d.ts",
+      "import": "./dist/radio-group.js",
+      "require": "./dist/radio-group.cjs"
+    },
+    "./context": {
+      "types": "./dist/context.d.ts",
+      "import": "./dist/context.js",
+      "require": "./dist/context.cjs"
     }
   },
   "dependencies": {

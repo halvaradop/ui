@@ -1,7 +1,12 @@
 import { Radio as DefaultRadio, radioVariants, type RadioProps } from "@halvaradop/ui-radio"
 import { useRadioGroup } from "./context.js"
 
-const Radio = ({ name, value, ref, ...props }: Omit<RadioProps<typeof radioVariants>, "onChange">) => {
+const Radio = ({
+    name,
+    value,
+    ref,
+    ...props
+}: Omit<RadioProps<typeof radioVariants>, "value" | "onChange"> & { value: string }) => {
     const { name: defaultName, selectedValue, onChange } = useRadioGroup()
 
     return (
@@ -10,7 +15,7 @@ const Radio = ({ name, value, ref, ...props }: Omit<RadioProps<typeof radioVaria
             name={name ?? defaultName}
             value={value}
             checked={selectedValue === value}
-            onChange={onChange}
+            onChange={() => onChange?.(value)}
             {...props}
         />
     )
