@@ -2,6 +2,7 @@ import { Radio as DefaultRadio, radioVariants, type RadioProps } from "@halvarad
 import { useRadioGroup } from "./context.js"
 
 const Radio = ({
+    className,
     name,
     value,
     ref,
@@ -11,6 +12,7 @@ const Radio = ({
 
     return (
         <DefaultRadio
+            className={className}
             ref={ref}
             name={name ?? defaultName}
             value={value}
