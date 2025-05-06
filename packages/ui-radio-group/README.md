@@ -4,6 +4,7 @@ The `@halvaradop/ui-radio-group` is an accessible, reusable, and customizable `R
 
 > [!NOTE]
 > This package uses the `Radio` component imported from the `@halvaradop/ui-radio` package to customize the radio component for use with the `RadioGroup` component. It employs the Compound Component Pattern to share logic internally between connected components. However, due to this implementation, TailwindCSS may not recognize the classes used by the `Radio` component, leading to errors and unexpected behavior. To resolve this issue, the team recommends installing the `@halvaradop/ui-radio` package directly. This ensures that TailwindCSS can properly recognize and apply the required classes for the `Radio` component.
+> For more detailed information and potential solutions, please read the [open discussion #144](https://github.com/halvaradop/ui/issues/144).
 
 ## Installation
 
