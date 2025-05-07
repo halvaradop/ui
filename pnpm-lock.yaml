@@ -298,6 +298,15 @@ importers:
         specifier: workspace:*
         version: link:../ui-utils
 
+  packages/ui-slot:
+    devDependencies:
+      '@halvaradop/ui-core':
+        specifier: workspace:*
+        version: link:../ui-core
+      '@halvaradop/ui-utils':
+        specifier: workspace:*
+        version: link:../ui-utils
+
   packages/ui-submit:
     dependencies:
       '@halvaradop/ui-core':
