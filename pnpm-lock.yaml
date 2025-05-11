@@ -92,6 +92,9 @@ importers:
       '@halvaradop/ui-core':
         specifier: workspace:*
         version: link:../ui-core
+      '@halvaradop/ui-slot':
+        specifier: workspace:*
+        version: link:../ui-slot
       class-variance-authority:
         specifier: 0.7.0
         version: 0.7.0
@@ -215,6 +218,9 @@ importers:
       '@halvaradop/ui-core':
         specifier: workspace:*
         version: link:../ui-core
+      '@halvaradop/ui-slot':
+        specifier: workspace:*
+        version: link:../ui-slot
       class-variance-authority:
         specifier: 0.7.0
         version: 0.7.0

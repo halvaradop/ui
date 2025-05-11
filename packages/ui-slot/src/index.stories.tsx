@@ -1,14 +1,43 @@
 import type { Meta, StoryObj } from "@storybook/react"
-import { Index } from "../../ui-template/src/index.js"
+import { Slot, SlotProps } from "./index.js"
 import { decorator } from "@halvaradop/ui-utils/decorator"
 import { DocsPage } from "@halvaradop/ui-utils/docs-page"
 
 const meta: Meta = {
-    title: "ui-index",
+    title: "ui-slot",
     tags: ["autodocs"],
-    component: Index,
-    args: {},
-    argTypes: {},
+    component: Slot,
+    args: {
+        children: "div",
+    },
+    argTypes: {
+        children: {
+            description: "The content of the Component",
+            control: {
+                type: "text",
+            },
+            table: {
+                type: {
+                    summary: "ReactNode | String",
+                },
+                defaultValue: {
+                    summary: "undefined",
+                },
+            },
+        },
+        asChild: {
+            control: "boolean",
+            description: "Make the slot a child of the component",
+            table: {
+                type: {
+                    summary: "boolean",
+                },
+                defaultValue: {
+                    summary: "false",
+                },
+            },
+        },
+    },
     parameters: {
         layout: "centered",
         backgrounds: {
@@ -16,11 +45,11 @@ const meta: Meta = {
             grid: true,
         },
         docs: {
-            page: () => <DocsPage subtitle="Template component powered by React & TailwindCSS" />,
+            page: () => <DocsPage subtitle="Slot component" />,
         },
     },
     decorators: [decorator],
-} satisfies Meta<typeof Index>
+} satisfies Meta<SlotProps<"div">>
 
 type Story = StoryObj<typeof meta>
 
@@ -28,8 +57,10 @@ export const Base: Story = {
     parameters: {
         skipDecorator: true,
     },
+    render: ({ children, asChild }) => {
+        const Component = asChild ? Slot : "div"
+        return <Component>{children}</Component>
+    },
 }
-
-export const Variants: Story = {}
 
 export default meta
