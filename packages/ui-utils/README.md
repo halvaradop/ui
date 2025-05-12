@@ -2,7 +2,7 @@
 
 The `@halvaradop/ui-utils` package centralizes shared configurations and utilities used by the `@halvaradop/ui` library that are not included in the build process of the packages. While it may seem similar to `@halvaradop/ui-core`, the focus and approach of these two packages are different. `@halvaradop/ui-core` includes its data in the build, whereas `@halvaradop/ui-utils` does not.
 
-> [!NOTE]
+> [!WARNING]
 > This package is not published on npm because it only contains shared configurations useful for the packages within the library. However, it should be used in the majority of the packages due to its file configurations and more details.
 
 ## Usage

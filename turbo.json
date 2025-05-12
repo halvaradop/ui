@@ -7,6 +7,10 @@
       "inputs": ["src"],
       "cache": true
     },
+    "build:release": {
+      "dependsOn": ["^build:release"],
+      "cache": false
+    },
     "dev": {
       "dependsOn": ["^dev"],
       "outputs": ["dist"],

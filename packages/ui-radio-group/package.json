@@ -1,12 +1,13 @@
 {
   "name": "@halvaradop/ui-radio-group",
-  "version": "0.2.0",
+  "version": "0.3.3",
   "private": false,
   "description": "A customizable Radio Group component for @halvaradop/ui library with Tailwind CSS styling.",
   "type": "module",
   "scripts": {
     "dev": "tsup --watch",
     "build": "tsup",
+    "build:release": "sh -c 'export NODE_ENV=production ; tsup'",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "clean": "turbo run clean:dist clean:modules clean:turbo --parallel",
@@ -40,13 +41,34 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
+    },
+    "./radio": {
+      "types": "./dist/radio.d.ts",
+      "import": "./dist/radio.js",
+      "require": "./dist/radio.cjs"
+    },
+    "./radio-group": {
+      "types": "./dist/radio-group.d.ts",
+      "import": "./dist/radio-group.js",
+      "require": "./dist/radio-group.cjs"
+    },
+    "./context": {
+      "types": "./dist/context.d.ts",
+      "import": "./dist/context.js",
+      "require": "./dist/context.cjs"
     }
   },
   "dependencies": {
     "@halvaradop/ui-core": "workspace:*",
+    "@halvaradop/ui-radio": "workspace:*",
     "class-variance-authority": "0.7.0"
   },
   "devDependencies": {
+    "@halvaradop/ui-label": "workspace:*",
     "@halvaradop/ui-utils": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   }
 }

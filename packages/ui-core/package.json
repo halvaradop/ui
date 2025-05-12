@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "tsup --watch",
     "build": "tsup",
+    "build:release": "sh -c 'export NODE_ENV=production ; tsup'",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "clean": "turbo run clean:dist clean:modules clean:turbo --parallel",
@@ -61,5 +62,9 @@
   "devDependencies": {
     "clsx": "^2.1.1",
     "@halvaradop/ui-utils": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   }
 }

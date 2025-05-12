@@ -1,12 +1,13 @@
 {
   "name": "@halvaradop/ui-dialog",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "private": false,
-  "description": "A customizable dialog component for @halvaradop/ui library with Tailwind CSS styling.",
+  "description": "A customizable Dialog component for @halvaradop/ui library with Tailwind CSS styling.",
   "type": "module",
   "scripts": {
     "dev": "tsup --watch",
     "build": "tsup",
+    "build:release": "sh -c 'export NODE_ENV=production ; tsup'",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "clean": "turbo run clean:dist clean:modules clean:turbo --parallel",
@@ -53,5 +54,9 @@
   },
   "devDependencies": {
     "@halvaradop/ui-utils": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   }
 }

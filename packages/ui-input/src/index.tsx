@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 export type InputProps<T extends ArgsFunction> = VariantProps<T> & ComponentProps<"input", "size">
 
 export const inputVariants = cva(
-    "text-primary border bg-input-background focus-visible:outline-none disabled:cursor-not-allowed disabled:text-disabled disabled:border-disabled disabled:bg-disabled",
+    "text-inverse border bg-input-background focus-visible:outline-none disabled:cursor-not-allowed disabled:text-disabled disabled:border-disabled disabled:bg-disabled",
     {
         variants: {
             size: {
@@ -15,10 +15,10 @@ export const inputVariants = cva(
                 lg: "h-11 indent-4 text-lg rounded-xl",
             },
             variant: {
-                base: "caret-primary border-input focus-visible:ring-1 focus-visible:border-input focus-visible:ring-input",
-                line: "border-0 border-b border-input rounded-none",
+                base: "caret-primary border-base focus-visible:ring-1 focus-visible:border-base focus-visible:ring-border",
+                line: "border-0 border-b border-base rounded-none",
                 sensitive:
-                    "focus-visible:ring-1 focus-visible:border-primary focus-visible:ring-primary usinvalid:text-rose-300 usinvalid:placeholder-rose-400  usinvalid:border-rose-400 usinvalid:focus-within:ring-rose-400 usvalid:text-green-400 usvalid:border-green-400 usvalid:focus-within:ring-green-400 input-empty:usinvalid:border-inherit input-empty:usinvalid:placeholder-slate-300 input-empty:usinvalid:caret-slate-600 input-empty:usinvalid:focus-within:border-slate-700 input-empty:usinvalid:focus-within:ring-slate-700",
+                    "focus-visible:ring-1 focus-visible:border-base focus-visible:ring-border usinvalid:text-red-hover usinvalid:placeholder-red-hover usinvalid:border-red-hover usinvalid:focus-within:ring-red-hover usvalid:text-green-hover usvalid:border-green-hover usvalid:focus-within:ring-green-hover input-empty:usinvalid:border-inherit input-empty:usinvalid:placeholder-border-md input-empty:usinvalid:caret-border-md input-empty:usinvalid:focus-within:border-md input-empty:usinvalid:focus-within:ring-border-md",
             },
             fullWidth: {
                 true: "w-full",

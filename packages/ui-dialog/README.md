@@ -1,6 +1,6 @@
 # @halvaradop/ui-dialog
 
-The `@halvaradop/ui-dialog` is an accessible, reusable, and customizable `Modal` component that is part of the `@halvaradop/ui` library for React. Built with `React` and styled using `TailwindCSS`, it provides a set of pre-styled components designed to streamline and accelerate the development of user interfaces.
+The `@halvaradop/ui-dialog` is an accessible, reusable, and customizable `Dialog` component that is part of the `@halvaradop/ui` library for React. Built with `React` and styled using `TailwindCSS`, it provides a set of pre-styled components designed to streamline and accelerate the development of user interfaces.
 
 ## Installation
 
@@ -28,13 +28,13 @@ pnpm add @halvaradop/ui-dialog@beta
 
 ## Usage
 
-The `Modal` component offers two additional props for customization: `variant` and `size`. Import the `Modal` component as shown below:
+The `Dialog` component does not accept any props; it simply applies default styles. Import the `Dialog` component as shown below:
 
 ```tsx
 "use client"
 import { useRef } from "react"
 import { Button } from "@halvaradop/ui-button"
-import { Modal, innerDialogVariants } from "@halvaradop/ui-dialog"
+import { Dialog, modalVariants } from "@halvaradop/ui-dialog"
 
 export default function App() {
   const modalRef = useRef<HTMLDialogElement>(null)
@@ -50,23 +50,23 @@ export default function App() {
   return (
     <>
       <Button onClick={() => handleToggleModal(true)}>Open</Button>
-      <Modal ref={modalRef}>
-        <div className={innerDialogVariants({ variant: "fixed" })}>
+      <Dialog ref={modalRef}>
+        <div className={modalVariants({ variant: "fixed" })}>
           <div>Modal content</div>
           <Button className="mt-4" onClick={() => handleToggleModal(false)}>
             Close
           </Button>
         </div>
-      </Modal>
+      </Dialog>
     </>
   )
 }
 ```
 
 > [!TIP]
-> The `Modal` component represents the dialog HTML tag to create the window at the top layer. The `innerDialogVariants` function contains the styles for the content within the `Modal` component.
+> The `Dialog` component represents the dialog HTML tag to create the window at the top layer. The `modalVariants` function contains the styles for the content within the `Dialog` component or just known as `modal`, the function exports a set of styles based in two variants called `variant` and `size`, this variants are similars that the receive like other components like `Button`, `Form`, `Input` and more.
 
-### Prop Values
+### Variant Values
 
 | Prop    | Values                   | Default |
 | ------- | ------------------------ | ------- |
@@ -82,71 +82,69 @@ import type { Config } from "tailwindcss"
 
 const config: Config = {
   content: ["./node_modules/@halvaradop/ui-*/**/*.{js,ts,jsx,tsx,mdx}"],
+  darkMode: "class",
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
 }
 
 export default config
 ```
 
-## Customizing The Design System
+### Customizing with CSS Variables
 
-The library uses CSS variables to define the design system. You can customize these variables to match your project's design requirements. Here are the available CSS variables and how to set them.
+The `Dialog` component supports CSS variables to customize its styles based on your design system. To set the CSS variables, define the required variables in your project's `.css` file. Then, extend the `colors` field in the `tailwind.config.ts` file to create new color names using the values of the previously defined CSS variables.
 
-### Available CSS Variables
-
-The following CSS variables are a few of the variables configured. If you want to see all of the CSS variables provided by the library, [please see](https://github.com/halvaradop/ui/blob/master/index.css).
-
-#### CSS Config
+Below are some of the CSS variables used by the `@halvaradop/ui-dialog` component. For a complete list of CSS variables, refer to the [index.css](https://github.com/halvaradop/ui/blob/master/index.css) file:
 
 ```css
+/* Default color scheme for light theme */
 :root {
-  --color-primary: oklch(13% 0 100);
-  --color-secondary: oklch(92% 0 0);
-  --color-ghost: oklch(92% 0 0);
-  --color-red: oklch(67% 0.2343 13);
-  --color-blue: oklch(62% 0.22 250);
-  --color-green: oklch(86% 0.32 147);
-  --color-yellow: oklch(87% 0.2 90);
-  --color-font-100: oklch(96% 0 360);
-  --color-font-200: oklch(13% 0 100);
+  /* Modal color used by interalModal */
+  --color-modal: oklch(99.7% 0.001 360);
+
+  /* Dialog color used by Modal component */
+  --color-dialog: oklch(75.51% 0.001 360 / 50.27%);
 }
 ```
 
-#### Multi-Theme Support
+### Multi-Theming Support
 
-If your application supports multiple themes, such as a dark theme, you can update the CSS variables accordingly. For example:
+The library supports only the `Dark Theme`. To update the CSS variables based on the dark theme, use the following code:
 
 ```css
+/* Dark theme color scheme */
 :is(html, body).dark {
-  --color-primary: oklch(92% 0 0);
-  --color-secondary: oklch(13% 0 100);
+  --color-modal: oklch(99.7% 0.001 360);
+  --color-dialog: oklch(75.51% 0.001 360 / 50.27%);
 }
 ```
 
-#### Tailwind Config
+### Integrating CSS Variables with TailwindCSS Configuration
 
-Set the CSS variables in the `tailwind.config.{js|ts}` file as shown below
+After defining the colors for your project using your design system or the default styles provided by the library, the next step is to create new color references using the CSS variables. The following code snippet demonstrates how to create some colors using these CSS variables. For more details, refer to the [tailwind.config.ts](https://github.com/halvaradop/ui/blob/master/tailwind.config.ts) file.
 
 ```ts
 import type { Config } from "tailwindcss"
 
 const config: Config = {
+  content: ["./node_modules/@halvaradop/ui-*/**/*.{js,ts,jsx,tsx,mdx}"],
   darkMode: "class",
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
   theme: {
     extends: {
       colors: {
-        primary: "var(--color-primary)",
-        secondary: "var(--color-secondary)",
-        ghost: "var(--color-ghost)",
-        ...
-      }
-    }
-  }
+        modal: "var(--color-modal)",
+        dialog: "var(--color-dialog)",
+      },
+    },
+  },
 }
 
 export default config
 ```
-
-By following these steps, you can effectively document how to set and customize the CSS variables used by your library to define the design system.
 
 ## Notes
 

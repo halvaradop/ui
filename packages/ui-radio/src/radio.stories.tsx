@@ -1,7 +1,7 @@
 import type { ArgTypes, Meta, StoryObj } from "@storybook/react"
 import { Radio } from "./index.js"
-import { Label } from "../../ui-label/src/index.js"
 import { RadioGroup } from "../../ui-radio-group/src/index.js"
+import { Label } from "@halvaradop/ui-label"
 import { decorator } from "@halvaradop/ui-utils/decorator"
 import { DocsPage } from "@halvaradop/ui-utils/docs-page"
 
@@ -64,7 +64,7 @@ export const Base: Story = {
         skipDecorator: true,
     },
     render: ({ size, color }) => (
-        <RadioGroup>
+        <fieldset className="space-y-2">
             <Label className="flex items-center gap-x-2">
                 <Radio size={size} color={color} />
             </Label>
@@ -77,7 +77,7 @@ export const Base: Story = {
             <Label className="flex items-center gap-x-2">
                 <Radio size={size} color={color} />
             </Label>
-        </RadioGroup>
+        </fieldset>
     ),
 }
 
@@ -89,7 +89,7 @@ export const Sizes: Story = {
         color,
     },
     render: ({ color }) => (
-        <RadioGroup>
+        <fieldset>
             <Label className="flex items-center gap-x-2">
                 sm
                 <Radio size="sm" color={color} />
@@ -106,7 +106,7 @@ export const Sizes: Story = {
                 lg
                 <Radio size="lg" color={color} />
             </Label>
-        </RadioGroup>
+        </fieldset>
     ),
 }
 
@@ -118,7 +118,7 @@ export const Colors: Story = {
         size,
     },
     render: ({ size }) => (
-        <RadioGroup>
+        <fieldset>
             <Label className="flex items-center gap-x-2">
                 green
                 <Radio color="green" size={size} />
@@ -139,7 +139,7 @@ export const Colors: Story = {
                 primary
                 <Radio color="primary" size={size} />
             </Label>
-        </RadioGroup>
+        </fieldset>
     ),
 }
 

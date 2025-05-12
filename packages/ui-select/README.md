@@ -1,22 +1,19 @@
-# @halvaradop/ui-template
+# @halvaradop/ui-select
 
-The `@halvaradop/ui-template` is an accessible, reusable, and customizable `Template` component that is part of the `@halvaradop/ui` library for React. Built with `React` and styled using `TailwindCSS`, it provides a set of pre-styled components designed to streamline and accelerate the development of user interfaces.
-
-> [!WARNING]
-> This is not a real component provided by the `@halvaradop/ui` library. It is a template to facilitate the creation of new components within the library, offering default configurations and documentation. This package helps reduce the time required to build a component from scratch, allowing you to focus on adding new styles and features. For more information, please read the [Contributing Guide](https://github.com/halvaradop/ui/blob/master/.github/CONTRIBUTING.md).
+The `@halvaradop/ui-select` is an accessible, reusable, and customizable `Select` component that is part of the `@halvaradop/ui` library for React. Built with `React` and styled using `TailwindCSS`, it provides a set of pre-styled components designed to streamline and accelerate the development of user interfaces.
 
 ## Installation
 
-This template package offers two versions: one for React 18 and another for React 19.
+This select package offers two versions: one for React 18 and another for React 19.
 
 ### For React 18
 
 Install the stable version:
 
 ```bash
-npm install @halvaradop/ui-template
-yarn add @halvaradop/ui-template
-pnpm add @halvaradop/ui-template
+npm install @halvaradop/ui-select
+yarn add @halvaradop/ui-select
+pnpm add @halvaradop/ui-select
 ```
 
 ### For React 19
@@ -24,29 +21,63 @@ pnpm add @halvaradop/ui-template
 Install the beta version:
 
 ```bash
-npm install @halvaradop/ui-template@beta
-yarn add @halvaradop/ui-template@beta
-pnpm add @halvaradop/ui-template@beta
+npm install @halvaradop/ui-select@beta
+yarn add @halvaradop/ui-select@beta
+pnpm add @halvaradop/ui-select@beta
 ```
 
 ## Usage
 
-The `Template` component offers several additional props for customization. Import the `Template` component as shown below:
+The `Select` component is highly customizable and comes with several additional props to suit your needs. Below is an example of how to use the `Select` component along with its subcomponents:
 
 ```tsx
-import { Template } from "@halvaradop/ui-template"
+import { Select, SelectTrigger, SelectList, SelectOption } from "@halvaradop/ui-select"
 
 export default function App() {
-  return <Template />
+  return (
+    <Select name="example" defaultValue="option1">
+      <SelectTrigger>Select an option</SelectTrigger>
+      <SelectList>
+        <SelectOption value="option1">Option 1</SelectOption>
+        <SelectOption value="option2">Option 2</SelectOption>
+        <SelectOption value="option3">Option 3</SelectOption>
+      </SelectList>
+    </Select>
+  )
 }
 ```
 
-### Prop Values
+### Components Overview
 
-| Prop    | Values                   | Default |
-| ------- | ------------------------ | ------- |
-| variant |                          |         |
-| size    | "sm", "base", "md", "lg" | "base"  |
+The `@halvaradop/ui-select` package includes the following components, which can be imported either collectively or individually:
+
+- **`Select`**: The main wrapper component that provides context and state management for the select functionality.
+- **`SelectTrigger`**: The button that toggles the dropdown menu.
+- **`SelectList`**: The container that holds the list of selectable options.
+- **`SelectOption`**: Represents an individual option within the dropdown.
+
+#### Importing Components Individually
+
+For optimized imports, you can access each component directly by its entry point:
+
+```tsx
+import { Select } from "@halvaradop/ui-select/select"
+import { SelectTrigger } from "@halvaradop/ui-select/trigger"
+import { SelectList } from "@halvaradop/ui-select/list"
+import { SelectOption } from "@halvaradop/ui-select/option"
+```
+
+### Prop Reference
+
+The table below outlines the available props for each component, along with their accepted values and default settings:
+
+| Component       | Prop           | Accepted Values      | Default     |
+| --------------- | -------------- | -------------------- | ----------- |
+| `Select`        | `name`         | `string`             | `undefined` |
+| `Select`        | `defaultValue` | `string` or `number` | `undefined` |
+| `SelectTrigger` | `children`     | `ReactNode`          | `undefined` |
+| `SelectList`    | `children`     | `ReactNode`          | `undefined` |
+| `SelectOption`  | `value`        | `string` or `number` | `undefined` |
 
 ## Styles
 
@@ -68,9 +99,9 @@ export default config
 
 ### Customizing with CSS Variables
 
-The `Template` component supports CSS variables to customize its styles based on your design system. To set the CSS variables, define the required variables in your project's `.css` file. Then, extend the `colors` field in the `tailwind.config.ts` file to create new color names using the values of the previously defined CSS variables.
+The `Select` component supports CSS variables to customize its styles based on your design system. To set the CSS variables, define the required variables in your project's `.css` file. Then, extend the `colors` field in the `tailwind.config.ts` file to create new color names using the values of the previously defined CSS variables.
 
-Below are some of the CSS variables used by the `@halvaradop/ui-template` component. For a complete list of CSS variables, refer to the [index.css](https://github.com/halvaradop/ui/blob/master/index.css) file:
+Below are some of the CSS variables used by the `@halvaradop/ui-select` component. For a complete list of CSS variables, refer to the [index.css](https://github.com/halvaradop/ui/blob/master/index.css) file:
 
 ```css
 /* Default color scheme for light theme */

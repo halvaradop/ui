@@ -1,14 +1,17 @@
 import { useRef } from "react"
 import type { Meta, StoryObj } from "@storybook/react"
-import { Modal, innerDialogVariants } from "./index.js"
-import { Button } from "../../ui-button/src/index.js"
+import { Dialog, modalVariants } from "./index.js"
+import { Button } from "@halvaradop/ui-button"
 import { decorator } from "@halvaradop/ui-utils/decorator"
 import { DocsPage } from "@halvaradop/ui-utils/docs-page"
+import type { VariantProps } from "class-variance-authority"
+
+type ModalProps = VariantProps<typeof modalVariants>
 
 const meta: Meta = {
     title: "ui-dialog",
     tags: ["autodocs"],
-    component: Modal,
+    component: Dialog as any,
     args: {
         size: "base",
         variant: "base",
@@ -51,7 +54,7 @@ const meta: Meta = {
         },
     },
     decorators: [decorator],
-} satisfies Meta<typeof Modal>
+} satisfies Meta<ModalProps>
 
 type Story = StoryObj<typeof meta>
 
@@ -73,14 +76,18 @@ export const Base: Story = {
         return (
             <>
                 <Button onClick={() => handleToggleModal(true)}>Open</Button>
-                <Modal ref={modalRef}>
-                    <div className={innerDialogVariants({ size, variant })}>
-                        <div>Modal content</div>
+                <Dialog ref={modalRef}>
+                    <div className={modalVariants({ size, variant })}>
+                        <div className="text-center">
+                            <h1 className="font-medium">Modal Content</h1>
+                            <span className="block">size: {size}</span>
+                            <span className="block">variant: {variant}</span>
+                        </div>
                         <Button className="mt-4" onClick={() => handleToggleModal(false)}>
                             Close
                         </Button>
                     </div>
-                </Modal>
+                </Dialog>
             </>
         )
     },

@@ -8,7 +8,6 @@ const config: Config = {
         "./packages/**/*.{js,ts,jsx,tsx,mdx}",
         "!./node_modules/**",
     ],
-    darkMode: "class",
     future: {
         hoverOnlyWhenSupported: true,
     },
@@ -25,10 +24,6 @@ const config: Config = {
                 secondary: {
                     DEFAULT: "var(--color-secondary)",
                     hover: "var(--color-secondary-hover)",
-                },
-                color: {
-                    100: "var(--color-font-100)",
-                    200: "var(--color-font-200)",
                 },
                 red: {
                     DEFAULT: "var(--color-red)",
@@ -47,14 +42,25 @@ const config: Config = {
                     hover: "var(--color-yellow-hover)",
                 },
                 input: {
-                    DEFAULT: "var(--color-input)",
+                    border: "var(--color-input-border)",
                     background: "var(--color-input-background)",
                 },
                 modal: "var(--color-modal)",
                 ghost: "var(--color-ghost)",
                 dialog: "var(--color-dialog)",
-                border: "var(--color-border)",
+                border: {
+                    DEFAULT: "var(--color-border-base)",
+                    md: "var(--color-border-md)",
+                },
                 disabled: "var(--color-disabled)",
+            },
+            textColor: {
+                base: "var(--color-base)",
+                inverse: "var(--color-inverse)",
+            },
+            borderColor: {
+                base: "var(--color-border-base)",
+                md: "var(--color-border-md)",
             },
         },
     },

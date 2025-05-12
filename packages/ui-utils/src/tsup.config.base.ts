@@ -1,5 +1,7 @@
 import { Options } from "tsup"
 
+const env = process.env.NODE_ENV
+
 /**
  * Base tsup configuration for all packages.
  */
@@ -8,6 +10,8 @@ export const tsupConfig: Options = {
     format: ["esm", "cjs"],
     dts: true,
     clean: true,
-    minify: true,
+    sourcemap: env !== "production",
+    minify: env === "production",
+    bundle: env === "production",
     external: ["vite", "tailwindcss"],
 }
