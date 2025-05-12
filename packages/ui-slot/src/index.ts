@@ -38,6 +38,10 @@ type SlotWithAsChild<Component extends HTMLTag, Element extends HTMLElement> =
     | ({ asChild?: false } & ComponentProps<Component>)
     | { asChild: true; children: ReactNode; ref?: React.Ref<Element> | undefined }
 
+/**
+ * SlotProps is a type that represents the props of a Slot component. This type is
+ * used to define the props of a Slot component that can be used with the `asChild`
+ */
 export type SlotProps<Component extends HTMLTag, Element extends HTMLElement = never> = SlotWithAsChild<
     Component,
     Element
