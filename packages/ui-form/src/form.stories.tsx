@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react"
 import { Form } from "./index.js"
-import { Input } from "@/ui-input/src/index.js"
-import { Label } from "@/ui-label/src/index.js"
+import { Input } from "@/ui/ui-input/src/index.js"
+import { Label } from "@/ui/ui-label/src/index.js"
 import { decorator } from "@halvaradop/ui-utils/decorator"
 import { DocsPage } from "@halvaradop/ui-utils/docs-page"
 

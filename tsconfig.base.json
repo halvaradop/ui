@@ -3,7 +3,7 @@
     "composite": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./packages/*"]
+      "@/ui/*": ["./packages/*"]
     }
   },
   "include": ["packages", "vite.config.ts"]

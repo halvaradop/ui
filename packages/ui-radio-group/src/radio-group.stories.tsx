@@ -1,7 +1,7 @@
 import { useState } from "react"
 import type { Meta, StoryObj } from "@storybook/react"
 import { RadioGroup, Radio } from "./index.js"
-import { Label } from "@/ui-label/src/index.js"
+import { Label } from "@/ui/ui-label/src/index.js"
 import { decorator } from "@halvaradop/ui-utils/decorator"
 import { DocsPage } from "@halvaradop/ui-utils/docs-page"
 

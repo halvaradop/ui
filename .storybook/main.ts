@@ -32,7 +32,7 @@ const config: StorybookConfig = {
     viteFinal: async (config) => {
         config.resolve = {
             alias: {
-                "@": path.resolve(__dirname, "../packages"),
+                "@/ui": path.resolve(__dirname, "../packages"),
             },
         }
         return config
