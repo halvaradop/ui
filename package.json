@@ -6,9 +6,8 @@
   "description": "A comprehensive UI library for React, built with Tailwind CSS and CVA (Class Variance Authority). It provides reusable components and supports JSX syntax.",
   "scripts": {
     "dev": "turbo run dev --parallel",
-    "build": "pnpm build:core && turbo build --parallel --filter=!*core --filter=!*utils --filter=!*template --filter=!*radio-group && pnpm build:unstable",
+    "build": "pnpm build:core && turbo build --parallel --filter=!*core --filter=!*utils --filter=!*template",
     "build:core": "turbo run build --filter=*utils --filter=*core",
-    "build:unstable": "turbo clean:dist clean:turbo --filter=*radio-group && rm -rf .turbo/* && turbo build --filter=*radio-group",
     "build:storybook": "storybook build",
     "build:release": "turbo build:release --parallel",
     "format": "prettier --write .",

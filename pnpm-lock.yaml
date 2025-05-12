@@ -181,12 +181,6 @@ importers:
         specifier: ^18.0.0
         version: 18.3.1(react@18.3.1)
     devDependencies:
-      '@halvaradop/ui-input':
-        specifier: workspace:*
-        version: link:../ui-input
-      '@halvaradop/ui-label':
-        specifier: workspace:*
-        version: link:../ui-label
       '@halvaradop/ui-utils':
         specifier: workspace:*
         version: link:../ui-utils
@@ -228,9 +222,6 @@ importers:
         specifier: ^18.0.0
         version: 18.3.1(react@18.3.1)
     devDependencies:
-      '@halvaradop/ui-input':
-        specifier: workspace:*
-        version: link:../ui-input
       '@halvaradop/ui-utils':
         specifier: workspace:*
         version: link:../ui-utils
@@ -250,9 +241,6 @@ importers:
         specifier: ^18.0.0
         version: 18.3.1(react@18.3.1)
     devDependencies:
-      '@halvaradop/ui-label':
-        specifier: workspace:*
-        version: link:../ui-label
       '@halvaradop/ui-utils':
         specifier: workspace:*
         version: link:../ui-utils
@@ -275,9 +263,6 @@ importers:
         specifier: ^18.0.0
         version: 18.3.1(react@18.3.1)
     devDependencies:
-      '@halvaradop/ui-label':
-        specifier: workspace:*
-        version: link:../ui-label
       '@halvaradop/ui-utils':
         specifier: workspace:*
         version: link:../ui-utils
