@@ -8,7 +8,7 @@
     "dev": "turbo run dev --parallel",
     "build": "turbo run build",
     "build:storybook": "storybook build",
-    "build:release": "turbo build:release --parallel",
+    "build:release": "turbo build:release",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "storybook": "storybook dev -p 6006",
@@ -18,7 +18,8 @@
     "clean": "turbo run clean --parallel",
     "clean:dist": "turbo run clean:dist --parallel",
     "clean:modules": "turbo run clean:modules --parallel",
-    "clean:turbo": "turbo run clean:turbo --parallel"
+    "clean:turbo": "turbo run clean:turbo --parallel",
+    "clean:cts": "turbo run clean:cts --parallel"
   },
   "repository": {
     "type": "git",
