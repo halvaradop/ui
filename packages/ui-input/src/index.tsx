@@ -18,7 +18,7 @@ export const inputVariants = cva(
                 base: "caret-primary border-base focus-visible:ring-1 focus-visible:border-base focus-visible:ring-border",
                 line: "border-0 border-b border-base rounded-none",
                 sensitive:
-                    "focus-visible:ring-1 focus-visible:border-base focus-visible:ring-border usinvalid:text-red-hover usinvalid:placeholder-red-hover usinvalid:border-red-hover usinvalid:focus-within:ring-red-hover usvalid:text-green-hover usvalid:border-green-hover usvalid:focus-within:ring-green-hover input-empty:usinvalid:border-inherit input-empty:usinvalid:placeholder-border-md input-empty:usinvalid:caret-border-md input-empty:usinvalid:focus-within:border-md input-empty:usinvalid:focus-within:ring-border-md",
+                    "focus-visible:ring-1 focus-visible:border-base focus-visible:ring-border user-invalid:text-red-hover user-invalid:placeholder-red-hover user-invalid:border-red-hover user-invalid:focus-within:ring-red-hover user-valid:text-green-hover user-valid:border-green-hover user-valid:focus-within:ring-green-hover input-empty:user-invalid:border-inherit input-empty:user-invalid:placeholder-border-md input-empty:user-invalid:caret-border-md input-empty:user-invalid:focus-within:border-md input-empty:user-invalid:focus-within:ring-border-md",
             },
             fullWidth: {
                 true: "w-full",

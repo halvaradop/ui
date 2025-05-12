@@ -66,14 +66,7 @@ const config: Config = {
     },
     plugins: [
         plugin(({ addVariant }) => {
-            /**
-             * These variants are unstables and may be removed in the future or must be implemented by the user
-             */
-            addVariant("usinvalid", "&:user-invalid")
-            addVariant("usvalid", "&:user-valid")
             addVariant("input-empty", "&:is(:usinvalid:placeholder-shown, :placeholder-shown)")
-            addVariant("peer-usinvalid", ".peer:user-invalid ~ &")
-            addVariant("peer-usinvalid-empty", ".peer:user-invalid:placeholder-shown ~ &")
         }),
     ],
 }

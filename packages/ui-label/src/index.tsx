@@ -13,7 +13,7 @@ export const labelVariants = cva("font-medium text-left relative leading-none", 
         },
         variant: {
             base: "text-base",
-            error: "w-fit hidden text-red absolute top-0 right-0 peer-usinvalid:block peer-usinvalid-empty:hidden",
+            error: "w-fit hidden text-red absolute top-0 right-0 peer-user-invalid:block  peer-user-invalid-empty:hidden",
             flex: "flex flex-col items-start",
         },
         size: {

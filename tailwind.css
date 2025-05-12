@@ -1,9 +1,9 @@
-@tailwind base;
-@tailwind utilities;
-@tailwind components;
+@import "tailwindcss";
 
 /* Default color scheme for light theme */
-:root {
+@theme {
+    --breakpoint-base: 900px;
+
     /* Primary colors */
     --color-primary: oklch(20% 0 100);
     --color-primary-hover: oklch(35% 0 100);
@@ -74,8 +74,6 @@
     --color-dialog: oklch(93.18% 0 0 / 30%);
 }
 
-@layer base {
-    .story-container {
-        @apply w-11/12 h-full mx-auto flex items-center flex-wrap gap-5 text-center;
-    }
+.story-container {
+    @apply w-11/12 h-full mx-auto flex items-center flex-wrap gap-5 text-center;
 }
