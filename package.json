@@ -18,7 +18,8 @@
     "clean": "turbo run clean --parallel",
     "clean:dist": "turbo run clean:dist --parallel",
     "clean:modules": "turbo run clean:modules --parallel",
-    "clean:turbo": "turbo run clean:turbo --parallel"
+    "clean:turbo": "turbo run clean:turbo --parallel",
+    "clean:cts": "turbo run clean:cts --parallel"
   },
   "repository": {
     "type": "git",
