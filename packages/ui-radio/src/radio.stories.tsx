@@ -1,5 +1,6 @@
 import type { ArgTypes, Meta, StoryObj } from "@storybook/react"
 import { Radio } from "./index.js"
+import { RadioGroup } from "../../ui-radio-group/src/index.js"
 import { Label } from "@halvaradop/ui-label"
 import { decorator } from "@halvaradop/ui-utils/decorator"
 import { DocsPage } from "@halvaradop/ui-utils/docs-page"

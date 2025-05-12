@@ -162,9 +162,6 @@ importers:
         specifier: ^18.0.0
         version: 18.3.1(react@18.3.1)
     devDependencies:
-      '@halvaradop/ui-button':
-        specifier: workspace:*
-        version: link:../ui-button
       '@halvaradop/ui-utils':
         specifier: workspace:*
         version: link:../ui-utils
