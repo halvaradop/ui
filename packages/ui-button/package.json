@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "tsup --watch",
     "build": "tsup",
-    "build:release": "sh -c 'export NODE_ENV=production ; echo $NODE_ENV ; tsup'",
+    "build:release": "sh -c 'export NODE_ENV=production ; tsup'",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "clean": "turbo run clean:dist clean:modules clean:turbo --parallel",
@@ -49,6 +49,7 @@
   },
   "dependencies": {
     "@halvaradop/ui-core": "workspace:*",
+    "@halvaradop/ui-slot": "workspace:*",
     "class-variance-authority": "0.7.0"
   },
   "devDependencies": {

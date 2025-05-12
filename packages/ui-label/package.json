@@ -50,11 +50,11 @@
   },
   "dependencies": {
     "@halvaradop/ui-core": "workspace:*",
+    "@halvaradop/ui-slot": "workspace:*",
     "class-variance-authority": "0.7.0"
   },
   "devDependencies": {
-    "@halvaradop/ui-utils": "workspace:*",
-    "@halvaradop/ui-input": "workspace:*"
+    "@halvaradop/ui-utils": "workspace:*"
   },
   "peerDependencies": {
     "react": "^18.0.0",

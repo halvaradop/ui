@@ -1,5 +1,6 @@
 import { forwardRef } from "react"
-import { merge, Slot, type SlotProps, type ArgsFunction } from "@halvaradop/ui-core"
+import { merge, type ArgsFunction } from "@halvaradop/ui-core"
+import { Slot, type SlotProps } from "@halvaradop/ui-slot"
 import { cva, type VariantProps } from "class-variance-authority"
 
 export type LabelProps<T extends ArgsFunction> = SlotProps<"label"> & VariantProps<T>

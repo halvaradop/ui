@@ -1,10 +1,9 @@
 {
-  "name": "@halvaradop/ui-radio",
-  "version": "0.2.0",
+  "name": "@halvaradop/ui-slot",
+  "version": "0.1.0",
   "private": false,
-  "description": "A customizable Radio component for @halvaradop/ui library with Tailwind CSS styling.",
+  "description": "A customizable Slot component for @halvaradop/ui library with Tailwind CSS styling.",
   "type": "module",
-  "types": "dist/index.d.ts",
   "scripts": {
     "dev": "tsup --watch",
     "build": "tsup",
@@ -44,15 +43,8 @@
       "require": "./dist/index.cjs"
     }
   },
-  "dependencies": {
-    "@halvaradop/ui-core": "workspace:*",
-    "class-variance-authority": "0.7.0"
-  },
   "devDependencies": {
+    "@halvaradop/ui-core": "workspace:*",
     "@halvaradop/ui-utils": "workspace:*"
-  },
-  "peerDependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
   }
 }

@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/ui/*": ["./packages/*"]
+    }
+  },
+  "include": ["packages", "vite.config.ts"]
+}
