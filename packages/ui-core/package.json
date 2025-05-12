@@ -46,10 +46,10 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./slot": {
-      "types": "./dist/slot.d.ts",
-      "import": "./dist/slot.js",
-      "require": "./dist/slot.cjs"
+    "./utils": {
+      "types": "./dist/utils.d.ts",
+      "import": "./dist/utils.js",
+      "require": "./dist/utils.cjs"
     },
     "./types": {
       "types": "./dist/types.d.ts"
