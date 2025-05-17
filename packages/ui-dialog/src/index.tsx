@@ -4,12 +4,12 @@ import { cva } from "class-variance-authority"
 
 export type DialogProps = WithChildrenProps<ComponentProps<"dialog">>
 
-export const modalVariants = cva("flex items-center justify-center", {
+export const modalVariants = cva("flex items-center justify-center text-on-surface bg-surface", {
     variants: {
         variant: {
-            base: "flex-col shadow bg-modal",
-            inner: "flex-col shadow-inner bg-modal",
-            fixed: "flex-col fixed top-1/2 -translate-y-1/2 bg-modal",
+            base: "flex-col shadow",
+            inner: "flex-col shadow-inner",
+            fixed: "flex-col fixed inset-0 z-50",
         },
         size: {
             sm: "pt-6 p-4 rounded",
@@ -28,7 +28,7 @@ export const Dialog = forwardRef<HTMLDialogElement, DialogProps>(({ className, c
     return (
         <dialog
             className={merge(
-                "w-full min-h-screen max-w-none max-h-none items-center justify-center relative inset-0 bg-transparent backdrop:bg-dialog open:flex",
+                "w-full min-h-screen max-w-none max-h-none items-center justify-center relative inset-0 bg-transparent backdrop:bg-overlay open:flex",
                 className
             )}
             ref={ref}

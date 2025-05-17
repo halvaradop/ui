@@ -1,79 +1,56 @@
 @import "tailwindcss";
 
-/* Default color scheme for light theme */
 @theme {
     --breakpoint-base: 900px;
 
-    /* Primary colors */
-    --color-primary: oklch(20% 0 100);
-    --color-primary-hover: oklch(35% 0 100);
+    --opacity-cursor: 80%;
 
-    /* Secondary colors */
-    --color-secondary: oklch(90% 0 0);
-    --color-secondary-hover: oklch(95% 0 0);
+    --color-muted: oklch(65% 0.01 260);
+    --color-border: oklch(70% 0.02 260);
+    --color-overlay: oklch(30% 0.02 260 / 0.3);
 
-    /* Red color */
-    --color-red: oklch(0.637 0.237 25.331);
-    --color-red-hover: oklch(0.704 0.191 22.216);
+    --color-success: oklch(75% 0.18 140);
+    --color-danger: oklch(65% 0.2 25);
 
-    /* Blue color */
-    --color-blue: oklch(0.588 0.158 241.966);
-    --color-blue-hover: oklch(0.685 0.169 237.323);
+    --color-surface: oklch(98% 0 0);
+    --color-on-surface: oklch(20% 0.02 260);
 
-    /* Green color */
-    --color-green: oklch(0.723 0.219 149.579);
-    --color-green-hover: oklch(0.792 0.209 151.711);
+    --color-primary: oklch(30% 0 270);
+    --color-on-primary: oklch(95% 0 0);
 
-    /* Yellow color */
-    --color-yellow: oklch(0.905 0.182 98.111);
-    --color-yellow-hover: oklch(0.945 0.129 101.54);
+    --color-secondary: oklch(60% 0 270);
+    --color-on-secondary: oklch(10% 0 0);
 
-    /* Text colors */
-    --color-base: oklch(96% 0 360);
-    --color-inverse: oklch(15% 0 100);
+    --color-ghost: oklch(94% 0.01 260);
 
-    /* Ghost color used by the Button component */
-    --color-ghost: oklch(92% 0 0);
-
-    /* Input colors */
-    --color-input-border: oklch(0.709 0.01 56.259);
-    --color-input-background: oklch(99% 0 0);
-
-    /* Color for components with the disabled HTML attribute */
     --color-disabled: oklch(92% 0 0);
-
-    /* Modal colors */
-    --color-modal: oklch(98% 0.001 360);
-    --color-dialog: oklch(75% 0.001 360 / 60%);
-    --color-dialog: oklch(0.374 0.01 67.558 / 60%);
-
-    /* Border colors */
-    --color-border-base: oklch(0.87 0 0);
-    --color-border-md: oklch(0.556 0 0);
+    --color-on-disabled: oklch(60% 0.01 260);
 }
 
-/* Dark theme color scheme */
 :is(html, body).dark {
-    /* Primary colors */
-    --color-primary: oklch(92% 0 0);
-    --color-primary-hover: oklch(95% 0 0);
+    --opacity-cursor: 80%;
 
-    /* Secondary colors */
-    --color-secondary: oklch(13% 0 100);
-    --color-secondary-hover: oklch(28% 0 100);
+    --color-muted: oklch(70% 0.01 260);
+    --color-border: oklch(35% 0.01 260);
 
-    /* Text colors */
-    --color-font-100: oklch(13% 0 100);
-    --color-font-200: oklch(96% 0 360);
+    --color-success: oklch(70% 0.19 150);
+    --color-danger: oklch(65% 0.22 25);
 
-    /* Input colors */
-    --color-input: oklch(92% 0 0);
-    --color-input-background: oklch(13% 0 100);
+    --color-overlay: oklch(0% 0 0 / 0.6);
 
-    /* Dialog color */
-    --color-dialog: oklch(93.18% 0 0 / 30%);
+    --color-surface: oklch(15% 0.005 260);
+    --color-on-surface: oklch(95% 0.01 260);
+
+    --color-primary: oklch(90% 0 0);
+    --color-on-primary: oklch(20% 0 270);
+
+    --color-secondary: oklch(60% 0 0);
+    --color-on-secondary: oklch(10% 0 270);
+
+    --color-ghost: oklch(25% 0 0);
+    --color-disabled: oklch(30% 0 0);
 }
 
 .story-container {
-    @apply w-11/12 h-full mx-auto flex items-center flex-wrap gap-5 text-center;
+    @apply w-11/12 h-full text-on-surface mx-auto flex items-center flex-wrap gap-5 text-center;
 }

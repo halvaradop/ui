@@ -14,7 +14,7 @@ export const Select = forwardRef<HTMLUListElement, SelectProps>(
             <SelectProvider name={name} defaultValue={defaultValue}>
                 <ul
                     id={selectId}
-                    className={merge("relative", className)}
+                    className={merge("text-on-surface relative", className)}
                     ref={ref}
                     role="combobox"
                     aria-haspopup="listbox"

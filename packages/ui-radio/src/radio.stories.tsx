@@ -20,11 +20,11 @@ const size: ArgTypes["size"] = {
 
 const color: ArgTypes["color"] = {
     control: "select",
-    options: ["green", "blue", "red", "yellow", "primary"],
+    options: ["primary", "green", "red"],
     description: "Color of the radio",
     table: {
         type: {
-            summary: "green | blue | red | yellow | primary",
+            summary: "primary | green | red",
         },
         defaultValue: {
             summary: "primary",
@@ -119,24 +119,17 @@ export const Colors: Story = {
     render: ({ size }) => (
         <fieldset>
             <Label className="flex items-center gap-x-2">
+                primary
+                <Radio color="primary" size={size} />
+            </Label>
+            <Label className="flex items-center gap-x-2">
                 green
                 <Radio color="green" size={size} />
             </Label>
-            <Label className="flex items-center gap-x-2">
-                blue
-                <Radio color="blue" size={size} />
-            </Label>
+
             <Label className="flex items-center gap-x-2">
                 red
                 <Radio color="red" size={size} />
-            </Label>
-            <Label className="flex items-center gap-x-2">
-                yellow
-                <Radio color="yellow" size={size} />
-            </Label>
-            <Label className="flex items-center gap-x-2">
-                primary
-                <Radio color="primary" size={size} />
             </Label>
         </fieldset>
     ),
