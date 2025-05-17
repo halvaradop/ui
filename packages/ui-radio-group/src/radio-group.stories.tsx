@@ -28,11 +28,11 @@ const meta: Meta = {
         },
         color: {
             control: "select",
-            options: ["green", "blue", "red", "yellow", "primary"],
+            options: ["primary", "green", "red"],
             description: "Color of the radio group",
             table: {
                 type: {
-                    summary: "green | blue | red | yellow | primary",
+                    summary: "primary | green | red",
                 },
             },
         },

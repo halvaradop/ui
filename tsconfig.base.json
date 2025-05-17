@@ -1,10 +1,27 @@
 {
   "compilerOptions": {
+    "esModuleInterop": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "target": "ES2020",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "moduleDetection": "force",
+    "declaration": true,
+    "sourceMap": true,
+    "declarationMap": true,
+    "strict": true,
+    "allowJs": true,
+    "checkJs": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
     "composite": true,
     "baseUrl": ".",
     "paths": {
       "@/ui/*": ["./packages/*"]
     }
   },
-  "include": ["packages", "vite.config.ts"]
+  "include": ["vite.config.ts"]
 }

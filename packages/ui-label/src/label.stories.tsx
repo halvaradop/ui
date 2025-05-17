@@ -20,7 +20,7 @@ const size: ArgTypes["size"] = {
 
 const variant: ArgTypes["variant"] = {
     control: "select",
-    options: ["base", "error", "flex"],
+    options: ["default", "required"],
     description: "Variant of the label",
     table: {
         type: {
@@ -97,7 +97,7 @@ export const Sizes: Story = {
 
 export const Error: Story = {
     render: () => (
-        <Label>
+        <div className="relative">
             <Label htmlFor="error-story">Name</Label>
             <Input
                 className="peer"
@@ -107,18 +107,10 @@ export const Error: Story = {
                 id="error-story"
                 required
             />
-            <Label className="right-0" variant="error" size="sm" asChild>
+            <Label className="right-0" variant="required" size="sm" asChild>
                 <span>Invalid email address</span>
             </Label>
-        </Label>
-    ),
-}
-
-export const AsSpan: Story = {
-    render: () => (
-        <Label asChild>
-            <span>Name</span>
-        </Label>
+        </div>
     ),
 }
 

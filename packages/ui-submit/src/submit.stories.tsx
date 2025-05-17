@@ -20,11 +20,11 @@ const size: ArgTypes["size"] = {
 
 const variant: ArgTypes["variant"] = {
     control: "select",
-    options: ["base", "secondary", "inverted"],
+    options: ["base", "secondary"],
     description: "The variant of the button",
     table: {
         type: {
-            summary: "base | secondary | inverted",
+            summary: "base | secondary",
         },
         defaultValue: {
             summary: "base",
@@ -93,7 +93,7 @@ export const Variants: Story = {
         size,
     },
     render: ({ size, disabled, pending, value }) => {
-        const variants = ["base", "secondary", "inverted"]
+        const variants = ["base", "secondary"]
         return (
             <>
                 {variants.map((variant) => (

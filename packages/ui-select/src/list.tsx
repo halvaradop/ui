@@ -10,7 +10,7 @@ export const SelectList = forwardRef<HTMLUListElement, ComponentProps<"ul">>(
             <ul
                 ref={ref}
                 className={merge(
-                    "w-full p-1 border border-primary rounded-md absolute top-10 right-0 bg-primary",
+                    "w-full p-1 border border-border rounded-md absolute top-10 right-0 bg-surface",
                     className,
                     open ? "block" : "hidden"
                 )}

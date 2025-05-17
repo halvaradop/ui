@@ -6,20 +6,19 @@ import { cva, type VariantProps } from "class-variance-authority"
 export type ButtonProps<T extends ArgsFunction> = SlotProps<"button"> & VariantProps<T>
 
 export const buttonVariants = cva(
-    "flex items-center justify-center font-semibold border border-solid transition-colors hover:bg-opacity-90 focus-visible:[outline-style:solid] focus-visible:outline-2 focus-visible:outline-offset-2",
+    "flex items-center justify-center font-semibold border border-solid transition-colors focus-visible:[outline-style:solid] focus-visible:outline-3 focus-visible:outline-offset-3 hover:cursor-pointer",
     {
         variants: {
             variant: {
-                base: "text-base border-primary bg-primary hover:border-primary-hover hover:bg-primary-hover focus-visible:outline-primary-hover",
+                base: "text-on-primary border-primary bg-primary hover:border-primary/(--opacity-cursor) hover:bg-primary/(--opacity-cursor) focus-visible:outline-primary/(--opacity-cursor)",
                 secondary:
-                    "text-inverse border-secondary bg-secondary hover:border-secondary-hover hover:bg-secondary-hover focus-visible:outline-secondary",
-                ghost: "text-inverse border-transparent bg-transparent hover:bg-ghost focus-visible:outline-ghost dark:hover:text-color-100",
-                link: "text-inverse border-none hover:underline hover:underline-offset-8 hover:decoration-primary focus-visible:underline focus-visible:underline-offset-8 focus-visible:outline-none",
+                    "text-on-secondary border-secondary bg-secondary hover:border-secondary/(--opacity-cursor) hover:bg-secondary/(--opacity-cursor) focus-visible:outline-secondary",
+                ghost: "text-on-secondary border-transparent bg-transparent hover:bg-ghost focus-visible:outline-ghost",
+                link: "text-on-secondary border-none hover:underline hover:underline-offset-8 hover:decoration-primary focus-visible:underline focus-visible:underline-offset-8 focus-visible:outline-none",
                 destructive:
-                    "text-base border-red bg-red hover:border-red-hover hover:bg-red-hover focus-visible:outline-red",
-                outline:
-                    "text-inverse border-ghost hover:bg-ghost focus-visible:outline-ghost dark:hover:text-color-100",
-                plain: "text-inverse border-transparent focus-visible:outline-primary",
+                    "text-on-primary border-danger bg-danger hover:border-danger/(--opacity-cursor) hover:bg-danger/(--opacity-cursor) focus-visible:outline-danger",
+                outline: "text-on-secondary border-ghost hover:bg-ghost focus-visible:outline-ghost",
+                plain: "text-on-secondary border-transparent focus-visible:outline-primary",
             },
             size: {
                 sm: "h-9 px-3 text-sm rounded-md",

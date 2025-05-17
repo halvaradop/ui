@@ -2,68 +2,53 @@ import { forwardRef } from "react"
 import { merge, type ComponentProps, type ArgsFunction } from "@halvaradop/ui-core"
 import { cva, type VariantProps } from "class-variance-authority"
 
-export type RadioProps<T extends ArgsFunction> = VariantProps<T> & ComponentProps<"input", "type" | "size">
+export type RadioProps<T extends ArgsFunction> = VariantProps<T> &
+    VariantProps<typeof internalVariants> &
+    ComponentProps<"input", "type" | "size" | "color">
 
-export const radioVariants = cva("peer relative z-10 appearance-none rounded-full focus:outline-none", {
-    variants: {
-        size: {
-            sm: "border size-3",
-            base: "border size-4",
-            md: "border-2 size-5",
-            lg: "border-2 size-6",
+export const radioVariants = cva(
+    "peer relative z-10 border-border appearance-none rounded-full focus:outline-none hover:cursor-pointer",
+    {
+        variants: {
+            size: {
+                sm: "border size-3",
+                base: "border size-4",
+                md: "border-2 size-5",
+                lg: "border-2 size-6",
+            },
         },
-        color: {
-            green: "border-green",
-            blue: "border-blue",
-            red: "border-red",
-            yellow: "border-yellow",
-            primary: "border-primary",
+        defaultVariants: {
+            size: "base",
         },
-    },
-    defaultVariants: {
-        size: "base",
-        color: "primary",
-    },
-})
+    }
+)
 
-const internalVariants = cva("block absolute z-0 rounded-full", {
+const internalVariants = cva("size-3/5 block absolute z-0 rounded-full bg-surface", {
     variants: {
-        size: {
-            sm: "size-1",
-            base: "size-2",
-            md: "size-[10px]",
-            lg: "size-3",
-        },
         color: {
-            green: "peer-checked:bg-green",
-            blue: "peer-checked:bg-blue",
-            red: "peer-checked:bg-red",
-            yellow: "peer-checked:bg-yellow",
             primary: "peer-checked:bg-primary",
+            green: "peer-checked:bg-success",
+            red: "peer-checked:bg-danger",
         },
     },
     defaultVariants: {
-        size: "base",
         color: "primary",
     },
 })
 
-export const Radio = forwardRef<HTMLInputElement, RadioProps<typeof radioVariants & typeof internalVariants>>(
+export const Radio = forwardRef<HTMLInputElement, RadioProps<typeof radioVariants>>(
     ({ className, size, color, name, value, ...props }, ref) => {
         return (
-            <label
-                className="w-min inline-flex items-center justify-center relative hover:cursor-pointer"
-                htmlFor={name}
-            >
+            <label className="w-min inline-flex items-center justify-center relative z-20" htmlFor={name}>
                 <input
-                    className={merge(radioVariants({ className, size, color }))}
+                    className={merge(radioVariants({ className, size }))}
                     type="radio"
                     name={name}
                     value={value}
                     ref={ref}
                     {...props}
                 />
-                <span className={internalVariants({ size, color })} />
+                <span className={internalVariants({ color })} />
             </label>
         )
     }
