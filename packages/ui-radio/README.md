@@ -1,7 +1,8 @@
 # @halvaradop/ui-radio
 
-> [!WARNING]
-> ⚠️ **DEPRECATED**: This package is deprecated and will no longer receive updates or bug fixes. Please migrate to [@halvaradop/ui-radio-group](https://github.com/halvaradop/ui/tree/master/packages/ui-radio-group).
+`@halvaradop/ui-radio` is a deprecated, accessible, reusable, and customizable Radio component from the `@halvaradop/ui` React library. Built with React and styled using TailwindCSS v4, it provided pre-styled components to accelerate UI development.
+
+> [!WARNING] > **DEPRECATED:** This package is deprecated and will no longer receive updates or bug fixes. Please migrate to [@halvaradop/ui-radio-group](https://github.com/halvaradop/ui/tree/master/packages/ui-radio-group). For more information, see [issue #144](https://github.com/halvaradop/ui/issues/144).
 
 ## Migration Guide
 
@@ -10,14 +11,14 @@ Follow these steps to migrate from `@halvaradop/ui-radio` to `@halvaradop/ui-rad
 ### 1. Remove `@halvaradop/ui-radio` from your dependencies
 
 ```bash
-pnpm un @halvaradop/ui-radio
+pnpm remove @halvaradop/ui-radio
 # or
-yarn un @halvaradop/ui-radio
+yarn remove @halvaradop/ui-radio
 # or
 npm uninstall @halvaradop/ui-radio
 ```
 
-### 2. Install `@halvaradop/ui-radio-group` (if not already installed)
+### 2. Install `@halvaradop/ui-radio-group`
 
 ```bash
 pnpm add @halvaradop/ui-radio-group
@@ -59,4 +60,6 @@ import { RadioGroup, Radio } from "@halvaradop/ui-radio-group"
 </RadioGroup>
 ```
 
-For more details, see the [RadioGroup documentation](https://github.com/halvaradop/ui/tree/master/packages/ui-radio-group) or [migration issue #144](https://github.com/halvaradop/ui/issues/144).
+## Notes
+
+This package is deprecated. Please migrate to `@halvaradop/ui-radio-group`. If you encounter any issues, please report them via [GitHub Issues](https://github.com/halvaradop/ui/issues).
