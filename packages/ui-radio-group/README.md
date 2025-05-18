@@ -1,75 +1,33 @@
 # @halvaradop/ui-radio-group
 
-The `@halvaradop/ui-radio-group` is an accessible, reusable, and customizable `RadioGroup` component that is part of the `@halvaradop/ui` library for React. Built with `React` and styled using `TailwindCSS`, it provides a set of pre-styled components designed to streamline and accelerate the development of user interfaces.
-
-> [!NOTE]
-> This package uses the `Radio` component imported from the `@halvaradop/ui-radio` package to customize the radio component for use with the `RadioGroup` component. It employs the Compound Component Pattern to share logic internally between connected components. However, due to this implementation, TailwindCSS may not recognize the classes used by the `Radio` component, leading to errors and unexpected behavior. To resolve this issue, the team recommends installing the `@halvaradop/ui-radio` package directly. This ensures that TailwindCSS can properly recognize and apply the required classes for the `Radio` component.
-> For more detailed information and potential solutions, please read the [open discussion #144](https://github.com/halvaradop/ui/issues/144).
+`@halvaradop/ui-radio-group` is an accessible, reusable, and customizable RadioGroup component from the `@halvaradop/ui` React library. Built with React and styled using TailwindCSS v4, it provides pre-styled components to accelerate UI development.
 
 ## Installation
 
-This radio-group package offers two versions: one for React 18 and another for React 19.
+There are two versions available: one for React 18 (stable) and one for React 19 (beta).
 
-### For React 18
-
-Install the stable version:
+### React 18 (Stable)
 
 ```bash
-# Install Radio
-## npm
-npm install @halvaradop/ui-radio
-
-## yarn
-yarn add @halvaradop/ui-radio
-
-## pnpm
-pnpm add @halvaradop/ui-radio
-
-# Install RadioGroup
-## npm
 npm install @halvaradop/ui-radio-group
-
-## yarn
 yarn add @halvaradop/ui-radio-group
-
-## pnpm
 pnpm add @halvaradop/ui-radio-group
 ```
 
-### For React 19
-
-Install the beta version:
+### React 19 (Beta)
 
 ```bash
-# Install Radio
-
-## npm
-npm install @halvaradop/ui-radio@beta
-
-## yarn
-yarn add @halvaradop/ui-radio@beta
-
-## pnpm
-pnpm add @halvaradop/ui-radio@beta
-
-# Install RadioGroup
-## npm
 npm install @halvaradop/ui-radio-group@beta
-
-## yarn
 yarn add @halvaradop/ui-radio-group@beta
-
-## pnpm
 pnpm add @halvaradop/ui-radio-group@beta
 ```
 
 ## Usage
 
-The `RadioGroup` component offers an additional prop for customization: `variant`. Import the `RadioGroup` component as shown below:
+The `RadioGroup` component offers an additional prop for customization: `variant`.
 
 ```tsx
-import { Radio } from "@halvaradop/ui-radio"
-import { RadioGroup } from "@halvaradop/ui-radio-group"
+import { RadioGroup, Radio } from "@halvaradop/ui-radio-group"
 
 export default function App() {
   return (
@@ -81,34 +39,62 @@ export default function App() {
 }
 ```
 
-### Prop Values
+### Prop Reference
 
 | Prop    | Values          | Default  |
 | ------- | --------------- | -------- |
 | variant | "row", "column" | "column" |
 
-## Styles
+## Styling
 
-To add styles from the library to any of the components in your project, you need to add the pattern `"./node_modules/@halvaradop/ui-*/**/*.{js,ts,jsx,tsx,mdx}"` within the `tailwind.config.ts` file. This will allow TailwindCSS to recognize the classes used in the library and apply the styles to the components.
+The component supports TailwindCSS v4. To customize colors, use the following CSS variables. For the full theme, see [the theme file](https://github.com/halvaradop/ui/blob/master/tailwind.css).
 
-```ts
-import type { Config } from "tailwindcss"
+```css
+@import "tailwindcss";
 
-const config: Config = {
-  content: ["./node_modules/@halvaradop/ui-*/**/*.{js,ts,jsx,tsx,mdx}"],
-  darkMode: "class",
-  future: {
-    hoverOnlyWhenSupported: true,
-  },
+@theme {
+  --breakpoint-base: 900px;
+  --opacity-cursor: 80%;
+  --color-muted: oklch(65% 0.01 260);
+  --color-border: oklch(70% 0.02 260);
+  --color-overlay: oklch(30% 0.02 260 / 0.3);
+  --color-success: oklch(75% 0.18 140);
+  --color-danger: oklch(65% 0.2 25);
+  --color-surface: oklch(98% 0 0);
+  --color-on-surface: oklch(20% 0.02 260);
+  --color-primary: oklch(30% 0 270);
+  --color-on-primary: oklch(95% 0 0);
+  --color-secondary: oklch(60% 0 270);
+  --color-on-secondary: oklch(10% 0 0);
+  --color-ghost: oklch(94% 0.01 260);
+  --color-disabled: oklch(92% 0 0);
+  --color-on-disabled: oklch(60% 0.01 260);
 }
-
-export default config
 ```
 
-### Customizing with CSS Variables
+### Dark Theme Support
 
-The `RadioGroup` component does not support CSS variables for customizing its styles directly, as it primarily serves to group `Radio` inputs. For styling customization, consider applying CSS variables to the individual `Radio` components within the `RadioGroup`.
+The library currently supports only a dark theme. To enable it, update the CSS variables as follows:
+
+```css
+:is(html, body).dark {
+  --opacity-cursor: 80%;
+  --color-muted: oklch(70% 0.01 260);
+  --color-border: oklch(35% 0.01 260);
+  --color-success: oklch(70% 0.19 150);
+  --color-danger: oklch(65% 0.22 25);
+  --color-overlay: oklch(0% 0 0 / 0.6);
+  --color-surface: oklch(15% 0.005 260);
+  --color-on-surface: oklch(95% 0.01 260);
+  --color-primary: oklch(90% 0 0);
+  --color-on-primary: oklch(20% 0 270);
+  --color-secondary: oklch(60% 0 0);
+  --color-on-secondary: oklch(10% 0 270);
+  --color-ghost: oklch(25% 0 0);
+  --color-disabled: oklch(30% 0 0);
+}
+```
 
 ## Notes
 
-The beta version works, however, it may have minor changes or issues compared to the stable version. If you find a problem or issue, please report it in an [Issue](https://github.com/halvaradop/ui/issues) with the details.
+The beta version may have minor changes or issues compared to the stable version. Please report any problems via [GitHub Issues](https://github.com/halvaradop/ui/issues).

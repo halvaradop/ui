@@ -4,7 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 
 export type FormProps<T extends ArgsFunction> = VariantProps<T> & WithChildrenProps<ComponentProps<"form">>
 
-export const formVariants = cva("mx-auto flex items-center flex-col relative", {
+export const formVariants = cva("mx-auto flex items-center flex-col text-on-surface relative bg-surface", {
     variants: {
         size: {
             sm: "w-11/12 max-w-xs pt-6 pb-4 px-3 gap-y-3 rounded-md",
