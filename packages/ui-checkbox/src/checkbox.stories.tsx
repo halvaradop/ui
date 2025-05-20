@@ -1,4 +1,5 @@
 import type { ArgTypes, Meta, StoryObj } from "@storybook/react"
+import { expect, userEvent, within } from "@storybook/test"
 import { Checkbox } from "./index.js"
 import { decorator } from "@halvaradop/ui-utils/decorator"
 import { DocsPage } from "@halvaradop/ui-utils/docs-page"
@@ -148,6 +149,18 @@ export const Colors: Story = {
             </div>
         </>
     ),
+    play: async ({ canvasElement }) => {
+        const canvas = within(canvasElement)
+        const checkboxs = await canvas.findAllByRole("checkbox")
+        for (const checkbox of checkboxs) {
+            await new Promise((resolve) => setTimeout(resolve, 750))
+            await userEvent.click(checkbox)
+            expect(checkbox).toBeChecked()
+            await new Promise((resolve) => setTimeout(resolve, 750))
+            await userEvent.click(checkbox)
+            expect(checkbox).not.toBeChecked()
+        }
+    },
 }
 
 export default meta
