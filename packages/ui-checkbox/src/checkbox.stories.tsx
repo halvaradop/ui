@@ -75,6 +75,20 @@ const meta: Meta = {
         },
     },
     decorators: [decorator],
+    play: async ({ canvasElement }) => {
+        const canvas = within(canvasElement)
+        const checkboxs = await canvas.findAllByRole("checkbox")
+        for (const checkbox of checkboxs) {
+            await new Promise((resolve) => setTimeout(resolve, 750))
+            checkbox.focus()
+            expect(checkbox).toHaveFocus()
+            await userEvent.click(checkbox)
+            expect(checkbox).toBeChecked()
+            await new Promise((resolve) => setTimeout(resolve, 750))
+            await userEvent.click(checkbox)
+            expect(checkbox).not.toBeChecked()
+        }
+    },
 } satisfies Meta<typeof Checkbox>
 
 type Story = StoryObj<typeof meta>
@@ -149,18 +163,6 @@ export const Colors: Story = {
             </div>
         </>
     ),
-    play: async ({ canvasElement }) => {
-        const canvas = within(canvasElement)
-        const checkboxs = await canvas.findAllByRole("checkbox")
-        for (const checkbox of checkboxs) {
-            await new Promise((resolve) => setTimeout(resolve, 750))
-            await userEvent.click(checkbox)
-            expect(checkbox).toBeChecked()
-            await new Promise((resolve) => setTimeout(resolve, 750))
-            await userEvent.click(checkbox)
-            expect(checkbox).not.toBeChecked()
-        }
-    },
 }
 
 export default meta

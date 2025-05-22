@@ -1,5 +1,6 @@
 import { useRef } from "react"
 import type { Meta, StoryObj } from "@storybook/react"
+import { within, expect } from "@storybook/test"
 import { Dialog, modalVariants } from "./index.js"
 import { Button } from "@/ui/ui-button/src/index.js"
 import { decorator } from "@halvaradop/ui-utils/decorator"
@@ -90,6 +91,27 @@ export const Base: Story = {
                 </Dialog>
             </>
         )
+    },
+    play: async ({ canvasElement }) => {
+        const canvas = within(canvasElement)
+        const openButton = canvas.getByRole("button", { name: /open/i })
+        openButton.click()
+
+        const modal = canvas.getByRole("dialog")
+        expect(modal.hasAttribute("open")).toBeTruthy()
+
+        expect(canvas.getByText(/Modal Content/i)).toBeInTheDocument()
+        expect(canvas.getByText(/size:/i)).toHaveTextContent(/size: (sm|base|md|lg)/i)
+        expect(canvas.getByText(/variant:/i)).toHaveTextContent(/variant: (base|inner|fixed)/i)
+
+        expect(document.activeElement === modal || modal.contains(document.activeElement)).toBeTruthy()
+
+        await new Promise((resolve) => setTimeout(resolve, 500))
+
+        const closeButton = canvas.getByRole("button", { name: /close/i })
+        closeButton.click()
+
+        expect(modal.hasAttribute("open")).toBeFalsy()
     },
 }
 
