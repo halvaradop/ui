@@ -18,21 +18,20 @@ const internalVariants = cva("hidden absolute peer-checked:block", {
 })
 
 export const checkboxVariants = cva(
-    "appearance-none border border-base focus-visible:[outline-style:solid] focus-visible:outline-border",
+    "appearance-none border border-solid border-border focus-visible:[outline-style:solid] focus-visible:outline-border disabled:border-muted disabled:bg-muted",
     {
         variants: {
             size: {
-                sm: "size-3 rounded-[1px] focus-visible:outline focus-visible:outline-offset-1",
-                base: "size-4 rounded-sm focus-visible:outline focus-visible:outline-offset-1",
-                md: "size-5 p-0.5 rounded-[4px] focus-visible:outline-2 focus-visible:outline-offset-2",
-                lg: "size-6 p-0.5 rounded-[5px] focus-visible:outline-2 focus-visible:outline-offset-2",
+                sm: "size-3 rounded-[1px] focus-visible:outline focus-visible:outline-offset-2",
+                base: "size-4 rounded-sm focus-visible:outline focus-visible:outline-offset-2",
+                md: "size-5 p-0.5 rounded-[4px] focus-visible:outline-3 focus-visible:outline-offset-3",
+                lg: "size-6 p-0.5 rounded-[5px] focus-visible:outline-3 focus-visible:outline-offset-3",
             },
             color: {
-                green: "checked:border-green checked:bg-green checked:focus-visible:outline-green",
-                blue: "checked:border-blue checked:bg-blue checked:focus-visible:outline-blue",
-                red: "checked:border-red checked:bg-red checked:focus-visible:outline-red",
-                yellow: "checked:border-yellow checked:bg-yellow checked:focus-visible:outline-yellow",
                 primary: "checked:border-primary checked:bg-primary checked:focus-visible:outline-primary",
+                secondary: "checked:border-secondary checked:bg-secondary checked:focus-visible:outline-secondary",
+                green: "checked:border-success checked:bg-success checked:focus-visible:outline-success",
+                red: "checked:border-danger checked:bg-danger checked:focus-visible:outline-danger",
             },
             fullRounded: {
                 true: "rounded-full",
@@ -40,7 +39,7 @@ export const checkboxVariants = cva(
         },
         defaultVariants: {
             size: "base",
-            color: "green",
+            color: "primary",
         },
     }
 )
