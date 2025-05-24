@@ -46,6 +46,16 @@
       "types": "./dist/radio.d.ts",
       "import": "./dist/radio.js",
       "require": "./dist/radio.cjs"
+    },
+    "./radio-group": {
+      "types": "./dist/radio-group.d.ts",
+      "import": "./dist/radio-group.js",
+      "require": "./dist/radio-group.cjs"
+    },
+    "./context": {
+      "types": "./dist/context.d.ts",
+      "import": "./dist/context.js",
+      "require": "./dist/context.cjs"
     }
   },
   "dependencies": {
