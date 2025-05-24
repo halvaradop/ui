@@ -1,7 +1,8 @@
 {
-  "display": "Node 20",
-  "_version": "20.1.0",
+  "files": [],
+  "references": [{ "path": "./tsconfig.base.json" }],
   "compilerOptions": {
+    "esModuleInterop": true,
     "lib": ["ES2023", "DOM"],
     "target": "ES2020",
     "module": "Node16",
@@ -13,7 +14,6 @@
     "strict": true,
     "allowJs": true,
     "checkJs": true,
-    "esModuleInterop": true,
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
@@ -21,9 +21,7 @@
     "isolatedModules": true,
     "baseUrl": ".",
     "paths": {
-      "@/ui/*": ["../../packages/*"]
+      "@/ui/*": ["./packages/*"]
     }
-  },
-  "include": ["src"],
-  "exclude": ["node_modules"]
+  }
 }
