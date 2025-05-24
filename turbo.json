@@ -30,6 +30,9 @@
     },
     "clean:turbo": {
       "cache": false
+    },
+    "clean:cts": {
+      "cache": false
     }
   },
   "ui": "tui",
