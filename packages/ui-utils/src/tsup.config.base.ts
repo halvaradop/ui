@@ -13,5 +13,5 @@ export const tsupConfig: Options = {
     sourcemap: env !== "production",
     minify: env === "production",
     bundle: env === "production",
-    external: ["vite", "tailwindcss"],
+    external: ["vite", "tailwindcss", "react", "react-dom"],
 }
