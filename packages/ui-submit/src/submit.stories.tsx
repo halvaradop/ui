@@ -1,5 +1,5 @@
-"use client"
 import type { ArgTypes, Meta, StoryObj } from "@storybook/react"
+import { expect, getAllByRole, userEvent, within } from "@storybook/test"
 import { Submit } from "./index.js"
 import { decorator } from "@halvaradop/ui-utils/decorator"
 import { DocsPage } from "@halvaradop/ui-utils/docs-page"
@@ -67,6 +67,18 @@ const meta: Meta = {
         },
     },
     decorators: [decorator],
+    play: async ({ canvasElement }) => {
+        const canvas = within(canvasElement)
+        const buttons = canvas.getAllByRole("button")
+        for (const button of buttons.slice(1)) {
+            await expect(button).toBeInTheDocument()
+            button.setAttribute("disabled", "true")
+            await expect(button).toBeDisabled()
+            await new Promise((resolve) => setTimeout(resolve, 500))
+            button.removeAttribute("disabled")
+            await expect(button).not.toBeDisabled()
+        }
+    },
 } satisfies Meta<typeof Submit>
 
 type Story = StoryObj<typeof meta>
