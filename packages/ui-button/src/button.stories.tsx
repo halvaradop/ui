@@ -1,4 +1,5 @@
 import type { Meta, StoryObj, ArgTypes } from "@storybook/react"
+import { userEvent, within } from "@storybook/test"
 import { Button } from "./index.jsx"
 import { decorator } from "@halvaradop/ui-utils/decorator"
 import { DocsPage } from "@halvaradop/ui-utils/docs-page"
@@ -113,6 +114,15 @@ export const Variants: Story = {
                 ))}
             </>
         )
+    },
+    play: async ({ canvasElement }) => {
+        const canvas = within(canvasElement)
+        const buttons = await canvas.findAllByRole("button")
+        for (const button of buttons.slice(1)) {
+            await new Promise((resolve) => setTimeout(resolve, 1000))
+            button.focus()
+            await userEvent.tab()
+        }
     },
 }
 
