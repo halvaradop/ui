@@ -17,10 +17,10 @@ export const decorator: Decorator = (Story, { parameters }) => {
 
     return (
         <div
-            className="w-full h-full mx-auto flex items-center justify-center absolute inset-0 data-[dark='true']:bg-black"
+            className="w-full h-min min-h-dvh mx-auto flex items-center justify-center absolute inset-0 data-[dark='true']:bg-surface"
             data-dark={isDark}
         >
-            <div className="w-full dark:text-white">
+            <div className="w-full dark:text-on-surface">
                 <button className="absolute top-[4%] left-[4%]" onClick={handleToggleTheme}>
                     Theme
                 </button>

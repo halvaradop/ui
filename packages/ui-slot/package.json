@@ -1,8 +1,8 @@
 {
-  "name": "@halvaradop/ui-label",
-  "version": "0.2.0-beta.1",
+  "name": "@halvaradop/ui-slot",
+  "version": "0.1.0",
   "private": false,
-  "description": "A customizable label component for @halvaradop/ui library with Tailwind CSS styling.",
+  "description": "A customizable Slot component for @halvaradop/ui library with Tailwind CSS styling.",
   "type": "module",
   "scripts": {
     "dev": "tsup --watch",
@@ -20,12 +20,7 @@
     "type": "git",
     "url": "git+https://github.com/halvaradop/ui.git"
   },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/@halvaradop/ui-label"
-  },
   "keywords": [
-    "label",
     "react",
     "component",
     "tailwindcss",
@@ -49,16 +44,8 @@
       "require": "./dist/index.cjs"
     }
   },
-  "dependencies": {
-    "@halvaradop/ui-core": "workspace:*",
-    "@halvaradop/ui-slot": "workspace:*",
-    "class-variance-authority": "0.7.0"
-  },
   "devDependencies": {
+    "@halvaradop/ui-core": "workspace:*",
     "@halvaradop/ui-utils": "workspace:*"
-  },
-  "peerDependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
   }
 }

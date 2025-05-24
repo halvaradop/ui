@@ -12,15 +12,13 @@ export type SubmitProps<T extends ArgsFunction> = VariantProps<T> &
     InternalSubmitProps
 
 export const submitVariants = cva(
-    "font-medium border focus-visible:[outline-style:solid] focus-visible:outline-2 focus-visible:outline-offset-2 hover:cursor-pointer disabled:hover:cursor-progress",
+    "font-medium border focus-visible:outline-solid focus-visible:outline-3 focus-visible:outline-offset-3 hover:cursor-pointer disabled:hover:cursor-progress",
     {
         variants: {
             variant: {
-                base: "text-base border-primary bg-primary focus-visible:outline-primary disabled:bg-primary-hover",
+                base: "text-on-primary border-primary bg-primary focus-visible:outline-primary disabled:bg-primary/(--opacity-cursor)",
                 secondary:
-                    "text-inverse border-secondary bg-secondary focus-visible:outline-secondary disabled:bg-secondary-hover",
-                inverted:
-                    "text-base border-primary bg-primary focus-visible:outline-primary disabled:bg-primary-hover invert",
+                    "text-on-secondary border-secondary bg-secondary focus-visible:outline-secondary disabled:bg-secondary/(--opacity-cursor)",
             },
             size: {
                 sm: "h-9 px-3 text-sm rounded",

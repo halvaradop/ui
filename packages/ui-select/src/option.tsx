@@ -6,18 +6,19 @@ export type SelectItemProps = ComponentProps<"li", "value"> & {
 }
 
 export const SelectOption = ({ className, value, children, ref, ...props }: SelectItemProps) => {
-    const { onChange } = useSelect()
+    const { selectedValue, onChange } = useSelect()
 
     return (
         <li
             className={merge(
-                "w-full h-9 px-3 flex items-center text-secondary rounded-md hover:bg-primary-hover hover:cursor-pointer",
+                "w-full h-9 px-3 flex items-center transition-colors rounded-md hover:cursor-pointer hover:bg-ghost aria-selected:text-on-primary aria-selected:bg-primary",
                 className
             )}
             ref={ref}
             role="option"
             data-value={value}
             onClick={onChange}
+            aria-selected={selectedValue === value}
             tabIndex={-1}
             {...props}
         >

@@ -13,7 +13,7 @@ export const Select = ({ className, children, name, defaultValue, ref, ...props 
         <SelectProvider name={name} defaultValue={defaultValue}>
             <ul
                 id={selectId}
-                className={merge("relative", className)}
+                className={merge("text-on-surface relative", className)}
                 ref={ref}
                 role="combobox"
                 aria-haspopup="listbox"

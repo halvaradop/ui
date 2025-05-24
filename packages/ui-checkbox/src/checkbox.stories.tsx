@@ -1,7 +1,7 @@
 import type { ArgTypes, Meta, StoryObj } from "@storybook/react"
+import { expect, userEvent, within } from "@storybook/test"
 import { Checkbox } from "./index.js"
 import { decorator } from "@halvaradop/ui-utils/decorator"
-import { Title, Canvas, Subtitle, Controls } from "@storybook/blocks"
 import { DocsPage } from "@halvaradop/ui-utils/docs-page"
 
 const size: ArgTypes["size"] = {
@@ -20,14 +20,14 @@ const size: ArgTypes["size"] = {
 
 const color: ArgTypes["color"] = {
     control: "select",
-    options: ["green", "blue", "red", "yellow", "primary"],
+    options: ["primary", "secondary", "green", "blue", "red", "yellow"],
     description: "Color of the checkbox",
     table: {
         type: {
-            summary: "green | blue | red | yellow | primary",
+            summary: "primary | secondary | green | blue | red | yellow",
         },
         defaultValue: {
-            summary: "green",
+            summary: "primary",
         },
     },
 }
@@ -52,6 +52,18 @@ const meta: Meta = {
                 },
             },
         },
+        disabled: {
+            control: "boolean",
+            description: "Disable the checkbox",
+            table: {
+                type: {
+                    summary: "boolean",
+                },
+                defaultValue: {
+                    summary: "false",
+                },
+            },
+        },
     },
     parameters: {
         layout: "centered",
@@ -63,6 +75,20 @@ const meta: Meta = {
         },
     },
     decorators: [decorator],
+    play: async ({ canvasElement }) => {
+        const canvas = within(canvasElement)
+        const checkboxs = await canvas.findAllByRole("checkbox")
+        for (const checkbox of checkboxs) {
+            await new Promise((resolve) => setTimeout(resolve, 750))
+            checkbox.focus()
+            expect(checkbox).toHaveFocus()
+            await userEvent.click(checkbox)
+            expect(checkbox).toBeChecked()
+            await new Promise((resolve) => setTimeout(resolve, 750))
+            await userEvent.click(checkbox)
+            expect(checkbox).not.toBeChecked()
+        }
+    },
 } satisfies Meta<typeof Checkbox>
 
 type Story = StoryObj<typeof meta>
@@ -120,24 +146,20 @@ export const Colors: Story = {
     render: (args) => (
         <>
             <div>
+                <span className="font-medium">Primary</span>
+                <Checkbox color="primary" {...args} />
+            </div>
+            <div>
+                <span className="font-medium">Secondary</span>
+                <Checkbox color="secondary" {...args} />
+            </div>
+            <div>
                 <span className="font-medium">Green</span>
                 <Checkbox color="green" {...args} />
             </div>
             <div>
-                <span className="font-medium">Blue</span>
-                <Checkbox color="blue" {...args} />
-            </div>
-            <div>
                 <span className="font-medium">Red</span>
                 <Checkbox color="red" {...args} />
-            </div>
-            <div>
-                <span className="font-medium">Yellow</span>
-                <Checkbox color="yellow" {...args} />
-            </div>
-            <div>
-                <span className="font-medium">primary</span>
-                <Checkbox color="primary" {...args} />
             </div>
         </>
     ),

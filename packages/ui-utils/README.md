@@ -38,7 +38,14 @@ The `tsupConfig` object contains the basic configuration for building a package 
 import { defineConfig } from "tsup"
 import { tsupConfig } from "@halvaradop/ui-utils/tsup.config.base"
 
-export default defineConfig(tsupConfig)
+import { defineConfig } from "tsup"
+import { tsupConfig } from "@halvaradop/ui-utils/tsup.config.base"
+
+export default defineConfig((options) => ({
+  ...tsupConfig,
+  minify: !options.watch,
+  splitting: !options.watch,
+}))
 ```
 
 ### Decorator for Storybook
@@ -75,4 +82,4 @@ const meta: Meta = {
 
 ## Notes
 
-The beta version is functional but may have minor changes or issues compared to the stable version. If you encounter any problems, please report them in an [Issue](https://github.com/halvaradop/ui/issues) with details.
+The beta version may have minor changes or issues compared to the stable version. Please report any problems via [GitHub Issues](https://github.com/halvaradop/ui/issues).

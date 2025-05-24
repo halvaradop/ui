@@ -4,20 +4,20 @@ import { cva, type VariantProps } from "class-variance-authority"
 export type InputProps<T extends ArgsFunction> = VariantProps<T> & ComponentProps<"input", "size">
 
 export const inputVariants = cva(
-    "text-inverse border bg-input-background focus-visible:outline-none disabled:cursor-not-allowed disabled:text-disabled disabled:border-disabled disabled:bg-disabled",
+    "text-on-surface border border-solid border-border bg-surface placeholder:text-muted outline-0 focus-visible:outline-solid disabled:cursor-not-allowed disabled:text-on-secondary disabled:border-disabled disabled:bg-disabled",
     {
         variants: {
             size: {
-                sm: "h-8 indent-2 text-sm rounded-md",
-                base: "h-9 indent-3 rounded-lg",
-                md: "h-10 indent-3 rounded-lg",
-                lg: "h-11 indent-4 text-lg rounded-xl",
+                sm: "h-8 indent-2 text-sm rounded-xs",
+                base: "h-9 indent-3 rounded-sm",
+                md: "h-10 indent-3 rounded-sm",
+                lg: "h-11 indent-4 text-lg rounded-lg",
             },
             variant: {
-                base: "caret-primary border-base focus-visible:ring-1 focus-visible:border-base focus-visible:ring-border",
-                line: "border-0 border-b border-base rounded-none",
+                base: "caret-on-surface focus:outline focus:outline-border",
+                line: "border-0 border-b rounded-none",
                 sensitive:
-                    "focus-visible:ring-1 focus-visible:border-base focus-visible:ring-border usinvalid:text-red-hover usinvalid:placeholder-red-hover usinvalid:border-red-hover usinvalid:focus-within:ring-red-hover usvalid:text-green-hover usvalid:border-green-hover usvalid:focus-within:ring-green-hover input-empty:usinvalid:border-inherit input-empty:usinvalid:placeholder-border-md input-empty:usinvalid:caret-border-md input-empty:usinvalid:focus-within:border-md input-empty:usinvalid:focus-within:ring-border-md",
+                    "user-invalid:text-danger user-invalid:border-danger focus:border-border focus:outline focus:outline-border focus:user-invalid:text-danger focus:user-invalid:border-danger focus:user-invalid:outline-danger invalid:placeholder-shown:border-border",
             },
             fullWidth: {
                 true: "w-full",
