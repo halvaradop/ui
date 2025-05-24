@@ -139,5 +139,7 @@ playwright-report/
 blob-report/
 playwright/.cache/
 
-# Storybook
-storybook-static
+# Storybook build outputs
+out/
+storybook-static/
+storybook-static-*
