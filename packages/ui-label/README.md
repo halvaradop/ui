@@ -1,14 +1,12 @@
 # @halvaradop/ui-label
 
-The `@halvaradop/ui-label` is an accessible, reusable, and customizable `Label` component that is part of the `@halvaradop/ui` library for React. Built with `React` and styled using `TailwindCSS`, it provides a set of pre-styled components designed to streamline and accelerate the development of user interfaces.
+`@halvaradop/ui-label` is an accessible, reusable, and customizable Label component from the `@halvaradop/ui` React library. Built with React and styled using TailwindCSS v4, it provides pre-styled components to accelerate UI development.
 
 ## Installation
 
-This label package offers two versions: one for React 18 and another for React 19.
+There are two versions available: one for React 18 (stable) and one for React 19 (beta).
 
-### For React 18
-
-Install the stable version:
+### React 18 (Stable)
 
 ```bash
 npm install @halvaradop/ui-label
@@ -16,9 +14,7 @@ yarn add @halvaradop/ui-label
 pnpm add @halvaradop/ui-label
 ```
 
-### For React 19
-
-Install the beta version:
+### React 19 (Beta)
 
 ```bash
 npm install @halvaradop/ui-label@beta
@@ -28,7 +24,7 @@ pnpm add @halvaradop/ui-label@beta
 
 ## Usage
 
-The `Label` component offers three additional props for customization: `variant`, `size` and `asChild`. Import the `Label` component as shown below:
+The `Label` component offers additional props for customization: `variant`, `size`, and `asChild`.
 
 ```tsx
 import { Label } from "@halvaradop/ui-label"
@@ -45,7 +41,7 @@ export default function App() {
 
 ### Advanced Usage
 
-The `Label` component leverages the `Slot` component from [`@halvaradop/ui-core`](https://github.com/halvaradop/ui/blob/master/packages/ui-core/src/slot.ts). This feature allows you to replace the label's HTML tag with the tag of its children. To enable this functionality, set the `asChild` prop to `true`.
+The `Label` component leverages the `Slot` component from [`@halvaradop/ui-slot`](https://github.com/halvaradop/ui/blob/master/packages/ui-slot/src/index.ts). To enable this, set the `asChild` prop to `true`:
 
 ```tsx
 import { Label } from "@halvaradop/ui-label"
@@ -59,28 +55,7 @@ export default function App() {
 }
 ```
 
-The `error` variant uses the pseudo-selectors `:user-valid` and `:user-invalid`, which are not supported by `TailwindCSS` by default. To use this variant, you need to extend TailwindCSS with a custom plugin. Below is an example of how to set up this plugin:
-
-```ts
-import type { Config } from "tailwindcss"
-import plugin from "tailwindcss/plugin"
-
-const config: Config = {
-  plugins: [
-    plugin(({ addVariant }) => {
-      addVariant("usinvalid", "&:user-invalid")
-      addVariant("usvalid", "&:user-valid")
-      addVariant("input-empty", "&:is(:usinvalid:placeholder-shown, :placeholder-shown)")
-      addVariant("peer-usinvalid", ".peer:user-invalid ~ &")
-      addVariant("peer-usinvalid-empty", ".peer:user-invalid:placeholder-shown ~ &")
-    }),
-  ],
-}
-
-export default config
-```
-
-### Prop Values
+### Prop Reference
 
 | Prop    | Values                  | Default |
 | ------- | ----------------------- | ------- |
@@ -88,78 +63,32 @@ export default config
 | size    | "sm", "base", "md"      | "base"  |
 | asChild | true, false             | false   |
 
-## Styles
+## Styling
 
-To add styles from the library to any of the components in your project, you need to add the pattern `"./node_modules/@halvaradop/ui-*/**/*.{js,ts,jsx,tsx,mdx}"` within the `tailwind.config.ts` file. This will allow TailwindCSS to recognize the classes used in the library and apply the styles to the components.
-
-```ts
-import type { Config } from "tailwindcss"
-
-const config: Config = {
-  content: ["./node_modules/@halvaradop/ui-*/**/*.{js,ts,jsx,tsx,mdx}"],
-  darkMode: "class",
-  future: {
-    hoverOnlyWhenSupported: true,
-  },
-}
-
-export default config
-```
-
-### Customizing with CSS Variables
-
-The `Label` component supports CSS variables to customize its styles based on your design system. To set the CSS variables, define the required variables in your project's `.css` file. Then, extend the `colors` field in the `tailwind.config.ts` file to create new color names using the values of the previously defined CSS variables.
-
-Below are some of the CSS variables used by the `@halvaradop/ui-label` component. For a complete list of CSS variables, refer to the [index.css](https://github.com/halvaradop/ui/blob/master/index.css) file:
+The component supports TailwindCSS v4. To customize colors, use the following CSS variables. For the full theme, see [the theme file](https://github.com/halvaradop/ui/blob/master/tailwind.css).
 
 ```css
-/* Default color scheme for light theme */
+@import "tailwindcss";
 
-:root {
-  /* Primary colors used by base variant (Default variant) */
-  --color-primary: oklch(13% 0 100);
+@theme {
+  --color-muted: oklch(65% 0.01 260);
+  --color-danger: oklch(65% 0.2 25);
+  --color-on-surface: oklch(20% 0.02 260);
 }
 ```
 
-### Multi-Theming Support
+### Dark Theme Support
 
-The library supports only the `Dark Theme`. To update the CSS variables based on the dark theme, use the following code:
+The library currently supports only a dark theme. To enable it, update the CSS variables as follows:
 
 ```css
-/* Dark theme color scheme */
-
 :is(html, body).dark {
-  --color-primary: oklch(13% 0 100);
+  --color-muted: oklch(70% 0.01 260);
+  --color-danger: oklch(65% 0.22 25);
+  --color-on-surface: oklch(95% 0.01 260);
 }
-```
-
-### Integrating CSS Variables with TailwindCSS Configuration
-
-After defining the colors for your project using your design system or the default styles provided by the library, the next step is to create new color references using the CSS variables. The following code snippet demonstrates how to create some colors using these CSS variables. For more details, refer to the [tailwind.config.ts](https://github.com/halvaradop/ui/blob/master/tailwind.config.ts) file.
-
-```ts
-import type { Config } from "tailwindcss"
-
-const config: Config = {
-  content: ["./node_modules/@halvaradop/ui-*/**/*.{js,ts,jsx,tsx,mdx}"],
-  darkMode: "class",
-  future: {
-    hoverOnlyWhenSupported: true,
-  },
-  theme: {
-    extends: {
-      colors: {
-        primary: {
-          DEFAULT: "var(--color-primary)",
-        },
-      },
-    },
-  },
-}
-
-export default config
 ```
 
 ## Notes
 
-The beta version works, however, it may have minor changes or issues compared to the stable version. If you find a problem or issue, please report it in an [Issue](https://github.com/halvaradop/ui/issues) with the details.
+The beta version may have minor changes or issues compared to the stable version. Please report any problems via [GitHub Issues](https://github.com/halvaradop/ui/issues).

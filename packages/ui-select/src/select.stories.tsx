@@ -25,16 +25,15 @@ const meta: Meta = {
 type Story = StoryObj<typeof meta>
 
 export const Base: Story = {
-    parameters: {
-        skipDecorator: true,
-    },
     render: () => (
-        <Select className="min-w-56" name="food">
+        <Select className="min-w-56 mx-auto" name="food">
             <SelectTrigger>Select an item</SelectTrigger>
             <SelectList>
                 <SelectOption value="pizza">Pizza</SelectOption>
                 <SelectOption value="burger">Burger</SelectOption>
-                <SelectOption value="sushi">Sushi</SelectOption>
+                <SelectOption value="sushi" aria-disabled>
+                    Sushi
+                </SelectOption>
                 <SelectOption value="salad">Salad</SelectOption>
             </SelectList>
         </Select>
