@@ -24,6 +24,7 @@ export const labelVariants = cva(
             },
         },
         defaultVariants: {
+            variant: "" as any,
             size: "base",
             fullWidth: true,
         },

@@ -64,6 +64,18 @@ const meta: Meta = {
                 },
             },
         },
+        disabled: {
+            control: "boolean",
+            description: "Disable the button",
+            table: {
+                type: {
+                    summary: "boolean",
+                },
+                defaultValue: {
+                    summary: "false",
+                },
+            },
+        },
     },
     parameters: {
         layout: "centered",
@@ -100,14 +112,14 @@ export const Variants: Story = {
     argTypes: {
         size,
     },
-    render: ({ children, size, fullRounded }) => {
+    render: ({ children, size, fullRounded, disabled }) => {
         const variants = ["base", "secondary", "ghost", "link", "destructive", "outline", "plain"]
         return (
             <>
                 {variants.map((variant) => (
                     <div key={variant}>
-                        <span className="font-medium capitalize">{variant}</span>
-                        <Button variant={variant as any} size={size} fullRounded={fullRounded}>
+                        <span className="block font-medium capitalize">{variant}</span>
+                        <Button variant={variant as any} size={size} fullRounded={fullRounded} disabled={disabled}>
                             {children}
                         </Button>
                     </div>
@@ -133,14 +145,14 @@ export const Sizes: Story = {
     argTypes: {
         variant,
     },
-    render: ({ children, variant, fullRounded }) => {
+    render: ({ children, variant, fullRounded, disabled }) => {
         const sizes = ["sm", "base", "md", "lg"]
         return (
             <>
                 {sizes.map((size) => (
                     <div key={size}>
                         <span className="font-medium capitalize">{size}</span>
-                        <Button size={size as any} variant={variant} fullRounded={fullRounded}>
+                        <Button size={size as any} variant={variant} fullRounded={fullRounded} disabled={disabled}>
                             {children}
                         </Button>
                     </div>
