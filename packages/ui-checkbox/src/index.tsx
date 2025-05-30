@@ -7,10 +7,10 @@ export type CheckboxProps<T extends ArgsFunction> = ComponentProps<"input", "typ
 const internalVariants = cva("hidden absolute peer-checked:block", {
     variants: {
         size: {
-            sm: "size-3",
-            base: "size-4",
-            md: "size-5",
-            lg: "size-6",
+            sm: "size-[calc(var(--size-sm)*0.5)]",
+            base: "size-[calc(var(--size-base)*0.5)]",
+            md: "size-[calc(var(--size-md)*0.5)]",
+            lg: "size-[calc(var(--size-lg)*0.5)]",
         },
     },
     defaultVariants: {
@@ -23,10 +23,10 @@ export const checkboxVariants = cva(
     {
         variants: {
             size: {
-                sm: "size-3 focus-visible:outline focus-visible:outline-offset-2",
-                base: "size-4 focus-visible:outline focus-visible:outline-offset-2",
-                md: "size-5 p-0.5 focus-visible:outline-3 focus-visible:outline-offset-3",
-                lg: "size-6 p-0.5 focus-visible:outline-3 focus-visible:outline-offset-3",
+                sm: "size-[calc(var(--size-sm)*0.5)] focus-visible:outline focus-visible:outline-offset-2",
+                base: "size-[calc(var(--size-base)*0.5)] focus-visible:outline focus-visible:outline-offset-2",
+                md: "size-[calc(var(--size-md)*0.5)] p-0.5 focus-visible:outline-3 focus-visible:outline-offset-3",
+                lg: "size-[calc(var(--size-lg)*0.5)] p-0.5 focus-visible:outline-3 focus-visible:outline-offset-3",
             },
             color: {
                 primary: "checked:border-primary checked:bg-primary checked:focus-visible:outline-primary",

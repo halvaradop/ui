@@ -27,17 +27,10 @@
     --color-disabled: oklch(92% 0 0);
     --color-on-disabled: oklch(60% 0.01 260);
 
-    --size: 2.25rem;
-    --padding: 0.75rem;
-
+    --size-sm: 1.75rem;
     --size-base: 2.25rem;
     --size-md: 2.75rem;
     --size-lg: 3.25rem;
-
-    --padding-sm: 0.5rem;
-    --padding-base: 0.75rem;
-    --padding-md: 1rem;
-    --padding-lg: 1.25rem;
 }
 
 :is(html, body).dark {

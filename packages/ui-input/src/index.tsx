@@ -9,10 +9,10 @@ export const inputVariants = cva(
     {
         variants: {
             size: {
-                sm: "h-8 indent-2 text-sm",
-                base: "h-9 indent-3",
-                md: "h-10 indent-3",
-                lg: "h-11 indent-4 text-lg",
+                sm: "h-8 indent-[calc(var(--size-sm)*0.4)]",
+                base: "h-9 indent-[calc(var(--size-base)*0.4)]",
+                md: "h-10 indent-[calc(var(--size-md)*0.4)]",
+                lg: "h-11 indent-[calc(var(--size-lg)*0.4)]",
             },
             variant: {
                 base: "caret-on-surface focus:outline focus:outline-border",

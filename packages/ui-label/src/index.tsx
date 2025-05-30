@@ -14,6 +14,7 @@ export const labelVariants = cva(
                 false: "w-fit",
             },
             variant: {
+                base: "",
                 required:
                     "w-fit hidden text-danger absolute top-0 right-0 peer-user-invalid:block peer-placeholder-shown:hidden peer-user-invalid:peer-placeholder-shown:hidden",
             },
@@ -21,10 +22,11 @@ export const labelVariants = cva(
                 sm: "text-xs",
                 base: "text-sm",
                 md: "text-base",
+                lg: "text-lg",
             },
         },
         defaultVariants: {
-            variant: "" as any,
+            variant: "base",
             size: "base",
             fullWidth: true,
         },

@@ -19,10 +19,10 @@ export const submitVariants = cva(
                 secondary: "text-on-secondary border-secondary bg-secondary focus-visible:outline-secondary",
             },
             size: {
-                sm: "h-9 px-3 text-sm",
-                base: "h-10 px-4 text-base",
-                md: "h-10 px-5 text-base",
-                lg: "h-11 px-6 text-lg",
+                sm: "h-(--size-sm) px-[calc(var(--size-sm)*0.5)] text-sm",
+                base: "h-(--size-base) px-[calc(var(--size-base)*0.5)] text-base",
+                md: "h-(--size-md) px-[calc(var(--size-md)*0.5)] text-md",
+                lg: "h-(--size-lg) px-[calc(var(--size-lg)*0.5)] text-lg",
             },
             fullWidth: {
                 true: "w-full",

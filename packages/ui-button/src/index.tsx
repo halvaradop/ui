@@ -21,10 +21,10 @@ export const buttonVariants = cva(
                 plain: "text-on-surface border-transparent focus-visible:outline-primary",
             },
             size: {
-                sm: "h-[calc(var(--size)*0.8)] px-3 text-sm",
-                base: "h-(--size) px-(--padding) text-base",
-                md: "h-[calc(var(--size)*1.15)] px-4 text-md",
-                lg: "h-[calc(var(--size)*1.5)] px-4 text-lg",
+                sm: "h-(--size-sm) px-[calc(var(--size-sm)*0.5)] text-sm",
+                base: "h-(--size-base) px-[calc(var(--size-base)*0.5)] text-base",
+                md: "h-(--size-md) px-[calc(var(--size-md)*0.5)] text-md",
+                lg: "h-(--size-lg) px-[calc(var(--size-lg)*0.5)] text-lg",
             },
             fullWidth: {
                 true: "w-full",

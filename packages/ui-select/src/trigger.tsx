@@ -13,7 +13,7 @@ export const SelectTrigger = forwardRef<HTMLButtonElement, SelectTriggerProps>(
         return (
             <button
                 className={merge(
-                    "w-full h-9 px-3 flex items-center justify-between border border-border rounded-(--rounded) transition-colors bg-surface hover:cursor-pointer hover:border-primary hover:bg-ghost focus-visible:outline-solid focus-visible:outline",
+                    "w-full h-9 px-[calc(var(--size-base)*0.4)] flex items-center justify-between border border-border rounded-(--rounded) transition-colors bg-surface hover:cursor-pointer hover:border-primary hover:bg-ghost focus-visible:outline-solid focus-visible:outline",
                     className
                 )}
                 id={`${id}-trigger`}
