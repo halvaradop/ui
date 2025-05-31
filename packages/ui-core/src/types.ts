@@ -1,4 +1,4 @@
-import type { PropsWithChildren as WithChildren } from "react"
+import type { PropsWithChildren as WithChildren, JSXElementConstructor } from "react"
 
 /**
  * HTMLTag
@@ -10,7 +10,7 @@ import type { PropsWithChildren as WithChildren } from "react"
  * // or a custom React component
  * const tag: HTMLTag = "section"
  */
-export type HTMLTag = keyof JSX.IntrinsicElements | React.JSXElementConstructor<unknown>
+export type HTMLTag = keyof JSX.IntrinsicElements | JSXElementConstructor<unknown>
 
 /**
  * PropsWithChildren
@@ -48,7 +48,7 @@ export type PropsWithChildren<Props extends object> = Omit<Props, "children"> & 
  */
 export type HTMLTagAttributes<Tag extends HTMLTag> = Tag extends keyof JSX.IntrinsicElements
     ? JSX.IntrinsicElements[Tag]
-    : React.JSXElementConstructor<Tag>
+    : JSXElementConstructor<Tag>
 
 /**
  * ComponentProps
