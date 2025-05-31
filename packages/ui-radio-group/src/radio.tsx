@@ -13,14 +13,14 @@ export type RadioProps<T extends ArgsFunction> = VariantProps<T> &
     InternalRadioProps
 
 export const radioVariants = cva(
-    "peer relative z-10 border-border appearance-none rounded-full focus:outline-none hover:cursor-pointer",
+    "peer relative z-10 border-border appearance-none rounded-full focus:outline-none hover:cursor-pointer disabled:cursor-not-allowed",
     {
         variants: {
             size: {
-                sm: "border size-3",
-                base: "border size-4",
-                md: "border-2 size-5",
-                lg: "border-2 size-6",
+                sm: "size-[calc(var(--size-sm)*0.5)] border",
+                base: "size-[calc(var(--size-base)*0.5)] border",
+                md: "size-[calc(var(--size-md)*0.5)] border-2",
+                lg: "size-[calc(var(--size-lg)*0.5)] border-2",
             },
         },
         defaultVariants: {

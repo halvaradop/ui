@@ -4,6 +4,7 @@ import { useSelect } from "./context.js"
 
 export type SelectItemProps = ComponentProps<"li", "value"> & {
     value?: string | number
+    disabled?: boolean
 }
 
 export const SelectOption = forwardRef<HTMLLIElement, SelectItemProps>(
@@ -13,7 +14,7 @@ export const SelectOption = forwardRef<HTMLLIElement, SelectItemProps>(
         return (
             <li
                 className={merge(
-                    "w-full h-9 px-3 flex items-center transition-colors rounded-md hover:cursor-pointer hover:bg-ghost aria-selected:text-on-primary aria-selected:bg-primary",
+                    "w-full h-9 px-[calc(var(--size-base)*0.4)] flex items-center transition-colors rounded-(--rounded) hover:cursor-pointer hover:bg-ghost aria-selected:text-on-primary aria-selected:bg-primary disabled:text-on-surface disabled:bg-disabled disabled:cursor-not-allowed",
                     className
                 )}
                 ref={ref}

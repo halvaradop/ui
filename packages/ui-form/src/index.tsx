@@ -4,27 +4,29 @@ import { cva, type VariantProps } from "class-variance-authority"
 
 export type FormProps<T extends ArgsFunction> = VariantProps<T> & WithChildrenProps<ComponentProps<"form">>
 
-export const formVariants = cva("mx-auto flex items-center flex-col text-on-surface relative bg-surface", {
-    variants: {
-        size: {
-            sm: "w-11/12 max-w-xs pt-6 pb-4 px-3 gap-y-3 rounded-md",
-            base: "w-11/12 max-w-sm pt-10 pb-6 px-4 gap-y-4 rounded-xl",
-            md: "w-11/12 max-w-md pt-12 pb-8 px-5 gap-y-5 rounded-xl",
-            lg: "w-11/12 max-w-lg pt-14 pb-10 px-6 gap-y-6 rounded-2xl",
-            full: "w-fit",
+export const formVariants = cva(
+    "w-full mx-auto flex items-center flex-col text-on-surface relative rounded-(--rounded) bg-surface",
+    {
+        variants: {
+            size: {
+                sm: "max-w-sm p-[calc(var(--size-sm)*0.75)] gap-[calc(var(--size-sm)*0.5)]",
+                base: "max-w-md p-[calc(var(--size-base)*0.75)] gap-[calc(var(--size-base)*0.5)]",
+                md: "max-w-lg p-[calc(var(--size-md)*0.75)] gap-[calc(var(--size-md)*0.5)]",
+                lg: "max-w-xl p-[calc(var(--size-lg)*0.75)] gap-[calc(var(--size-lg)*0.5)]",
+            },
+            variant: {
+                base: "items-start",
+                outline: "border border-border shadow",
+                inner: "border border-border shadow-inner",
+                ghost: "bg-transparent",
+            },
         },
-        variant: {
-            base: "items-start",
-            outline: "border border-border shadow",
-            inner: "border border-border shadow-inner",
-            ghost: "p-0",
+        defaultVariants: {
+            variant: "base",
+            size: "base",
         },
-    },
-    defaultVariants: {
-        variant: "base",
-        size: "base",
-    },
-})
+    }
+)
 
 export const Form = forwardRef<HTMLFormElement, FormProps<typeof formVariants>>(
     ({ className, variant, size, children, ...props }, ref) => {

@@ -1,4 +1,3 @@
-"use client"
 import { forwardRef, useState, useCallback } from "react"
 import { merge, type ComponentProps, type WithChildrenProps, type ArgsFunction } from "@halvaradop/ui-core"
 import { cva, type VariantProps } from "class-variance-authority"
@@ -14,8 +13,8 @@ export type RadioGroupProps<T extends ArgsFunction> = VariantProps<T> &
 export const radioGroupVariants = cva("flex", {
     variants: {
         variant: {
-            row: "flex-row gap-x-5",
-            column: "flex-col gap-y-1",
+            row: "flex-row gap-x-[calc(var(--size-sm)*0.27)]",
+            column: "flex-col gap-y-[calc(var(--size-sm)*0.27)]",
         },
     },
     defaultVariants: {
