@@ -1,8 +1,8 @@
 import { forwardRef } from "react"
-import { merge, type ComponentProps, type ArgsFunction } from "@halvaradop/ui-core"
+import { merge, type ComponentProps } from "@halvaradop/ui-core"
 import { cva, type VariantProps } from "class-variance-authority"
 
-export type InputProps<T extends ArgsFunction> = VariantProps<T> & ComponentProps<"input", "size">
+export type InputProps<T extends VoidFunction> = VariantProps<T> & ComponentProps<"input", "size">
 
 export const inputVariants = cva(
     "text-on-surface border border-solid border-border rounded-(--rounded) bg-surface placeholder:text-muted outline-0 focus-visible:outline-solid disabled:cursor-not-allowed disabled:text-on-secondary disabled:border-disabled disabled:bg-disabled",

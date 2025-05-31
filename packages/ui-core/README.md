@@ -31,10 +31,9 @@ The core package provides essential utilities and types to streamline developmen
 You can import the following types to ensure type safety and consistency across your components:
 
 - **`HTMLTag`**: Represents valid HTML tag names.
-- **`WithChildrenProps`**: Ensures the `children` prop is required.
+- **`PropsWithChildren`**: Ensures the `children` prop is required.
 - **`HTMLTagAttributes`**: Retrieves the attributes for a given HTML tag.
 - **`ComponentProps`**: Similar to `HTMLTagAttributes`, but allows you to omit specific attributes.
-- **`ArgsFunction`**: Utility type used by `VariantProps` from `cva`.
 
 Types are available from both the main entry point and the `/types` subpath.
 
@@ -45,9 +44,9 @@ Types are available from both the main entry point and the `/types` subpath.
 **Example:**
 
 ```tsx
-import { merge, HTMLTag, WithChildrenProps } from "@halvaradop/ui-core"
+import { merge, HTMLTag, PropsWithChildren } from "@halvaradop/ui-core"
 
-function Button({ className, children }: WithChildrenProps & { className?: string }) {
+function Button({ className, children }: PropsWithChildren & { className?: string }) {
   return <button className={merge("px-4 py-2", className)}>{children}</button>
 }
 ```

@@ -1,10 +1,10 @@
 import { forwardRef, useState, useCallback } from "react"
-import { merge, type ComponentProps, type WithChildrenProps, type ArgsFunction } from "@halvaradop/ui-core"
+import { merge, type ComponentProps, type PropsWithChildren } from "@halvaradop/ui-core"
 import { cva, type VariantProps } from "class-variance-authority"
 import { RadioGroupContext } from "./context.js"
 
-export type RadioGroupProps<T extends ArgsFunction> = VariantProps<T> &
-    WithChildrenProps<ComponentProps<"fieldset", "defaultValue" | "onChange">> & {
+export type RadioGroupProps<T extends VoidFunction> = VariantProps<T> &
+    PropsWithChildren<ComponentProps<"fieldset", "defaultValue" | "onChange">> & {
         value?: string
         defaultValue?: string
         onChange?: (value: string) => void

@@ -1,9 +1,9 @@
 import { forwardRef } from "react"
-import { merge, type ArgsFunction } from "@halvaradop/ui-core"
+import { merge } from "@halvaradop/ui-core"
 import { Slot, type SlotProps } from "@halvaradop/ui-slot"
 import { cva, type VariantProps } from "class-variance-authority"
 
-export type ButtonProps<T extends ArgsFunction> = SlotProps<"button"> & VariantProps<T>
+export type ButtonProps<T extends VoidFunction> = SlotProps<"button"> & VariantProps<T>
 
 export const buttonVariants = cva(
     "inline-flex items-center justify-center font-semibold border border-solid rounded-(--rounded) transition-colors focus-visible:outline-solid focus-visible:outline-3 focus-visible:outline-offset-3 hover:cursor-pointer disabled:text-on-surface disabled:border-disabled disabled:bg-disabled disabled:cursor-not-allowed",
