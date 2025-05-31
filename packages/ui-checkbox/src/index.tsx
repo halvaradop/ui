@@ -1,8 +1,8 @@
 import { forwardRef } from "react"
-import { merge, type ComponentProps, type ArgsFunction } from "@halvaradop/ui-core"
+import { merge, type ComponentProps } from "@halvaradop/ui-core"
 import { cva, type VariantProps } from "class-variance-authority"
 
-export type CheckboxProps<T extends ArgsFunction> = ComponentProps<"input", "type" | "size"> & VariantProps<T>
+export type CheckboxProps<T extends VoidFunction> = ComponentProps<"input", "type" | "size"> & VariantProps<T>
 
 const internalVariants = cva("hidden absolute peer-checked:block", {
     variants: {

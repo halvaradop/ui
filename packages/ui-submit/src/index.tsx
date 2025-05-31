@@ -1,12 +1,12 @@
 import { forwardRef } from "react"
-import { merge, type ComponentProps, type ArgsFunction } from "@halvaradop/ui-core"
+import { merge, type ComponentProps } from "@halvaradop/ui-core"
 import { cva, VariantProps } from "class-variance-authority"
 
 interface InternalSubmitProps {
     pending?: string
 }
 
-export type SubmitProps<T extends ArgsFunction> = VariantProps<T> &
+export type SubmitProps<T extends VoidFunction> = VariantProps<T> &
     ComponentProps<"input", "type" | "size"> &
     InternalSubmitProps
 

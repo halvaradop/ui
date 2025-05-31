@@ -1,5 +1,5 @@
 import { forwardRef } from "react"
-import { merge, type ComponentProps, type ArgsFunction } from "@halvaradop/ui-core"
+import { merge, type ComponentProps } from "@halvaradop/ui-core"
 import { cva, type VariantProps } from "class-variance-authority"
 import { useRadioGroup } from "./context.js"
 
@@ -7,7 +7,7 @@ interface InternalRadioProps {
     value: string
 }
 
-export type RadioProps<T extends ArgsFunction> = VariantProps<T> &
+export type RadioProps<T extends VoidFunction> = VariantProps<T> &
     VariantProps<typeof internalVariants> &
     ComponentProps<"input", "type" | "size" | "color" | "value" | "onChange"> &
     InternalRadioProps
