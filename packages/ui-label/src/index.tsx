@@ -1,9 +1,9 @@
 import { forwardRef } from "react"
-import { merge, type ArgsFunction } from "@halvaradop/ui-core"
+import { merge } from "@halvaradop/ui-core"
 import { Slot, type SlotProps } from "@halvaradop/ui-slot"
 import { cva, type VariantProps } from "class-variance-authority"
 
-export type LabelProps<T extends ArgsFunction> = SlotProps<"label"> & VariantProps<T>
+export type LabelProps<T extends VoidFunction> = SlotProps<"label"> & VariantProps<T>
 
 export const labelVariants = cva(
     "block font-medium text-on-surface text-left relative leading-none disabled:text-muted",
