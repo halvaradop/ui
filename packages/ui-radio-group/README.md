@@ -53,22 +53,18 @@ The component supports TailwindCSS v4. To customize colors, use the following CS
 @import "tailwindcss";
 
 @theme {
-  --breakpoint-base: 900px;
-  --opacity-cursor: 80%;
-  --color-muted: oklch(65% 0.01 260);
   --color-border: oklch(70% 0.02 260);
-  --color-overlay: oklch(30% 0.02 260 / 0.3);
+
   --color-success: oklch(75% 0.18 140);
   --color-danger: oklch(65% 0.2 25);
+
   --color-surface: oklch(98% 0 0);
-  --color-on-surface: oklch(20% 0.02 260);
   --color-primary: oklch(30% 0 270);
-  --color-on-primary: oklch(95% 0 0);
-  --color-secondary: oklch(60% 0 270);
-  --color-on-secondary: oklch(10% 0 0);
-  --color-ghost: oklch(94% 0.01 260);
-  --color-disabled: oklch(92% 0 0);
-  --color-on-disabled: oklch(60% 0.01 260);
+
+  --size-sm: 1.75rem;
+  --size-base: 2.25rem;
+  --size-md: 2.75rem;
+  --size-lg: 3.25rem;
 }
 ```
 
@@ -78,20 +74,13 @@ The library currently supports only a dark theme. To enable it, update the CSS v
 
 ```css
 :is(html, body).dark {
-  --opacity-cursor: 80%;
-  --color-muted: oklch(70% 0.01 260);
   --color-border: oklch(35% 0.01 260);
+
   --color-success: oklch(70% 0.19 150);
   --color-danger: oklch(65% 0.22 25);
-  --color-overlay: oklch(0% 0 0 / 0.6);
+
   --color-surface: oklch(15% 0.005 260);
-  --color-on-surface: oklch(95% 0.01 260);
   --color-primary: oklch(90% 0 0);
-  --color-on-primary: oklch(20% 0 270);
-  --color-secondary: oklch(60% 0 0);
-  --color-on-secondary: oklch(10% 0 270);
-  --color-ghost: oklch(25% 0 0);
-  --color-disabled: oklch(30% 0 0);
 }
 ```
 

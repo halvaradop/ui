@@ -59,6 +59,8 @@ The component supports TailwindCSS v4. To customize colors, use the following CS
 @import "tailwindcss";
 
 @theme {
+  --rounded: 0.375rem;
+
   --color-muted: oklch(65% 0.01 260);
   --color-border: oklch(70% 0.02 260);
 
@@ -70,6 +72,11 @@ The component supports TailwindCSS v4. To customize colors, use the following CS
   --color-on-secondary: oklch(10% 0 0);
 
   --color-ghost: oklch(94% 0.01 260);
+
+  --size-sm: 1.75rem;
+  --size-base: 2.25rem;
+  --size-md: 2.75rem;
+  --size-lg: 3.25rem;
 }
 ```
 
