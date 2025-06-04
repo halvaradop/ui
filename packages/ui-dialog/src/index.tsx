@@ -34,7 +34,10 @@ export const Dialog = forwardRef<HTMLDialogElement, DialogProps>(({ className, c
                 "w-full min-h-screen max-w-none max-h-none items-center justify-center relative inset-0 bg-transparent backdrop:bg-overlay open:flex",
                 className
             )}
+            role="dialog"
             ref={ref}
+            tabIndex={-1}
+            aria-modal="true"
             {...props}
         >
             {children}

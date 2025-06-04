@@ -31,7 +31,7 @@ export const formVariants = cva(
 export const Form = forwardRef<HTMLFormElement, FormProps<typeof formVariants>>(
     ({ className, variant, size, children, ...props }, ref) => {
         return (
-            <form className={merge(formVariants({ className, variant, size }))} ref={ref} {...props}>
+            <form className={merge(formVariants({ className, variant, size }))} ref={ref} role="form" {...props}>
                 {children}
             </form>
         )

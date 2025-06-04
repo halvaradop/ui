@@ -45,17 +45,22 @@ const internalVariants = cva("size-3/5 block absolute z-0 rounded-full bg-surfac
 export const Radio = forwardRef<HTMLInputElement, RadioProps<typeof radioVariants>>(
     ({ className, size, color, name, value, ...props }, ref) => {
         const { name: defaultName, selectedValue, onChange } = useRadioGroup()
+        const isSelected = selectedValue === value
 
         return (
             <label className="w-min inline-flex items-center justify-center relative z-20" htmlFor={name}>
                 <input
                     className={merge(radioVariants({ className, size }))}
+                    ref={ref}
                     type="radio"
+                    role="radio"
                     name={name ?? defaultName}
                     value={value}
-                    checked={selectedValue === value}
+                    checked={isSelected}
+                    tabIndex={isSelected ? 0 : -1}
+                    aria-checked={isSelected}
+                    aria-selected={isSelected}
                     onChange={() => onChange?.(value)}
-                    ref={ref}
                     {...props}
                 />
                 <span className={internalVariants({ color })} />

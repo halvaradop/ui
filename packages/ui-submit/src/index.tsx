@@ -60,15 +60,17 @@ export const Submit = forwardRef<HTMLInputElement, SubmitProps<typeof submitVari
         return (
             <input
                 className={merge(submitVariants({ className, variant, size, fullWidth, fullRounded }))}
+                ref={ref}
                 type="submit"
+                role="button"
                 value={message}
                 disabled={disabled}
                 aria-disabled={disabled}
-                ref={ref}
+                aria-busy={disabled}
                 {...props}
             />
         )
     }
 )
 
-Submit.displayName = "Input"
+Submit.displayName = "Submit"
