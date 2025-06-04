@@ -2,12 +2,12 @@ import { forwardRef } from "react"
 import { merge, type ComponentProps } from "@halvaradop/ui-core"
 import { useSelect } from "./context.js"
 
-export const SelectList = forwardRef<HTMLUListElement, ComponentProps<"ul">>(
+export const SelectList = forwardRef<HTMLDivElement, ComponentProps<"div">>(
     ({ children, className, ...props }, ref) => {
         const { id, open } = useSelect()
 
         return (
-            <ul
+            <div
                 className={merge(
                     "w-full p-1 border border-border rounded-(--rounded) absolute top-10 right-0 bg-surface",
                     className,
@@ -16,11 +16,11 @@ export const SelectList = forwardRef<HTMLUListElement, ComponentProps<"ul">>(
                 ref={ref}
                 id={`${id}-listbox`}
                 role="listbox"
-                aria-labelledby={`${id}-trigger`}
+                aria-labelledby={`${id}-list`}
                 {...props}
             >
                 {children}
-            </ul>
+            </div>
         )
     }
 )

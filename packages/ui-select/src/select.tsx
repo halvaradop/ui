@@ -1,4 +1,4 @@
-import { forwardRef, useId } from "react"
+import { forwardRef } from "react"
 import { merge, type ComponentProps } from "@halvaradop/ui-core"
 import { SelectProvider, useSelect } from "./context.js"
 

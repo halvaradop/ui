@@ -23,7 +23,7 @@ export const SelectTrigger = forwardRef<HTMLButtonElement, SelectTriggerProps>(
                 aria-haspopup="listbox"
                 aria-expanded={open}
                 aria-controls={`${id}-listbox`}
-                aria-labelledby={`${id}-label`}
+                aria-labelledby={`${id}-trigger`}
                 onClick={onTrigger}
                 {...props}
             >
