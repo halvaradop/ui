@@ -9,7 +9,8 @@ export type SelectItemProps = ComponentProps<"li", "value"> & {
 
 export const SelectOption = forwardRef<HTMLLIElement, SelectItemProps>(
     ({ className, value, children, ...props }, ref) => {
-        const { selectedValue, onChange } = useSelect()
+        const { id, selectedValue, onChange } = useSelect()
+        const isSelected = selectedValue === value
 
         return (
             <li
@@ -18,11 +19,12 @@ export const SelectOption = forwardRef<HTMLLIElement, SelectItemProps>(
                     className
                 )}
                 ref={ref}
+                id={`${id}-option-${value}`}
                 role="option"
                 data-value={value}
+                tabIndex={isSelected ? 0 : -1}
+                aria-selected={isSelected}
                 onClick={onChange}
-                aria-selected={selectedValue === value}
-                tabIndex={-1}
                 {...props}
             >
                 {children}

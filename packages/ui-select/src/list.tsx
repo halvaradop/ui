@@ -8,12 +8,13 @@ export const SelectList = forwardRef<HTMLUListElement, ComponentProps<"ul">>(
 
         return (
             <ul
-                ref={ref}
                 className={merge(
                     "w-full p-1 border border-border rounded-(--rounded) absolute top-10 right-0 bg-surface",
                     className,
                     open ? "block" : "hidden"
                 )}
+                ref={ref}
+                id={`${id}-listbox`}
                 role="listbox"
                 aria-labelledby={`${id}-trigger`}
                 {...props}

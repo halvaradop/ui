@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, type MouseEventHandler, type MouseEvent } from "react"
+import { createContext, useContext, useState, useId, type MouseEventHandler, type MouseEvent } from "react"
 
 export interface SelectContextType {
     id: string
@@ -33,6 +33,7 @@ interface SelectProviderProps {
 }
 
 export const SelectProvider = ({ name, defaultValue, children }: SelectProviderProps) => {
+    const selectId = useId()
     const [open, setOpen] = useState(false)
     const [selectedValue, setSelectedValue] = useState<string>(defaultValue ?? "")
 

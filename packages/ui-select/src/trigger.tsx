@@ -16,14 +16,14 @@ export const SelectTrigger = forwardRef<HTMLButtonElement, SelectTriggerProps>(
                     "w-full h-9 px-[calc(var(--size-base)*0.4)] flex items-center justify-between border border-border rounded-(--rounded) transition-colors bg-surface hover:cursor-pointer hover:border-primary hover:bg-ghost focus-visible:outline-solid focus-visible:outline",
                     className
                 )}
-                id={`${id}-trigger`}
                 ref={ref}
+                id={`${id}-trigger`}
+                type="button"
                 role="combobox"
                 aria-haspopup="listbox"
                 aria-expanded={open}
                 aria-controls={`${id}-listbox`}
                 aria-labelledby={`${id}-label`}
-                type="button"
                 onClick={onTrigger}
                 {...props}
             >

@@ -46,7 +46,7 @@ export const checkboxVariants = cva(
 )
 
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps<typeof checkboxVariants>>(
-    ({ className, size, color, fullRounded, name, ...props }, ref) => {
+    ({ className, size, color, fullRounded, name, checked, ...props }, ref) => {
         return (
             <label
                 className="flex items-center justify-center relative cursor-pointer has-disabled:cursor-not-allowed"
@@ -54,9 +54,13 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps<typeof checkb
             >
                 <input
                     className={merge(checkboxVariants({ className, size, color, fullRounded }), "peer")}
-                    type="checkbox"
-                    name={name}
                     ref={ref}
+                    type="checkbox"
+                    role="checkbox"
+                    name={name}
+                    checked={checked}
+                    aria-roledescription="checkbox"
+                    aria-checked={checked}
                     {...props}
                 />
                 <svg
@@ -64,6 +68,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps<typeof checkb
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 -960 960 960"
                     fill="#fff"
+                    aria-hidden="true"
                 >
                     <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
                 </svg>

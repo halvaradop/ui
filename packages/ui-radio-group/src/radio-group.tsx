@@ -42,6 +42,7 @@ export const RadioGroup = forwardRef<HTMLFieldSetElement, RadioGroupProps<typeof
                     name={name}
                     data-value={selectedValue}
                     data-name={name}
+                    role="radiogroup"
                     {...props}
                 >
                     {children}
