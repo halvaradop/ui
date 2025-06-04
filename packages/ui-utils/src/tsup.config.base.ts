@@ -14,4 +14,7 @@ export const tsupConfig: Options = {
     minify: env === "production",
     bundle: env === "production",
     external: ["vite", "tailwindcss", "react", "react-dom"],
+    banner: {
+        js: `"use client"`,
+    },
 }
