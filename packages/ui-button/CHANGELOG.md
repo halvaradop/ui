@@ -33,7 +33,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Added new `variant` options: `secondary` and `plain` for extended Button styles. [#93](https://github.com/halvaradop/ui/pull/93)
+
 - Introduced CSS variables for Button customization. Declare these in your main CSS file and configure them in `tailwindcss.config.ts`: [#93](https://github.com/halvaradop/ui/pull/93)
+
   - `--color-font-100`
   - `--color-font-200`
   - `--color-primary`
@@ -43,6 +45,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `--color-ghost`
   - `--color-red`
   - `--color-red-hover`
+
 - Renamed `--color-font-100` and `--color-font-200` to `--color-base` and `--color-inverse` for easier configuration via `tailwind.config.ts`. [#125](https://github.com/halvaradop/ui/pull/125)
 
 ---
