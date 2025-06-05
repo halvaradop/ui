@@ -148,7 +148,7 @@ sequenceDiagram
 
 ## Adding a New Component
 
-See [`CONTRIBUTING.md`](./CONTRIBUTING.md) → “Adding a New Component”.
+See [`CONTRIBUTING.md`](/CONTRIBUTING.md) → “Adding a New Component”.
 
 Steps:
 
@@ -213,8 +213,8 @@ const Component = forwardRef<HTMLDivElement, ComponentProps>(({ className, varia
 ## Accessibility & Contribution
 
 - All components are accessible by default (ARIA, keyboard, focus management).
-- Contributions are welcome! See the [Contributing Guide](https://github.com/halvaradop/ui/blob/master/.github/CONTRIBUTING.md) and [Code of Conduct](https://github.com/halvaradop/.github/blob/master/.github/CODE_OF_CONDUCT.md).
+- Contributions are welcome! See the [Contributing Guide](/CONTRIBUTING.md) and [Code of Conduct](https://github.com/halvaradop/.github/blob/master/.github/CODE_OF_CONDUCT.md).
 
 ---
 
-For more details, see individual package READMEs and the main [README.md](./README.md).
+For more details, see individual package READMEs and the main [README.md](/README.md).
