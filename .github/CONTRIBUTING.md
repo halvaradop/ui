@@ -1,202 +1,213 @@
-# Contributing Guide
+# Contributing to @halvaradop/ui
 
-We welcome contributions to the `@halvaradop/ui` library. If you have an idea, find an issue, or have any advice, please feel free to open an issue or create a pull request. Please read our general [Contributing Guidelines](https://github.com/halvaradop/.github/blob/master/.github/CONTRIBUTING.md) for more information.
+Thank you for your interest in contributing to our component library! This guide will help you contribute effectively and follow the structure and conventions of the monorepo.
 
-## For Contributors
+---
 
-If you want to contribute to the library, please keep the following in mind:
+## 📚 Table of Contents
 
-- Pull requests require approval from a `core` maintainer before merging. Refer to the `CODEOWNERS` file for details.
-- The repository has two main branches:
-  - `master`: Supports `React 18`.
-  - `beta`: Supports `React 19`.
-- The project is written entirely in `TypeScript`.
-- Code formatting is enforced using `prettier`. Run `pnpm format` or `pnpm format:check` before committing changes.
-- Package management and build processes are handled using `turborepo` and `pnpm`.
-- Use `storybook` to visualize UI changes. Start it with `pnpm storybook`.
-- Use `@halvaradop/ui-template` to create new components with a basic template.
-- Use `@halvaradop/ui-core` for utilities like the `merge` function used across components.
-- Use `@halvaradop/ui-utils` for configuration files and code excluded from package bundles.
-- Use the `[SYNC]` prefix in pull requests and commits to indicate changes synchronized from another branch. This is typically used to sync changes from `master` to `beta`, with necessary adjustments for compatibility between `React 18` and `React 19`.
+1. [Code of Conduct](#code-of-conduct)
+2. [Getting Started](#getting-started)
+3. [Development Workflow](#development-workflow)
+4. [Branching Strategy](#branching-strategy)
+5. [Component Development](#component-development)
+6. [Testing](#testing)
+7. [Documentation](#documentation)
+8. [Commit Guidelines](#commit-guidelines)
+9. [Pull Request Process](#pull-request-process)
+10. [Release Process](#release-process)
+11. [Maintainer Guidelines](#maintainer-guidelines)
+12. [Project Structure](#project-structure)
 
-## Project Structure
+---
 
-```sh
-ui/
-│
-├── .github/                              # GitHub configuration and standard files
-│     ├── workflows/                      # GitHub Actions workflows
-│     ├── CODEOWNERS                      # Code ownership rules
-│     └── CONTRIBUTING.md                 # Contribution guidelines
-├── .storybook/                           # Storybook configuration
-├── packages                              # Library components
-│     ├── ui-*                            # Individual components
-│     ├── ui-core                         # Core utilities (e.g., Slot, types, merge function)
-│     ├── ui-utils                        # Shared configurations and utilities
-│     └── ui-template                     # Template for creating new components
-├── tests                                 # Playwright tests
-├── index.css                             # CSS styles and variables
-├── tailwind.config.ts                    # Tailwind CSS configuration
-└── turbo.json                            # Turborepo configuration
-```
+## 📜 Code of Conduct
 
-## Installation
+All contributors must adhere to our [Code of Conduct](https://github.com/halvaradop/.github/blob/master/.github/CODE_OF_CONDUCT.md). Please read it before participating.
 
-To set up the project, follow these steps:
+---
 
-### Clone the Repository
+## 🛠 Getting Started
+
+### Prerequisites
+
+- Node.js v18+
+- pnpm v8+
+- Git
+
+### Installation
 
 ```bash
+corepack enable
 git clone git@github.com:halvaradop/ui.git
 cd ui
-```
-
-### Scripts
-
-The project uses `pnpm` as the package manager. Below are some commonly used scripts. For a full list, refer to the [package.json](https://github.com/halvaradop/ui/blob/master/package.json) or the `package.json` files in the `packages` directory:
-
-```bash
-# Install dependencies
 pnpm install
-
-# Build packages
-pnpm build
-
-# Start development server
-pnpm dev
-
-# Run Storybook
-pnpm storybook
-
-# Clean all build artifacts and dependencies
-pnpm clean
-
-# Clean only the `dist` folder
-pnpm clean:dist
-
-# Clean only the `node_modules` folder
-pnpm clean:modules
-
-# Clean only the `.turbo` folder
-pnpm clean:turbo
 ```
 
-## Switching Between Branches
+---
 
-When switching between the `master` and `beta` branches, dependencies may differ. To avoid issues, run the following commands:
-
-```sh
-pnpm clean && rm -rf node_modules pnpm-lock.yaml .turbo && pnpm install && echo "Branch is ready to work"
-```
-
-## Adding a New Component
-
-To add a new component, use the [ui-template](https://github.com/halvaradop/ui/tree/master/packages/ui-template) as a starting point. Follow these steps:
-
-### Copy the Template
+## ⚙️ Development Workflow
 
 ```bash
-# Navigate to the packages folder
+pnpm storybook        # Start Storybook
+pnpm test             # Run Playwright tests
+pnpm format           # Format code
+pnpm build            # Build all packages
+pnpm clean            # Clean the project
+```
+
+---
+
+## 🌿 Branching Strategy
+
+- `master`: Current stable branch (React 18, will become legacy)
+- `beta`: React 19 development branch (will become new `main`)
+
+Use `[SYNC]` prefix to indicate synchronization PRs between branches.
+
+---
+
+## 📦 Component Development
+
+Use the official template:
+
+```bash
 cd packages
-
-# Copy the ui-template
 cp -r ui-template ui-new-component
-
-# Navigate to the new component folder
 cd ui-new-component
-
-# Clean the new component
-pnpm clean
-
-# Install dependencies
 pnpm install
 ```
 
 ### Update the Package Name
 
-Edit the `package.json` file in the new component folder:
+Update `package.json` and `README.md` with the new component name and description.
 
-```diff
-{
-- "name": "@halvaradop/ui-template",
-+ "name": "@halvaradop/ui-new-component",
-  "version": "0.1.0",
-  "private": false,
-  "description": "A customizable new-component for @halvaradop/ui library with Tailwind CSS styling."
-}
+### Naming Conventions
+
+- Folders must begin with `ui-` (e.g., `ui-button`, `ui-select`)
+- Components must use PascalCase
+- Props types must end with `Props` (e.g., `ButtonProps`)
+- Variants must follow the format `componentNameVariants` (e.g., `buttonVariants`)
+
+### Implement and Document
+
+Follow these standards:
+
+- Written in **TypeScript**
+- Styled with **TailwindCSS v4** and **CSS Variables**
+- Documented using **Storybook**
+- Tested using **Playwright**
+
+---
+
+## ✅ Testing
+
+```bash
+pnpm test
 ```
 
-### Update Documentation
+We use **Storybook `play` functions** for simulating user interactions as part of our component testing strategy.
 
-Update the `README.md` file in the new component folder:
+Use `pnpm storybook` to preview changes visually.
 
-```diff
-- # @halvaradop/ui-template
-- The `@halvaradop/ui-template` is an accessible, reusable, and customizable `Template` component that is part of the `@halvaradop/ui` library for React. Built with `React` and styled using `TailwindCSS`, it provides a set of pre-styled components designed to streamline and accelerate the development of user interfaces.
-+ # @halvaradop/ui-new-component
-+ The `@halvaradop/ui-new-component` is an accessible, reusable, and customizable `NewComponent` component that is part of the `@halvaradop/ui` library for React. Built with `React` and styled using `TailwindCSS`, it provides a set of pre-styled components designed to streamline and accelerate the development of user interfaces.
+---
+
+## 🧾 Documentation
+
+### Changelogs
+
+Follow the [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format.  
+Each package has its own `CHANGELOG.md` file.
+
+```md
+## [Unreleased]
+
+### Added
+
+- New feature description [#123](https://github.com/halvaradop/ui/pull/123)
 ```
 
-### Implement the Component
+---
 
-Edit the `index.tsx` file to define the new component:
+## 📝 Commit Guidelines
 
-```diff
-import { forwardRef } from "react"
-import { merge, type ArgsFunction, type ComponentProps } from "@halvaradop/ui-core"
-import { cva, type VariantProps } from "class-variance-authority"
+Use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/):
 
-- export type IndexProps<T extends ArgsFunction> = VariantProps<T> & ComponentProps<"div">
--
-- export const indexVariants = cva("", {
--  variants: {},
-- })
--
-- export const Index = forwardRef(() => {
--  return <div></div>
-- })
-
-+ export type NewComponentProps<T extends ArgsFunction> = VariantProps<T> & ComponentProps<"div">
-+
-+ export const newComponentVariants = cva("", {
-+  variants: {},
-+ })
-+
-+ export const NewComponent = forwardRef(() => {
-+  return <div></div>
-+ })
+```bash
+feat: add new button component
+fix: correct checkbox styling
+docs: update select usage example
+chore: upgrade dependencies
 ```
 
-### Create a Story for the Component
+---
 
-Update the `index.stories.tsx` file to add a Storybook story for the new component:
+## 🚀 Pull Request Process
 
-```diff
-import type { Meta, StoryObj } from "@storybook/react"
-- import { Index } from "./index.jsx"
-+ import { NewComponent } from "./index.jsx"
-import { decorator } from "@halvaradop/ui-utils/decorator"
-import { DocsPage } from "@halvaradop/ui-utils/docs-page"
+1. Use a descriptive title and body
+2. Reference any related issues or PRs
+3. Add screenshots for UI changes
+4. Ensure all tests and builds pass
+5. Label PRs appropriately:
+   - `breaking`
+   - `accessibility`
+   - `[SYNC]`
+6. Get approval from a code owner
 
-const meta: Meta = {
--  title: "ui-index",
-+  title: "ui-new-component",
-  tags: ["autodocs"],
--  component: Index,
-+  component: NewComponent,
-  args: {},
-  argTypes: {},
-  parameters: {
-    layout: "centered",
-    backgrounds: {
-      default: "light",
-      grid: true,
-    },
-    docs: {
-      page: () => <DocsPage subtitle="New component powered by React & TailwindCSS" />,
-    },
-  },
-  decorators: [decorator],
-- } satisfies Meta<typeof Index>
-+ } satisfies Meta<typeof NewComponent>
+Only maintainers listed in the [CODEOWNERS](https://github.com/halvaradop/ui/blob/master/.github/CODEOWNERS) file can approve PRs related to their assigned areas.
+
+---
+
+## 🔖 Release Process
+
+### Versioning
+
+Each package follows [Semantic Versioning](https://semver.org/) independently:
+
+- MAJOR: Breaking changes
+- MINOR: New features
+- PATCH: Fixes
+
+> Note: We do **not** use Changesets. All changelogs are manually written before each release.
+
+### Publishing (maintainers only)
+
+1. Update `CHANGELOG.md` for each modified package
+2. Bump `version` in `package.json`
+3. Create a GitHub release
+4. Publish to npm manually or via script
+
+---
+
+## 🛡 Maintainer Guidelines
+
+Responsibilities:
+
+- Review and merge PRs only in assigned scope (see `CODEOWNERS`)
+- Maintain consistency across versions and branches
+- Ensure all packages follow naming and changelog conventions
+- Coordinate `[SYNC]` PRs between `master`, `beta`, and `react-18`
+
+---
+
+## 🗂 Project Structure
+
+```txt
+ui/
+├── .github/              # GitHub workflows and contributor files
+├── .storybook/           # Storybook config
+├── packages/             # Component packages
+│   ├── ui-button/        # Component example
+│   ├── ui-core/          # Shared logic and types
+│   ├── ui-utils/         # Internal tooling (tsup, config)
+│   ├── ui-slot/          # Slot logic
+│   └── ui-template/      # Boilerplate for new components
+├── tests/                # Playwright tests
+├── tailwind.css          # Global theme tokens
+├── CHANGELOG.md          # Monorepo-level changelog
+└── turbo.json            # Turborepo config
 ```
+
+---
+
+Happy contributing! 🎉
