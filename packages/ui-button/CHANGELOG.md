@@ -74,7 +74,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Added the `Slot` component from `@halvaradop/ui-core` for customization via the `asChild` prop. [#30](https://github.com/halvaradop/ui/pull/30)
+- Implement the `Slot` component from `@halvaradop/ui-core` for customization and extensible React components via the `asChild` prop. [#30](https://github.com/halvaradop/ui/pull/30)
 
 ---
 
