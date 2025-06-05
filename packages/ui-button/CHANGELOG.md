@@ -15,9 +15,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - `--opacity-cursor`
     - `--color-on-primary`
     - `--color-on-secondary`
-    - `--color-surface`, `--color-on-surface`
+    - `--color-surface`
+      `--color-on-surface`
     - `--color-muted`
     - `--color-danger`
+    - `--size-sm`
+    - `--size-base`
+    - `--size-md`
+    - `--size-lg`
   - #### Deprecated CSS Variables
     - `--color-primary-hover`
     - `--color-secondary-hover`
@@ -65,6 +70,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed `forwardRef` from the Button component due to React upgrade to v19, which no longer requires it for ref forwarding. [#58](https://github.com/halvaradop/ui/pull/58)
 
 ### Fixed
+
+- Fixed missing `cva` types in the package build, which caused components to not recognize those types. [#67](https://github.com/halvaradop/ui/pull/67)
 
 - Resolved incompatibility between React 18 and 19 caused by changes in `react` and `react/jsx-runtime` packages, mainly affecting `@halvaradop/ui-core` and the Slot component. Logic is now separated for React 18 (stable) and React 19 (beta). See [#66](https://github.com/halvaradop/ui/issues/66), [#71](https://github.com/halvaradop/ui/pull/71), and [#72](https://github.com/halvaradop/ui/pull/72).
 

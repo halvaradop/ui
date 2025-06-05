@@ -12,11 +12,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated CSS variables for improved configuration and compatibility with Tailwind CSS v4. Main changes for the Checkbox component: [#152](https://github.com/halvaradop/ui/pull/152)
 
   - #### New CSS Variables
+
     - `--color-primary`
     - `--color-secondary`
     - `--color-muted`
     - `--color-danger`
     - `--color-success`
+    - `--size-sm`
+    - `--size-base`
+    - `--size-md`
+    - `--size-lg`
+
   - #### Deprecated CSS Variables
     - `--color-primary`
     - `--color-primary-hover`
@@ -41,7 +47,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [0.4.0]
+## [0.4.0] - 2025-02-06
 
 ### Added
 
@@ -62,7 +68,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [0.3.0]
+## [0.3.0] - 2025-01-15
 
 ### Added
 
@@ -71,7 +77,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [0.2.0]
+## [0.2.0] - 2024-12-19
 
 ### Fixed
 
@@ -79,7 +85,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [0.1.0]
+## [0.1.0] - 2024-12-13
 
 ### Added
 
