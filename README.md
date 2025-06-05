@@ -129,8 +129,8 @@ The beta version may have minor changes or issues compared to the stable version
 
 ## Contributing
 
-We welcome contributions to the `@halvaradop/ui` library! Please read the [Contributing Guide](https://github.com/halvaradop/ui/blob/master/.github/CONTRIBUTING.md) for details on our process, code standards, and how to get started. All contributors are expected to follow our [Code of Conduct](https://github.com/halvaradop/.github/blob/master/.github/CODE_OF_CONDUCT.md).
+We welcome contributions to the `@halvaradop/ui` library! Please read the [Contributing Guide](./CONTRIBUTING.md) for details on our process, code standards, and how to get started. All contributors are expected to follow our [Code of Conduct](https://github.com/halvaradop/.github/blob/master/.github/CODE_OF_CONDUCT.md).
 
 ## Architecture
 
-For an in-depth look at the monorepo structure, package layout, build and development workflow, design principles, and guidelines for extending the library, refer to the [ARCHITECTURE.md](https://github.com/halvaradop/ui/blob/master/ARCHITECTURE.md) document.
+For an in-depth look at the monorepo structure, package layout, build and development workflow, design principles, and guidelines for extending the library, refer to the [ARCHITECTURE.md](./ARCHITECTURE.md) document.
