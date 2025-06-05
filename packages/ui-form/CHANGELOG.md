@@ -7,52 +7,63 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Added
+### Changed
 
-- Updated CSS variables for better configuration and compatibility with Tailwind CSS v4. Main changes for the Button component: [#152](https://github.com/halvaradop/ui/pull/152)
+- Migrated from Tailwind CSS v3 to v4. Replaced deprecated variables and introduced auto-generated ones via the `@theme` directive. The configuration is now handled natively without `tailwind.config.ts`. This affected the Form component.  
+  [#152](https://github.com/halvaradop/ui/pull/152)
 
-  - #### New CSS Variables
-    - `--color-surface`
-    - `--color-on-surface`
-    - `--size-sm`
-    - `--size-base`
-    - `--size-md`
-    - `--size-lg`
+- Improved accessibility (a11y) by adding the `role` attribute to the Form component to enhance WAI-ARIA compliance.  
+  [#165](https://github.com/halvaradop/ui/pull/165)
 
-- Improved accessibility (a11y) for the Button component by adding `role` props. [#165](https://github.com/halvaradop/ui/pull/165)
+### Notes
+
+- These changes reduce configuration overhead and increase clarity for consumers using Tailwind v4.
+
+---
 
 ## [0.4.0] - 2025-02-06
 
 ### Added
 
-- Introduced CSS variables for Button customization. Declare these in your main CSS file and configure them in `tailwindcss.config.ts`: [#93](https://github.com/halvaradop/ui/pull/93)
+- Introduced new CSS variables to support theming for the Form component.  
+  [#93](https://github.com/halvaradop/ui/pull/93)
 
-  - `--color-border`
+---
 
 ## [0.3.0] - 2025-01-15
 
-### Added
+### Changed
 
-- Added `forwardRef` support to the Form component, restoring the `ref` prop functionality removed in [#58](https://github.com/halvaradop/ui/pull/58). [#78](https://github.com/halvaradop/ui/pull/78)
+- Reintroduced `forwardRef` to restore compatibility with `useRef` in React 18.  
+  [#78](https://github.com/halvaradop/ui/pull/78)
+
+---
 
 ## [0.2.0] - 2024-12-19
 
-### Added
+### Changed
 
-- Implement the `merge` function imported from `@halvaradop/ui-core` for merging classes, special for size variants which was created unexpected styles [#57](https://github.com/halvaradop/ui/pull/57)
+- Introduced the `merge` function from `@halvaradop/ui-core` for class composition, improving consistency and fixing styling issues with size variants.  
+  [#57](https://github.com/halvaradop/ui/pull/57)
 
 ### Fixed
 
-- Fixed missing `cva` types in the package build, which caused components to not recognize those types. [#67](https://github.com/halvaradop/ui/pull/67)
+- Fixed missing `cva` types which were causing issues during build and usage.  
+  [#67](https://github.com/halvaradop/ui/pull/67)
 
-- Resolved incompatibility between React 18 and 19 caused by changes in `react` and `react/jsx-runtime` packages, mainly affecting `@halvaradop/ui-core` and the Slot component. Logic is now separated for React 18 (stable) and React 19 (beta). See [#66](https://github.com/halvaradop/ui/issues/66), [#71](https://github.com/halvaradop/ui/pull/71), and [#72](https://github.com/halvaradop/ui/pull/72).
+- Resolved incompatibilities between React 18 and 19 caused by runtime JSX differences.  
+  [#66](https://github.com/halvaradop/ui/issues/66), [#71](https://github.com/halvaradop/ui/pull/71), [#72](https://github.com/halvaradop/ui/pull/72)
 
 ### Removed
 
-- Removed `forwardRef` from the Form component due to React upgrade to v19, which no longer requires it for ref forwarding. [#58](https://github.com/halvaradop/ui/pull/58)
+- Removed `forwardRef` during the React 19 update under the assumption that it was no longer necessary.  
+  [#58](https://github.com/halvaradop/ui/pull/58)
+
+---
 
 ## [0.1.0] - 2024-10-09
 
 ### Added
 
-- Initial release: Introduced the `Form` component with `base`, `outline`, and `filled` variants for the `variant` prop; `sm`, `base`, `md`, and `lg` for the `size` prop. Implemented using the `cva` function from `class-variance-authority`. [#38](https://github.com/halvaradop/ui/pull/38)
+- Initial release of the Form component with support for `base`, `outline`, and `filled` variants, as well as `sm`, `base`, `md`, and `lg` sizes. Built using `cva`.  
+  [#38](https://github.com/halvaradop/ui/pull/38)

@@ -7,29 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Added
+### Changed
 
-- Updated CSS variables for better configuration and compatibility with Tailwind CSS v4. Main changes for the Button component: [#152](https://github.com/halvaradop/ui/pull/152)
+- Migrated from Tailwind CSS v3 to v4. Removed deprecated CSS variables and added new auto-generated variables using the `@theme` directive. These changes improve consistency and reduce manual configuration. This change affected the Button component.  
+  [#152](https://github.com/halvaradop/ui/pull/152)
 
-  - #### New CSS Variables
-    - `--opacity-cursor`
-    - `--color-on-primary`
-    - `--color-on-secondary`
-    - `--color-surface`
-      `--color-on-surface`
-    - `--color-muted`
-    - `--color-danger`
-    - `--size-sm`
-    - `--size-base`
-    - `--size-md`
-    - `--size-lg`
-  - #### Deprecated CSS Variables
-    - `--color-primary-hover`
-    - `--color-secondary-hover`
-    - `--color-text-base`
-    - `--color-text-inverse`
+- Improved accessibility (a11y) by adding WAI-ARIA attributes such as `role`, `type`, and `tabIndex` to the Button component.  
+  [#165](https://github.com/halvaradop/ui/pull/165)
 
-- Improved accessibility (a11y) for the Button component by adding `role`, `type`, and `tabIndex` props. [#165](https://github.com/halvaradop/ui/pull/165)
+### Notes
+
+- Tailwind CSS v4 changes impacted most components. The Button component now uses native variants instead of custom `addVariant()` definitions.
 
 ---
 
@@ -37,29 +25,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Added new `variant` options: `secondary` and `plain` for extended Button styles. [#93](https://github.com/halvaradop/ui/pull/93)
+- Added new `variant` options: `secondary` and `plain` for extended Button styles.  
+  [#93](https://github.com/halvaradop/ui/pull/93)
 
-- Introduced CSS variables for Button customization. Declare these in your main CSS file and configure them in `tailwindcss.config.ts`: [#93](https://github.com/halvaradop/ui/pull/93)
+- Introduced CSS variables for Button customization. Declare these in your main CSS file and configure them in `tailwind.config.ts`.  
+  [#93](https://github.com/halvaradop/ui/pull/93)
 
-  - `--color-font-100`
-  - `--color-font-200`
-  - `--color-primary`
-  - `--color-primary-hover`
-  - `--color-secondary`
-  - `--color-secondary-hover`
-  - `--color-ghost`
-  - `--color-red`
-  - `--color-red-hover`
-
-- Renamed `--color-font-100` and `--color-font-200` to `--color-base` and `--color-inverse` for easier configuration via `tailwind.config.ts`. [#125](https://github.com/halvaradop/ui/pull/125)
+- Renamed `--color-font-100` and `--color-font-200` to `--color-base` and `--color-inverse`.  
+  [#125](https://github.com/halvaradop/ui/pull/125)
 
 ---
 
 ## [0.5.0] - 2025-01-15
 
-### Added
+### Changed
 
-- Added `forwardRef` support to the Button component, restoring the `ref` prop functionality removed in [#58](https://github.com/halvaradop/ui/pull/58). [#78](https://github.com/halvaradop/ui/pull/78)
+- Reintroduced `forwardRef` to restore support for `ref` prop in React 18.  
+  [#78](https://github.com/halvaradop/ui/pull/78)
 
 ---
 
@@ -67,13 +49,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
-- Removed `forwardRef` from the Button component due to React upgrade to v19, which no longer requires it for ref forwarding. [#58](https://github.com/halvaradop/ui/pull/58)
+- Removed `forwardRef` from the Button component based on React 19 upgrade, which supports `ref` natively.  
+  [#58](https://github.com/halvaradop/ui/pull/58)
 
 ### Fixed
 
-- Fixed missing `cva` types in the package build, which caused components to not recognize those types. [#67](https://github.com/halvaradop/ui/pull/67)
+- Fixed missing `cva` types in the package build.  
+  [#67](https://github.com/halvaradop/ui/pull/67)
 
-- Resolved incompatibility between React 18 and 19 caused by changes in `react` and `react/jsx-runtime` packages, mainly affecting `@halvaradop/ui-core` and the Slot component. Logic is now separated for React 18 (stable) and React 19 (beta). See [#66](https://github.com/halvaradop/ui/issues/66), [#71](https://github.com/halvaradop/ui/pull/71), and [#72](https://github.com/halvaradop/ui/pull/72).
+- Resolved incompatibility between React 18 and 19 related to `jsx-runtime`.  
+  [#66](https://github.com/halvaradop/ui/issues/66), [#71](https://github.com/halvaradop/ui/pull/71), [#72](https://github.com/halvaradop/ui/pull/72)
 
 ---
 
@@ -81,7 +66,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Implement the `Slot` component from `@halvaradop/ui-core` for customization and extensible React components via the `asChild` prop. [#30](https://github.com/halvaradop/ui/pull/30)
+- Added `Slot` component support via `asChild` for enhanced composition.  
+  [#30](https://github.com/halvaradop/ui/pull/30)
 
 ---
 
@@ -89,7 +75,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Re-released v0.2.0 to fix an error caused by the `jsx` field in `tsconfig.json` (changed from `preserve` to `react-jsx`). [#23](https://github.com/halvaradop/ui/pull/23)
+- Re-released to fix an error with `jsx` config in `tsconfig.json`.  
+  [#23](https://github.com/halvaradop/ui/pull/23)
 
 ---
 
@@ -97,12 +84,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Added `destructive` and `outline` variants for the `variant` prop.
-- Integrated `merge` function from `@halvaradop/ui-core` to combine component and user classes. [#7](https://github.com/halvaradop/ui/pull/7)
+- Added `destructive` and `outline` variants.  
+  [#7](https://github.com/halvaradop/ui/pull/7)
 
 ### Fixed
 
-- Re-released v0.1.0 to address issues and implement the `merge` function from `@halvaradop/ui-core` for improved consistency. [#12](https://github.com/halvaradop/ui/pull/12)
+- Reworked internal merging using `@halvaradop/ui-core`.  
+  [#12](https://github.com/halvaradop/ui/pull/12)
 
 ---
 
@@ -110,4 +98,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Initial release: Introduced the `Button` component with `base`, `ghost`, and `link` variants for the `variant` prop; `sm`, `base`, `md`, and `lg` for the `size` prop; `fullWidth` and `fullRounded` props. Implemented using the `cva` function from `class-variance-authority`. [#4](https://github.com/halvaradop/ui/pull/4)
+- Initial release of the Button component. Includes support for variants (`base`, `ghost`, `link`) and sizes (`sm`, `base`, `md`, `lg`). Also supports `fullWidth` and `fullRounded` props.  
+  [#4](https://github.com/halvaradop/ui/pull/4)

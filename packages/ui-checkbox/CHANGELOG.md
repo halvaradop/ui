@@ -7,43 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Added
+### Changed
 
-- Updated CSS variables for improved configuration and compatibility with Tailwind CSS v4. Main changes for the Checkbox component: [#152](https://github.com/halvaradop/ui/pull/152)
+- Migrated from Tailwind CSS v3 to v4. Deprecated older CSS variables and introduced new ones using the `@theme` directive. This affects the configuration and structure of the Checkbox component.  
+  [#152](https://github.com/halvaradop/ui/pull/152)
 
-  - #### New CSS Variables
-
-    - `--color-primary`
-    - `--color-secondary`
-    - `--color-muted`
-    - `--color-danger`
-    - `--color-success`
-    - `--size-sm`
-    - `--size-base`
-    - `--size-md`
-    - `--size-lg`
-
-  - #### Deprecated CSS Variables
-    - `--color-primary`
-    - `--color-primary-hover`
-    - `--color-red`
-    - `--color-red-hover`
-    - `--color-green`
-    - `--color-green-hover`
-    - `--color-blue`
-    - `--color-blue-hover`
-    - `--color-yellow`
-    - `--color-yellow-hover`
-
-- Added a new `secondary` variant to the `color` prop, utilizing the `--color-secondary` CSS variable for styling. [#152](https://github.com/halvaradop/ui/pull/152)
+- Improved accessibility (a11y) by adding WAI-ARIA attributes such as `role`, `type`, and `tabIndex` to the Checkbox component.  
+  [#165](https://github.com/halvaradop/ui/pull/165)
 
 ### Removed
 
-- Removed the `blue` and `yellow` variants from the `color` prop. [#152](https://github.com/halvaradop/ui/pull/152)
+- Removed the `blue` and `yellow` variants from the `color` prop, which were inconsistent with the new CSS variable structure in Tailwind CSS v4.  
+  [#152](https://github.com/halvaradop/ui/pull/152)
 
-### Improved
+### Notes
 
-- Enhanced accessibility (a11y) for the Checkbox component by adding `role`, `type`, and `tabIndex` props. [#165](https://github.com/halvaradop/ui/pull/165)
+- The migration to Tailwind CSS v4 affects all components that relied on older variant definitions or hardcoded variable names.
 
 ---
 
@@ -51,29 +30,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Introduced CSS variables for Checkbox customization. Declare these in your main CSS file and configure them in `tailwindcss.config.ts`: [#93](https://github.com/halvaradop/ui/pull/93)
+- Introduced CSS variables for customization.  
+  [#93](https://github.com/halvaradop/ui/pull/93)
 
-  - `--color-primary`
-  - `--color-primary-hover`
-  - `--color-red`
-  - `--color-red-hover`
-  - `--color-green`
-  - `--color-green-hover`
-  - `--color-blue`
-  - `--color-blue-hover`
-  - `--color-yellow`
-  - `--color-yellow-hover`
-
-- Added missing `fullRounded` prop to the component, now accessible via the `cva` function. [#108](https://github.com/halvaradop/ui/pull/108)
+- Added `fullRounded` support to the Checkbox component using `cva`.  
+  [#108](https://github.com/halvaradop/ui/pull/108)
 
 ---
 
 ## [0.3.0] - 2025-01-15
 
-### Added
+### Changed
 
-- Added the missing `ref` prop for direct access to the component via the `useRef` hook, using `forwardRef`. [#67](https://github.com/halvaradop/ui/pull/67)
-- Spread additional props to the Checkbox component, allowing users to pass extra props not used internally. [#67](https://github.com/halvaradop/ui/pull/67)
+- Added `forwardRef` to support `ref` usage with React 18.  
+  [#67](https://github.com/halvaradop/ui/pull/67)
+
+- Enabled spreading of additional props to Checkbox component.  
+  [#67](https://github.com/halvaradop/ui/pull/67)
 
 ---
 
@@ -81,7 +54,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Resolved incompatibility between React 18 and 19 caused by changes in `react` and `react/jsx-runtime` packages, mainly affecting `@halvaradop/ui-core` and the Slot component. Logic is now separated for React 18 (stable) and React 19 (beta). See [#66](https://github.com/halvaradop/ui/issues/66), [#71](https://github.com/halvaradop/ui/pull/71), and [#72](https://github.com/halvaradop/ui/pull/72).
+- Resolved incompatibility between React 18 and 19 caused by `jsx-runtime` changes and type errors in shared packages.  
+  [#66](https://github.com/halvaradop/ui/issues/66), [#71](https://github.com/halvaradop/ui/pull/71), [#72](https://github.com/halvaradop/ui/pull/72)
 
 ---
 
@@ -89,4 +63,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Initial release: Introduced the `Checkbox` component with `sm`, `base`, `md`, and `lg` options for the `size` prop; `green`, `blue`, `red`, `yellow`, and `black` for the `color` prop; and `fullWidth` and `fullRounded` props. Implemented using the `cva` function from `class-variance-authority`. [#63](https://github.com/halvaradop/ui/pull/63)
+- Initial release of the Checkbox component. Includes support for `sm`, `base`, `md`, and `lg` sizes; `green`, `blue`, `red`, `yellow`, and `black` colors; and `fullWidth` / `fullRounded` props. Built using `cva`.  
+  [#63](https://github.com/halvaradop/ui/pull/63)

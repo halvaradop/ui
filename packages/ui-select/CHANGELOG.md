@@ -2,43 +2,39 @@
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+This changelog follows the [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format  
+and adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
 ### Changed
 
-- Updated CSS variables for improved configuration and compatibility with Tailwind CSS v4. Main changes for the Button component: [#152](https://github.com/halvaradop/ui/pull/152)
+- Updated CSS variables for Tailwind CSS v4 compatibility. Legacy variable naming was replaced by auto-generated tokens based on the `@theme` directive. This modernizes the Select component styling and configuration.  
+  [#152](https://github.com/halvaradop/ui/pull/152)
 
-  - #### New CSS Variables
-    - `--opacity-cursor`
-    - `--rounded`
-    - `--color-primary`
-    - `--color-on-primary`
-    - `--color-surface`
-    - `--color-muted`
-    - `--color-border`
-    - `--color-ghost`
-    - `--color-disabled`
-    - `--size-sm`
-    - `--size-base`
-    - `--size-md`
-    - `--size-lg`
+### Notes
+
+- Tailwind v4 eliminates the need to configure CSS variables in `tailwind.config.ts`. Variables are now generated automatically.
+- Native variants and theming simplify the use and styling of the Select component.
+
+---
 
 ## [0.1.0] - 2025-04-06
 
 ### Added
 
-- Initial release: Introduced the `Select` suite, which implements the Compound Component Pattern to share state between related components: `Select`, `SelectTrigger`, `SelectOption`, and `SelectList`. [#139](https://github.com/halvaradop/ui/pull/139)
+- Initial release of the Select component suite using the Compound Component Pattern. Includes:
 
-  - Implemented the `Select` component for streamlined dropdown selection.
-  - Added `SelectTrigger` to manage user interactions.
-  - Included `SelectOption` to define selectable values.
-  - Integrated `SelectList` for structured option presentation.
+  - `Select`: Main wrapper component.
+  - `SelectTrigger`: Control for toggling dropdown.
+  - `SelectOption`: Represents selectable items.
+  - `SelectList`: Wraps list of options.  
+    [#139](https://github.com/halvaradop/ui/pull/139)
 
-- Implemented CSS variables as defined in [#93](https://github.com/halvaradop/ui/pull/93) and [#125](https://github.com/halvaradop/ui/pull/125). [#139](https://github.com/halvaradop/ui/pull/139)
+- Implemented CSS variable system for consistent styling across variants.  
+  [#93](https://github.com/halvaradop/ui/pull/93), [#125](https://github.com/halvaradop/ui/pull/125)
 
-- Added a merge function from the `@halvaradop/ui-core` package to correctly merge Tailwind CSS classes. [#139](https://github.com/halvaradop/ui/pull/139)
+- Added `merge` function from `@halvaradop/ui-core` for className handling.
 
-- Added WAI-ARIA attributes for accessibility. [#139](https://github.com/halvaradop/ui/pull/139)
+- Included WAI-ARIA attributes for accessibility compliance.  
+  [#139](https://github.com/halvaradop/ui/pull/139)
