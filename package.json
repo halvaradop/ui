@@ -22,7 +22,9 @@
     "clean:cts": "turbo run clean:cts --parallel",
     "release:bump": "bash scripts/release.bash --publish",
     "release:dry-run": "bash scripts/release.bash --publish --dry-run",
-    "release:versioning": "bash scripts/release.bash"
+    "release:versioning": "bash scripts/release.bash",
+    "release:prepublish": "bash scripts/release.bash --prepublish",
+    "release:current": "bash scripts/release.bash --publish-current"
   },
   "repository": {
     "type": "git",
