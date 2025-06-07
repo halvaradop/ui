@@ -143,7 +143,16 @@ process_package() {
   fi
 
   if [ -n "$PREPUBLISH_TAG" ]; then
-    local pre_version="${current_version}-${PREPUBLISH_TAG}.0"
+    # Detect if current version already has a pre-release tag
+    if [[ "$current_version" =~ -$PREPUBLISH_TAG\.([0-9]+)$ ]]; then
+      # Extract the current pre-release number and increment it
+      pre_num=${BASH_REMATCH[1]}
+      base_version=${current_version%%-$PREPUBLISH_TAG.*}
+      next_pre_num=$((pre_num + 1))
+      pre_version="${base_version}-${PREPUBLISH_TAG}.${next_pre_num}"
+    else
+      pre_version="${current_version}-${PREPUBLISH_TAG}.0"
+    fi
     echo -e "${GREEN}Preparing pre-release: ${pre_version} (tag: ${PREPUBLISH_TAG})${NC}"
     update_package_version "$pkg_dir" "$pre_version"
     if [ "$PUBLISH" = true ]; then
