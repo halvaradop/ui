@@ -1,4 +1,3 @@
-"use client"
 import { useFormStatus } from "react-dom"
 import { merge, type ComponentProps } from "@halvaradop/ui-core"
 import { cva, VariantProps } from "class-variance-authority"
@@ -58,14 +57,16 @@ export const Submit = ({
     return (
         <input
             className={merge(submitVariants({ className, variant, size, fullWidth, fullRounded }))}
+            ref={ref}
             type="submit"
+            role="button"
             value={message}
             disabled={status}
             aria-disabled={status}
-            ref={ref}
+            aria-busy={status}
             {...props}
         />
     )
 }
 
-Submit.displayName = "Input"
+Submit.displayName = "Submit"

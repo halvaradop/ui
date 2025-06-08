@@ -1,4 +1,4 @@
-import { createContext, useState, type MouseEventHandler, type MouseEvent, use } from "react"
+import { createContext, use, useState, useId, type MouseEventHandler, type MouseEvent } from "react"
 
 export interface SelectContextType {
     id: string
@@ -6,7 +6,7 @@ export interface SelectContextType {
     onTrigger: () => void
     name: string
     selectedValue: string
-    onChange: MouseEventHandler<HTMLLIElement>
+    onChange: MouseEventHandler<HTMLButtonElement>
 }
 
 export const SelectContext = createContext<SelectContextType>({
@@ -33,6 +33,7 @@ interface SelectProviderProps {
 }
 
 export const SelectProvider = ({ name, defaultValue, children }: SelectProviderProps) => {
+    const selectId = useId()
     const [open, setOpen] = useState(false)
     const [selectedValue, setSelectedValue] = useState<string>(defaultValue ?? "")
 
@@ -40,7 +41,7 @@ export const SelectProvider = ({ name, defaultValue, children }: SelectProviderP
         setOpen((prev) => !prev)
     }
 
-    const handleChange = (event: MouseEvent<HTMLLIElement>) => {
+    const handleChange = (event: MouseEvent<HTMLButtonElement>) => {
         const value = event.currentTarget.dataset.value ?? ""
         handleTrigger()
         setSelectedValue(value)
@@ -48,7 +49,7 @@ export const SelectProvider = ({ name, defaultValue, children }: SelectProviderP
 
     return (
         <SelectContext
-            value={{ id: "select-id", name, selectedValue, open, onTrigger: handleTrigger, onChange: handleChange }}
+            value={{ id: selectId, name, selectedValue, open, onTrigger: handleTrigger, onChange: handleChange }}
         >
             {children}
         </SelectContext>

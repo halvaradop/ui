@@ -49,9 +49,9 @@ export const RadioGroup = ({
                 className={merge(radioGroupVariants({ className, variant }))}
                 ref={ref}
                 name={name}
-                defaultValue={defaultValue}
                 data-value={selectedValue}
                 data-name={name}
+                role="radiogroup"
                 {...props}
             >
                 {children}

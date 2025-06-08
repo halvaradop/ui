@@ -49,8 +49,9 @@ export const Input = ({
     return (
         <input
             className={merge(inputVariants({ className, variant, size, fullWidth, fullRounded }))}
-            type={type}
             ref={ref}
+            type={type}
+            role="textbox"
             {...props}
         />
     )
