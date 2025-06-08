@@ -29,7 +29,7 @@ export const formVariants = cva(
 
 export const Form = ({ className, variant, size, children, ref, ...props }: FormProps<typeof formVariants>) => {
     return (
-        <form className={merge(formVariants({ className, variant, size }))} ref={ref} {...props}>
+        <form className={merge(formVariants({ className, variant, size }))} ref={ref} role="form" {...props}>
             {children}
         </form>
     )

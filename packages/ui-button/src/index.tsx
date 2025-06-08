@@ -2,7 +2,7 @@ import { merge } from "@halvaradop/ui-core"
 import { Slot, type SlotProps } from "@halvaradop/ui-slot"
 import { cva, type VariantProps } from "class-variance-authority"
 
-export type ButtonProps<T extends VoidFunction> = SlotProps<"button"> & VariantProps<T>
+export type ButtonProps<T extends (...args: any) => void> = SlotProps<"button"> & VariantProps<T>
 
 export const buttonVariants = cva(
     "inline-flex items-center justify-center font-semibold border border-solid rounded-(--rounded) transition-colors focus-visible:outline-solid focus-visible:outline-3 focus-visible:outline-offset-3 hover:cursor-pointer disabled:text-on-surface disabled:border-disabled disabled:bg-disabled disabled:cursor-not-allowed",
@@ -54,11 +54,15 @@ export const Button = ({
     ...props
 }: ButtonProps<typeof buttonVariants>) => {
     const SlotComponent = asChild ? Slot : "button"
+    const isButton = !asChild
+
     return (
         <SlotComponent
             className={merge(buttonVariants({ className, variant, size, fullWidth, fullRounded }))}
             ref={ref}
-            role="button"
+            role={isButton ? "button" : undefined}
+            type={isButton ? "button" : undefined}
+            tabIndex={isButton ? 0 : undefined}
             {...props}
         >
             {children}
