@@ -36,7 +36,7 @@ export const Slot = ({ children, ...props }: WithChildren) => {
  */
 type SlotWithAsChild<Component extends HTMLTag, Element extends HTMLElement = never> =
     | ({ asChild?: false } & ComponentProps<Component>)
-    | PropsWithChildren<{ asChild: true, ref?: Ref<Element> }>;
+    | PropsWithChildren<{ asChild: true; ref?: Ref<Element> }>
 
 /**
  * SlotProps is a type that represents the props of a Slot component. This type is
