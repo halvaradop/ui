@@ -96,8 +96,8 @@ importers:
   packages/ui-button:
     dependencies:
       '@halvaradop/ui-core':
-        specifier: ^0.5.0-rc.0
-        version: 0.5.0
+        specifier: workspace:*
+        version: link:../ui-core
       '@halvaradop/ui-slot':
         specifier: workspace:*
         version: link:../ui-slot
@@ -118,8 +118,8 @@ importers:
   packages/ui-checkbox:
     dependencies:
       '@halvaradop/ui-core':
-        specifier: ^0.5.0-rc.0
-        version: 0.5.0
+        specifier: workspace:*
+        version: link:../ui-core
       class-variance-authority:
         specifier: 0.7.0
         version: 0.7.0
@@ -156,8 +156,8 @@ importers:
   packages/ui-dialog:
     dependencies:
       '@halvaradop/ui-core':
-        specifier: ^0.5.0-rc.0
-        version: 0.5.0
+        specifier: workspace:*
+        version: link:../ui-core
       class-variance-authority:
         specifier: 0.7.0
         version: 0.7.0
@@ -175,8 +175,8 @@ importers:
   packages/ui-form:
     dependencies:
       '@halvaradop/ui-core':
-        specifier: ^0.5.0-rc.0
-        version: 0.5.0
+        specifier: workspace:*
+        version: link:../ui-core
       class-variance-authority:
         specifier: 0.7.0
         version: 0.7.0
@@ -194,8 +194,8 @@ importers:
   packages/ui-input:
     dependencies:
       '@halvaradop/ui-core':
-        specifier: ^0.5.0-rc.0
-        version: 0.5.0
+        specifier: workspace:*
+        version: link:../ui-core
       class-variance-authority:
         specifier: 0.7.0
         version: 0.7.0
@@ -213,8 +213,8 @@ importers:
   packages/ui-label:
     dependencies:
       '@halvaradop/ui-core':
-        specifier: ^0.5.0-rc.0
-        version: 0.5.0
+        specifier: workspace:*
+        version: link:../ui-core
       '@halvaradop/ui-slot':
         specifier: workspace:*
         version: link:../ui-slot
@@ -254,8 +254,8 @@ importers:
   packages/ui-radio-group:
     dependencies:
       '@halvaradop/ui-core':
-        specifier: ^0.5.0-rc.0
-        version: 0.5.0
+        specifier: workspace:*
+        version: link:../ui-core
       class-variance-authority:
         specifier: 0.7.0
         version: 0.7.0
@@ -273,8 +273,8 @@ importers:
   packages/ui-select:
     dependencies:
       '@halvaradop/ui-core':
-        specifier: ^0.5.0-rc.0
-        version: 0.5.0
+        specifier: workspace:*
+        version: link:../ui-core
       class-variance-authority:
         specifier: 0.7.0
         version: 0.7.0
@@ -292,8 +292,8 @@ importers:
   packages/ui-slot:
     devDependencies:
       '@halvaradop/ui-core':
-        specifier: ^0.5.0-rc.0
-        version: 0.5.0
+        specifier: workspace:*
+        version: link:../ui-core
       '@halvaradop/ui-utils':
         specifier: workspace:*
         version: link:../ui-utils
@@ -301,8 +301,8 @@ importers:
   packages/ui-submit:
     dependencies:
       '@halvaradop/ui-core':
-        specifier: ^0.5.0-rc.0
-        version: 0.5.0
+        specifier: workspace:*
+        version: link:../ui-core
       class-variance-authority:
         specifier: 0.7.0
         version: 0.7.0
@@ -320,8 +320,8 @@ importers:
   packages/ui-template:
     dependencies:
       '@halvaradop/ui-core':
-        specifier: ^0.5.0-rc.0
-        version: 0.5.0
+        specifier: workspace:*
+        version: link:../ui-core
       class-variance-authority:
         specifier: 0.7.0
         version: 0.7.0
