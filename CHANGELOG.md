@@ -8,6 +8,33 @@ Per-package version history is maintained inside each package’s own `CHANGELOG
 
 ---
 
+## [Unreleased]
+
+## [rc pre-release] - 2025-06-07
+
+- Pre-release (`rc`) versions published for all major monorepo packages [#170](https://github.com/halvaradop/ui/pull/170):
+
+  - @halvaradop/ui-button
+  - @halvaradop/ui-checkbox
+  - @halvaradop/ui-core
+  - @halvaradop/ui-dialog
+  - @halvaradop/ui-form
+  - @halvaradop/ui-input
+  - @halvaradop/ui-label
+  - @halvaradop/ui-radio-group
+  - @halvaradop/ui-radio
+  - @halvaradop/ui-select
+  - @halvaradop/ui-slot
+  - @halvaradop/ui-submit
+  - @halvaradop/ui-template
+  - @halvaradop/ui-utils
+
+  Each package incremented its pre-release version (`rc.0`, `rc.1`, etc.) as appropriate. These versions are available on npm under the `rc` tag for testing and validation prior to the stable release.
+
+---
+
+---
+
 ## Added
 
 - **Theming system with CSS variables**  
@@ -60,8 +87,6 @@ Per-package version history is maintained inside each package’s own `CHANGELOG
 - **Legacy configuration files**  
   Removed duplicated config files (`tsup.config.base.ts`, `tsconfig.base.json`, etc.) from each package. These were replaced by the centralized `@halvaradop/ui-utils` package.  
   → [PR #107](https://github.com/halvaradop/ui/pull/107)
-
----
 
 ## Notes
 
