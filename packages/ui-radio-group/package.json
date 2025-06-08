@@ -61,7 +61,6 @@
   },
   "dependencies": {
     "@halvaradop/ui-core": "workspace:*",
-    "@halvaradop/ui-radio": "workspace:*",
     "class-variance-authority": "0.7.0"
   },
   "devDependencies": {
