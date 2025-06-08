@@ -34,15 +34,11 @@
 }
 
 :is(html, body).dark {
-    --opacity-cursor: 80%;
-
     --color-muted: oklch(70% 0.01 260);
     --color-border: oklch(35% 0.01 260);
+    --color-overlay: oklch(0% 0 0 / 0.6);
 
     --color-success: oklch(70% 0.19 150);
-    --color-danger: oklch(65% 0.22 25);
-
-    --color-overlay: oklch(0% 0 0 / 0.6);
 
     --color-surface: oklch(15% 0.005 260);
     --color-on-surface: oklch(95% 0.01 260);

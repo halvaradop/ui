@@ -55,6 +55,7 @@ The component supports TailwindCSS v4. To customize colors, use the following CS
 @import "tailwindcss";
 
 @theme {
+  --rounded: 0.375rem;
   --opacity-cursor: 80%;
 
   --color-muted: oklch(65% 0.01 260);
@@ -68,6 +69,11 @@ The component supports TailwindCSS v4. To customize colors, use the following CS
 
   --color-secondary: oklch(60% 0 270);
   --color-on-secondary: oklch(10% 0 0);
+
+  --size-sm: 1.75rem;
+  --size-base: 2.25rem;
+  --size-md: 2.75rem;
+  --size-lg: 3.25rem;
 }
 ```
 
@@ -77,13 +83,10 @@ The library currently supports only a dark theme. To enable it, update the CSS v
 
 ```css
 :is(html, body).dark {
-  --opacity-cursor: 80%;
-
   --color-muted: oklch(70% 0.01 260);
   --color-border: oklch(35% 0.01 260);
 
   --color-success: oklch(70% 0.19 150);
-  --color-danger: oklch(65% 0.22 25);
 
   --color-primary: oklch(90% 0 0);
   --color-on-primary: oklch(20% 0 270);
