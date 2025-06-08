@@ -8,7 +8,7 @@ export const SelectList = ({ children, className, ref, ...props }: ComponentProp
         <ul
             ref={ref}
             className={merge(
-                "w-full p-1 border border-border rounded-md absolute top-10 right-0 bg-surface",
+                "w-full p-1 border border-border rounded-(--rounded) absolute top-10 right-0 bg-surface",
                 className,
                 open ? "block" : "hidden"
             )}

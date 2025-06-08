@@ -6,10 +6,10 @@ export type CheckboxProps<T extends ArgsFunction> = ComponentProps<"input", "typ
 const internalVariants = cva("hidden absolute peer-checked:block", {
     variants: {
         size: {
-            sm: "size-3",
-            base: "size-4",
-            md: "size-5",
-            lg: "size-6",
+            sm: "size-[calc(var(--size-sm)*0.5)]",
+            base: "size-[calc(var(--size-base)*0.5)]",
+            md: "size-[calc(var(--size-md)*0.5)]",
+            lg: "size-[calc(var(--size-lg)*0.5)]",
         },
     },
     defaultVariants: {
@@ -18,14 +18,14 @@ const internalVariants = cva("hidden absolute peer-checked:block", {
 })
 
 export const checkboxVariants = cva(
-    "appearance-none border border-solid border-border focus-visible:[outline-style:solid] focus-visible:outline-border disabled:border-muted disabled:bg-muted",
+    "appearance-none border border-solid border-border rounded-[calc(var(--rounded)*0.75)] focus-visible:[outline-style:solid] focus-visible:outline-border disabled:border-muted disabled:bg-muted",
     {
         variants: {
             size: {
-                sm: "size-3 rounded-[1px] focus-visible:outline focus-visible:outline-offset-2",
-                base: "size-4 rounded-sm focus-visible:outline focus-visible:outline-offset-2",
-                md: "size-5 p-0.5 rounded-[4px] focus-visible:outline-3 focus-visible:outline-offset-3",
-                lg: "size-6 p-0.5 rounded-[5px] focus-visible:outline-3 focus-visible:outline-offset-3",
+                sm: "size-[calc(var(--size-sm)*0.5)] focus-visible:outline focus-visible:outline-offset-2",
+                base: "size-[calc(var(--size-base)*0.5)] focus-visible:outline focus-visible:outline-offset-2",
+                md: "size-[calc(var(--size-md)*0.5)] p-0.5 focus-visible:outline-3 focus-visible:outline-offset-3",
+                lg: "size-[calc(var(--size-lg)*0.5)] p-0.5 focus-visible:outline-3 focus-visible:outline-offset-3",
             },
             color: {
                 primary: "checked:border-primary checked:bg-primary checked:focus-visible:outline-primary",

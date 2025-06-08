@@ -84,6 +84,11 @@ export const Base: Story = {
                             <span className="block">size: {size}</span>
                             <span className="block">variant: {variant}</span>
                         </div>
+                        {Array.from({ length: 30 }, (_, i) => (
+                            <p key={i} className="text-center">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptatibus.
+                            </p>
+                        ))}
                         <Button className="mt-4" onClick={() => handleToggleModal(false)}>
                             Close
                         </Button>

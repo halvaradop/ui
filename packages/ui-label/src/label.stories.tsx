@@ -24,7 +24,7 @@ const variant: ArgTypes["variant"] = {
     description: "Variant of the label",
     table: {
         type: {
-            summary: "base | error | flex",
+            summary: "base | required",
         },
         defaultValue: {
             summary: "base",
