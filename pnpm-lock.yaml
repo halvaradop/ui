@@ -235,8 +235,8 @@ importers:
   packages/ui-radio:
     dependencies:
       '@halvaradop/ui-core':
-        specifier: workspace:*
-        version: link:../ui-core
+        specifier: ^0.5.0-rc.0
+        version: 0.5.0
       class-variance-authority:
         specifier: 0.7.0
         version: 0.7.0
@@ -256,9 +256,6 @@ importers:
       '@halvaradop/ui-core':
         specifier: workspace:*
         version: link:../ui-core
-      '@halvaradop/ui-radio':
-        specifier: workspace:*
-        version: link:../ui-radio
       class-variance-authority:
         specifier: 0.7.0
         version: 0.7.0
@@ -568,6 +565,9 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
+
+  '@halvaradop/ui-core@0.5.0':
+    resolution: {integrity: sha512-r0vNex3PTD6OUlmXGMA8sXrkdKAVV0wbZ7uMpzhJ/moy3OHNt3tQdgsbTHLdN3fWTaagxLvu+FuYw1edeXNh6Q==}
 
   '@isaacs/cliui@8.0.2':
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
@@ -2474,6 +2474,10 @@ snapshots:
 
   '@esbuild/win32-x64@0.25.4':
     optional: true
+
+  '@halvaradop/ui-core@0.5.0':
+    dependencies:
+      tailwind-merge: 2.6.0
 
   '@isaacs/cliui@8.0.2':
     dependencies:
