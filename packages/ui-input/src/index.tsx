@@ -1,23 +1,23 @@
-import { merge, type ComponentProps, type ArgsFunction } from "@halvaradop/ui-core"
+import { merge, type ComponentProps } from "@halvaradop/ui-core"
 import { cva, type VariantProps } from "class-variance-authority"
 
-export type InputProps<T extends ArgsFunction> = VariantProps<T> & ComponentProps<"input", "size">
+export type InputProps<T extends VoidFunction> = VariantProps<T> & ComponentProps<"input", "size">
 
 export const inputVariants = cva(
-    "text-inverse border bg-input-background focus-visible:outline-none disabled:cursor-not-allowed disabled:text-disabled disabled:border-disabled disabled:bg-disabled",
+    "text-on-surface border border-solid border-border rounded-(--rounded) bg-surface placeholder:text-muted outline-0 focus-visible:outline-solid disabled:cursor-not-allowed disabled:text-on-secondary disabled:border-disabled disabled:bg-disabled",
     {
         variants: {
             size: {
-                sm: "h-8 indent-2 text-sm rounded-md",
-                base: "h-9 indent-3 rounded-lg",
-                md: "h-10 indent-3 rounded-lg",
-                lg: "h-11 indent-4 text-lg rounded-xl",
+                sm: "h-8 indent-[calc(var(--size-sm)*0.4)]",
+                base: "h-9 indent-[calc(var(--size-base)*0.4)]",
+                md: "h-10 indent-[calc(var(--size-md)*0.4)]",
+                lg: "h-11 indent-[calc(var(--size-lg)*0.4)]",
             },
             variant: {
-                base: "caret-primary border-base focus-visible:ring-1 focus-visible:border-base focus-visible:ring-border",
-                line: "border-0 border-b border-base rounded-none",
+                base: "caret-on-surface focus:outline focus:outline-border",
+                line: "border-0 border-b rounded-none bg-transparent",
                 sensitive:
-                    "focus-visible:ring-1 focus-visible:border-base focus-visible:ring-border usinvalid:text-red-hover usinvalid:placeholder-red-hover usinvalid:border-red-hover usinvalid:focus-within:ring-red-hover usvalid:text-green-hover usvalid:border-green-hover usvalid:focus-within:ring-green-hover input-empty:usinvalid:border-inherit input-empty:usinvalid:placeholder-border-md input-empty:usinvalid:caret-border-md input-empty:usinvalid:focus-within:border-md input-empty:usinvalid:focus-within:ring-border-md",
+                    "user-invalid:text-danger user-invalid:border-danger focus:border-border focus:outline focus:outline-border focus:user-invalid:text-danger focus:user-invalid:border-danger focus:user-invalid:outline-danger invalid:placeholder-shown:border-border",
             },
             fullWidth: {
                 true: "w-full",
@@ -49,8 +49,9 @@ export const Input = ({
     return (
         <input
             className={merge(inputVariants({ className, variant, size, fullWidth, fullRounded }))}
-            type={type}
             ref={ref}
+            type={type}
+            role="textbox"
             {...props}
         />
     )

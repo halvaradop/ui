@@ -1,20 +1,20 @@
-"use client"
-import { ChangeEvent, ChangeEventHandler, useState } from "react"
-import { merge, type ComponentProps, type WithChildrenProps, type ArgsFunction } from "@halvaradop/ui-core"
+import { useState, useCallback } from "react"
+import { merge, type ComponentProps, type PropsWithChildren } from "@halvaradop/ui-core"
 import { cva, type VariantProps } from "class-variance-authority"
 import { RadioGroupContext } from "./context.js"
 
-export type RadioGroupProps<T extends ArgsFunction> = VariantProps<T> &
-    WithChildrenProps<ComponentProps<"fieldset", "defaultValue" | "onChange">> & {
+export type RadioGroupProps<T extends VoidFunction> = VariantProps<T> &
+    PropsWithChildren<ComponentProps<"fieldset", "defaultValue" | "onChange">> & {
+        value?: string
         defaultValue?: string
-        onChange?: ChangeEventHandler<HTMLInputElement>
+        onChange?: (value: string) => void
     }
 
 export const radioGroupVariants = cva("flex", {
     variants: {
         variant: {
-            row: "flex-row gap-x-5",
-            column: "flex-col gap-y-1",
+            row: "flex-row gap-x-[calc(var(--size-sm)*0.27)]",
+            column: "flex-col gap-y-[calc(var(--size-sm)*0.27)]",
         },
     },
     defaultVariants: {
@@ -26,18 +26,22 @@ export const RadioGroup = ({
     className,
     variant,
     name,
+    value,
     defaultValue,
     children,
     ref,
     onChange,
     ...props
 }: RadioGroupProps<typeof radioGroupVariants>) => {
-    const [selectedValue, setSelectedValue] = useState(defaultValue)
+    const [selectedValue, setSelectedValue] = useState(defaultValue ?? value)
 
-    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-        onChange?.(event)
-        setSelectedValue(event.target.value)
-    }
+    const handleChange = useCallback(
+        (value: string) => {
+            setSelectedValue(value)
+            onChange?.(value)
+        },
+        [onChange]
+    )
 
     return (
         <RadioGroupContext.Provider value={{ name, selectedValue, onChange: handleChange }}>
@@ -45,9 +49,9 @@ export const RadioGroup = ({
                 className={merge(radioGroupVariants({ className, variant }))}
                 ref={ref}
                 name={name}
-                defaultValue={defaultValue}
                 data-value={selectedValue}
                 data-name={name}
+                role="radiogroup"
                 {...props}
             >
                 {children}

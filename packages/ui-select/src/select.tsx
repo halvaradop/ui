@@ -1,6 +1,6 @@
 import { useId } from "react"
 import { merge, type ComponentProps } from "@halvaradop/ui-core"
-import { SelectProvider } from "./context.js"
+import { SelectProvider, useSelect } from "./context.js"
 
 export type SelectProps = ComponentProps<"ul"> & {
     name: string
@@ -8,16 +8,19 @@ export type SelectProps = ComponentProps<"ul"> & {
 }
 
 export const Select = ({ className, children, name, defaultValue, ref, ...props }: SelectProps) => {
-    const selectId = useId()
+    const { id, open } = useSelect()
+
     return (
         <SelectProvider name={name} defaultValue={defaultValue}>
             <ul
-                id={selectId}
-                className={merge("relative", className)}
+                className={merge("text-on-surface relative", className)}
                 ref={ref}
+                id={id}
                 role="combobox"
                 aria-haspopup="listbox"
-                aria-controls={`${selectId}-listbox`}
+                aria-controls={`${id}-listbox`}
+                aria-expanded={open}
+                aria-labelledby={`${id}-trigger`}
                 {...props}
             >
                 {children}

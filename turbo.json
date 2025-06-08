@@ -13,7 +13,10 @@
     },
     "dev": {
       "dependsOn": ["^dev"],
-      "cache": false
+      "outputs": ["dist"],
+      "inputs": ["src"],
+      "cache": false,
+      "persistent": false
     },
     "clean": {
       "cache": false,
@@ -26,6 +29,9 @@
       "cache": false
     },
     "clean:turbo": {
+      "cache": false
+    },
+    "clean:cts": {
       "cache": false
     }
   },

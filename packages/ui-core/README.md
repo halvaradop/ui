@@ -1,14 +1,12 @@
 # @halvaradop/ui-core
 
-The `@halvaradop/ui-core` package provides shared types and utilities for the `@halvaradop/ui` library. It ensures consistent functionality across all packages by centralizing these resources, which are included in the build process.
+`@halvaradop/ui-core` provides shared types and utilities for the `@halvaradop/ui` React library. Built with React and styled using TailwindCSS v4, it ensures consistent functionality and design across all packages by centralizing these resources.
 
 ## Installation
 
-This core package offers two versions: one for React 18 and another for React 19.
+There are two versions available: one for React 18 (stable) and one for React 19 (beta).
 
-### For React 18
-
-Install the stable version:
+### React 18 (Stable)
 
 ```bash
 npm install @halvaradop/ui-core
@@ -16,9 +14,7 @@ yarn add @halvaradop/ui-core
 pnpm add @halvaradop/ui-core
 ```
 
-### For React 19
-
-Install the beta version:
+### React 19 (Beta)
 
 ```bash
 npm install @halvaradop/ui-core@beta
@@ -28,41 +24,33 @@ pnpm add @halvaradop/ui-core@beta
 
 ## Usage
 
-The core package offers three main resources: the `Slot` component, `merge` function, and various types.
-
-### Slot
-
-The `Slot` component allows changing the default HTML tag of a parent element to the tag name of its children. This is useful for components like `Button` and `Label` that can be updated with other tags. Additionally, it provides the `SlotProps` type to infer attributes based on the HTML tag name.
-
-```ts
-import { type SlotProps, Slot } from "@halvaradop/ui-core"
-
-interface CardProps extends SlotProps<"article"> {
-    // extra props
-}
-
-export const Card = ({ className, children, asChild }: CardProps) => {
-    const SlotComponent = asChild ? "article" : Slot
-    return <SlotComponent>{children}</SlotComponent>
-}
-```
+The core package provides essential utilities and types to streamline development with `@halvaradop/ui`.
 
 ### Types
 
-The core package exports several types used throughout the components:
+You can import the following types to ensure type safety and consistency across your components:
 
-- `HTMLTag`: Contains HTML tags.
-- `WithChildrenProps`: Adds the `children` prop as a mandatory prop.
-- `HTMLTagAttributes`: Returns the attributes of the HTML tag.
-- `ComponentProps`: Similar to `HTMLTagAttributes` but allows excluding specified attributes.
-- `ArgsFunction`: Used by the `VariantProps` type imported from `cva`.
+- **`HTMLTag`**: Represents valid HTML tag names.
+- **`PropsWithChildren`**: Ensures the `children` prop is required.
+- **`HTMLTagAttributes`**: Retrieves the attributes for a given HTML tag.
+- **`ComponentProps`**: Similar to `HTMLTagAttributes`, but allows you to omit specific attributes.
 
-These types are imported from the index entry point and the `/types` export.
+Types are available from both the main entry point and the `/types` subpath.
 
-### Utils
+### Utilities
 
-Currently, the only utility is the `merge` function, which merges the classes passed to components with the current classes provided in the components.
+- **`merge`**: A utility function to combine multiple class names, making it easier to manage TailwindCSS classes in your components.
+
+**Example:**
+
+```tsx
+import { merge, HTMLTag, PropsWithChildren } from "@halvaradop/ui-core"
+
+function Button({ className, children }: PropsWithChildren & { className?: string }) {
+  return <button className={merge("px-4 py-2", className)}>{children}</button>
+}
+```
 
 ## Notes
 
-The beta version is functional but may have minor changes or issues compared to the stable version. If you encounter any problems, please report them in an [Issue](https://github.com/halvaradop/ui/issues) with details.
+The beta version may have minor changes or issues compared to the stable version. Please report any problems via [GitHub Issues](https://github.com/halvaradop/ui/issues).

@@ -1,7 +1,8 @@
 import { useRef } from "react"
 import type { Meta, StoryObj } from "@storybook/react"
+import { within, expect } from "@storybook/test"
 import { Dialog, modalVariants } from "./index.js"
-import { Button } from "@halvaradop/ui-button"
+import { Button } from "@/ui/ui-button/src/index.js"
 import { decorator } from "@halvaradop/ui-utils/decorator"
 import { DocsPage } from "@halvaradop/ui-utils/docs-page"
 import type { VariantProps } from "class-variance-authority"
@@ -83,6 +84,11 @@ export const Base: Story = {
                             <span className="block">size: {size}</span>
                             <span className="block">variant: {variant}</span>
                         </div>
+                        {Array.from({ length: 30 }, (_, i) => (
+                            <p key={i} className="text-center">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptatibus.
+                            </p>
+                        ))}
                         <Button className="mt-4" onClick={() => handleToggleModal(false)}>
                             Close
                         </Button>
@@ -90,6 +96,27 @@ export const Base: Story = {
                 </Dialog>
             </>
         )
+    },
+    play: async ({ canvasElement }) => {
+        const canvas = within(canvasElement)
+        const openButton = canvas.getByRole("button", { name: /open/i })
+        openButton.click()
+
+        const modal = canvas.getByRole("dialog")
+        expect(modal.hasAttribute("open")).toBeTruthy()
+
+        expect(canvas.getByText(/Modal Content/i)).toBeInTheDocument()
+        expect(canvas.getByText(/size:/i)).toHaveTextContent(/size: (sm|base|md|lg)/i)
+        expect(canvas.getByText(/variant:/i)).toHaveTextContent(/variant: (base|inner|fixed)/i)
+
+        expect(document.activeElement === modal || modal.contains(document.activeElement)).toBeTruthy()
+
+        await new Promise((resolve) => setTimeout(resolve, 500))
+
+        const closeButton = canvas.getByRole("button", { name: /close/i })
+        closeButton.click()
+
+        expect(modal.hasAttribute("open")).toBeFalsy()
     },
 }
 

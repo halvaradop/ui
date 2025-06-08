@@ -1,7 +1,7 @@
-import { merge, type ArgsFunction, type ComponentProps } from "@halvaradop/ui-core"
+import { merge, type ComponentProps } from "@halvaradop/ui-core"
 import { cva, type VariantProps } from "class-variance-authority"
 
-export type IndexProps<T extends ArgsFunction> = VariantProps<T> & ComponentProps<"div">
+export type IndexProps<T extends VoidFunction> = VariantProps<T> & ComponentProps<"div">
 
 export const indexVariants = cva("", {
     variants: {},

@@ -1,43 +1,39 @@
 # @halvaradop/ui@beta
 
-This is a library of accessible, reusable, and customizable UI components for web applications built with React and styled using TailwindCSS. It provides a set of pre-styled components designed to streamline and accelerate the development of user interfaces.
+A modern, accessible, and customizable React UI component library, organized as a monorepo and styled with TailwindCSS v4. This library provides pre-styled, reusable components to help you build user interfaces faster and more consistently.
 
 ## Version Compatibility
 
-This library supports both `React 18` and `React 19`. Refer to the table below to select the appropriate version of the library based on your React version:
+Supports both `React 18` and `React 19`. Use the table below to select the correct library version for your React version:
 
-| React version | Library version            |
-| ------------- | -------------------------- |
-| React 18      | Latest version ^x.y.z      |
-| React 19      | Beta version ^x.y.z-beta.n |
+| React version | Library version        |
+| ------------- | ---------------------- |
+| React 18      | Latest stable (^x.y.z) |
+| React 19      | Beta (^x.y.z-beta.n)   |
 
 ## Installation
 
-To install the available components, you can refer to the [packages](https://github.com/halvaradop/ui/tree/master/packages) and add the package name with the `@halvaradop` prefix. Then, run one of the following commands based on your package manager and the React version you are using:
+Find available components in the [packages directory](https://github.com/halvaradop/ui/tree/master/packages). Install the desired package with the `@halvaradop` prefix using your preferred package manager:
 
-### For React 18
-
-Install the stable version:
+### For React 18 (Stable)
 
 ```bash
-npm install @halvaradop/ui-component
-yarn add @halvaradop/ui-component
-pnpm add @halvaradop/ui-component
+npm install @halvaradop/ui-button
+yarn add @halvaradop/ui-button
+pnpm add @halvaradop/ui-button
 ```
 
-### For React 19
-
-Install the beta version:
+### For React 19 (Beta)
 
 ```bash
-npm install @halvaradop/ui-component@beta
-yarn add @halvaradop/ui-component@beta
-pnpm add @halvaradop/ui-component@beta
+npm install @halvaradop/ui-button@beta
+yarn add @halvaradop/ui-button@beta
+pnpm add @halvaradop/ui-button@beta
 ```
 
 ## Usage
 
-Import components and start building your application:
+Import components and use them in your application:
 
 ```tsx
 import { Button } from "@halvaradop/ui-button"
@@ -47,155 +43,94 @@ export default function App() {
 }
 ```
 
-Check the full list of components in the [packages directory](https://github.com/halvaradop/ui/tree/master/packages).
+## Components
 
-## Styles
+- [Button](https://github.com/halvaradop/ui/tree/master/packages/ui-button)
+- [Checkbox](https://github.com/halvaradop/ui/tree/master/packages/ui-checkbox)
+- [Core](https://github.com/halvaradop/ui/tree/master/packages/ui-core)
+- [Dialog](https://github.com/halvaradop/ui/tree/master/packages/ui-dialog)
+- [Form](https://github.com/halvaradop/ui/tree/master/packages/ui-form)
+- [Input](https://github.com/halvaradop/ui/tree/master/packages/ui-input)
+- [Label](https://github.com/halvaradop/ui/tree/master/packages/ui-label)
+- [RadioGroup](https://github.com/halvaradop/ui/tree/master/packages/ui-radio-group)
+- [Select](https://github.com/halvaradop/ui/tree/master/packages/ui-select)
+- [Slot](https://github.com/halvaradop/ui/tree/master/packages/ui-slot)
+- [Submit](https://github.com/halvaradop/ui/tree/master/packages/ui-submit)
 
-To add styles from the library to any of the components in your project, you need to add the pattern `"./node_modules/@halvaradop/ui-*/**/*.{js,ts,jsx,tsx,mdx}"` within the `tailwind.config.ts` file. This will allow TailwindCSS to recognize the classes used in the library and apply the styles to the components.
+### Versioning and Releasing
 
-```ts
-import type { Config } from "tailwindcss"
+Each package maintains its own [CHANGELOG.md](https://github.com/halvaradop/ui/tree/master/packages) to track changes, bug fixes, and releases. For detailed changelogs, refer to the specific package directory. Additionally, a general [CHANGELOG.md](https://github.com/halvaradop/ui/blob/master/CHANGELOG.md) provides an overview of the main changes in the current major version of the library.
 
-const config: Config = {
-  content: ["./node_modules/@halvaradop/ui-*/**/*.{js,ts,jsx,tsx,mdx}"],
-  darkMode: "class",
-  future: {
-    hoverOnlyWhenSupported: true,
-  },
-}
+## Styling
 
-export default config
-```
-
-### Customizing with CSS Variables
-
-The components support CSS variables to customize your components based on your application's design system. To set the CSS variables, define the required variables in your project's `.css` file. Then, extend the `colors` field in the `tailwind.config.ts` file to create new color names using the values of the previously defined CSS variables.
-
-Below are some of the CSS variables used by the components of the `@halvaradop/ui` library. For a complete list of CSS variables, refer to the [index.css](https://github.com/halvaradop/ui/blob/master/index.css) file:
+The component supports TailwindCSS v4. To customize colors, use the following CSS variables. For the full theme, see [the theme file](https://github.com/halvaradop/ui/blob/master/tailwind.css).
 
 ```css
-/* Default color scheme for light theme */
-:root {
-  /* Primary colors */
-  --color-primary: oklch(13% 0 100);
-  --color-primary-hover: oklch(28% 0 100);
+@import "tailwindcss";
 
-  /* Secondary colors */
-  --color-secondary: oklch(92% 0 0);
-  --color-secondary-hover: oklch(95% 0 0);
+@theme {
+  --breakpoint-base: 900px;
 
-  /* Red color */
-  --color-red: oklch(67% 0.2343 13);
-  --color-red-hover: oklch(81% 0.2343 13);
+  --rounded: 0.375rem;
+  --opacity-cursor: 80%;
 
-  /* Blue color */
-  --color-blue: oklch(62% 0.22 250);
-  --color-blue-hover: oklch(76% 0.22 250);
+  --color-muted: oklch(65% 0.01 260);
+  --color-border: oklch(70% 0.02 260);
+  --color-overlay: oklch(30% 0.02 260 / 0.3);
 
-  /* Green color */
-  --color-green: oklch(86% 0.32 147);
-  --color-green-hover: oklch(100% 0.32 147);
+  --color-success: oklch(75% 0.18 140);
+  --color-danger: oklch(65% 0.2 25);
 
-  /* Yellow color */
-  --color-yellow: oklch(87% 0.2 90);
-  --color-yellow-hover: oklch(100% 0.2 90);
+  --color-surface: oklch(98% 0 0);
+  --color-on-surface: oklch(20% 0.02 260);
 
-  /* Text colors */
-  --color-font-100: oklch(96% 0 360);
-  --color-font-200: oklch(13% 0 100);
+  --color-primary: oklch(30% 0 270);
+  --color-on-primary: oklch(95% 0 0);
 
-  /* Ghost color used by the Button component */
-  --color-ghost: oklch(92% 0 0);
+  --color-secondary: oklch(60% 0 270);
+  --color-on-secondary: oklch(10% 0 0);
 
-  /* Input colors */
-  --color-input: oklch(13% 0 100);
-  --color-input-background: oklch(99% 0 0);
+  --color-ghost: oklch(94% 0.01 260);
 
-  /* Color for components with the disabled HTML attribute */
   --color-disabled: oklch(92% 0 0);
+  --color-on-disabled: oklch(60% 0.01 260);
 
-  /* Modal colors */
-  --color-modal: oklch(99.7% 0.001 360);
-  --color-dialog: oklch(75.51% 0.001 360 / 50.27%);
-
-  /* Border colors */
-  --color-border: oklch(93.55% 0.001 360);
+  --size-sm: 1.75rem;
+  --size-base: 2.25rem;
+  --size-md: 2.75rem;
+  --size-lg: 3.25rem;
 }
 ```
 
-### Multi-Theming Support
+### Dark Theme Support
 
-The library supports only the `Dark Theme`. To update the CSS variables based on the dark theme, use the following code:
+The library currently supports only a dark theme. To enable it, update the CSS variables as follows:
 
 ```css
-/* Dark theme color scheme */
 :is(html, body).dark {
-  /* Primary colors in dark theme */
-  --color-primary: oklch(92% 0 0);
-  --color-primary-hover: oklch(95% 0 0);
-
-  /* Secondary colors in dark theme */
-  --color-secondary: oklch(13% 0 100);
-  --color-secondary-hover: oklch(28% 0 100);
-
-  /* Text colors in dark theme */
-  --color-font-100: oklch(13% 0 100);
-  --color-font-200: oklch(96% 0 360);
-
-  /* Input colors in dark theme */
-  --color-input: oklch(92% 0 0);
-  --color-input-background: oklch(13% 0 100);
+  --color-muted: oklch(70% 0.01 260);
+  --color-border: oklch(35% 0.01 260);
+  --color-overlay: oklch(0% 0 0 / 0.6);
+  --color-success: oklch(70% 0.19 150);
+  --color-danger: oklch(65% 0.22 25);
+  --color-surface: oklch(15% 0.005 260);
+  --color-primary: oklch(90% 0 0);
+  --color-on-primary: oklch(20% 0 270);
+  --color-secondary: oklch(60% 0 0);
+  --color-on-secondary: oklch(10% 0 270);
+  --color-ghost: oklch(25% 0 0);
+  --color-disabled: oklch(30% 0 0);
 }
-```
-
-### Integrating CSS Variables with TailwindCSS Configuration
-
-After defining the colors for your project using your design system or the default styles provided by the library, the next step is to create new color references using the CSS variables. The following code snippet demonstrates how to create some colors using these CSS variables. For more details, refer to the [tailwind.config.ts](https://github.com/halvaradop/ui/blob/master/tailwind.config.ts) file.
-
-```ts
-import type { Config } from "tailwindcss"s
-
-const config: Config = {
-  content: ["./node_modules/@halvaradop/ui-*/**/*.{js,ts,jsx,tsx,mdx}"],
-  darkMode: "class",
-  future: {
-    hoverOnlyWhenSupported: true,
-  },
-  theme: {
-    extend: {
-      colors: {
-        primary: {
-          DEFAULT: "var(--color-primary)",
-          hover: "var(--color-primary-hover)",
-        },
-        secondary: {
-          DEFAULT: "var(--color-secondary)",
-          hover: "var(--color-secondary-hover)",
-        },
-        color: {
-          100: "var(--color-font-100)",
-          200: "var(--color-font-200)",
-        },
-        input: {
-          DEFAULT: "var(--color-input)",
-          background: "var(--color-input-background)",
-        },
-      },
-    },
-  },
-}
-
-export default config
 ```
 
 ## Notes
 
-The beta version works, however, it may have minor changes or issues compared to the stable version. If you find a problem or issue, please report it in an [Issue](https://github.com/halvaradop/ui/issues) with the details.
+The beta version may have minor changes or issues compared to the stable version. Please report any problems via [GitHub Issues](https://github.com/halvaradop/ui/issues).
 
 ## Contributing
 
-We welcome contributions to the `@halvaradop/ui` library. If you have an idea, find an issue, or have any advice, please feel free to open an issue or create a pull request. We offer a guide on how to contribute to the project and the necessary steps to do so. Please read [Contributing Guide](https://github.com/halvaradop/ui/blob/master/.github/CONTRIBUTING.md).
+We welcome contributions to the `@halvaradop/ui` library! Please read the [Contributing Guide](./CONTRIBUTING.md) for details on our process, code standards, and how to get started. All contributors are expected to follow our [Code of Conduct](https://github.com/halvaradop/.github/blob/master/.github/CODE_OF_CONDUCT.md).
 
-# Code Of Conduct
+## Architecture
 
-Please be aware that this project has a code of conduct, and we expect all contributors to follow these guidelines in their interactions. For more information, please read our [Code of Conduct](https://github.com/halvaradop/.github/blob/master/.github/CODE_OF_CONDUCT.md).
+For an in-depth look at the monorepo structure, package layout, build and development workflow, design principles, and guidelines for extending the library, refer to the [ARCHITECTURE.md](./ARCHITECTURE.md) document.

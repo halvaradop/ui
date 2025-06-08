@@ -1,14 +1,12 @@
 # @halvaradop/ui-checkbox
 
-The `@halvaradop/ui-checkbox` is an accessible, reusable, and customizable `Checkbox` component that is part of the `@halvaradop/ui` library for React. Built with `React` and styled using `TailwindCSS`, it provides a set of pre-styled components designed to streamline and accelerate the development of user interfaces.
+`@halvaradop/ui-checkbox` is an accessible, reusable, and customizable `Checkbox` component from the `@halvaradop/ui` React library. Built with React and styled using TailwindCSS v4, it provides pre-styled components to accelerate UI development.
 
 ## Installation
 
-This checkbox package offers two versions: one for React 18 and another for React 19.
+There are two versions available: one for React 18 (stable) and one for React 19 (beta).
 
-### For React 18
-
-Install the stable version:
+### React 18 (Stable)
 
 ```bash
 npm install @halvaradop/ui-checkbox
@@ -16,9 +14,7 @@ yarn add @halvaradop/ui-checkbox
 pnpm add @halvaradop/ui-checkbox
 ```
 
-### For React 19
-
-Install the beta version:
+### React 19 (Beta)
 
 ```bash
 npm install @halvaradop/ui-checkbox@beta
@@ -43,7 +39,7 @@ export default function App() {
 }
 ```
 
-### Prop Values
+### Prop Reference
 
 | Prop        | Values                                      | Default |
 | ----------- | ------------------------------------------- | ------- |
@@ -51,123 +47,55 @@ export default function App() {
 | size        | "sm", "base", "md", "lg"                    | "base"  |
 | fullRounded | true, false                                 | false   |
 
-## Styles
+## Styling
 
-To add styles from the library to any of the components in your project, you need to add the pattern `"./node_modules/@halvaradop/ui-*/**/*.{js,ts,jsx,tsx,mdx}"` within the `tailwind.config.ts` file. This will allow TailwindCSS to recognize the classes used in the library and apply the styles to the components.
-
-```ts
-import type { Config } from "tailwindcss"
-
-const config: Config = {
-  content: ["./node_modules/@halvaradop/ui-*/**/*.{js,ts,jsx,tsx,mdx}"],
-  darkMode: "class",
-  future: {
-    hoverOnlyWhenSupported: true,
-  },
-}
-
-export default config
-```
-
-### Customizing with CSS Variables
-
-The `Checkbox` component supports CSS variables to customize its styles based on your design system. To set the CSS variables, define the required variables in your project's `.css` file. Then, extend the `colors` field in the `tailwind.config.ts` file to create new color names using the values of the previously defined CSS variables.
-
-Below are some of the CSS variables used by the `@halvaradop/ui-checkbox` component. For a complete list of CSS variables, refer to the [index.css](https://github.com/halvaradop/ui/blob/master/index.css) file:
+The component supports TailwindCSS v4. To customize colors, use the following CSS variables. For the full theme, see [the theme file](https://github.com/halvaradop/ui/blob/master/tailwind.css).
 
 ```css
-/* Default color scheme for light theme */
-:root {
-  /* Primary colors used by color variant */
-  --color-primary: oklch(13% 0 100);
-  --color-primary-hover: oklch(28% 0 100);
+@import "tailwindcss";
 
-  /* Red color used by color variant */
-  --color-red: oklch(67% 0.2343 13);
-  --color-red-hover: oklch(81% 0.2343 13);
+@theme {
+  --rounded: 0.375rem;
+  --opacity-cursor: 80%;
 
-  /* Blue color used by color variant */
-  --color-blue: oklch(62% 0.22 250);
-  --color-blue-hover: oklch(76% 0.22 250);
+  --color-muted: oklch(65% 0.01 260);
+  --color-border: oklch(70% 0.02 260);
 
-  /* Green color used by color variant (Default color variant) */
-  --color-green: oklch(86% 0.32 147);
-  --color-green-hover: oklch(100% 0.32 147);
+  --color-success: oklch(75% 0.18 140);
+  --color-danger: oklch(65% 0.2 25);
 
-  /* Yellow color used by color variant */
-  --color-yellow: oklch(87% 0.2 90);
-  --color-yellow-hover: oklch(100% 0.2 90);
+  --color-primary: oklch(30% 0 270);
+  --color-on-primary: oklch(95% 0 0);
+
+  --color-secondary: oklch(60% 0 270);
+  --color-on-secondary: oklch(10% 0 0);
+
+  --size-sm: 1.75rem;
+  --size-base: 2.25rem;
+  --size-md: 2.75rem;
+  --size-lg: 3.25rem;
 }
 ```
 
-### Multi-Theme Support
+### Dark Theme Support
 
-The library supports only the `Dark Theme`. To update the CSS variables based on the dark theme, use the following code:
+The library currently supports only a dark theme. To enable it, update the CSS variables as follows:
 
 ```css
-/* Dark theme color scheme */
 :is(html, body).dark {
-  --color-primary: oklch(13% 0 100);
-  --color-primary-hover: oklch(28% 0 100);
+  --color-muted: oklch(70% 0.01 260);
+  --color-border: oklch(35% 0.01 260);
 
-  --color-red: oklch(67% 0.2343 13);
-  --color-red-hover: oklch(81% 0.2343 13);
+  --color-success: oklch(70% 0.19 150);
 
-  --color-blue: oklch(62% 0.22 250);
-  --color-blue-hover: oklch(76% 0.22 250);
+  --color-primary: oklch(90% 0 0);
+  --color-on-primary: oklch(20% 0 270);
 
-  --color-green: oklch(86% 0.32 147);
-  --color-green-hover: oklch(100% 0.32 147);
-
-  --color-yellow: oklch(87% 0.2 90);
-  --color-yellow-hover: oklch(100% 0.2 90);
+  --color-secondary: oklch(60% 0 0);
+  --color-on-secondary: oklch(10% 0 270);
 }
-```
-
-### Integrating CSS Variables with TailwindCSS Configuration
-
-After defining the colors for your project using your design system or the default styles provided by the library, the next step is to create new color references using the CSS variables. The following code snippet demonstrates how to create some colors using these CSS variables. For more details, refer to the [tailwind.config.ts](https://github.com/halvaradop/ui/blob/master/tailwind.config.ts) file.
-
-```ts
-import type { Config } from "tailwindcss"
-
-const config: Config = {
-  content: ["./node_modules/@halvaradop/ui-*/**/*.{js,ts,jsx,tsx,mdx}"],
-  darkMode: "class",
-  future: {
-    hoverOnlyWhenSupported: true,
-  },
-  theme: {
-    extends: {
-      colors: {
-        primary: {
-          DEFAULT: "var(--color-primary)",
-          hover: "var(--color-primary-hover)",
-        },
-        red: {
-          DEFAULT: "var(--color-red)",
-          hover: "var(--color-red-hover)",
-        },
-        blue: {
-          DEFAULT: "var(--color-blue)",
-          hover: "var(--color-blue-hover)",
-        },
-        green: {
-          DEFAULT: "var(--color-green)",
-          hover: "var(--color-green-hover)",
-        },
-        yellow: {
-          DEFAULT: "var(--color-yellow)",
-          hover: "var(--color-yellow-hover)",
-        },
-      },
-    },
-  },
-}
-
-export default config
 ```
 
 ## Notes
 
-The beta version works, however, it may have minor changes or issues compared to the stable version. If you find a problem or issue, please report it in an [Issue](https://github.com/halvaradop/ui/issues) with the details.
+The beta version may have minor changes or issues compared to the stable version. Please report any problems via [GitHub Issues](https://github.com/halvaradop/ui/issues).

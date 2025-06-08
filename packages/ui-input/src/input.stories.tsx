@@ -1,5 +1,6 @@
-import { Input } from "./index.jsx"
 import type { ArgTypes, Meta, StoryObj } from "@storybook/react"
+import { expect, userEvent, within } from "@storybook/test"
+import { Input } from "./index.jsx"
 import { decorator } from "@halvaradop/ui-utils/decorator"
 import { DocsPage } from "@halvaradop/ui-utils/docs-page"
 
@@ -80,6 +81,14 @@ const meta: Meta = {
         },
     },
     decorators: [decorator],
+    play: async ({ canvasElement }) => {
+        const canvas = within(canvasElement)
+        const inputs = canvas.getAllByRole("textbox")
+        for (const input of inputs) {
+            await userEvent.type(input, "John Doe", { delay: 102 })
+            expect(input).toHaveValue("John Doe")
+        }
+    },
 } satisfies Meta<typeof Input>
 
 type Story = StoryObj<typeof meta>

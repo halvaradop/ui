@@ -1,36 +1,42 @@
-import { merge, type ComponentProps, type WithChildrenProps } from "@halvaradop/ui-core"
+import { merge, type ComponentProps, type PropsWithChildren } from "@halvaradop/ui-core"
 import { cva } from "class-variance-authority"
 
-export type DialogProps = WithChildrenProps<ComponentProps<"dialog">>
+export type DialogProps = PropsWithChildren<ComponentProps<"dialog">>
 
-export const modalVariants = cva("flex items-center justify-center", {
-    variants: {
-        variant: {
-            base: "flex-col shadow bg-modal",
-            inner: "flex-col shadow-inner bg-modal",
-            fixed: "flex-col fixed top-1/2 -translate-y-1/2 bg-modal",
+export const modalVariants = cva(
+    "w-full mx-auto my-4 p-6 flex items-center justify-center flex-col text-on-surface border border-solid border-border rounded-(--rounded) overflow-hidden bg-surface",
+    {
+        variants: {
+            variant: {
+                base: "",
+                inner: "border-muted",
+                fixed: "max-h-[calc(100vh-2rem)] fixed inset-4 z-50 overflow-y-auto overscroll-contain [scrollbar-gutter:stable]",
+            },
+            size: {
+                sm: "max-w-sm",
+                base: "max-w-md",
+                md: "max-w-lg",
+                lg: "max-w-xl",
+            },
         },
-        size: {
-            sm: "pt-6 p-4 rounded",
-            base: "pt-8 p-6 rounded",
-            md: "pt-10 p-8 rounded-md",
-            lg: "pt-12 p-10 rounded-lg",
+        defaultVariants: {
+            variant: "base",
+            size: "base",
         },
-    },
-    defaultVariants: {
-        variant: "base",
-        size: "base",
-    },
-})
+    }
+)
 
 export const Dialog = ({ className, children, ref, ...props }: DialogProps) => {
     return (
         <dialog
             className={merge(
-                "w-full min-h-screen max-w-none max-h-none items-center justify-center relative inset-0 bg-transparent backdrop:bg-dialog open:flex",
+                "w-full min-h-screen max-w-none max-h-none items-center justify-center relative inset-0 bg-transparent backdrop:bg-overlay open:flex",
                 className
             )}
+            role="dialog"
             ref={ref}
+            tabIndex={-1}
+            aria-modal="true"
             {...props}
         >
             {children}

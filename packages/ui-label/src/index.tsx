@@ -1,31 +1,36 @@
-import { merge, Slot, type SlotProps, type ArgsFunction } from "@halvaradop/ui-core"
+import { merge } from "@halvaradop/ui-core"
+import { Slot, type SlotProps } from "@halvaradop/ui-slot"
 import { cva, type VariantProps } from "class-variance-authority"
 
-export type LabelProps<T extends ArgsFunction> = SlotProps<"label"> & VariantProps<T>
+export type LabelProps<T extends VoidFunction> = SlotProps<"label"> & VariantProps<T>
 
-export const labelVariants = cva("font-medium text-left relative leading-none", {
-    variants: {
-        fullWidth: {
-            true: "w-full",
-            false: "w-fit",
+export const labelVariants = cva(
+    "block font-medium text-on-surface text-left relative leading-none disabled:text-muted",
+    {
+        variants: {
+            fullWidth: {
+                true: "w-full",
+                false: "w-fit",
+            },
+            variant: {
+                base: "",
+                required:
+                    "w-fit hidden text-danger absolute top-0 right-0 peer-user-invalid:block peer-placeholder-shown:hidden peer-user-invalid:peer-placeholder-shown:hidden",
+            },
+            size: {
+                sm: "text-xs",
+                base: "text-sm",
+                md: "text-base",
+                lg: "text-lg",
+            },
         },
-        variant: {
-            base: "text-base",
-            error: "w-fit hidden text-red absolute top-0 right-0 peer-usinvalid:block peer-usinvalid-empty:hidden",
-            flex: "flex flex-col items-start",
+        defaultVariants: {
+            variant: "base",
+            size: "base",
+            fullWidth: true,
         },
-        size: {
-            sm: "text-xs",
-            base: "text-sm",
-            md: "text-base",
-        },
-    },
-    defaultVariants: {
-        variant: "base",
-        size: "base",
-        fullWidth: true,
-    },
-})
+    }
+)
 
 export const Label = ({
     className,
