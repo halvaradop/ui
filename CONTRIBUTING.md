@@ -168,14 +168,15 @@ Each package follows [Semantic Versioning](https://semver.org/) independently:
 - MINOR: New features
 - PATCH: Fixes
 
-> Note: We do **not** use Changesets. All changelogs are manually written before each release.
+> [!NOTE]
+> We do **not** use Changesets. All changelogs are maintained manually and must be updated before each release. Releases are managed using the `release` script located in the `scripts` folder, which provides an interactive bash workflow for publishing new versions.
 
-### Publishing (maintainers only)
+### Publishing (Maintainers Only)
 
-1. Update `CHANGELOG.md` for each modified package
-2. Bump `version` in `package.json`
-3. Create a GitHub release
-4. Publish to npm manually or via script
+1. Update the `CHANGELOG.md` for each modified package.
+2. Bump the `version` field in each relevant `package.json`.
+3. Create a GitHub release.
+4. Publish to npm by running the `release.bash` script, or use the direct scripts: `release:bump`, `release:dry-run`, or `release:versioning` via the package manager (`pnpm`).
 
 ---
 

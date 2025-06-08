@@ -16,6 +16,7 @@ ui/
 │   ├── ui-slot/          # Slot component (decoupled from ui-core)
 │   ├── ui-template/      # Boilerplate for new components
 │   └── ...               # More UI packages
+├── scripts/              # Utility scripts (e.g., build, release)
 ├── tests/                # E2E tests using Playwright
 ├── tailwind.css          # CSS theme and variable declarations
 ├── turbo.json            # Turborepo config
