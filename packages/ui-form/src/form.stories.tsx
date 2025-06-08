@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, useState } from "react"
+import { FormEvent } from "react"
 import type { Meta, StoryObj } from "@storybook/react"
 import { expect, userEvent, within } from "@storybook/test"
 import { Form } from "./index.js"
@@ -32,11 +32,11 @@ const meta: Meta = {
         },
         size: {
             control: "select",
-            options: ["sm", "base", "md", "lg", "full"],
+            options: ["sm", "base", "md", "lg"],
             description: "Size of the form",
             table: {
                 type: {
-                    summary: "sm | base | md | lg | full",
+                    summary: "sm | base | md | lg",
                 },
                 defaultValue: {
                     summary: "base",
