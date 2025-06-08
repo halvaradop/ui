@@ -1,7 +1,7 @@
-import { merge, type WithChildrenProps, type ComponentProps, type ArgsFunction } from "@halvaradop/ui-core"
+import { merge, type PropsWithChildren, type ComponentProps } from "@halvaradop/ui-core"
 import { cva, type VariantProps } from "class-variance-authority"
 
-export type FormProps<T extends ArgsFunction> = VariantProps<T> & WithChildrenProps<ComponentProps<"form">>
+export type FormProps<T extends VoidFunction> = VariantProps<T> & PropsWithChildren<ComponentProps<"form">>
 
 export const formVariants = cva(
     "w-full mx-auto flex items-center flex-col text-on-surface relative rounded-(--rounded) bg-surface",

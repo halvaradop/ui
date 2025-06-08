@@ -1,7 +1,7 @@
-import { merge, type ComponentProps, type WithChildrenProps } from "@halvaradop/ui-core"
+import { merge, type ComponentProps, type PropsWithChildren } from "@halvaradop/ui-core"
 import { cva } from "class-variance-authority"
 
-export type DialogProps = WithChildrenProps<ComponentProps<"dialog">>
+export type DialogProps = PropsWithChildren<ComponentProps<"dialog">>
 
 export const modalVariants = cva(
     "w-full mx-auto my-4 p-6 flex items-center justify-center flex-col text-on-surface border border-solid border-border rounded-(--rounded) overflow-hidden bg-surface",

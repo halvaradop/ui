@@ -1,5 +1,12 @@
-import { type ReactNode, type ComponentProps, Children, isValidElement, cloneElement } from "react"
-import type { HTMLTag } from "@halvaradop/ui-core"
+import {
+    type Ref,
+    type ComponentProps,
+    type PropsWithChildren as WithChildren,
+    Children,
+    isValidElement,
+    cloneElement,
+} from "react"
+import type { HTMLTag, PropsWithChildren } from "@halvaradop/ui-core"
 
 /**
  * Slot is a component that allows you to pass props to its children.
@@ -13,7 +20,7 @@ import type { HTMLTag } from "@halvaradop/ui-core"
  * </Slot>
  * ```
  */
-export const Slot = ({ children, ...props }: { children: React.ReactNode }) => {
+export const Slot = ({ children, ...props }: WithChildren) => {
     if (isValidElement(children)) {
         const childrenProps = children.props ?? {}
         return cloneElement(children, { ...props, ...childrenProps })
@@ -27,15 +34,12 @@ export const Slot = ({ children, ...props }: { children: React.ReactNode }) => {
 /**
  * @internal
  */
-type SlotWithAsChild<Component extends HTMLTag, Element extends HTMLElement> =
+type SlotWithAsChild<Component extends HTMLTag, Element extends HTMLElement = never> =
     | ({ asChild?: false } & ComponentProps<Component>)
-    | { asChild: true; children: ReactNode; ref?: React.Ref<Element> | undefined }
+    | PropsWithChildren<{ asChild: true; ref?: Ref<Element> }>
 
 /**
  * SlotProps is a type that represents the props of a Slot component. This type is
  * used to define the props of a Slot component that can be used with the `asChild`
  */
-export type SlotProps<Component extends HTMLTag, Element extends HTMLElement = never> = SlotWithAsChild<
-    Component,
-    Element
-> & { className?: string }
+export type SlotProps<Component extends HTMLTag> = SlotWithAsChild<Component> & { className?: string }
