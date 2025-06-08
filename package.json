@@ -19,7 +19,12 @@
     "clean:dist": "turbo run clean:dist --parallel",
     "clean:modules": "turbo run clean:modules --parallel",
     "clean:turbo": "turbo run clean:turbo --parallel",
-    "clean:cts": "turbo run clean:cts --parallel"
+    "clean:cts": "turbo run clean:cts --parallel",
+    "release:bump": "bash scripts/release.bash --publish",
+    "release:dry-run": "bash scripts/release.bash --publish --dry-run",
+    "release:versioning": "bash scripts/release.bash",
+    "release:prepublish": "bash scripts/release.bash --prepublish",
+    "release:current": "bash scripts/release.bash --publish-current"
   },
   "repository": {
     "type": "git",
