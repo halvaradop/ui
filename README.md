@@ -1,6 +1,6 @@
 # @halvaradop/ui@beta
 
-A library of accessible, reusable, and customizable UI components for React web applications, styled with TailwindCSS. This package provides pre-styled components to help you build user interfaces faster and more consistently.
+A modern, accessible, and customizable React UI component library, organized as a monorepo and styled with TailwindCSS v4. This library provides pre-styled, reusable components to help you build user interfaces faster and more consistently.
 
 ## Version Compatibility
 
@@ -57,6 +57,10 @@ export default function App() {
 - [Slot](https://github.com/halvaradop/ui/tree/master/packages/ui-slot)
 - [Submit](https://github.com/halvaradop/ui/tree/master/packages/ui-submit)
 
+### Versioning and Releasing
+
+Each package maintains its own [CHANGELOG.md](https://github.com/halvaradop/ui/tree/master/packages) to track changes, bug fixes, and releases. For detailed changelogs, refer to the specific package directory. Additionally, a general [CHANGELOG.md](https://github.com/halvaradop/ui/blob/master/CHANGELOG.md) provides an overview of the main changes in the current major version of the library.
+
 ## Styling
 
 The component supports TailwindCSS v4. To customize colors, use the following CSS variables. For the full theme, see [the theme file](https://github.com/halvaradop/ui/blob/master/tailwind.css).
@@ -107,18 +111,13 @@ The library currently supports only a dark theme. To enable it, update the CSS v
   --color-muted: oklch(70% 0.01 260);
   --color-border: oklch(35% 0.01 260);
   --color-overlay: oklch(0% 0 0 / 0.6);
-
   --color-success: oklch(70% 0.19 150);
   --color-danger: oklch(65% 0.22 25);
-
   --color-surface: oklch(15% 0.005 260);
-
   --color-primary: oklch(90% 0 0);
   --color-on-primary: oklch(20% 0 270);
-
   --color-secondary: oklch(60% 0 0);
   --color-on-secondary: oklch(10% 0 270);
-
   --color-ghost: oklch(25% 0 0);
   --color-disabled: oklch(30% 0 0);
 }
@@ -130,8 +129,8 @@ The beta version may have minor changes or issues compared to the stable version
 
 ## Contributing
 
-We welcome contributions to the `@halvaradop/ui` library. If you have an idea, find an issue, or have any advice, please feel free to open an issue or create a pull request. We offer a guide on how to contribute to the project and the necessary steps to do so. Please read [Contributing Guide](https://github.com/halvaradop/ui/blob/master/.github/CONTRIBUTING.md).
+We welcome contributions to the `@halvaradop/ui` library! Please read the [Contributing Guide](./CONTRIBUTING.md) for details on our process, code standards, and how to get started. All contributors are expected to follow our [Code of Conduct](https://github.com/halvaradop/.github/blob/master/.github/CODE_OF_CONDUCT.md).
 
-# Code Of Conduct
+## Architecture
 
-Please be aware that this project has a code of conduct, and we expect all contributors to follow these guidelines in their interactions. For more information, please read our [Code of Conduct](https://github.com/halvaradop/.github/blob/master/.github/CODE_OF_CONDUCT.md).
+For an in-depth look at the monorepo structure, package layout, build and development workflow, design principles, and guidelines for extending the library, refer to the [ARCHITECTURE.md](./ARCHITECTURE.md) document.
