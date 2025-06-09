@@ -7,75 +7,74 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+---
+
+## [1.0.0-next.1] - 2025-06-08 (Version @next for React 19)
+
+> **Pre-release for React 19:** This `next` version is published for testing and validation with **React 19** as the base. It allows evaluation in real-world environments before being promoted to a stable release. The previous `rc` version was based on React 18.  
+> [More details about the release strategy: #160](https://github.com/halvaradop/ui/pull/160)
+
+### Breaking Changes
+
+- **Migration to Tailwind CSS v4:** This release migrates the library from **Tailwind CSS v3 to v4**. **This is a breaking change** if your application depends on Tailwind CSS v3 or on specific configurations that have been changed or removed in v4. Most components have been affected. [#158](https://github.com/halvaradop/ui/pull/158) and [#172](https://github.com/halvaradop/ui/pull/172)
+
 ### Changed
 
-- Migrated from Tailwind CSS v3 to v4. Deprecated older CSS variables and introduced new ones using the `@theme` directive. This affects the configuration and structure of the Checkbox component.  
-  [#152](https://github.com/halvaradop/ui/pull/152)
-
 - Improved accessibility (a11y) by adding WAI-ARIA attributes such as `role`, `type`, and `tabIndex` to the Checkbox component.  
-  [#165](https://github.com/halvaradop/ui/pull/165)
+  [#176](https://github.com/halvaradop/ui/pull/176)
 
 ### Removed
 
-- Removed the `blue` and `yellow` variants from the `color` prop, which were inconsistent with the new CSS variable structure in Tailwind CSS v4.  
-  [#152](https://github.com/halvaradop/ui/pull/152)
+- Removed the `blue` and `yellow` variants from the `color` prop, which were inconsistent with the new CSS variable structure in Tailwind CSS v4. [#172](https://github.com/halvaradop/ui/pull/172)
 
 ### Notes
 
-- The migration to Tailwind CSS v4 affects all components that relied on older variant definitions or hardcoded variable names.
+- This `@next` version acts as a **candidate for the upcoming stable `1.0.0` release**.
+- Versioning and publishing are automated via the `release.bash` script.
+- The main goal is to test the release workflow and gather feedback from real-world environments.
+
+> The stable `1.0.0` version will be published after successful validation of this `next` version.  
+> This release was initiated in response to [#169](https://github.com/halvaradop/ui/issues/169), which details the rationale for moving to a major stable version.
 
 ---
 
-## [0.4.0-rc.1] - 2025-06-07
-
-### Notes
-
-- This is a **release candidate** published under the `rc` tag to validate changes in preparation for the upcoming `1.0.0` major release.  
-  See [#170](https://github.com/halvaradop/ui/pull/170)
-- Versioning and publishing were automated using the `release.bash` script.  
-  See [#170](https://github.com/halvaradop/ui/pull/170)
-- The purpose of this release is to test the release workflow in real environments before finalizing the stable release.  
-  See [#170](https://github.com/halvaradop/ui/pull/170)
-
-> No breaking changes have been introduced in this release candidate.  
-> The final release will follow after successful validation.
-
-This release was initiated based on [#169](https://github.com/halvaradop/ui/issues/169), which outlines the reasoning for upgrading to a stable major version.
-
----
-
-## [0.4.0] - 2025-02-06
+## [0.2.0-beta.1] - 2025-02-12 (Beta for React 19 Development)
 
 ### Added
 
 - Introduced CSS variables for customization.  
-  [#93](https://github.com/halvaradop/ui/pull/93)
+  [#103](https://github.com/halvaradop/ui/pull/103)
 
 - Added `fullRounded` support to the Checkbox component using `cva`.  
-  [#108](https://github.com/halvaradop/ui/pull/108)
+  [#114](https://github.com/halvaradop/ui/pull/114)
 
 ---
 
-## [0.3.0] - 2025-01-15
-
-### Changed
-
-- Added `forwardRef` to support `ref` usage with React 18.  
-  [#67](https://github.com/halvaradop/ui/pull/67)
-
-- Enabled spreading of additional props to Checkbox component.  
-  [#67](https://github.com/halvaradop/ui/pull/67)
-
----
-
-## [0.2.0] - 2024-12-19
+## [0.1.0-beta.1] - 2025-01-15 (Beta for React 19 Development)
 
 ### Fixed
+
+- Fixed missing `cva` types in the package build.  
+  [#67](https://github.com/halvaradop/ui/pull/67)
 
 - Resolved incompatibility between React 18 and 19 caused by `jsx-runtime` changes and type errors in shared packages.  
   [#66](https://github.com/halvaradop/ui/issues/66), [#71](https://github.com/halvaradop/ui/pull/71), [#72](https://github.com/halvaradop/ui/pull/72)
 
 ---
+
+## [0.1.0-beta.0] - 2024-12-19 (Beta for React 19 Development)
+
+> **Beta release for React 19 development:** This version targets early adopters who want to test the library with React 19. It is not intended for production use.
+
+### Changed
+
+- Updated peer dependencies to support React 19.
+- Began internal refactoring to align with React 19 features and best practices.
+
+### Notes
+
+- This beta is for development and feedback purposes only. Breaking changes may occur in future releases.
+- Please report any issues encountered when using this version with React 19.
 
 ## [0.1.0] - 2024-12-13
 
