@@ -57,6 +57,11 @@ and adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Updated peer dependencies to support React 19.
 - Began internal refactoring to align with React 19 features and best practices.
 
+### Removed
+
+- Removed `forwardRef` from the Button component based on React 19 upgrade, which supports `ref` natively.  
+  [#58](https://github.com/halvaradop/ui/pull/58)
+
 ### Fixed
 
 - Fixed missing `cva` types in the package build.  

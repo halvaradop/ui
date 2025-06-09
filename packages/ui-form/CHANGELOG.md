@@ -50,7 +50,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Introduced the `merge` function from `@halvaradop/ui-core` for class composition, improving consistency and fixing styling issues with size variants.  
   [#57](https://github.com/halvaradop/ui/pull/57)
 
-- Mark `children` prop as a mandatory prop in `Form` component. [#79](https://github.com/halvaradop/ui/pull/79)
+- Made the `children` prop required in the `Form` component to ensure proper usage and type safety.  
+  [#79](https://github.com/halvaradop/ui/pull/79)
+
+### Removed
+
+- Removed `forwardRef` from the Button component based on React 19 upgrade, which supports `ref` natively.  
+  [#58](https://github.com/halvaradop/ui/pull/58)
 
 ### Fixed
 
