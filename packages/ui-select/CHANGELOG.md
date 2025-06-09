@@ -60,7 +60,7 @@ and adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
-## [0.1.0-beta.1] - 2025-04-06
+## [0.1.0-beta.1] - 2025-04-06 (Beta for React 19 Development)
 
 > **Beta release for React 19 development:** This version targets early adopters who want to test the library with React 19. It is not intended for production use.
 

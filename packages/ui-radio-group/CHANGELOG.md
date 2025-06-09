@@ -65,7 +65,7 @@ and adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
-## [0.3.0-beta.1] - 2025-03-19
+## [0.3.0-beta.1] - 2025-03-19 (Beta for React 19 Development)
 
 ### Fixed
 
@@ -73,7 +73,7 @@ and adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
-## [0.2.0-beta.1] - 2025-02-12
+## [0.2.0-beta.1] - 2025-02-12 (Beta for React 19 Development)
 
 ### Removed
 
@@ -90,7 +90,7 @@ and adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
-## [0.1.0-beta.1] - 2024-12-19
+## [0.1.0-beta.1] - 2024-12-19 (Beta for React 19 Development)
 
 > **Beta release for React 19 development:** This version targets early adopters who want to test the library with React 19. It is not intended for production use.
 
