@@ -60,10 +60,9 @@ pnpm clean            # Clean the project
 
 ## 🌿 Branching Strategy
 
-- `master`: Current stable branch (React 18, will become legacy)
-- `beta`: React 19 development branch (will become new `main`)
-
-Use `[SYNC]` prefix to indicate synchronization PRs between branches.
+- **`master`**: The main development branch. Represents the latest stable release (currently React 19).
+- **`legacy/react-18`**: Maintains support for React 18. Only accepts critical fixes, bug patches, and minimal changes required for legacy compatibility.
+- Use the `[SYNC]` prefix in pull request titles to clearly indicate synchronization PRs that merge changes between branches (e.g., from `master` to `legacy/react-18`).
 
 ---
 
@@ -187,7 +186,7 @@ Responsibilities:
 - Review and merge PRs only in assigned scope (see `CODEOWNERS`)
 - Maintain consistency across versions and branches
 - Ensure all packages follow naming and changelog conventions
-- Coordinate `[SYNC]` PRs between `master`, `beta`, and `react-18`
+- Coordinate `[SYNC]` PRs between `master` and `legacy/react-18`
 
 ---
 
