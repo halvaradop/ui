@@ -4,9 +4,9 @@
 
 ## Installation
 
-There are two versions available: one for React 18 (stable) and one for React 19 (beta).
+There are two versions available: one for React 19 (stable) and one for React 18 (legacy).
 
-### React 18 (Stable)
+### React 19 (Stable)
 
 ```bash
 npm install @halvaradop/ui-checkbox
@@ -14,12 +14,12 @@ yarn add @halvaradop/ui-checkbox
 pnpm add @halvaradop/ui-checkbox
 ```
 
-### React 19 (Beta)
+### React 18 (Legacy)
 
 ```bash
-npm install @halvaradop/ui-checkbox@beta
-yarn add @halvaradop/ui-checkbox@beta
-pnpm add @halvaradop/ui-checkbox@beta
+npm install @halvaradop/ui-checkbox@legacy
+yarn add @halvaradop/ui-checkbox@legacy
+pnpm add @halvaradop/ui-checkbox@legacy
 ```
 
 ## Usage

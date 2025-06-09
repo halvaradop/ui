@@ -4,9 +4,9 @@
 
 ## Installation
 
-There are two versions available: one for React 18 (stable) and one for React 19 (beta).
+There are two versions available: one for React 19 (stable) and one for React 18 (legacy)..
 
-### React 18 (Stable)
+### React 19 (Stable)
 
 ```bash
 npm install @halvaradop/ui-form
@@ -14,12 +14,12 @@ yarn add @halvaradop/ui-form
 pnpm add @halvaradop/ui-form
 ```
 
-### React 19 (Beta)
+### React 18 (Legacy)
 
 ```bash
-npm install @halvaradop/ui-form@beta
-yarn add @halvaradop/ui-form@beta
-pnpm add @halvaradop/ui-form@beta
+npm install @halvaradop/ui-form@legacy
+yarn add @halvaradop/ui-form@legacy
+pnpm add @halvaradop/ui-form@legacy
 ```
 
 ## Usage

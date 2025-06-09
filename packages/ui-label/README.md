@@ -4,9 +4,9 @@
 
 ## Installation
 
-There are two versions available: one for React 18 (stable) and one for React 19 (beta).
+There are two versions available: one for React 19 (stable) and one for React 18 (legacy)..
 
-### React 18 (Stable)
+### React 19 (Stable)
 
 ```bash
 npm install @halvaradop/ui-label
@@ -14,12 +14,12 @@ yarn add @halvaradop/ui-label
 pnpm add @halvaradop/ui-label
 ```
 
-### React 19 (Beta)
+### React 18 (Legacy)
 
 ```bash
-npm install @halvaradop/ui-label@beta
-yarn add @halvaradop/ui-label@beta
-pnpm add @halvaradop/ui-label@beta
+npm install @halvaradop/ui-label@legacy
+yarn add @halvaradop/ui-label@legacy
+pnpm add @halvaradop/ui-label@legacy
 ```
 
 ## Usage

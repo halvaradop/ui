@@ -1,4 +1,4 @@
-# @halvaradop/ui@beta
+# @halvaradop/ui
 
 A modern, accessible, and customizable React UI component library, organized as a monorepo and styled with TailwindCSS v4. This library provides pre-styled, reusable components to help you build user interfaces faster and more consistently.
 
@@ -28,7 +28,7 @@ yarn add @halvaradop/ui-button
 pnpm add @halvaradop/ui-button
 ```
 
-### For React 19 (Beta)
+### For React 19 (Legacy)
 
 ```bash
 npm install @halvaradop/ui-button@legacy
