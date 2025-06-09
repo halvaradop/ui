@@ -143,17 +143,18 @@ chore: upgrade dependencies
 
 ## 🚀 Pull Request Process
 
-1. Use a descriptive title and body
-2. Reference any related issues or PRs
-3. Add screenshots for UI changes
-4. Ensure all tests and builds pass
-5. Label PRs appropriately:
-   - `breaking`
-   - `accessibility`
-   - `[SYNC]`
-6. Get approval from a code owner
+1. Use a descriptive title and body that follow
+2. Reference any related issues or PRs in the body.
+3. Add screenshots or GIFs for UI changes to facilitate review.
+4. Ensure all tests pass (`pnpm test`)
+5. Confirm all builds pass (`pnpm build`).
+6. Label PRs appropriately (e.g., `breaking`, `accessibility`).
+7. Get approval from a code owner.
 
 Only maintainers listed in the [CODEOWNERS](https://github.com/halvaradop/ui/blob/master/.github/CODEOWNERS) file can approve PRs related to their assigned areas.
+
+> Note on [SYNC] commits:
+> Historically, during the transition phase, some commits in the master branch (formerly beta) might be prefixed with [SYNC]. These indicate changes synchronized from the legacy/react-18 branch. As a contributor, you should not use this prefix for new commits; it was specific to a past internal synchronization workflow.
 
 ---
 
@@ -183,10 +184,10 @@ Each package follows [Semantic Versioning](https://semver.org/) independently:
 
 Responsibilities:
 
-- Review and merge PRs only in assigned scope (see `CODEOWNERS`)
-- Maintain consistency across versions and branches
-- Ensure all packages follow naming and changelog conventions
-- Coordinate `[SYNC]` PRs between `master` and `legacy/react-18`
+- Reviewing and merging PRs only within their assigned scope (see `CODEOWNERS`).
+- Maintaining consistency across different versions and branches.
+- Ensuring all packages adhere to naming and changelog conventions.
+- Coordinating any necessary synchronizations between `master` and `legacy/react-18` (though the [SYNC] commit prefix is no longer in active use for new contributions, historical context remains).
 
 ---
 
