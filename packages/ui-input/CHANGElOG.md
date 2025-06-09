@@ -7,44 +7,39 @@ and adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
-### Changed
+---
 
-- Migrated from Tailwind CSS v3 to v4. Deprecated legacy CSS variables and introduced new auto-generated ones via the `@theme` directive. This simplifies the configuration of the Input component and improves theme consistency.  
-  [#152](https://github.com/halvaradop/ui/pull/152)
+## [1.0.0-next.1] - 2025-06-08 (Version @next for React 19)
+
+> **Pre-release for React 19:** This `next` version is published for testing and validation with **React 19** as the base. It allows evaluation in real-world environments before being promoted to a stable release. The previous `rc` version was based on React 18.  
+> [More details about the release strategy: #160](https://github.com/halvaradop/ui/pull/160)
+
+### Breaking Changes
+
+- **Migration to Tailwind CSS v4:** This release migrates the library from **Tailwind CSS v3 to v4**. **This is a breaking change** if your application depends on Tailwind CSS v3 or on specific configurations that have been changed or removed in v4. Most components have been affected. [#158](https://github.com/halvaradop/ui/pull/158) and [#172](https://github.com/halvaradop/ui/pull/172)
+
+### Changed
 
 - Improved accessibility by adding WAI-ARIA attributes such as `role` and `type` to the Input component.  
   [#165](https://github.com/halvaradop/ui/pull/165)
 
 ### Notes
 
-- The Tailwind v4 migration eliminates the need for custom variants and external theme configuration via `tailwind.config.ts`.
+- This `@next` version acts as a **candidate for the upcoming stable `1.0.0` release**.
+- Versioning and publishing are automated via the `release.bash` script.
+- The main goal is to test the release workflow and gather feedback from real-world environments.
+
+> The stable `1.0.0` version will be published after successful validation of this `next` version.  
+> This release was initiated in response to [#169](https://github.com/halvaradop/ui/issues/169), which details the rationale for moving to a major stable version.
 
 ---
 
-## [0.5.0-rc.1] - 2025-06-07
-
-### Notes
-
-- This is a **release candidate** published under the `rc` tag to validate changes in preparation for the upcoming `1.0.0` major release.  
-  See [#170](https://github.com/halvaradop/ui/pull/170)
-- Versioning and publishing were automated using the `release.bash` script.  
-  See [#170](https://github.com/halvaradop/ui/pull/170)
-- The purpose of this release is to test the release workflow in real environments before finalizing the stable release.  
-  See [#170](https://github.com/halvaradop/ui/pull/170)
-
-> No breaking changes have been introduced in this release candidate.  
-> The final release will follow after successful validation.
-
-This release was initiated based on [#169](https://github.com/halvaradop/ui/issues/169), which outlines the reasoning for upgrading to a stable major version.
-
----
-
-## [0.5.0] - 2025-02-06
+## [0.3.0-beta.1] - 2025-02-12
 
 ### Added
 
 - Introduced new CSS variables to support Input customization and theming.  
-  [#93](https://github.com/halvaradop/ui/pull/93)
+  [#103](https://github.com/halvaradop/ui/pull/103)
 
 ### Changed
 
@@ -53,20 +48,11 @@ This release was initiated based on [#169](https://github.com/halvaradop/ui/issu
 
 ---
 
-## [0.4.0] - 2025-01-15
-
-### Changed
-
-- Reintroduced `forwardRef` to restore compatibility with `useRef` in React 18.  
-  [#78](https://github.com/halvaradop/ui/pull/78)
-
----
-
-## [0.3.0] - 2024-12-19
+## [0.2.2-beta.1] - 2025-01-15
 
 ### Removed
 
-- Removed `forwardRef` when upgrading to React 19, which no longer requires this hook for `ref` usage.  
+- Removed `forwardRef` from the Button component based on React 19 upgrade, which supports `ref` natively.  
   [#58](https://github.com/halvaradop/ui/pull/58)
 
 ### Fixed
@@ -78,6 +64,20 @@ This release was initiated based on [#169](https://github.com/halvaradop/ui/issu
   [#66](https://github.com/halvaradop/ui/issues/66), [#71](https://github.com/halvaradop/ui/pull/71), [#72](https://github.com/halvaradop/ui/pull/72)
 
 ---
+
+## [0.2.2-beta.0] - 2024-12-19
+
+> **Beta release for React 19 development:** This version targets early adopters who want to test the library with React 19. It is not intended for production use.
+
+### Changed
+
+- Updated peer dependencies to support React 19.
+- Began internal refactoring to align with React 19 features and best practices.
+
+### Notes
+
+- This beta is for development and feedback purposes only. Breaking changes may occur in future releases.
+- Please report any issues encountered when using this version with React 19.
 
 ## [0.2.0] - 2024-10-29
 
