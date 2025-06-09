@@ -1,6 +1,6 @@
 {
   "name": "@halvaradop/ui-slot",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": false,
   "description": "A customizable Slot component for @halvaradop/ui library with Tailwind CSS styling.",
   "type": "module",
