@@ -69,24 +69,53 @@ Key packages:
 
 ## Branching & Versioning Strategy
 
-| Branch | React Version | Tailwind Version | Status |
-| ------ | ------------- | ---------------- | ------ |
-| master | React 18      | Tailwind v3      | Stable |
-| beta   | React 19      | Tailwind v4      | Beta   |
+| Branch          | React Version | Tailwind Version | Status |
+| --------------- | ------------- | ---------------- | ------ |
+| master          | React 19      | Tailwind v4      | Stable |
+| legacy/react-18 | React 18      | Tailwind v4      | Legacy |
 
-- `master`: Current stable (React 18)
-- `beta`: Pre-release (React 19, Tailwind v4)
-- After the next major release, `main` will track React 19, and React 18 will move to `react-18` for legacy maintenance.
+- `master`: This is the **primary development branch** for the library. It is currently optimized for **React 19** and leverages **Tailwind CSS v4**. All new features, major improvements, and active development efforts are focused here.
+- `legacy/react-18`: This branch serves as a **legacy support line** for **React 18**. It will receive critical bug fixes and security updates but is not intended for new feature development.
+
+### Strategy for Branch Transition
+
+This diagram illustrates the process of transitioning the primary development line:
 
 ```mermaid
 sequenceDiagram
-    participant Master
-    participant Beta
-    Master->>Beta: Create sync branch
-    Beta->>Beta: Resolve React 19 conflicts
-    Beta->>Beta: Update dependencies
-    Beta->>Beta: Verify functionality
+  participant OldMaster as master (React 18)
+  participant Beta as beta (React 19 Development)
+  participant NewMaster as master (React 19)
+  participant LegacyBranch as legacy/react-18
+
+  OldMaster->>LegacyBranch: Renamed to legacy/react-18
+  Beta->>NewMaster: Renamed to master (now main development branch)
+
+  Note over NewMaster, LegacyBranch: After transition:
+  NewMaster->>NewMaster: Active development for React 19
+  LegacyBranch->>LegacyBranch: Support and critical fixes for React 18
 ```
+
+### Current Synchronization Strategy
+
+While `master` (React 19) is the primary branch, if critical fixes or foundational changes are applied to `legacy/react-18` that also benefit `master`, synchronization will occur.
+
+```mermaid
+sequenceDiagram
+  participant Master(React 19)
+  participant Legacy/react-18(React 18)
+
+  Legacy/react-18->>Master(React 19): If critical fixes occur, synchronize
+  Master(React 19)->>Master(React 19): Integrate synchronized changes
+```
+
+## Historical Commit Prefixes ([SYNC])
+
+During the parallel development phase—when the beta branch (now `master`) was being prepared for React 19 while the `master` branch (now `legacy/react-18`) remained active for React 18—we used a specific commit prefix:
+
+- [SYNC]: Commits prefixed with [SYNC] indicate changes that were synchronized from the `master` branch (React 18) into the beta branch (React 19). This ensured that critical bug fixes, security updates, or foundational changes from the stable React 18 line were consistently integrated into the upcoming React 19 version.
+
+Although the presence of these [SYNC] prefixes can add some noise to the commit history of the current `master` branch, we have chosen to preserve them rather than remove them. This decision was made to maintain the integrity of the repository tree and avoid breaking the commit history between the previous branches (`master` and beta). Removing these prefixes would have resulted in greater issues with traceability and understanding the complete repository history in the future.
 
 ## Internal Utilities
 

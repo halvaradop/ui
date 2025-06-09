@@ -1,6 +1,6 @@
 {
   "name": "@halvaradop/ui-select",
-  "version": "0.1.0-beta.1",
+  "version": "1.0.0",
   "private": false,
   "description": "A customizable Select component for @halvaradop/ui library with Tailwind CSS styling.",
   "type": "module",
@@ -77,7 +77,7 @@
     "@halvaradop/ui-utils": "workspace:*"
   },
   "peerDependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   }
 }

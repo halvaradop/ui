@@ -1,4 +1,4 @@
-# @halvaradop/ui@beta
+# @halvaradop/ui
 
 A modern, accessible, and customizable React UI component library, organized as a monorepo and styled with TailwindCSS v4. This library provides pre-styled, reusable components to help you build user interfaces faster and more consistently.
 
@@ -6,10 +6,15 @@ A modern, accessible, and customizable React UI component library, organized as 
 
 Supports both `React 18` and `React 19`. Use the table below to select the correct library version for your React version:
 
-| React version | Library version        |
-| ------------- | ---------------------- |
-| React 18      | Latest stable (^x.y.z) |
-| React 19      | Beta (^x.y.z-beta.n)   |
+| React version | Library version            | NPM tag  |
+| ------------- | -------------------------- | -------- |
+| React 19      | `^1.y.z` (latest stable)   | `latest` |
+| React 18      | `^0.y.z-legacy.n` (legacy) | `legacy` |
+
+> **Note:**
+>
+> - For React 19, install the default package version (`@halvaradop/ui-button`).
+> - For React 18, use the `@legacy` tag (`@halvaradop/ui-button@legacy`) to ensure compatibility.
 
 ## Installation
 
@@ -23,12 +28,12 @@ yarn add @halvaradop/ui-button
 pnpm add @halvaradop/ui-button
 ```
 
-### For React 19 (Beta)
+### For React 19 (Legacy)
 
 ```bash
-npm install @halvaradop/ui-button@beta
-yarn add @halvaradop/ui-button@beta
-pnpm add @halvaradop/ui-button@beta
+npm install @halvaradop/ui-button@legacy
+yarn add @halvaradop/ui-button@legacy
+pnpm add @halvaradop/ui-button@legacy
 ```
 
 ## Usage
