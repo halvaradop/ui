@@ -10,30 +10,34 @@ Per-package version history is maintained inside each package’s own `CHANGELOG
 
 ## [Unreleased]
 
-## [rc pre-release] - 2025-06-07
-
-- Pre-release (`rc`) versions published for all major monorepo packages [#170](https://github.com/halvaradop/ui/pull/170):
-
-  - @halvaradop/ui-button
-  - @halvaradop/ui-checkbox
-  - @halvaradop/ui-core
-  - @halvaradop/ui-dialog
-  - @halvaradop/ui-form
-  - @halvaradop/ui-input
-  - @halvaradop/ui-label
-  - @halvaradop/ui-radio-group
-  - @halvaradop/ui-radio
-  - @halvaradop/ui-select
-  - @halvaradop/ui-slot
-  - @halvaradop/ui-submit
-  - @halvaradop/ui-template
-  - @halvaradop/ui-utils
-
-  Each package incremented its pre-release version (`rc.0`, `rc.1`, etc.) as appropriate. These versions are available on npm under the `rc` tag for testing and validation prior to the stable release.
-
 ---
 
----
+## [next pre-publish] - 2025-06-08
+
+- Published pre-release (`next`) versions for all major monorepo packages ([#170](https://github.com/halvaradop/ui/pull/170)):
+
+  - `@halvaradop/ui-button`
+  - `@halvaradop/ui-checkbox`
+  - `@halvaradop/ui-core`
+  - `@halvaradop/ui-dialog`
+  - `@halvaradop/ui-form`
+  - `@halvaradop/ui-input`
+  - `@halvaradop/ui-label`
+  - `@halvaradop/ui-radio-group`
+  - `@halvaradop/ui-radio`
+  - `@halvaradop/ui-select`
+  - `@halvaradop/ui-slot`
+  - `@halvaradop/ui-submit`
+  - `@halvaradop/ui-template`
+  - `@halvaradop/ui-utils`
+
+  Each package was incremented to a new pre-release version (`next.0`, `next.1`, etc.) and published to npm under the `next` tag. These releases are intended for testing and validation ahead of the upcoming stable release.
+
+## Breaking Changes
+
+- **`@halvaradop/ui-radio` package**  
+  The Radio component was deprecated and merged into `@halvaradop/ui-radio-group` to avoid duplication and Tailwind scanning issues.  
+  → [PR #153](https://github.com/halvaradop/ui/pull/153), [Issue #144](https://github.com/halvaradop/ui/issues/144)
 
 ## Added
 
@@ -52,8 +56,6 @@ Per-package version history is maintained inside each package’s own `CHANGELOG
   - [`@halvaradop/ui-radio-group`](https://github.com/halvaradop/ui/pull/153): Includes both `RadioGroup` and `Radio` using the Compound Component Pattern.
   - [`@halvaradop/ui-utils`](https://github.com/halvaradop/ui/pull/107): Centralized build and configuration utilities (`tsup`, `tsconfig`, etc.).
 
----
-
 ## Changed
 
 - **Tailwind CSS v4 Migration**  
@@ -71,16 +73,6 @@ Per-package version history is maintained inside each package’s own `CHANGELOG
 - **Ref forwarding reintroduced**  
   After being removed in React 19 migration, `forwardRef` was re-added to restore compatibility with React 18’s `useRef`.  
   → [PR #78](https://github.com/halvaradop/ui/pull/78)
-
----
-
-## Deprecated
-
-- **`@halvaradop/ui-radio` package**  
-  The Radio component was deprecated and merged into `@halvaradop/ui-radio-group` to avoid duplication and Tailwind scanning issues.  
-  → [PR #153](https://github.com/halvaradop/ui/pull/153), [Issue #144](https://github.com/halvaradop/ui/issues/144)
-
----
 
 ## Removed
 
