@@ -69,14 +69,13 @@ Key packages:
 
 ## Branching & Versioning Strategy
 
-| Branch | React Version | Tailwind Version | Status |
-| ------ | ------------- | ---------------- | ------ |
-| master | React 18      | Tailwind v3      | Stable |
-| beta   | React 19      | Tailwind v4      | Beta   |
+| Branch          | React Version | Tailwind Version | Status |
+| --------------- | ------------- | ---------------- | ------ |
+| master          | React 19      | Tailwind v4      | Stable |
+| legacy/react-18 | React 18      | Tailwind v4      | Legacy |
 
-- `master`: Current stable (React 18)
-- `beta`: Pre-release (React 19, Tailwind v4)
-- After the next major release, `main` will track React 19, and React 18 will move to `react-18` for legacy maintenance.
+- `master`: Current stable branch (React 19, Tailwind v4)
+- `legacy/react-18`: Legacy support branch (React 18, Tailwind v4)
 
 ```mermaid
 sequenceDiagram
