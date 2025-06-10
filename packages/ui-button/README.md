@@ -4,9 +4,9 @@
 
 ## Installation
 
-There are two versions available: one for React 18 (stable) and one for React 19 (beta).
+There are two versions available: one for React 19 (stable) and one for React 18 (legacy).
 
-### React 18 (Stable)
+### React 19 (Stable)
 
 ```bash
 npm install @halvaradop/ui-button
@@ -14,12 +14,12 @@ yarn add @halvaradop/ui-button
 pnpm add @halvaradop/ui-button
 ```
 
-### React 19 (Beta)
+### React 18 (Legacy)
 
 ```bash
-npm install @halvaradop/ui-button@beta
-yarn add @halvaradop/ui-button@beta
-pnpm add @halvaradop/ui-button@beta
+npm install @halvaradop/ui-button@legacy
+yarn add @halvaradop/ui-button@legacy
+pnpm add @halvaradop/ui-button@legacy
 ```
 
 ## Usage

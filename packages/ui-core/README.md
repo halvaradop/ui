@@ -4,9 +4,9 @@
 
 ## Installation
 
-There are two versions available: one for React 18 (stable) and one for React 19 (beta).
+There are two versions available: one for React 19 (stable) and one for React 18 (legacy).
 
-### React 18 (Stable)
+### React 19 (Stable)
 
 ```bash
 npm install @halvaradop/ui-core
@@ -14,12 +14,12 @@ yarn add @halvaradop/ui-core
 pnpm add @halvaradop/ui-core
 ```
 
-### React 19 (Beta)
+### React 18 (Legacy)
 
 ```bash
-npm install @halvaradop/ui-core@beta
-yarn add @halvaradop/ui-core@beta
-pnpm add @halvaradop/ui-core@beta
+npm install @halvaradop/ui-core@legacy
+yarn add @halvaradop/ui-core@legacy
+pnpm add @halvaradop/ui-core@legacy
 ```
 
 ## Usage

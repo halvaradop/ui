@@ -4,9 +4,9 @@
 
 ## Installation
 
-There are two versions available: one for React 18 (stable) and one for React 19 (beta).
+There are two versions available: one for React 19 (stable) and one for React 18 (legacy).
 
-### React 18 (Stable)
+### React 19 (Stable)
 
 ```bash
 npm install @halvaradop/ui-dialog
@@ -14,12 +14,12 @@ yarn add @halvaradop/ui-dialog
 pnpm add @halvaradop/ui-dialog
 ```
 
-### React 19 (Beta)
+### React 18 (Legacy)
 
 ```bash
-npm install @halvaradop/ui-dialog@beta
-yarn add @halvaradop/ui-dialog@beta
-pnpm add @halvaradop/ui-dialog@beta
+npm install @halvaradop/ui-dialog@legacy
+yarn add @halvaradop/ui-dialog@legacy
+pnpm add @halvaradop/ui-dialog@legacy
 ```
 
 ## Usage

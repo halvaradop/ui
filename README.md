@@ -26,9 +26,9 @@ pnpm add @halvaradop/ui-button
 ### For React 19 (Beta)
 
 ```bash
-npm install @halvaradop/ui-button@beta
-yarn add @halvaradop/ui-button@beta
-pnpm add @halvaradop/ui-button@beta
+npm install @halvaradop/ui-button@legacy
+yarn add @halvaradop/ui-button@legacy
+pnpm add @halvaradop/ui-button@legacy
 ```
 
 ## Usage
