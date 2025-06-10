@@ -9,21 +9,22 @@ const meta: Meta = {
     tags: ["autodocs"],
     component: Toggle,
     args: {
-        variant: "base",
+        color: "primary",
         size: "base",
         disabled: false,
+        checked: false,
     },
     argTypes: {
-        variant: {
+        color: {
             control: "select",
-            options: ["base"],
+            options: ["green", "primary", "secondary", "red"],
             description: "Variant of the toggle button",
             table: {
                 type: {
                     summary: "base",
                 },
                 defaultValue: {
-                    summary: "base",
+                    summary: "green | primary | secondary | red",
                 },
             },
         },
@@ -93,12 +94,12 @@ export const Disabled: Story = {
 }
 
 export const Sizes: Story = {
-    render: ({ variant, disabled, checked }) => (
+    render: ({ color, disabled, checked }) => (
         <>
-            <Toggle variant={variant} size="sm" disabled={disabled} checked={checked} />
-            <Toggle variant={variant} size="base" disabled={disabled} checked={checked} />
-            <Toggle variant={variant} size="md" disabled={disabled} checked={checked} />
-            <Toggle variant={variant} size="lg" disabled={disabled} checked={checked} />
+            <Toggle color={color} size="sm" disabled={disabled} checked={checked} />
+            <Toggle color={color} size="base" disabled={disabled} checked={checked} />
+            <Toggle color={color} size="md" disabled={disabled} checked={checked} />
+            <Toggle color={color} size="lg" disabled={disabled} checked={checked} />
         </>
     ),
     play: async ({ canvasElement }) => {

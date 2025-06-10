@@ -11,8 +11,13 @@ export const toggleVariants = cva(
     "inline-grid items-center justify-center relative border border-solid rounded-full transition-colors ease-in-out hover:cursor-pointer focus-visible:outline-3 focus-visible:outline-solid focus-visible:outline-offset-3 disabled:border-disabled disabled:bg-disabled disabled:cursor-not-allowed",
     {
         variants: {
-            variant: {
-                base: "border-border bg-surface aria-checked:border-success aria-checked:bg-success focus-visible:outline-border",
+            color: {
+                green: "border-border bg-surface aria-checked:border-success aria-checked:bg-success focus-visible:outline-border",
+                primary:
+                    "bg-surface border-border aria-checked:bg-primary aria-checked:border-primary aria-checked:text-on-primary focus-visible:outline-primary",
+                secondary:
+                    "bg-surface border-border aria-checked:bg-secondary aria-checked:border-secondary aria-checked:text-on-secondary focus-visible:outline-secondary",
+                red: "bg-surface border-border aria-checked:bg-danger aria-checked:border-danger aria-checked:text-on-danger focus-visible:outline-danger",
             },
             size: {
                 sm: "h-(--size-sm) w-[calc(var(--size-sm)*2)] text-sm",
@@ -22,7 +27,7 @@ export const toggleVariants = cva(
             },
         },
         defaultVariants: {
-            variant: "base",
+            color: "primary",
             size: "base",
         },
     }
@@ -51,7 +56,7 @@ const internalVariants = cva(
 
 export const Toggle = ({
     className,
-    variant,
+    color,
     size,
     ref,
     checked,
@@ -68,7 +73,7 @@ export const Toggle = ({
 
     return (
         <button
-            className={merge(toggleVariants({ className, variant, size }))}
+            className={merge(toggleVariants({ className, color, size }))}
             ref={ref}
             role="switch"
             aria-checked={isActive}
