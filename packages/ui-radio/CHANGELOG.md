@@ -7,25 +7,34 @@ and adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
-### Changed
+---
 
-- Updated CSS variables introduced in [#93](https://github.com/halvaradop/ui/pull/93) to address missing values and improve Tailwind v4 support.  
-  [#143](https://github.com/halvaradop/ui/pull/143)
+## [0.3.0] - 2025-06-09 (Version @legacy for React 18)
 
-### Fixed
+> **Release: React 18 Support**
+>
+> Version **0.y.z** marks the official release of our component library with full **React 18** compatibility. This version is a **direct promotion of the latest pre-release (`0.y.z-rc.n`)** and has passed all stability and regression tests in real-world environments. It includes all changes, improvements, and fixes introduced during the `rc` phase.
+>
+> While this release contains substantial updates (such as the complete migration to Tailwind CSS v4 and accessibility enhancements) similar to those in the main (`latest`) version, its purpose is to provide a dedicated support line for projects that still rely on React 18. Active development has moved to the `master` branch, which targets React 19.
+>
+> **Recommended update for React 18 users!**
+>
+> We strongly recommend updating to this version if your project still depends on React 18 to benefit from the latest fixes and optimizations. You can install it using the `legacy` tag on npm:
+>
+> ```bash
+> npm install @halvaradop/ui@legacy
+> ```
+>
+> We encourage users to plan their migration to React 19 to take advantage of the latest features and optimizations available in the `master` branch.
 
-- Fixed an issue triggered by the `useRef` hook in the `@halvaradop/ui-radio-group` package, which was indirectly affected by the `Radio` component.  
-  [#122](https://github.com/halvaradop/ui/pull/122)
+### Breaking Changes
 
-### Deprecated
-
-- **Deprecated**: This package is now deprecated and will no longer receive updates or bug fixes.  
-  The `Radio` component was moved into the `@halvaradop/ui-radio-group` package to avoid Tailwind CSS scanning issues.  
+- The `Radio` component has been removed from this package and is now available in the `@halvaradop/ui-radio-group` package to address Tailwind CSS scanning issues.  
   [#153](https://github.com/halvaradop/ui/pull/153), [#144](https://github.com/halvaradop/ui/issues/144)
 
-### Notes
+#### Migration
 
-- Consumers should migrate to `@halvaradop/ui-radio-group`, which now includes the logic and styles previously contained here.
+- Please migrate to `@halvaradop/ui-radio-group`, which now contains the logic and styles previously provided by this package.
 
 ---
 

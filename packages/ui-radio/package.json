@@ -1,6 +1,6 @@
 {
   "name": "@halvaradop/ui-radio",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": false,
   "description": "DEPRECATED: Use @halvaradop/ui-radio-group instead. This package will no longer receive updates.",
   "deprecated": true,
@@ -21,6 +21,11 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/halvaradop/ui.git"
+  },
+  "publishConfig": {
+    "tag": "legacy",
+    "access": "public",
+    "registry": "https://registry.npmjs.org/@halvaradop/ui-radio"
   },
   "keywords": [
     "react",
