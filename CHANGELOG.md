@@ -10,6 +10,10 @@ Per-package version history is maintained inside each package’s own `CHANGELOG
 
 ## [Unreleased]
 
+### Added
+
+- [`@halvaradop/ui-toggle`](https://github.com/halvaradop/ui/pull/184)
+
 ---
 
 ## [1.0.0] - 2025-06-09

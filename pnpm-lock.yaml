@@ -320,6 +320,25 @@ importers:
         specifier: workspace:*
         version: link:../ui-utils
 
+  packages/ui-toggle:
+    dependencies:
+      '@halvaradop/ui-core':
+        specifier: workspace:*
+        version: link:../ui-core
+      class-variance-authority:
+        specifier: 0.7.0
+        version: 0.7.0
+      react:
+        specifier: ^19.0.0
+        version: 19.0.0
+      react-dom:
+        specifier: ^19.0.0
+        version: 19.0.0(react@19.0.0)
+    devDependencies:
+      '@halvaradop/ui-utils':
+        specifier: workspace:*
+        version: link:../ui-utils
+
   packages/ui-utils: {}
 
 packages:
