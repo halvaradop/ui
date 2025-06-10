@@ -7,6 +7,30 @@ and adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+---
+
+## [0.4.0] - 2025-06-09 (Version @legacy for React 18)
+
+> **Release: React 18 Support**
+>
+> Version **0.y.z** marks the official release of our component library with full **React 18** compatibility. This version is a **direct promotion of the latest pre-release (`0.y.z-rc.n`)** and has passed all stability and regression tests in real-world environments. It includes all changes, improvements, and fixes introduced during the `rc` phase.
+>
+> While this release contains substantial updates (such as the complete migration to Tailwind CSS v4 and accessibility enhancements) similar to those in the main (`latest`) version, its purpose is to provide a dedicated support line for projects that still rely on React 18. Active development has moved to the `master` branch, which targets React 19.
+>
+> **Recommended update for React 18 users!**
+>
+> We strongly recommend updating to this version if your project still depends on React 18 to benefit from the latest fixes and optimizations. You can install it using the `legacy` tag on npm:
+>
+> ```bash
+> npm install @halvaradop/ui@legacy
+> ```
+>
+> We encourage users to plan their migration to React 19 to take advantage of the latest features and optimizations available in the `master` branch.
+
+---
+
+## [0.3.3-rc.1] - 2025-06-07
+
 ### Added
 
 - Migrated the `Radio` component from `@halvaradop/ui-radio` into this package. This unifies the logic using the Compound Component Pattern and avoids TailwindCSS scanning issues.  
@@ -19,13 +43,6 @@ and adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 - Tailwind v4 compatibility is now fully native. Custom variants have been replaced by semantic tokens exposed via `@theme`.
 - This package now contains both `RadioGroup` and `Radio`, and consumers should migrate usage accordingly.
-
----
-
-## [0.3.3-rc.1] - 2025-06-07
-
-### Notes
-
 - This is a **release candidate** published under the `rc` tag to validate changes in preparation for the upcoming `1.0.0` major release.  
   See [#170](https://github.com/halvaradop/ui/pull/170)
 - Versioning and publishing were automated using the `release.bash` script.  
