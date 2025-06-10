@@ -7,42 +7,32 @@
 
 ## Installation
 
-There are two versions available: one for React 19 (stable) and one for React 18 (legacy)..
-
-### React 19 (Stable)
-
 ```bash
-npm install @halvaradop/ui-template
-yarn add @halvaradop/ui-template
-pnpm add @halvaradop/ui-template
-```
-
-### React 18 (Legacy)
-
-```bash
-npm install @halvaradop/ui-template@legacy
-yarn add @halvaradop/ui-template@legacy
-pnpm add @halvaradop/ui-template@legacy
+npm install @halvaradop/ui-toggle
+yarn add @halvaradop/ui-toggle
+pnpm add @halvaradop/ui-toggle
 ```
 
 ## Usage
 
-The `Toggle` component offers several additional props for customization. Import the `Toggle` component as shown below:
+The `Toggle` component offers three additional props for customization: `variant`, `size`, `checked` and `disabled`. Import the `Toggle` component as shown below:
 
 ```tsx
-import { Toggle } from "@halvaradop/ui-template"
+import { Toggle } from "@halvaradop/ui-toggle"
 
 export default function App() {
-  return <Toggle />
+  return <Toggle checked={false} />
 }
 ```
 
 ### Prop Reference
 
-| Prop    | Values                   | Default |
-| ------- | ------------------------ | ------- |
-| variant |                          |         |
-| size    | "sm", "base", "md", "lg" | "base"  |
+| Prop     | Values                   | Default |
+| -------- | ------------------------ | ------- |
+| variant  | "base"                   | base    |
+| size     | "sm", "base", "md", "lg" | "base"  |
+| checked  | true, false              | false   |
+| disabled | true, false              | false   |
 
 ## Styling
 
@@ -52,30 +42,10 @@ The component supports TailwindCSS v4. To customize colors, use the following CS
 @import "tailwindcss";
 
 @theme {
-  --breakpoint-base: 900px;
-
-  --opacity-cursor: 80%;
-
-  --color-muted: oklch(65% 0.01 260);
   --color-border: oklch(70% 0.02 260);
-  --color-overlay: oklch(30% 0.02 260 / 0.3);
-
-  --color-success: oklch(75% 0.18 140);
-  --color-danger: oklch(65% 0.2 25);
-
   --color-surface: oklch(98% 0 0);
-  --color-on-surface: oklch(20% 0.02 260);
-
-  --color-primary: oklch(30% 0 270);
-  --color-on-primary: oklch(95% 0 0);
-
-  --color-secondary: oklch(60% 0 270);
-  --color-on-secondary: oklch(10% 0 0);
-
-  --color-ghost: oklch(94% 0.01 260);
-
+  --color-success: oklch(75% 0.18 140);
   --color-disabled: oklch(92% 0 0);
-  --color-on-disabled: oklch(60% 0.01 260);
 }
 ```
 
@@ -85,26 +55,9 @@ The library currently supports only a dark theme. To enable it, update the CSS v
 
 ```css
 :is(html, body).dark {
-  --opacity-cursor: 80%;
-
-  --color-muted: oklch(70% 0.01 260);
   --color-border: oklch(35% 0.01 260);
-
   --color-success: oklch(70% 0.19 150);
-  --color-danger: oklch(65% 0.22 25);
-
-  --color-overlay: oklch(0% 0 0 / 0.6);
-
   --color-surface: oklch(15% 0.005 260);
-  --color-on-surface: oklch(95% 0.01 260);
-
-  --color-primary: oklch(90% 0 0);
-  --color-on-primary: oklch(20% 0 270);
-
-  --color-secondary: oklch(60% 0 0);
-  --color-on-secondary: oklch(10% 0 270);
-
-  --color-ghost: oklch(25% 0 0);
   --color-disabled: oklch(30% 0 0);
 }
 ```
