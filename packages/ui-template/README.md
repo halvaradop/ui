@@ -7,9 +7,9 @@
 
 ## Installation
 
-There are two versions available: one for React 18 (stable) and one for React 19 (beta).
+There are two versions available: one for React 19 (stable) and one for React 18 (legacy).
 
-### React 18 (Stable)
+### React 19 (Stable)
 
 ```bash
 npm install @halvaradop/ui-template
@@ -17,12 +17,12 @@ yarn add @halvaradop/ui-template
 pnpm add @halvaradop/ui-template
 ```
 
-### React 19 (Beta)
+### React 18 (Legacy)
 
 ```bash
-npm install @halvaradop/ui-template@beta
-yarn add @halvaradop/ui-template@beta
-pnpm add @halvaradop/ui-template@beta
+npm install @halvaradop/ui-template@legacy
+yarn add @halvaradop/ui-template@legacy
+pnpm add @halvaradop/ui-template@legacy
 ```
 
 ## Usage

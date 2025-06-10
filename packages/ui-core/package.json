@@ -1,6 +1,6 @@
 {
   "name": "@halvaradop/ui-core",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "The core of the @halvaradop/ui library, providing customizable components with Tailwind CSS styling.",
   "type": "module",
   "scripts": {
@@ -20,6 +20,7 @@
     "url": "git+https://github.com/halvaradop/ui.git"
   },
   "publishConfig": {
+    "tag": "legacy",
     "access": "public",
     "registry": "https://registry.npmjs.org/@halvaradop/ui-core"
   },

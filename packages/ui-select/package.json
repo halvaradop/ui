@@ -1,6 +1,6 @@
 {
   "name": "@halvaradop/ui-select",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": false,
   "description": "A customizable Select component for @halvaradop/ui library with Tailwind CSS styling.",
   "type": "module",
@@ -19,6 +19,11 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/halvaradop/ui.git"
+  },
+  "publishConfig": {
+    "tag": "legacy",
+    "access": "public",
+    "registry": "https://registry.npmjs.org/@halvaradop/ui-select"
   },
   "keywords": [
     "react",

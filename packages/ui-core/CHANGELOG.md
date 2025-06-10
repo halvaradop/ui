@@ -7,6 +7,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+---
+
+## [0.6.0] - 2025-06-09 - (Version @legacy for React 18)
+
+> **Release: React 18 Support**
+>
+> Version **0.y.z** marks the official release of our component library with full **React 18** compatibility. This version is a **direct promotion of the latest pre-release (`0.y.z-rc.n`)** and has passed all stability and regression tests in real-world environments. It includes all changes, improvements, and fixes introduced during the `rc` phase.
+>
+> While this release contains substantial updates (such as the complete migration to Tailwind CSS v4 and accessibility enhancements) similar to those in the main (`latest`) version, its purpose is to provide a dedicated support line for projects that still rely on React 18. Active development has moved to the `master` branch, which targets React 19.
+>
+> **Recommended update for React 18 users!**
+>
+> We strongly recommend updating to this version if your project still depends on React 18 to benefit from the latest fixes and optimizations. You can install it using the `legacy` tag on npm:
+>
+> ```bash
+> npm install @halvaradop/ui@legacy
+> ```
+>
+> We encourage users to plan their migration to React 19 to take advantage of the latest features and optimizations available in the `master` branch.
+
+---
+
+## [0.5.0-rc.1] - 2025-06-07
+
 ### Removed
 
 - Removed `slot.ts` and migrated its contents to the new `@halvaradop/ui-slot` package. This reduces bundle size for packages that do not use the Slot component.  
@@ -15,13 +39,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed `tsup.config.base.ts` and moved its contents to a new `@halvaradop/ui-utils` package for better organization of build and configuration utilities.  
   [#107](https://github.com/halvaradop/ui/pull/107)
 
-### Notes
-
 - The removal of `slot.ts` impacts packages relying on `SlotProps`. Ensure they import from `@halvaradop/ui-slot` moving forward.
-
----
-
-## [0.5.0-rc.1] - 2025-06-07
 
 ### Notes
 

@@ -7,6 +7,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+---
+
+## [0.7.0] - 2025-06-09 (Version @legacy for React 18)
+
+> **Release: React 18 Support**
+>
+> Version **0.y.z** marks the official release of our component library with full **React 18** compatibility. This version is a **direct promotion of the latest pre-release (`0.y.z-rc.n`)** and has passed all stability and regression tests in real-world environments. It includes all changes, improvements, and fixes introduced during the `rc` phase.
+>
+> While this release contains substantial updates (such as the complete migration to Tailwind CSS v4 and accessibility enhancements) similar to those in the main (`latest`) version, its purpose is to provide a dedicated support line for projects that still rely on React 18. Active development has moved to the `master` branch, which targets React 19.
+>
+> **Recommended update for React 18 users!**
+>
+> We strongly recommend updating to this version if your project still depends on React 18 to benefit from the latest fixes and optimizations. You can install it using the `legacy` tag on npm:
+>
+> ```bash
+> npm install @halvaradop/ui@legacy
+> ```
+>
+> We encourage users to plan their migration to React 19 to take advantage of the latest features and optimizations available in the `master` branch.
+
+---
+
+## [0.6.0-rc.1] - 2025-06-07
+
 ### Changed
 
 - Migrated from Tailwind CSS v3 to v4. Removed deprecated CSS variables and added new auto-generated variables using the `@theme` directive. These changes improve consistency and reduce manual configuration. This change affected the Button component.  
@@ -14,14 +38,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Improved accessibility (a11y) by adding WAI-ARIA attributes such as `role`, `type`, and `tabIndex` to the Button component.  
   [#165](https://github.com/halvaradop/ui/pull/165)
-
-### Notes
-
-- Tailwind CSS v4 changes impacted most components. The Button component now uses native variants instead of custom `addVariant()` definitions.
-
----
-
-## [0.6.0-rc.1] - 2025-06-07
 
 ### Notes
 

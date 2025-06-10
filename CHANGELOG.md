@@ -10,30 +10,48 @@ Per-package version history is maintained inside each package’s own `CHANGELOG
 
 ## [Unreleased]
 
+---
+
+## [legacy] - 2025-06-09
+
+> **Release: React 18 Support**
+>
+> Version **0.y.z** marks the official release of our component library with full **React 18** compatibility. This version is a **direct promotion of the latest pre-release (`0.y.z-rc.n`)** and has passed all stability and regression tests in real-world environments. It includes all changes, improvements, and fixes introduced during the `rc` phase.
+>
+> While this release contains substantial updates (such as the complete migration to Tailwind CSS v4 and accessibility enhancements) similar to those in the main (`latest`) version, its purpose is to provide a dedicated support line for projects that still rely on React 18. Active development has moved to the `master` branch, which targets React 19.
+>
+> **Recommended update for React 18 users!**
+>
+> We strongly recommend updating to this version if your project still depends on React 18 to benefit from the latest fixes and optimizations. You can install it using the `legacy` tag on npm:
+>
+> ```bash
+> npm install @halvaradop/ui@legacy
+> ```
+>
+> We encourage users to plan their migration to React 19 to take advantage of the latest features and optimizations available in the `master` branch.
+
+---
+
 ## [rc pre-release] - 2025-06-07
 
 - Pre-release (`rc`) versions published for all major monorepo packages [#170](https://github.com/halvaradop/ui/pull/170):
 
-  - @halvaradop/ui-button
-  - @halvaradop/ui-checkbox
-  - @halvaradop/ui-core
-  - @halvaradop/ui-dialog
-  - @halvaradop/ui-form
-  - @halvaradop/ui-input
-  - @halvaradop/ui-label
-  - @halvaradop/ui-radio-group
-  - @halvaradop/ui-radio
-  - @halvaradop/ui-select
-  - @halvaradop/ui-slot
-  - @halvaradop/ui-submit
-  - @halvaradop/ui-template
-  - @halvaradop/ui-utils
+  - `@halvaradop/ui-button`
+  - `@halvaradop/ui-checkbox`
+  - `@halvaradop/ui-core`
+  - `@halvaradop/ui-dialog`
+  - `@halvaradop/ui-form`
+  - `@halvaradop/ui-input`
+  - `@halvaradop/ui-label`
+  - `@halvaradop/ui-radio-group`
+  - `@halvaradop/ui-radio`
+  - `@halvaradop/ui-select`
+  - `@halvaradop/ui-slot`
+  - `@halvaradop/ui-submit`
+  - `@halvaradop/ui-template`
+  - `@halvaradop/ui-utils`
 
   Each package incremented its pre-release version (`rc.0`, `rc.1`, etc.) as appropriate. These versions are available on npm under the `rc` tag for testing and validation prior to the stable release.
-
----
-
----
 
 ## Added
 
@@ -72,15 +90,11 @@ Per-package version history is maintained inside each package’s own `CHANGELOG
   After being removed in React 19 migration, `forwardRef` was re-added to restore compatibility with React 18’s `useRef`.  
   → [PR #78](https://github.com/halvaradop/ui/pull/78)
 
----
-
 ## Deprecated
 
 - **`@halvaradop/ui-radio` package**  
   The Radio component was deprecated and merged into `@halvaradop/ui-radio-group` to avoid duplication and Tailwind scanning issues.  
   → [PR #153](https://github.com/halvaradop/ui/pull/153), [Issue #144](https://github.com/halvaradop/ui/issues/144)
-
----
 
 ## Removed
 
