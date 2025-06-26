@@ -17,22 +17,6 @@
       "inputs": ["src"],
       "cache": false,
       "persistent": false
-    },
-    "clean": {
-      "cache": false,
-      "inputs": ["dist", "node_modules"]
-    },
-    "clean:dist": {
-      "cache": false
-    },
-    "clean:modules": {
-      "cache": false
-    },
-    "clean:turbo": {
-      "cache": false
-    },
-    "clean:cts": {
-      "cache": false
     }
   },
   "ui": "tui",
