@@ -45,7 +45,6 @@ Per-package version history is maintained inside each package’s own `CHANGELOG
 ## [next pre-publish] - 2025-06-08
 
 - Published pre-release (`next`) versions for all major monorepo packages ([#170](https://github.com/halvaradop/ui/pull/170)):
-
   - `@halvaradop/ui-button`
   - `@halvaradop/ui-checkbox`
   - `@halvaradop/ui-core`

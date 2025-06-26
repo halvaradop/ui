@@ -67,7 +67,6 @@ and adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Added
 
 - Initial release of the Select component suite using the Compound Component Pattern. Includes:
-
   - `Select`: Main wrapper component.
   - `SelectTrigger`: Control for toggling dropdown.
   - `SelectOption`: Represents selectable items.

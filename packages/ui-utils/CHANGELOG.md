@@ -14,7 +14,6 @@ This changelog follows the [Keep a Changelog](https://keepachangelog.com/en/1.1.
 - Initial release of `@halvaradop/ui-utils`, a utility package to centralize configuration files and shared build settings across the monorepo. [#107](https://github.com/halvaradop/ui/pull/107)
 
 - Added base configuration files for `tsup` and TypeScript:
-
   - `tsup.config.base.ts`
   - `tsconfig.base.json`
 

@@ -6,12 +6,12 @@
   "description": "A comprehensive UI library for React, built with Tailwind CSS and CVA (Class Variance Authority). It provides reusable components and supports JSX syntax.",
   "scripts": {
     "dev": "turbo run dev --parallel",
+    "dev:storybook": "storybook dev -p 6006",
     "build": "turbo run build",
     "build:storybook": "storybook build",
     "build:release": "turbo build:release",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "storybook": "storybook dev -p 6006",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
     "test:e2e:report": "playwright show-report",
@@ -22,7 +22,7 @@
     "clean:cts": "pnpm --parallel -r clean:cts",
     "release:bump": "bash scripts/release.bash --publish",
     "release:dry-run": "bash scripts/release.bash --publish --dry-run",
-    "release:versioning": "bash scripts/release.bash",
+    "release:version": "bash scripts/release.bash",
     "release:prepublish": "bash scripts/release.bash --prepublish",
     "release:current": "bash scripts/release.bash --publish-current"
   },
