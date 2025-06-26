@@ -10,7 +10,7 @@
     "build:release": "sh -c 'export NODE_ENV=production ; tsup' && pnpm clean:cts",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "clean": "turbo run clean:dist clean:modules clean:turbo --parallel",
+    "clean": "pnpm clean:dist && pnpm clean:modules && pnpm clean:turbo",
     "clean:dist": "rm -rf dist",
     "clean:modules": "rm -rf node_modules",
     "clean:turbo": "rm -rf .turbo",
@@ -50,13 +50,13 @@
   },
   "dependencies": {
     "@halvaradop/ui-core": "workspace:*",
-    "class-variance-authority": "0.7.0"
+    "class-variance-authority": "catalog:"
   },
   "devDependencies": {
     "@halvaradop/ui-utils": "workspace:*"
   },
   "peerDependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react": "catalog:",
+    "react-dom": "catalog:"
   }
 }

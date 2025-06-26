@@ -73,11 +73,20 @@ update_package_version() {
   local pkg_name
   pkg_name=$(get_package_name "$pkg_dir")
 
+  if [ "$DRY_RUN" = true ]; then
+    echo -e "${YELLOW}[DRY RUN] Would update ${pkg_name} to version ${new_version}${NC}"
+    return
+  fi
+
   echo -e "${GREEN}Updating ${pkg_name} to version ${new_version}${NC}"
   jq --arg v "$new_version" '.version = $v' "${pkg_dir}/package.json" > "${pkg_dir}/temp.json"
   mv "${pkg_dir}/temp.json" "${pkg_dir}/package.json"
 
-  find "$PACKAGES_DIR" -name "package.json" -exec sed -i.bak "s#\"${pkg_name}\": \"[^\"]*\"#\"${pkg_name}\": \"^${new_version}\"#g" {} \;
+  # Update workspace dependencies with more precise regex to avoid false matches
+  find "$PACKAGES_DIR" -name "package.json" -exec sed -i.bak \
+    -e "s#\"${pkg_name}\": \"workspace:\\*\"#\"${pkg_name}\": \"workspace:*\"#g" \
+    -e "s#\"${pkg_name}\": \"\\^[0-9]\\+\\.[0-9]\\+\\.[0-9]\\+[^\"]*\"#\"${pkg_name}\": \"^${new_version}\"#g" \
+    {} \;
   find "$PACKAGES_DIR" -name "*.bak" -delete
 
   if [ -f "${pkg_dir}/CHANGELOG.md" ]; then
@@ -153,7 +162,13 @@ process_package() {
     else
       pre_version="${current_version}-${PREPUBLISH_TAG}.0"
     fi
-    echo -e "${GREEN}Preparing pre-release: ${pre_version} (tag: ${PREPUBLISH_TAG})${NC}"
+
+    if [ "$DRY_RUN" = true ]; then
+      echo -e "${YELLOW}[DRY RUN] Would prepare pre-release: ${pre_version} (tag: ${PREPUBLISH_TAG})${NC}"
+    else
+      echo -e "${GREEN}Preparing pre-release: ${pre_version} (tag: ${PREPUBLISH_TAG})${NC}"
+    fi
+
     update_package_version "$pkg_dir" "$pre_version"
     if [ "$PUBLISH" = true ]; then
       publish_package "$pkg_dir" "$pkg_name" "$pre_version" "$PREPUBLISH_TAG"
@@ -173,6 +188,10 @@ process_package() {
       *) echo -e "${RED}Invalid option${NC}" ;;
     esac
   done
+
+  if [ "$DRY_RUN" = true ]; then
+    echo -e "${YELLOW}[DRY RUN] Selected version: ${new_version}${NC}"
+  fi
 
   update_package_version "$pkg_dir" "$new_version"
   if [ "$PUBLISH" = true ]; then
