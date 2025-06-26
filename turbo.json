@@ -17,6 +17,10 @@
       "inputs": ["src"],
       "cache": false,
       "persistent": false
+    },
+    "format": {
+      "outputs": [".cache/.prettiercache"],
+      "cache": false
     }
   },
   "ui": "tui",
