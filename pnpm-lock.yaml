@@ -4,6 +4,24 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+catalogs:
+  default:
+    '@types/react':
+      specifier: 19.0.2
+      version: 19.0.2
+    '@types/react-dom':
+      specifier: 19.0.2
+      version: 19.0.2
+    class-variance-authority:
+      specifier: 0.7.0
+      version: 0.7.0
+    react:
+      specifier: 19.0.0
+      version: 19.0.0
+    react-dom:
+      specifier: 19.0.0
+      version: 19.0.0
+
 importers:
 
   .:
@@ -19,7 +37,7 @@ importers:
         version: 1.52.0
       '@storybook/addon-essentials':
         specifier: ^8.6.4
-        version: 8.6.14(@types/react@19.1.6)(storybook@8.6.14(prettier@3.5.3))
+        version: 8.6.14(@types/react@19.0.2)(storybook@8.6.14(prettier@3.5.3))
       '@storybook/addon-interactions':
         specifier: ^8.6.4
         version: 8.6.14(storybook@8.6.14(prettier@3.5.3))
@@ -54,11 +72,11 @@ importers:
         specifier: ^22.13.10
         version: 22.15.30
       '@types/react':
-        specifier: ^19.0.2
-        version: 19.1.6
+        specifier: 'catalog:'
+        version: 19.0.2
       '@types/react-dom':
-        specifier: ^19.0.2
-        version: 19.1.6(@types/react@19.1.6)
+        specifier: 'catalog:'
+        version: 19.0.2(@types/react@19.0.2)
       '@vitejs/plugin-react-swc':
         specifier: ^3.8.0
         version: 3.10.1(vite@6.3.5(@types/node@22.15.30)(jiti@2.4.2)(lightningcss@1.30.1))
@@ -72,10 +90,10 @@ importers:
         specifier: ^3.5.3
         version: 3.5.3
       react:
-        specifier: 19.0.0
+        specifier: 'catalog:'
         version: 19.0.0
       react-dom:
-        specifier: 19.0.0
+        specifier: 'catalog:'
         version: 19.0.0(react@19.0.0)
       storybook:
         specifier: ^8.6.4
@@ -105,13 +123,13 @@ importers:
         specifier: workspace:*
         version: link:../ui-slot
       class-variance-authority:
-        specifier: 0.7.0
+        specifier: 'catalog:'
         version: 0.7.0
       react:
-        specifier: ^19.0.0
+        specifier: 'catalog:'
         version: 19.0.0
       react-dom:
-        specifier: ^19.0.0
+        specifier: 'catalog:'
         version: 19.0.0(react@19.0.0)
     devDependencies:
       '@halvaradop/ui-utils':
@@ -124,13 +142,13 @@ importers:
         specifier: workspace:*
         version: link:../ui-core
       class-variance-authority:
-        specifier: 0.7.0
+        specifier: 'catalog:'
         version: 0.7.0
       react:
-        specifier: ^19.0.0
+        specifier: 'catalog:'
         version: 19.0.0
       react-dom:
-        specifier: ^19.0.0
+        specifier: 'catalog:'
         version: 19.0.0(react@19.0.0)
     devDependencies:
       '@halvaradop/ui-utils':
@@ -140,10 +158,10 @@ importers:
   packages/ui-core:
     dependencies:
       react:
-        specifier: ^19.0.0
+        specifier: 'catalog:'
         version: 19.0.0
       react-dom:
-        specifier: ^19.0.0
+        specifier: 'catalog:'
         version: 19.0.0(react@19.0.0)
       tailwind-merge:
         specifier: ^2.5.2
@@ -162,13 +180,13 @@ importers:
         specifier: workspace:*
         version: link:../ui-core
       class-variance-authority:
-        specifier: 0.7.0
+        specifier: 'catalog:'
         version: 0.7.0
       react:
-        specifier: ^19.0.0
+        specifier: 'catalog:'
         version: 19.0.0
       react-dom:
-        specifier: ^19.0.0
+        specifier: 'catalog:'
         version: 19.0.0(react@19.0.0)
     devDependencies:
       '@halvaradop/ui-utils':
@@ -181,13 +199,13 @@ importers:
         specifier: workspace:*
         version: link:../ui-core
       class-variance-authority:
-        specifier: 0.7.0
+        specifier: 'catalog:'
         version: 0.7.0
       react:
-        specifier: ^19.0.0
+        specifier: 'catalog:'
         version: 19.0.0
       react-dom:
-        specifier: ^19.0.0
+        specifier: 'catalog:'
         version: 19.0.0(react@19.0.0)
     devDependencies:
       '@halvaradop/ui-utils':
@@ -200,13 +218,13 @@ importers:
         specifier: workspace:*
         version: link:../ui-core
       class-variance-authority:
-        specifier: 0.7.0
+        specifier: 'catalog:'
         version: 0.7.0
       react:
-        specifier: ^19.0.0
+        specifier: 'catalog:'
         version: 19.0.0
       react-dom:
-        specifier: ^19.0.0
+        specifier: 'catalog:'
         version: 19.0.0(react@19.0.0)
     devDependencies:
       '@halvaradop/ui-utils':
@@ -222,13 +240,13 @@ importers:
         specifier: workspace:*
         version: link:../ui-slot
       class-variance-authority:
-        specifier: 0.7.0
+        specifier: 'catalog:'
         version: 0.7.0
       react:
-        specifier: ^19.0.0
+        specifier: 'catalog:'
         version: 19.0.0
       react-dom:
-        specifier: ^19.0.0
+        specifier: 'catalog:'
         version: 19.0.0(react@19.0.0)
     devDependencies:
       '@halvaradop/ui-utils':
@@ -241,13 +259,13 @@ importers:
         specifier: workspace:*
         version: link:../ui-core
       class-variance-authority:
-        specifier: 0.7.0
+        specifier: 'catalog:'
         version: 0.7.0
       react:
-        specifier: ^19.0.0
+        specifier: 'catalog:'
         version: 19.0.0
       react-dom:
-        specifier: ^19.0.0
+        specifier: 'catalog:'
         version: 19.0.0(react@19.0.0)
     devDependencies:
       '@halvaradop/ui-utils':
@@ -260,13 +278,13 @@ importers:
         specifier: workspace:*
         version: link:../ui-core
       class-variance-authority:
-        specifier: 0.7.0
+        specifier: 'catalog:'
         version: 0.7.0
       react:
-        specifier: ^19.0.0
+        specifier: 'catalog:'
         version: 19.0.0
       react-dom:
-        specifier: ^19.0.0
+        specifier: 'catalog:'
         version: 19.0.0(react@19.0.0)
     devDependencies:
       '@halvaradop/ui-utils':
@@ -288,13 +306,13 @@ importers:
         specifier: workspace:*
         version: link:../ui-core
       class-variance-authority:
-        specifier: 0.7.0
+        specifier: 'catalog:'
         version: 0.7.0
       react:
-        specifier: ^19.0.0
+        specifier: 'catalog:'
         version: 19.0.0
       react-dom:
-        specifier: ^19.0.0
+        specifier: 'catalog:'
         version: 19.0.0(react@19.0.0)
     devDependencies:
       '@halvaradop/ui-utils':
@@ -307,13 +325,13 @@ importers:
         specifier: workspace:*
         version: link:../ui-core
       class-variance-authority:
-        specifier: 0.7.0
+        specifier: 'catalog:'
         version: 0.7.0
       react:
-        specifier: ^19.0.0
+        specifier: 'catalog:'
         version: 19.0.0
       react-dom:
-        specifier: ^19.0.0
+        specifier: 'catalog:'
         version: 19.0.0(react@19.0.0)
     devDependencies:
       '@halvaradop/ui-utils':
@@ -326,13 +344,13 @@ importers:
         specifier: workspace:*
         version: link:../ui-core
       class-variance-authority:
-        specifier: 0.7.0
+        specifier: 'catalog:'
         version: 0.7.0
       react:
-        specifier: ^19.0.0
+        specifier: 'catalog:'
         version: 19.0.0
       react-dom:
-        specifier: ^19.0.0
+        specifier: 'catalog:'
         version: 19.0.0(react@19.0.0)
     devDependencies:
       '@halvaradop/ui-utils':
@@ -1140,13 +1158,13 @@ packages:
   '@types/node@22.15.30':
     resolution: {integrity: sha512-6Q7lr06bEHdlfplU6YRbgG1SFBdlsfNC4/lX+SkhiTs0cpJkOElmWls8PxDFv4yY/xKb8Y6SO0OmSX4wgqTZbA==}
 
-  '@types/react-dom@19.1.6':
-    resolution: {integrity: sha512-4hOiT/dwO8Ko0gV1m/TJZYk3y0KBnY9vzDh7W+DH17b2HFSOGgdj33dhihPeuy3l0q23+4e+hoXHV6hCC4dCXw==}
+  '@types/react-dom@19.0.2':
+    resolution: {integrity: sha512-c1s+7TKFaDRRxr1TxccIX2u7sfCnc3RxkVyBIUA2lCpyqCF+QoAwQ/CBg7bsMdVwP120HEH143VQezKtef5nCg==}
     peerDependencies:
       '@types/react': ^19.0.0
 
-  '@types/react@19.1.6':
-    resolution: {integrity: sha512-JeG0rEWak0N6Itr6QUx+X60uQmN+5t3j9r/OVDtWzFXKaj6kD1BwJzOksD0FF6iWxZlbE1kB0q9vtnU2ekqa1Q==}
+  '@types/react@19.0.2':
+    resolution: {integrity: sha512-USU8ZI/xyKJwFTpjSVIrSeHBVAGagkHQKPNbxeWwql/vDmnTIBgx+TJnhFnj1NXgz8XfprU0egV2dROLGpsBEg==}
 
   '@types/resolve@1.20.6':
     resolution: {integrity: sha512-A4STmOXPhMUtHH+S6ymgE2GiBSMqf4oTvcQZMcHzokuTLVYzXTB8ttjcgxOVaAp2lGwEdzZ0J+cRbbeevQj1UQ==}
@@ -2531,10 +2549,10 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@mdx-js/react@3.1.0(@types/react@19.1.6)(react@19.0.0)':
+  '@mdx-js/react@3.1.0(@types/react@19.0.2)(react@19.0.0)':
     dependencies:
       '@types/mdx': 2.0.13
-      '@types/react': 19.1.6
+      '@types/react': 19.0.2
       react: 19.0.0
 
   '@pkgjs/parseargs@0.11.0':
@@ -2637,9 +2655,9 @@ snapshots:
       storybook: 8.6.14(prettier@3.5.3)
       ts-dedent: 2.2.0
 
-  '@storybook/addon-docs@8.6.14(@types/react@19.1.6)(storybook@8.6.14(prettier@3.5.3))':
+  '@storybook/addon-docs@8.6.14(@types/react@19.0.2)(storybook@8.6.14(prettier@3.5.3))':
     dependencies:
-      '@mdx-js/react': 3.1.0(@types/react@19.1.6)(react@19.0.0)
+      '@mdx-js/react': 3.1.0(@types/react@19.0.2)(react@19.0.0)
       '@storybook/blocks': 8.6.14(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(storybook@8.6.14(prettier@3.5.3))
       '@storybook/csf-plugin': 8.6.14(storybook@8.6.14(prettier@3.5.3))
       '@storybook/react-dom-shim': 8.6.14(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(storybook@8.6.14(prettier@3.5.3))
@@ -2650,12 +2668,12 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  '@storybook/addon-essentials@8.6.14(@types/react@19.1.6)(storybook@8.6.14(prettier@3.5.3))':
+  '@storybook/addon-essentials@8.6.14(@types/react@19.0.2)(storybook@8.6.14(prettier@3.5.3))':
     dependencies:
       '@storybook/addon-actions': 8.6.14(storybook@8.6.14(prettier@3.5.3))
       '@storybook/addon-backgrounds': 8.6.14(storybook@8.6.14(prettier@3.5.3))
       '@storybook/addon-controls': 8.6.14(storybook@8.6.14(prettier@3.5.3))
-      '@storybook/addon-docs': 8.6.14(@types/react@19.1.6)(storybook@8.6.14(prettier@3.5.3))
+      '@storybook/addon-docs': 8.6.14(@types/react@19.0.2)(storybook@8.6.14(prettier@3.5.3))
       '@storybook/addon-highlight': 8.6.14(storybook@8.6.14(prettier@3.5.3))
       '@storybook/addon-measure': 8.6.14(storybook@8.6.14(prettier@3.5.3))
       '@storybook/addon-outline': 8.6.14(storybook@8.6.14(prettier@3.5.3))
@@ -3044,11 +3062,11 @@ snapshots:
     dependencies:
       undici-types: 6.21.0
 
-  '@types/react-dom@19.1.6(@types/react@19.1.6)':
+  '@types/react-dom@19.0.2(@types/react@19.0.2)':
     dependencies:
-      '@types/react': 19.1.6
+      '@types/react': 19.0.2
 
-  '@types/react@19.1.6':
+  '@types/react@19.0.2':
     dependencies:
       csstype: 3.1.3
 

@@ -61,13 +61,13 @@
   },
   "dependencies": {
     "@halvaradop/ui-core": "workspace:*",
-    "class-variance-authority": "0.7.0"
+    "class-variance-authority": "catalog:"
   },
   "devDependencies": {
     "@halvaradop/ui-utils": "workspace:*"
   },
   "peerDependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react": "catalog:",
+    "react-dom": "catalog:"
   }
 }
