@@ -32,6 +32,7 @@
       "outputLogs": "new-only"
     },
     "//#lint:root": {
+      "inputs": ["$TURBO_DEFAULT$"],
       "outputs": ["./cache/.eslintcache"],
       "outputLogs": "new-only"
     }
