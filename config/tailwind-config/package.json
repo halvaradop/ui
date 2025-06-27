@@ -1,0 +1,30 @@
+{
+  "name": "@halvaradop/tailwind-config",
+  "version": "0.0.0",
+  "private": false,
+  "description": "TailwindCSS configuration package for @ui library components.",
+  "type": "module",
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "keywords": [
+    "tailwind",
+    "config",
+    "ui"
+  ],
+  "author": "Hernan Alvarado <hernanvid123@gmail.com>",
+  "license": "MIT",
+  "exports": {
+    ".": "./tailwind.css",
+    "./tailwind-vite": "./tailwind-vite.js",
+    "./postcss": "./postcss.config.js"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.11",
+    "@tailwindcss/vite": "^4.1.11",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.11"
+  }
+}

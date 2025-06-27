@@ -35,6 +35,9 @@ importers:
       '@halvaradop/prettier-config':
         specifier: workspace:*
         version: link:config/prettier-config
+      '@halvaradop/tailwind-config':
+        specifier: workspace:*
+        version: link:config/tailwind-config
       '@halvaradop/ts-config':
         specifier: workspace:*
         version: link:config/ts-config
@@ -68,12 +71,6 @@ importers:
       '@storybook/test':
         specifier: ^8.6.4
         version: 8.6.14(storybook@8.6.14(prettier@3.6.2))
-      '@tailwindcss/postcss':
-        specifier: ^4.1.6
-        version: 4.1.11
-      '@tailwindcss/vite':
-        specifier: ^4.1.6
-        version: 4.1.11(vite@6.3.5(@types/node@22.15.33)(jiti@2.4.2)(lightningcss@1.30.1))
       '@types/node':
         specifier: ^22.13.10
         version: 22.15.33
@@ -86,12 +83,6 @@ importers:
       '@vitejs/plugin-react-swc':
         specifier: ^3.8.0
         version: 3.10.2(vite@6.3.5(@types/node@22.15.33)(jiti@2.4.2)(lightningcss@1.30.1))
-      autoprefixer:
-        specifier: ^10.4.21
-        version: 10.4.21(postcss@8.5.6)
-      postcss:
-        specifier: ^8.5.3
-        version: 8.5.6
       react:
         specifier: 'catalog:'
         version: 19.1.0
@@ -101,9 +92,6 @@ importers:
       storybook:
         specifier: ^8.6.4
         version: 8.6.14(prettier@3.6.2)
-      tailwindcss:
-        specifier: ^4.1.6
-        version: 4.1.11
       tsup:
         specifier: ^8.4.0
         version: 8.5.0(@swc/core@1.12.7)(jiti@2.4.2)(postcss@8.5.6)(typescript@5.8.3)
@@ -164,6 +152,24 @@ importers:
       prettier:
         specifier: ^3.6.2
         version: 3.6.2
+
+  config/tailwind-config:
+    devDependencies:
+      '@tailwindcss/postcss':
+        specifier: ^4.1.11
+        version: 4.1.11
+      '@tailwindcss/vite':
+        specifier: ^4.1.11
+        version: 4.1.11(vite@6.3.5(@types/node@22.15.33)(jiti@2.4.2)(lightningcss@1.30.1))
+      autoprefixer:
+        specifier: ^10.4.21
+        version: 10.4.21(postcss@8.5.6)
+      postcss:
+        specifier: ^8.5.6
+        version: 8.5.6
+      tailwindcss:
+        specifier: ^4.1.11
+        version: 4.1.11
 
   config/ts-config: {}
 

@@ -2,7 +2,7 @@ import eslint from "@eslint/js"
 import eslintTs from "typescript-eslint"
 import react from "eslint-plugin-react"
 import hooks from "eslint-plugin-react-hooks"
-import jsxA11y from "eslint-plugin-jsx-a11y"
+//import jsxA11y from "eslint-plugin-jsx-a11y"
 import prettierPlugin from "eslint-plugin-prettier"
 import prettierConfig from "eslint-config-prettier"
 import turbo from "eslint-plugin-turbo"
@@ -30,7 +30,7 @@ export default eslintTs.config(
             "@typescript-eslint": eslintTs.plugin,
             react,
             "react-hooks": hooks,
-            "jsx-a11y": jsxA11y,
+            //"jsx-a11y": jsxA11y,
             prettier: prettierPlugin,
             turbo,
         },
