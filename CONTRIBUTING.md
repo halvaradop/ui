@@ -176,7 +176,7 @@ Each package follows [Semantic Versioning](https://semver.org/) independently:
 1. Update the `CHANGELOG.md` for each modified package.
 2. Bump the `version` field in each relevant `package.json`.
 3. Create a GitHub release.
-4. Publish to npm by running the `release.bash` script, or use the direct scripts: `release:bump`, `release:dry-run`, or `release:versioning` via the package manager (`pnpm`).
+4. Publish to npm by running the `release.bash` script, or use the direct scripts: `release:bump`, `release:dry-run`, or `release:version` via the package manager (`pnpm`).
 
 ---
 

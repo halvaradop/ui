@@ -20,7 +20,7 @@ Supports both `React 18` and `React 19`. Use the table below to select the corre
 
 Find available components in the [packages directory](https://github.com/halvaradop/ui/tree/master/packages). Install the desired package with the `@halvaradop` prefix using your preferred package manager:
 
-### For React 18 (Stable)
+### For React 19 (Stable)
 
 ```bash
 npm install @halvaradop/ui-button
@@ -28,7 +28,7 @@ yarn add @halvaradop/ui-button
 pnpm add @halvaradop/ui-button
 ```
 
-### For React 19 (Legacy)
+### For React 18 (Legacy)
 
 ```bash
 npm install @halvaradop/ui-button@legacy
@@ -61,6 +61,7 @@ export default function App() {
 - [Select](https://github.com/halvaradop/ui/tree/master/packages/ui-select)
 - [Slot](https://github.com/halvaradop/ui/tree/master/packages/ui-slot)
 - [Submit](https://github.com/halvaradop/ui/tree/master/packages/ui-submit)
+- [Toggle](https://github.com/halvaradop/ui/tree/master/packages/ui-toggle)
 
 ### Versioning and Releasing
 

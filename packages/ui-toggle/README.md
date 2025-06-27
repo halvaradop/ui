@@ -2,9 +2,6 @@
 
 `@halvaradop/ui-toggle` is an accessible, reusable, and customizable `Toggle` component from the `@halvaradop/ui` React library. Built with React and styled using TailwindCSS v4, it provides pre-styled components to accelerate UI development.
 
-> [!WARNING]
-> This is not a real component provided by the `@halvaradop/ui` library. It is a template to facilitate the creation of new components within the library, offering default configurations and documentation. This package helps reduce the time required to build a component from scratch, allowing you to focus on adding new styles and features. For more information, please read the [Contributing Guide](https://github.com/halvaradop/ui/blob/master/.github/CONTRIBUTING.md).
-
 ## Installation
 
 ```bash
