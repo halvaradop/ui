@@ -20,7 +20,7 @@
     },
     "format": {
       "outputs": [".cache/.prettiercache"],
-      "cache": false
+      "outputLogs": "new-only"
     }
   },
   "ui": "tui",
