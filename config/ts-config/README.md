@@ -1,0 +1,1 @@
+# @halvaradop/ts-config
