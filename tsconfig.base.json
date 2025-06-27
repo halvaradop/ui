@@ -13,6 +13,7 @@
     "playwright.config.ts",
     "tests/**/*.{spec,test}.{ts,tsx,js,jsx}",
     "packages/**/*.{ts,tsx}",
-    "scripts/**/*.{ts,js}"
+    "**/*.{js,ts}",
+    "packages/**/tsup.config.ts"
   ]
 }

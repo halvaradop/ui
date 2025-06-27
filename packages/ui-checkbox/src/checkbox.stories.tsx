@@ -81,12 +81,12 @@ const meta: Meta = {
         for (const checkbox of checkboxs) {
             await new Promise((resolve) => setTimeout(resolve, 750))
             checkbox.focus()
-            expect(checkbox).toHaveFocus()
+            await expect(checkbox).toHaveFocus()
             await userEvent.click(checkbox)
-            expect(checkbox).toBeChecked()
+            await expect(checkbox).toBeChecked()
             await new Promise((resolve) => setTimeout(resolve, 750))
             await userEvent.click(checkbox)
-            expect(checkbox).not.toBeChecked()
+            await expect(checkbox).not.toBeChecked()
         }
     },
 } satisfies Meta<typeof Checkbox>
