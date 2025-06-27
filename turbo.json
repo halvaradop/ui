@@ -25,6 +25,15 @@
     "//#format:root": {
       "outputs": [".cache/.prettiercache"],
       "outputLogs": "new-only"
+    },
+    "lint": {
+      "inputs": ["$TURBO_DEFAULT$"],
+      "outputs": ["./cache/.eslintcache"],
+      "outputLogs": "new-only"
+    },
+    "//#lint:root": {
+      "outputs": ["./cache/.eslintcache"],
+      "outputLogs": "new-only"
     }
   },
   "ui": "tui",
