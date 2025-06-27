@@ -1,4 +1,3 @@
-import { useId } from "react"
 import { merge, type ComponentProps } from "@halvaradop/ui-core"
 import { SelectProvider, useSelect } from "./context.js"
 
