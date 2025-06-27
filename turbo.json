@@ -21,6 +21,10 @@
     "format": {
       "outputs": [".cache/.prettiercache"],
       "outputLogs": "new-only"
+    },
+    "//#format:root": {
+      "outputs": [".cache/.prettiercache"],
+      "outputLogs": "new-only"
     }
   },
   "ui": "tui",
