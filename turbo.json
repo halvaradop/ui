@@ -25,9 +25,20 @@
     "//#format:root": {
       "outputs": [".cache/.prettiercache"],
       "outputLogs": "new-only"
+    },
+    "lint": {
+      "inputs": ["$TURBO_DEFAULT$"],
+      "outputs": ["./cache/.eslintcache"],
+      "outputLogs": "new-only"
+    },
+    "//#lint:root": {
+      "inputs": ["$TURBO_DEFAULT$"],
+      "outputs": ["./cache/.eslintcache"],
+      "outputLogs": "new-only"
     }
   },
   "ui": "tui",
   "cacheDir": ".turbo/cache",
-  "globalDependencies": ["tsconfig.json"]
+  "globalDependencies": ["tsconfig.json"],
+  "globalEnv": ["NODE_ENV", "CI"]
 }

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj, ArgTypes } from "@storybook/react"
 import { userEvent, within } from "@storybook/test"
-import { Button } from "./index.jsx"
-import { decorator } from "@halvaradop/ui-utils/decorator"
+import { type ButtonProps, Button, buttonVariants } from "./index.jsx"
+import { DecoratorWrapper } from "@halvaradop/ui-utils/decorator"
 import { DocsPage } from "@halvaradop/ui-utils/docs-page"
 
 const variant: ArgTypes["variant"] = {
@@ -86,10 +86,11 @@ const meta: Meta = {
             page: () => <DocsPage subtitle="Button Component powered by React & TailwindCSS" />,
         },
     },
-    decorators: [decorator],
+    decorators: [DecoratorWrapper],
 } satisfies Meta<typeof Button>
 
 type Story = StoryObj<typeof meta>
+type StoryArgs = ButtonProps<typeof buttonVariants> & { disabled?: boolean }
 
 export const Base: Story = {
     args: {
@@ -112,14 +113,22 @@ export const Variants: Story = {
     argTypes: {
         size,
     },
-    render: ({ children, size, fullRounded, disabled }) => {
-        const variants = ["base", "secondary", "ghost", "link", "destructive", "outline", "plain"]
+    render: ({ children, size, fullRounded, disabled }: StoryArgs) => {
+        const variants = [
+            "base",
+            "secondary",
+            "ghost",
+            "link",
+            "destructive",
+            "outline",
+            "plain",
+        ] as StoryArgs["variant"][]
         return (
             <>
                 {variants.map((variant) => (
                     <div key={variant}>
                         <span className="block font-medium capitalize">{variant}</span>
-                        <Button variant={variant as any} size={size} fullRounded={fullRounded} disabled={disabled}>
+                        <Button variant={variant} size={size} fullRounded={fullRounded} disabled={disabled}>
                             {children}
                         </Button>
                     </div>
@@ -145,14 +154,14 @@ export const Sizes: Story = {
     argTypes: {
         variant,
     },
-    render: ({ children, variant, fullRounded, disabled }) => {
-        const sizes = ["sm", "base", "md", "lg"]
+    render: ({ children, variant, fullRounded, disabled }: StoryArgs) => {
+        const sizes = ["sm", "base", "md", "lg"] as StoryArgs["size"][]
         return (
             <>
                 {sizes.map((size) => (
                     <div key={size}>
                         <span className="font-medium capitalize">{size}</span>
-                        <Button size={size as any} variant={variant} fullRounded={fullRounded} disabled={disabled}>
+                        <Button size={size} variant={variant} fullRounded={fullRounded} disabled={disabled}>
                             {children}
                         </Button>
                     </div>

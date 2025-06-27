@@ -1,5 +1,4 @@
-import { JSX } from "react"
-import type { PropsWithChildren as WithChildren, JSXElementConstructor } from "react"
+import type { PropsWithChildren as WithChildren, JSXElementConstructor, JSX } from "react"
 
 /**
  * HTMLTag

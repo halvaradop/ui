@@ -1,6 +1,6 @@
 import { forwardRef } from "react"
-import { merge, type ComponentProps } from "@halvaradop/ui-core"
-import { cva, type VariantProps } from "class-variance-authority"
+import { type ComponentProps, merge } from "@halvaradop/ui-core"
+import { type VariantProps, cva } from "class-variance-authority"
 import { useRadioGroup } from "./context.js"
 
 interface InternalRadioProps {
@@ -59,7 +59,6 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps<typeof radioVariant
                     checked={isSelected}
                     tabIndex={isSelected ? 0 : -1}
                     aria-checked={isSelected}
-                    aria-selected={isSelected}
                     onChange={() => onChange?.(value)}
                     {...props}
                 />

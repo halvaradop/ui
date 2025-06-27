@@ -3,16 +3,14 @@ import type { Meta, StoryObj } from "@storybook/react"
 import { within, expect } from "@storybook/test"
 import { Dialog, modalVariants } from "./index.js"
 import { Button } from "@/ui/ui-button/src/index.js"
-import { decorator } from "@halvaradop/ui-utils/decorator"
+import { DecoratorWrapper } from "@halvaradop/ui-utils/decorator"
 import { DocsPage } from "@halvaradop/ui-utils/docs-page"
 import type { VariantProps } from "class-variance-authority"
-
-type ModalProps = VariantProps<typeof modalVariants>
 
 const meta: Meta = {
     title: "ui-dialog",
     tags: ["autodocs"],
-    component: Dialog as any,
+    component: Dialog,
     args: {
         size: "base",
         variant: "base",
@@ -54,16 +52,17 @@ const meta: Meta = {
             page: () => <DocsPage subtitle="Dialog component powered by React & TailwindCSS" />,
         },
     },
-    decorators: [decorator],
-} satisfies Meta<ModalProps>
+    decorators: [DecoratorWrapper],
+} satisfies Meta<StoryArgs>
 
 type Story = StoryObj<typeof meta>
+type StoryArgs = VariantProps<typeof modalVariants>
 
 export const Base: Story = {
     parameters: {
         skipDecorator: true,
     },
-    render: ({ size, variant }) => {
+    render: ({ size, variant }: StoryArgs) => {
         const modalRef = useRef<HTMLDialogElement>(null)
 
         const handleToggleModal = (isOpen: boolean): void => {
@@ -103,20 +102,20 @@ export const Base: Story = {
         openButton.click()
 
         const modal = canvas.getByRole("dialog")
-        expect(modal.hasAttribute("open")).toBeTruthy()
+        await expect(modal.hasAttribute("open")).toBeTruthy()
 
-        expect(canvas.getByText(/Modal Content/i)).toBeInTheDocument()
-        expect(canvas.getByText(/size:/i)).toHaveTextContent(/size: (sm|base|md|lg)/i)
-        expect(canvas.getByText(/variant:/i)).toHaveTextContent(/variant: (base|inner|fixed)/i)
+        await expect(canvas.getByText(/Modal Content/i)).toBeInTheDocument()
+        await expect(canvas.getByText(/size:/i)).toHaveTextContent(/size: (sm|base|md|lg)/i)
+        await expect(canvas.getByText(/variant:/i)).toHaveTextContent(/variant: (base|inner|fixed)/i)
 
-        expect(document.activeElement === modal || modal.contains(document.activeElement)).toBeTruthy()
+        await expect(document.activeElement === modal || modal.contains(document.activeElement)).toBeTruthy()
 
         await new Promise((resolve) => setTimeout(resolve, 500))
 
         const closeButton = canvas.getByRole("button", { name: /close/i })
         closeButton.click()
 
-        expect(modal.hasAttribute("open")).toBeFalsy()
+        await expect(modal.hasAttribute("open")).toBeFalsy()
     },
 }
 

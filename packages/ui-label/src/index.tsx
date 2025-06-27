@@ -1,6 +1,6 @@
 import { merge } from "@halvaradop/ui-core"
-import { Slot, type SlotProps } from "@halvaradop/ui-slot"
-import { cva, type VariantProps } from "class-variance-authority"
+import { type SlotProps, Slot } from "@halvaradop/ui-slot"
+import { type VariantProps, cva } from "class-variance-authority"
 
 export type LabelProps<T extends VoidFunction> = SlotProps<"label"> & VariantProps<T>
 

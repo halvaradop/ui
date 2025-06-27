@@ -1,5 +1,5 @@
-import { Meta, StoryObj } from "@storybook/react"
-import { decorator } from "./decorator.js"
+import type { Meta, StoryObj } from "@storybook/react"
+import { DecoratorWrapper } from "./decorator.js"
 
 const colors = [
     { name: "color-primary", value: "bg-primary" },
@@ -30,7 +30,7 @@ const meta: Meta = {
             ))}
         </div>
     ),
-    decorators: [decorator],
+    decorators: [DecoratorWrapper],
 }
 
 type Story = StoryObj<typeof meta>

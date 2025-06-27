@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react"
 import type { Decorator } from "@storybook/react"
 
-export const decorator: Decorator = (Story, { parameters }) => {
-    if (parameters.skipDecorator) return <Story />
-
+export const DecoratorWrapper: Decorator = (Story, { parameters }) => {
     const [isDark, setIsDark] = useState(false)
 
     const handleToggleTheme = () => {
@@ -14,6 +12,10 @@ export const decorator: Decorator = (Story, { parameters }) => {
     useEffect(() => {
         setIsDark(document.querySelector("html")?.classList?.contains("dark") ?? false)
     }, [])
+
+    if (parameters.skipDecorator) {
+        return <Story />
+    }
 
     return (
         <div

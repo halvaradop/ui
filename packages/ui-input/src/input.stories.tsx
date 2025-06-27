@@ -1,7 +1,7 @@
 import type { ArgTypes, Meta, StoryObj } from "@storybook/react"
 import { expect, userEvent, within } from "@storybook/test"
-import { Input } from "./index.jsx"
-import { decorator } from "@halvaradop/ui-utils/decorator"
+import { type InputProps, Input, inputVariants } from "./index.jsx"
+import { DecoratorWrapper } from "@halvaradop/ui-utils/decorator"
 import { DocsPage } from "@halvaradop/ui-utils/docs-page"
 
 const size: ArgTypes["size"] = {
@@ -80,18 +80,19 @@ const meta: Meta = {
             page: () => <DocsPage subtitle="Input component powered by React & TailwindCSS" />,
         },
     },
-    decorators: [decorator],
+    decorators: [DecoratorWrapper],
     play: async ({ canvasElement }) => {
         const canvas = within(canvasElement)
         const inputs = canvas.getAllByRole("textbox")
         for (const input of inputs) {
             await userEvent.type(input, "John Doe", { delay: 102 })
-            expect(input).toHaveValue("John Doe")
+            await expect(input).toHaveValue("John Doe")
         }
     },
 } satisfies Meta<typeof Input>
 
 type Story = StoryObj<typeof meta>
+type StoryArgs = InputProps<typeof inputVariants>
 
 export const Base: Story = {
     args: {
@@ -114,8 +115,8 @@ export const Variants: Story = {
     argTypes: {
         size,
     },
-    render: ({ size, placeholder, disabled, fullRounded }) => {
-        const variants = ["base", "line", "sensitive"]
+    render: ({ size, placeholder, disabled, fullRounded }: StoryArgs) => {
+        const variants = ["base", "line", "sensitive"] as StoryArgs["variant"][]
 
         return (
             <>
@@ -124,7 +125,7 @@ export const Variants: Story = {
                         <span className="font-medium">{variant}</span>
                         <Input
                             type={variant === "sensitive" ? "email" : "text"}
-                            variant={variant as any}
+                            variant={variant}
                             size={size}
                             disabled={disabled}
                             placeholder={placeholder}
@@ -144,8 +145,8 @@ export const Sizes: Story = {
     argTypes: {
         variant,
     },
-    render: ({ variant, placeholder, disabled, fullRounded }) => {
-        const sizes = ["sm", "base", "md", "lg"]
+    render: ({ variant, placeholder, disabled, fullRounded }: StoryArgs) => {
+        const sizes = ["sm", "base", "md", "lg"] as StoryArgs["size"][]
 
         return (
             <>
@@ -153,7 +154,7 @@ export const Sizes: Story = {
                     <div key={size}>
                         <span className="font-medium">{size}</span>
                         <Input
-                            size={size as any}
+                            size={size}
                             variant={variant}
                             disabled={disabled}
                             placeholder={placeholder}

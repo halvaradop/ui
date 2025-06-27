@@ -1,7 +1,7 @@
 import type { ArgTypes, Meta, StoryObj } from "@storybook/react"
-import { Label } from "./index.js"
+import { type LabelProps, Label, labelVariants } from "./index.js"
 import { Input } from "@/ui/ui-input/src/index.js"
-import { decorator } from "@halvaradop/ui-utils/decorator"
+import { DecoratorWrapper } from "@halvaradop/ui-utils/decorator"
 import { DocsPage } from "@halvaradop/ui-utils/docs-page"
 
 const size: ArgTypes["size"] = {
@@ -54,10 +54,11 @@ const meta: Meta = {
             page: () => <DocsPage subtitle="Label component powered by React & TailwindCSS" />,
         },
     },
-    decorators: [decorator],
+    decorators: [DecoratorWrapper],
 } satisfies Meta<typeof Label>
 
 type Story = StoryObj<typeof meta>
+type StoryArgs = LabelProps<typeof labelVariants>
 
 export const Base: Story = {
     args: {
@@ -80,7 +81,7 @@ export const Sizes: Story = {
     argTypes: {
         variant,
     },
-    render: ({ children, variant }) => (
+    render: ({ children, variant }: StoryArgs) => (
         <div className="w-full flex items-center gap-x-5">
             <Label size="sm" variant={variant}>
                 {children}

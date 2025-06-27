@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react"
-import { Slot, SlotProps } from "./index.js"
-import { decorator } from "@halvaradop/ui-utils/decorator"
+import { type SlotProps, Slot } from "./index.js"
+import { DecoratorWrapper } from "@halvaradop/ui-utils/decorator"
 import { DocsPage } from "@halvaradop/ui-utils/docs-page"
 
 const meta: Meta = {
@@ -48,7 +48,7 @@ const meta: Meta = {
             page: () => <DocsPage subtitle="Slot component" />,
         },
     },
-    decorators: [decorator],
+    decorators: [DecoratorWrapper],
 } satisfies Meta<SlotProps<"div">>
 
 type Story = StoryObj<typeof meta>

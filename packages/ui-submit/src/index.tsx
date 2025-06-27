@@ -1,6 +1,6 @@
 import { useFormStatus } from "react-dom"
-import { merge, type ComponentProps } from "@halvaradop/ui-core"
-import { cva, VariantProps } from "class-variance-authority"
+import { type ComponentProps, merge } from "@halvaradop/ui-core"
+import { type VariantProps, cva } from "class-variance-authority"
 
 interface InternalSubmitProps {
     pending?: string

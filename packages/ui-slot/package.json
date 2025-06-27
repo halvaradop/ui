@@ -10,6 +10,8 @@
     "build:release": "sh -c 'export NODE_ENV=production ; tsup' && pnpm clean:cts",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "lint": "eslint . --cache --cache-location .cache/.eslintcache",
+    "lint:fix": "eslint . --fix --cache --cache-location .cache/.eslintcache",
     "clean": "pnpm clean:dist && pnpm clean:modules && pnpm clean:turbo",
     "clean:dist": "rm -rf dist",
     "clean:modules": "rm -rf node_modules",

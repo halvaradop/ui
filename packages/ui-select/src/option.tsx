@@ -1,4 +1,4 @@
-import { merge, type ComponentProps } from "@halvaradop/ui-core"
+import { type ComponentProps, merge } from "@halvaradop/ui-core"
 import { useSelect } from "./context.js"
 
 export type SelectItemProps = ComponentProps<"button", "value"> & {

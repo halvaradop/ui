@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react"
 import { within, expect } from "@storybook/test"
 import { Select, SelectList, SelectOption, SelectTrigger } from "./index.js"
-import { decorator } from "@halvaradop/ui-utils/decorator"
+import { DecoratorWrapper } from "@halvaradop/ui-utils/decorator"
 import { DocsPage } from "@halvaradop/ui-utils/docs-page"
 
 const meta: Meta = {
@@ -20,7 +20,7 @@ const meta: Meta = {
             page: () => <DocsPage subtitle="Template component powered by React & TailwindCSS" />,
         },
     },
-    decorators: [decorator],
+    decorators: [DecoratorWrapper],
 } satisfies Meta<typeof Select>
 
 type Story = StoryObj<typeof meta>
