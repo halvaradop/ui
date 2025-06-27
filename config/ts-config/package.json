@@ -4,7 +4,15 @@
   "private": false,
   "description": "TypeScript configuration package for @ui library components.",
   "type": "module",
-  "scripts": {},
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint . --cache --cache-location .cache/.eslintcache",
+    "lint:fix": "eslint . --fix --cache --cache-location .cache/.eslintcache",
+    "clean": "pnpm clean:modules && pnpm clean:turbo",
+    "clean:modules": "rm -rf node_modules",
+    "clean:turbo": "rm -rf .turbo"
+  },
   "keywords": [
     "typescript",
     "config",

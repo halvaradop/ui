@@ -1,9 +1,0 @@
-{
-  "extends": "@halvaradop/ts-config/tsconfig.base.json",
-  "compilerOptions": {
-    "rootDir": ".",
-    "outDir": "dist"
-  },
-  "include": ["."],
-  "exclude": ["node_modules"]
-}

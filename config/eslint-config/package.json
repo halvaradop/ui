@@ -4,20 +4,14 @@
   "private": false,
   "description": "ESLint configuration package for @ui library components.",
   "type": "module",
-  "main": "eslint.config.js",
-  "exports": {
-    ".": "./eslint.config.js",
-    "./eslint.config.js": "./eslint.config.js",
-    "./.eslintignore": "./.eslintignore"
-  },
-  "files": [
-    "eslint.config.js",
-    ".eslintignore",
-    "README.md"
-  ],
   "scripts": {
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "lint": "eslint . --cache --cache-location .cache/.eslintcache",
+    "lint:fix": "eslint . --fix --cache --cache-location .cache/.eslintcache",
+    "clean": "pnpm clean:modules && pnpm clean:turbo",
+    "clean:modules": "rm -rf node_modules",
+    "clean:turbo": "rm -rf .turbo"
   },
   "keywords": [
     "eslint",
@@ -26,6 +20,11 @@
   ],
   "author": "Hernan Alvarado <hernanvid123@gmail.com>",
   "license": "MIT",
+  "exports": {
+    ".": "./eslint.config.js",
+    "./eslint.config.js": "./eslint.config.js",
+    "./.eslintignore": "./.eslintignore"
+  },
   "devDependencies": {
     "@halvaradop/ts-config": "workspace:*",
     "@eslint/js": "^9.29.0",
