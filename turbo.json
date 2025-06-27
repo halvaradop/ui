@@ -20,7 +20,11 @@
     },
     "format": {
       "outputs": [".cache/.prettiercache"],
-      "cache": false
+      "outputLogs": "new-only"
+    },
+    "//#format:root": {
+      "outputs": [".cache/.prettiercache"],
+      "outputLogs": "new-only"
     }
   },
   "ui": "tui",
