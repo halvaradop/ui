@@ -1,6 +1,6 @@
 import type { ArgTypes, Meta, StoryObj } from "@storybook/react"
 import { expect, userEvent, within } from "@storybook/test"
-import { Checkbox } from "./index.js"
+import { type CheckboxProps, Checkbox, checkboxVariants } from "./index.js"
 import { DecoratorWrapper } from "@halvaradop/ui-utils/decorator"
 import { DocsPage } from "@halvaradop/ui-utils/docs-page"
 
@@ -92,6 +92,7 @@ const meta: Meta = {
 } satisfies Meta<typeof Checkbox>
 
 type Story = StoryObj<typeof meta>
+type StoryArgs = CheckboxProps<typeof checkboxVariants>
 
 export const Base: Story = {
     args: {
@@ -114,7 +115,7 @@ export const Sizes: Story = {
     argTypes: {
         color,
     },
-    render: (args) => (
+    render: (args: StoryArgs) => (
         <>
             <div>
                 <span className="font-medium">sm</span>
@@ -143,7 +144,7 @@ export const Colors: Story = {
     argTypes: {
         size,
     },
-    render: (args) => (
+    render: (args: StoryArgs) => (
         <>
             <div>
                 <span className="font-medium">Primary</span>

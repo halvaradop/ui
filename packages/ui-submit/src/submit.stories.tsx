@@ -1,6 +1,6 @@
 import type { ArgTypes, Meta, StoryObj } from "@storybook/react"
 import { expect, within } from "@storybook/test"
-import { Submit } from "./index.js"
+import { type SubmitProps, Submit, submitVariants } from "./index.js"
 import { DecoratorWrapper } from "@halvaradop/ui-utils/decorator"
 import { DocsPage } from "@halvaradop/ui-utils/docs-page"
 
@@ -82,6 +82,7 @@ const meta: Meta = {
 } satisfies Meta<typeof Submit>
 
 type Story = StoryObj<typeof meta>
+type StoryArgs = SubmitProps<typeof submitVariants>
 
 export const Base: Story = {
     args: {
@@ -104,20 +105,14 @@ export const Variants: Story = {
     argTypes: {
         size,
     },
-    render: ({ size, disabled, pending, value }) => {
-        const variants = ["base", "secondary"]
+    render: ({ size, disabled, pending, value }: StoryArgs) => {
+        const variants = ["base", "secondary"] as StoryArgs["variant"][]
         return (
             <>
                 {variants.map((variant) => (
                     <div key={variant}>
                         <span className="font-medium block">{variant}</span>
-                        <Submit
-                            variant={variant as any}
-                            size={size}
-                            value={value}
-                            pending={pending}
-                            disabled={disabled}
-                        />
+                        <Submit variant={variant} size={size} value={value} pending={pending} disabled={disabled} />
                     </div>
                 ))}
             </>
@@ -132,20 +127,14 @@ export const Sizes: Story = {
     argTypes: {
         variant,
     },
-    render: ({ value, pending, disabled, variant }) => {
-        const sizes = ["sm", "base", "md", "lg"]
+    render: ({ value, pending, disabled, variant }: StoryArgs) => {
+        const sizes = ["sm", "base", "md", "lg"] as StoryArgs["size"][]
         return (
             <>
                 {sizes.map((size) => (
                     <div key={size}>
                         <span className="font-medium block">{size}</span>
-                        <Submit
-                            size={size as any}
-                            variant={variant}
-                            value={value}
-                            pending={pending}
-                            disabled={disabled}
-                        />
+                        <Submit size={size} variant={variant} value={value} pending={pending} disabled={disabled} />
                     </div>
                 ))}
             </>

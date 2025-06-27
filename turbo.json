@@ -29,5 +29,6 @@
   },
   "ui": "tui",
   "cacheDir": ".turbo/cache",
-  "globalDependencies": ["tsconfig.json"]
+  "globalDependencies": ["tsconfig.json"],
+  "globalEnv": ["NODE_ENV", "CI"]
 }

@@ -1,5 +1,5 @@
-import { merge, type PropsWithChildren, type ComponentProps } from "@halvaradop/ui-core"
-import { cva, type VariantProps } from "class-variance-authority"
+import { type PropsWithChildren, type ComponentProps, merge } from "@halvaradop/ui-core"
+import { type VariantProps, cva } from "class-variance-authority"
 
 export type FormProps<T extends VoidFunction> = VariantProps<T> & PropsWithChildren<ComponentProps<"form">>
 

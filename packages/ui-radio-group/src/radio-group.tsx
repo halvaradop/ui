@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react"
-import { merge, type ComponentProps, type PropsWithChildren } from "@halvaradop/ui-core"
-import { cva, type VariantProps } from "class-variance-authority"
+import { type ComponentProps, type PropsWithChildren, merge } from "@halvaradop/ui-core"
+import { type VariantProps, cva } from "class-variance-authority"
 import { RadioGroupContext } from "./context.js"
 
 export type RadioGroupProps<T extends VoidFunction> = VariantProps<T> &

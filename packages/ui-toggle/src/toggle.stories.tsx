@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react"
 import { within, expect, userEvent } from "@storybook/test"
-import { Toggle } from "./index.js"
+import { type ToggleProps, Toggle, toggleVariants } from "./index.js"
 import { DecoratorWrapper } from "@halvaradop/ui-utils/decorator"
 import { DocsPage } from "@halvaradop/ui-utils/docs-page"
 
@@ -80,6 +80,7 @@ const meta: Meta = {
 } satisfies Meta<typeof Toggle>
 
 type Story = StoryObj<typeof meta>
+type StoryArgs = ToggleProps<typeof toggleVariants>
 
 export const Base: Story = {
     parameters: {
@@ -94,7 +95,7 @@ export const Disabled: Story = {
 }
 
 export const Sizes: Story = {
-    render: ({ color, disabled, checked }) => (
+    render: ({ color, disabled, checked }: StoryArgs) => (
         <>
             <Toggle color={color} size="sm" disabled={disabled} checked={checked} />
             <Toggle color={color} size="base" disabled={disabled} checked={checked} />
@@ -108,14 +109,14 @@ export const Sizes: Story = {
         for (const toggle of toggles) {
             await new Promise((resolve) => setTimeout(resolve, 750))
             await userEvent.click(toggle)
-            expect(toggle).toHaveAttribute("aria-checked", "true")
-            expect(toggle).toHaveAttribute("data-checked", "true")
+            await expect(toggle).toHaveAttribute("aria-checked", "true")
+            await expect(toggle).toHaveAttribute("data-checked", "true")
         }
         for (const toggle of toggles) {
             await new Promise((resolve) => setTimeout(resolve, 750))
             await userEvent.click(toggle)
-            expect(toggle).toHaveAttribute("aria-checked", "false")
-            expect(toggle).toHaveAttribute("data-checked", "false")
+            await expect(toggle).toHaveAttribute("aria-checked", "false")
+            await expect(toggle).toHaveAttribute("data-checked", "false")
         }
     },
 }

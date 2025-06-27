@@ -1,4 +1,4 @@
-import { createContext, use, useState, useId, type MouseEventHandler, type MouseEvent } from "react"
+import { type MouseEventHandler, type MouseEvent, createContext, use, useState, useId } from "react"
 
 export interface SelectContextType {
     id: string
@@ -14,9 +14,7 @@ export const SelectContext = createContext<SelectContextType>({
     open: false,
     name: "default",
     selectedValue: "",
-    onTrigger: () => {},
-    onChange: () => {},
-})
+} as SelectContextType)
 
 export const useSelect = () => {
     const context = use(SelectContext)

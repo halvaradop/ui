@@ -1,6 +1,6 @@
 import type { Meta, StoryObj, ArgTypes } from "@storybook/react"
 import { userEvent, within } from "@storybook/test"
-import { Button, type ButtonProps, buttonVariants } from "./index.jsx"
+import { type ButtonProps, Button, buttonVariants } from "./index.jsx"
 import { DecoratorWrapper } from "@halvaradop/ui-utils/decorator"
 import { DocsPage } from "@halvaradop/ui-utils/docs-page"
 
@@ -90,7 +90,7 @@ const meta: Meta = {
 } satisfies Meta<typeof Button>
 
 type Story = StoryObj<typeof meta>
-type ButtonStoryProps = ButtonProps<typeof buttonVariants> & { disabled?: boolean }
+type StoryArgs = ButtonProps<typeof buttonVariants> & { disabled?: boolean }
 
 export const Base: Story = {
     args: {
@@ -113,7 +113,7 @@ export const Variants: Story = {
     argTypes: {
         size,
     },
-    render: ({ children, size, fullRounded, disabled }: ButtonStoryProps) => {
+    render: ({ children, size, fullRounded, disabled }: StoryArgs) => {
         const variants = [
             "base",
             "secondary",
@@ -122,7 +122,7 @@ export const Variants: Story = {
             "destructive",
             "outline",
             "plain",
-        ] as ButtonStoryProps["variant"][]
+        ] as StoryArgs["variant"][]
         return (
             <>
                 {variants.map((variant) => (
@@ -154,8 +154,8 @@ export const Sizes: Story = {
     argTypes: {
         variant,
     },
-    render: ({ children, variant, fullRounded, disabled }: ButtonStoryProps) => {
-        const sizes = ["sm", "base", "md", "lg"] as ButtonStoryProps["size"][]
+    render: ({ children, variant, fullRounded, disabled }: StoryArgs) => {
+        const sizes = ["sm", "base", "md", "lg"] as StoryArgs["size"][]
         return (
             <>
                 {sizes.map((size) => (

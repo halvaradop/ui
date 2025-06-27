@@ -1,4 +1,4 @@
-import { merge, type ComponentProps, type PropsWithChildren } from "@halvaradop/ui-core"
+import { type ComponentProps, type PropsWithChildren, merge } from "@halvaradop/ui-core"
 import { cva } from "class-variance-authority"
 
 export type DialogProps = PropsWithChildren<ComponentProps<"dialog">>

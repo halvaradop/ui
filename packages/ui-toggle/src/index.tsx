@@ -1,6 +1,6 @@
-import { useState, type MouseEvent } from "react"
-import { merge, type ComponentProps } from "@halvaradop/ui-core"
-import { cva, type VariantProps } from "class-variance-authority"
+import { type MouseEvent, useState } from "react"
+import { type ComponentProps, merge } from "@halvaradop/ui-core"
+import { type VariantProps, cva } from "class-variance-authority"
 
 export type ToggleProps<T extends VoidFunction> = VariantProps<T> &
     ComponentProps<"button", "children"> & {
@@ -77,7 +77,6 @@ export const Toggle = ({
             ref={ref}
             role="switch"
             aria-checked={isActive}
-            aria-pressed={isActive}
             aria-disabled={disabled}
             data-checked={isActive}
             disabled={disabled}
