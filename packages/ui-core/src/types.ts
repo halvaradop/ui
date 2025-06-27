@@ -1,4 +1,4 @@
-import { JSX } from "react"
+import type { JSX } from "react"
 import type { PropsWithChildren as WithChildren, JSXElementConstructor } from "react"
 
 /**

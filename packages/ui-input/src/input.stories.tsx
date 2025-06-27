@@ -1,7 +1,7 @@
 import type { ArgTypes, Meta, StoryObj } from "@storybook/react"
 import { expect, userEvent, within } from "@storybook/test"
 import { Input } from "./index.jsx"
-import { decorator } from "@halvaradop/ui-utils/decorator"
+import { DecoratorWrapper } from "@halvaradop/ui-utils/decorator"
 import { DocsPage } from "@halvaradop/ui-utils/docs-page"
 
 const size: ArgTypes["size"] = {
@@ -80,7 +80,7 @@ const meta: Meta = {
             page: () => <DocsPage subtitle="Input component powered by React & TailwindCSS" />,
         },
     },
-    decorators: [decorator],
+    decorators: [DecoratorWrapper],
     play: async ({ canvasElement }) => {
         const canvas = within(canvasElement)
         const inputs = canvas.getAllByRole("textbox")

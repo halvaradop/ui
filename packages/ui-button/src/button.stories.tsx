@@ -1,7 +1,7 @@
 import type { Meta, StoryObj, ArgTypes } from "@storybook/react"
 import { userEvent, within } from "@storybook/test"
 import { Button } from "./index.jsx"
-import { decorator } from "@halvaradop/ui-utils/decorator"
+import { DecoratorWrapper } from "@halvaradop/ui-utils/decorator"
 import { DocsPage } from "@halvaradop/ui-utils/docs-page"
 
 const variant: ArgTypes["variant"] = {
@@ -86,7 +86,7 @@ const meta: Meta = {
             page: () => <DocsPage subtitle="Button Component powered by React & TailwindCSS" />,
         },
     },
-    decorators: [decorator],
+    decorators: [DecoratorWrapper],
 } satisfies Meta<typeof Button>
 
 type Story = StoryObj<typeof meta>

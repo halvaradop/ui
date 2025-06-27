@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react"
 import { within, expect } from "@storybook/test"
 import { Dialog, modalVariants } from "./index.js"
 import { Button } from "@/ui/ui-button/src/index.js"
-import { decorator } from "@halvaradop/ui-utils/decorator"
+import { DecoratorWrapper } from "@halvaradop/ui-utils/decorator"
 import { DocsPage } from "@halvaradop/ui-utils/docs-page"
 import type { VariantProps } from "class-variance-authority"
 
@@ -54,7 +54,7 @@ const meta: Meta = {
             page: () => <DocsPage subtitle="Dialog component powered by React & TailwindCSS" />,
         },
     },
-    decorators: [decorator],
+    decorators: [DecoratorWrapper],
 } satisfies Meta<ModalProps>
 
 type Story = StoryObj<typeof meta>

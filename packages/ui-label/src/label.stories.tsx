@@ -1,7 +1,7 @@
 import type { ArgTypes, Meta, StoryObj } from "@storybook/react"
 import { Label } from "./index.js"
 import { Input } from "@/ui/ui-input/src/index.js"
-import { decorator } from "@halvaradop/ui-utils/decorator"
+import { DecoratorWrapper } from "@halvaradop/ui-utils/decorator"
 import { DocsPage } from "@halvaradop/ui-utils/docs-page"
 
 const size: ArgTypes["size"] = {
@@ -54,7 +54,7 @@ const meta: Meta = {
             page: () => <DocsPage subtitle="Label component powered by React & TailwindCSS" />,
         },
     },
-    decorators: [decorator],
+    decorators: [DecoratorWrapper],
 } satisfies Meta<typeof Label>
 
 type Story = StoryObj<typeof meta>

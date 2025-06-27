@@ -1,7 +1,7 @@
 import type { ArgTypes, Meta, StoryObj } from "@storybook/react"
 import { expect, userEvent, within } from "@storybook/test"
 import { Checkbox } from "./index.js"
-import { decorator } from "@halvaradop/ui-utils/decorator"
+import { DecoratorWrapper } from "@halvaradop/ui-utils/decorator"
 import { DocsPage } from "@halvaradop/ui-utils/docs-page"
 
 const size: ArgTypes["size"] = {
@@ -74,7 +74,7 @@ const meta: Meta = {
             page: () => <DocsPage subtitle="Checkbox component powered by React & TailwindCSS" />,
         },
     },
-    decorators: [decorator],
+    decorators: [DecoratorWrapper],
     play: async ({ canvasElement }) => {
         const canvas = within(canvasElement)
         const checkboxs = await canvas.findAllByRole("checkbox")

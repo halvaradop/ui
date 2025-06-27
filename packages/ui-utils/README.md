@@ -50,12 +50,12 @@ export default defineConfig((options) => ({
 The `decorator` is a custom decorator used by component stories to apply custom styles to story wrappers. It includes logic and UI to switch between light and dark themes. This decorator is exported from the `/decorator` entry point of the module, which can be imported using `@halvaradop/ui-utils/decorator`.
 
 ```tsx
-import { decorator } from "@halvaradop/ui-utils/decorator"
+import { DecoratorWrapper } from "@halvaradop/ui-utils/decorator"
 import type { Meta, StoryObj } from "@storybook/react"
 
 const meta: Meta = {
   title: "ui-component",
-  decorators: [decorator],
+  decorators: [DecoratorWrapper],
 }
 ```
 

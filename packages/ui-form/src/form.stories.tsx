@@ -1,11 +1,11 @@
-import { FormEvent } from "react"
+import type { FormEvent } from "react"
 import type { Meta, StoryObj } from "@storybook/react"
 import { expect, userEvent, within } from "@storybook/test"
 import { Form } from "./index.js"
 import { Input } from "@/ui/ui-input/src/index.js"
 import { Label } from "@/ui/ui-label/src/index.js"
 import { Submit } from "@/ui/ui-submit/src/index.js"
-import { decorator } from "@halvaradop/ui-utils/decorator"
+import { DecoratorWrapper } from "@halvaradop/ui-utils/decorator"
 import { DocsPage } from "@halvaradop/ui-utils/docs-page"
 
 const meta: Meta = {
@@ -50,7 +50,7 @@ const meta: Meta = {
             page: () => <DocsPage subtitle="Form component powered by React & TailwindCSS" />,
         },
     },
-    decorators: [decorator],
+    decorators: [DecoratorWrapper],
 } satisfies Meta<typeof Form>
 
 type Story = StoryObj<typeof meta>

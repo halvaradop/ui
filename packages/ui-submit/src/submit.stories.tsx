@@ -1,7 +1,7 @@
 import type { ArgTypes, Meta, StoryObj } from "@storybook/react"
 import { expect, within } from "@storybook/test"
 import { Submit } from "./index.js"
-import { decorator } from "@halvaradop/ui-utils/decorator"
+import { DecoratorWrapper } from "@halvaradop/ui-utils/decorator"
 import { DocsPage } from "@halvaradop/ui-utils/docs-page"
 
 const size: ArgTypes["size"] = {
@@ -66,7 +66,7 @@ const meta: Meta = {
             page: () => <DocsPage subtitle="Submit component powered by React & TailwindCSS" />,
         },
     },
-    decorators: [decorator],
+    decorators: [DecoratorWrapper],
     play: async ({ canvasElement }) => {
         const canvas = within(canvasElement)
         const buttons = canvas.getAllByRole("button")

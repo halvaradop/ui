@@ -1,5 +1,5 @@
 import { twMerge } from "tailwind-merge"
-import { clsx, ClassValue } from "clsx"
+import { clsx, type ClassValue } from "clsx"
 
 /**
  * Merge multiple classes into a single class string. It prioritizes the
