@@ -1,0 +1,21 @@
+{
+  "name": "@halvaradop/prettier-config",
+  "version": "0.0.0",
+  "private": false,
+  "description": "Prettier configuration package for @ui library components.",
+  "type": "module",
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "keywords": [
+    "prettier",
+    "config",
+    "ui"
+  ],
+  "author": "Hernan Alvarado <hernanvid123@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^3.6.2"
+  }
+}
