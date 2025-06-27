@@ -1,0 +1,44 @@
+{
+  "name": "@halvaradop/eslint-config",
+  "version": "0.0.0",
+  "private": false,
+  "description": "ESLint configuration package for @ui library components.",
+  "type": "module",
+  "main": "eslint.config.js",
+  "exports": {
+    ".": "./eslint.config.js",
+    "./eslint.config.js": "./eslint.config.js",
+    "./.eslintignore": "./.eslintignore"
+  },
+  "files": [
+    "eslint.config.js",
+    ".eslintignore",
+    "README.md"
+  ],
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "keywords": [
+    "eslint",
+    "config",
+    "ui"
+  ],
+  "author": "Hernan Alvarado <hernanvid123@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@halvaradop/ts-config": "workspace:*",
+    "@eslint/js": "^9.29.0",
+    "@eslint-react/eslint-plugin": "^1.52.2",
+    "@typescript-eslint/eslint-plugin": "^8.35.0",
+    "@typescript-eslint/parser": "^8.35.0",
+    "eslint": "^9.29.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-prettier": "^5.5.1",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-turbo": "^2.5.4",
+    "typescript-eslint": "^8.35.0"
+  }
+}
