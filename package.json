@@ -12,7 +12,7 @@
     "build:release": "turbo build:release",
     "format": "turbo format format:root -- --cache --cache-location .cache/.prettiercache",
     "format:root": "prettier --write . --ignore-unknown \"!packages\" --cache --cache-location .cache/.prettiercache",
-    "format:check": "prettier --config ./config/prettier-config/prettier.config.js --check .",
+    "format:check": "prettier --check .",
     "lint": "turbo lint lint:root -- --cache --cache-location .cache/.eslintcache",
     "lint:root": "eslint . --ignore-pattern \"packages/**\" . --cache --cache-location .cache/.eslintcache",
     "lint:fix": "eslint . --fix --cache --cache-location .cache/.eslintcache",
@@ -80,24 +80,5 @@
   "packageManager": "pnpm@10.3.0",
   "engines": {
     "node": ">=18"
-  },
-  "prettier": {
-    "semi": false,
-    "tabWidth": 4,
-    "printWidth": 120,
-    "trailingComma": "es5",
-    "overrides": [
-      {
-        "files": [
-          "*.json",
-          "*.md",
-          "*.yaml",
-          "*.yml"
-        ],
-        "options": {
-          "tabWidth": 2
-        }
-      }
-    ]
   }
 }

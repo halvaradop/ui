@@ -23,8 +23,10 @@
       "outputLogs": "new-only"
     },
     "//#format:root": {
+      "cache": false,
       "outputs": [".cache/.prettiercache"],
-      "outputLogs": "new-only"
+      "outputLogs": "new-only",
+      "inputs": ["*.{js,ts,json,md,yaml,yml}", ".storybook/**", "scripts/**", "tests/**", "!packages/**"]
     },
     "lint": {
       "inputs": ["$TURBO_DEFAULT$"],

@@ -49,7 +49,9 @@ const meta: Meta = {
 } satisfies Meta<typeof RadioGroup>
 
 type Story = StoryObj<typeof meta>
-type StoryArgs = VariantProps<typeof radioGroupVariants> & { color?: "primary" | "green" | "red" }
+type StoryArgs = VariantProps<typeof radioGroupVariants> & {
+    color?: "primary" | "green" | "red"
+}
 
 export const Base: Story = {
     parameters: {
