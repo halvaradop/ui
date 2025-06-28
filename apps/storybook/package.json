@@ -1,13 +1,17 @@
 {
   "name": "storybook",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.0.0",
+  "description": "A Storybook application for developing and showcasing components from the @halvaradop/ui library.",
   "type": "module",
   "scripts": {
     "dev": "storybook dev -p 6006",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "lint": "eslint . --cache --cache-location .cache/.eslintcache",
+    "lint:fix": "eslint . --fix --cache --cache-location .cache/.eslintcache",
+    "clean": "pnpm clean:dist && pnpm clean:modules && pnpm clean:turbo",
+    "clean:modules": "rm -rf node_modules",
+    "clean:turbo": "rm -rf .turbo"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +20,7 @@
     "@chromatic-com/storybook": "1.9.0",
     "@playwright/test": "^1.51.0",
     "@halvaradop/ts-config": "workspace:*",
+    "@halvaradop/tailwind-config": "workspace:*",
     "@storybook/addon-essentials": "^8.6.4",
     "@storybook/addon-interactions": "^8.6.4",
     "@storybook/addon-links": "^8.6.4",
