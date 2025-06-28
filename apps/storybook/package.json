@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "storybook dev -p 6006",
-    "format": "prettier --write .",
+    "build": "storybook build",
+    "format": "prettier --write . \"!storybook-static\" --cache --cache-location .cache/.prettiercache",
     "format:check": "prettier --check .",
     "lint": "eslint . --cache --cache-location .cache/.eslintcache",
     "lint:fix": "eslint . --fix --cache --cache-location .cache/.eslintcache",

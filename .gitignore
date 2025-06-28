@@ -141,5 +141,5 @@ playwright/.cache/
 
 # Storybook build outputs
 out/
-storybook-static/
+storybook-static
 storybook-static-*
