@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "tsup --watch",
-    "build": "tsup && pnpm clean:cts",
+    "build": "tsup --env.NODE_ENV=1 && pnpm clean:cts",
     "build:release": "sh -c 'export NODE_ENV=production ; tsup' && pnpm clean:cts",
     "format": "prettier --write . --cache --cache-location .cache/.prettiercache",
     "format:check": "prettier --check .",

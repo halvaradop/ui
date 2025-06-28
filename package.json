@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "turbo run dev --parallel",
     "dev:storybook": "turbo dev --filter=storybook",
-    "build": "turbo run build",
+    "build": "turbo run build --filter=!storybook",
     "build:storybook": "turbo build --filter=storybook",
     "build:release": "turbo build:release",
     "format": "turbo format format:root -- --cache --cache-location .cache/.prettiercache",
