@@ -1,0 +1,31 @@
+{
+  "name": "@halvaradop/tsup-config",
+  "version": "0.0.0",
+  "private": false,
+  "description": "Tsup configuration package for @ui library components.",
+  "type": "module",
+  "scripts": {
+    "build": "tsup tsup.config.base.ts --format esm --dts --clean",
+    "format": "prettier --write . \"!dist\" --cache --cache-location .cache/.prettiercache",
+    "format:check": "prettier --check .",
+    "clean": "pnpm clean:modules && pnpm clean:turbo",
+    "clean:modules": "rm -rf node_modules",
+    "clean:turbo": "rm -rf .turbo"
+  },
+  "keywords": [
+    "tsup",
+    "config",
+    "ui"
+  ],
+  "author": "Hernan Alvarado <hernanvid123@gmail.com>",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "types": "./dist/tsup.config.base.d.ts",
+      "import": "./dist/tsup.config.base.js"
+    }
+  },
+  "devDependencies": {
+    "@halvaradop/ts-config": "workspace:*"
+  }
+}

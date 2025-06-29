@@ -3,8 +3,8 @@ import type { Meta, StoryObj } from "@storybook/react"
 import { within, expect } from "@storybook/test"
 import { Dialog, modalVariants } from "./index.js"
 import { Button } from "@/ui/ui-button/src/index.js"
-import { DecoratorWrapper } from "@halvaradop/ui-utils/decorator"
-import { DocsPage } from "@halvaradop/ui-utils/docs-page"
+import { DecoratorWrapper } from "@/ui/ui-utils/src/decorator.js"
+import { DocsPage } from "@/ui/ui-utils/src/docs-page.js"
 import type { VariantProps } from "class-variance-authority"
 
 const meta: Meta = {

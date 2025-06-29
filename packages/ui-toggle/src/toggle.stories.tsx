@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react"
 import { within, expect, userEvent } from "@storybook/test"
 import { type ToggleProps, Toggle, toggleVariants } from "./index.js"
-import { DecoratorWrapper } from "@halvaradop/ui-utils/decorator"
-import { DocsPage } from "@halvaradop/ui-utils/docs-page"
+import { DecoratorWrapper } from "@/ui/ui-utils/src/decorator.js"
+import { DocsPage } from "@/ui/ui-utils/src/docs-page.js"
 
 const meta: Meta = {
     title: "ui-toggle",

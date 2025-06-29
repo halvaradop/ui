@@ -1,8 +1,8 @@
 import type { ArgTypes, Meta, StoryObj } from "@storybook/react"
 import { expect, userEvent, within } from "@storybook/test"
 import { type CheckboxProps, Checkbox, checkboxVariants } from "./index.js"
-import { DecoratorWrapper } from "@halvaradop/ui-utils/decorator"
-import { DocsPage } from "@halvaradop/ui-utils/docs-page"
+import { DecoratorWrapper } from "@/ui/ui-utils/src/decorator.js"
+import { DocsPage } from "@/ui/ui-utils/src/docs-page.js"
 
 const size: ArgTypes["size"] = {
     control: "select",

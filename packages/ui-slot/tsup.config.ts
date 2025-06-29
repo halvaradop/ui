@@ -1,4 +1,4 @@
 import { defineConfig } from "tsup"
-import { tsupConfig } from "@halvaradop/ui-utils/tsup.config.base"
+import { tsupConfig } from "@halvaradop/tsup-config"
 
 export default defineConfig(tsupConfig)

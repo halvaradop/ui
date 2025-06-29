@@ -1,0 +1,1 @@
+# @halvaradop/tsup-config

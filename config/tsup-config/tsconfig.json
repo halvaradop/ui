@@ -1,9 +1,5 @@
 {
   "extends": "@halvaradop/ts-config/tsconfig.base.json",
-  "compilerOptions": {
-    "outDir": "dist",
-    "jsx": "react-jsx"
-  },
-  "include": ["src"],
+  "include": ["."],
   "exclude": ["node_modules", "dist"]
 }

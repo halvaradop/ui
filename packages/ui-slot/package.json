@@ -46,8 +46,12 @@
       "require": "./dist/index.cjs"
     }
   },
+  "dependencies": {
+    "@halvaradop/ui-core": "workspace:*"
+  },
   "devDependencies": {
-    "@halvaradop/ui-core": "workspace:*",
-    "@halvaradop/ui-utils": "workspace:*"
+    "@halvaradop/ui-utils": "workspace:*",
+    "@halvaradop/tsup-config": "workspace:*",
+    "@halvaradop/ts-config": "workspace:*"
   }
 }

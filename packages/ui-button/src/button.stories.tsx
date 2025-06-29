@@ -1,8 +1,8 @@
 import type { Meta, StoryObj, ArgTypes } from "@storybook/react"
 import { userEvent, within } from "@storybook/test"
 import { type ButtonProps, Button, buttonVariants } from "./index.jsx"
-import { DecoratorWrapper } from "@halvaradop/ui-utils/decorator"
-import { DocsPage } from "@halvaradop/ui-utils/docs-page"
+import { DecoratorWrapper } from "@/ui/ui-utils/src/decorator.js"
+import { DocsPage } from "@/ui/ui-utils/src/docs-page.js"
 
 const variant: ArgTypes["variant"] = {
     control: "select",
