@@ -1,5 +1,5 @@
 {
-  "extends": "@halvaradop/ts-config/tsconfig.base.json",
+  "extends": "@ui/ts-config/tsconfig.base.json",
   "include": ["."],
   "exclude": ["node_modules", "dist"]
 }

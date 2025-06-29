@@ -1,5 +1,5 @@
 {
-  "name": "@halvaradop/ts-config",
+  "name": "@ui/ts-config",
   "version": "0.0.0",
   "private": false,
   "description": "TypeScript configuration package for @ui library components.",

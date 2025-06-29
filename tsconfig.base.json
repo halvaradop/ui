@@ -1,10 +1,10 @@
 {
-  "extends": "@halvaradop/ts-config/tsconfig.base.json",
+  "extends": "@ui/ts-config/tsconfig.base.json",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
       "@/ui/*": ["./packages/*"]
     }
   },
-  "include": ["vitest.config.ts"]
+  "include": ["packages/**/*.ts"]
 }

@@ -1,1 +1,1 @@
-# @halvaradop/ts-config
+# @ui/ts-config

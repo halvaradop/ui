@@ -1,1 +1,1 @@
-# @halvaradop/tsup-config
+# @ui/tsup-config

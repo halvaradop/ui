@@ -65,8 +65,8 @@
   },
   "devDependencies": {
     "clsx": "^2.1.1",
-    "@halvaradop/ts-config": "workspace:*",
-    "@halvaradop/tsup-config": "workspace:*"
+    "@ui/ts-config": "workspace:*",
+    "@ui/tsup-config": "workspace:*"
   },
   "peerDependencies": {
     "react": "catalog:",

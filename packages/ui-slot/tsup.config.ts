@@ -1,5 +1,5 @@
 import { defineConfig } from "tsup"
-import { tsupConfig } from "@halvaradop/tsup-config"
+import { tsupConfig } from "@ui/tsup-config"
 
 export default defineConfig((options) => {
     const env = options.env?.NODE_ENV

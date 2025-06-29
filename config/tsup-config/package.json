@@ -1,5 +1,5 @@
 {
-  "name": "@halvaradop/tsup-config",
+  "name": "@ui/tsup-config",
   "version": "0.0.0",
   "private": false,
   "description": "Tsup configuration package for @ui library components.",
@@ -26,6 +26,6 @@
     }
   },
   "devDependencies": {
-    "@halvaradop/ts-config": "workspace:*"
+    "@ui/ts-config": "workspace:*"
   }
 }

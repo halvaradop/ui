@@ -51,7 +51,7 @@
   },
   "devDependencies": {
     "@halvaradop/ui-utils": "workspace:*",
-    "@halvaradop/tsup-config": "workspace:*",
-    "@halvaradop/ts-config": "workspace:*"
+    "@ui/tsup-config": "workspace:*",
+    "@ui/ts-config": "workspace:*"
   }
 }

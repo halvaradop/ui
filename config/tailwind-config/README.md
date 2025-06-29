@@ -1,1 +1,1 @@
-# @halvaradop/tailwind-config
+# @ui/tailwind-config

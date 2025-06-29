@@ -1,5 +1,5 @@
 {
-  "name": "@halvaradop/tailwind-config",
+  "name": "@ui/tailwind-config",
   "version": "0.0.0",
   "private": false,
   "description": "TailwindCSS configuration package for @ui library components.",

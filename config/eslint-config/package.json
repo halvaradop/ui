@@ -1,5 +1,5 @@
 {
-  "name": "@halvaradop/eslint-config",
+  "name": "@ui/eslint-config",
   "version": "0.0.0",
   "private": false,
   "description": "ESLint configuration package for @ui library components.",
@@ -26,7 +26,7 @@
     "./.eslintignore": "./.eslintignore"
   },
   "devDependencies": {
-    "@halvaradop/ts-config": "workspace:*",
+    "@ui/ts-config": "workspace:*",
     "@eslint/js": "^9.29.0",
     "@eslint-react/eslint-plugin": "^1.52.2",
     "@typescript-eslint/eslint-plugin": "^8.35.0",

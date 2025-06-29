@@ -6,9 +6,9 @@
   "description": "A comprehensive UI library for React, built with Tailwind CSS and CVA (Class Variance Authority). It provides reusable components and supports JSX syntax.",
   "scripts": {
     "dev": "turbo run dev --parallel",
-    "dev:storybook": "turbo dev --filter=storybook",
-    "build": "turbo run build --filter=!storybook",
-    "build:storybook": "turbo build --filter=storybook",
+    "dev:storybook": "turbo dev --filter=@ui/storybook",
+    "build": "turbo run build --filter=!@ui/storybook",
+    "build:storybook": "turbo build --filter=@ui/storybook",
     "build:release": "turbo build:release",
     "format": "turbo format format:root -- --cache --cache-location .cache/.prettiercache",
     "format:root": "prettier --write . \"!packages\" \"!apps\" \"!config\" --cache --cache-location .cache/.prettiercache",
@@ -56,8 +56,8 @@
   },
   "homepage": "https://github.com/halvaradop/ui#readme",
   "devDependencies": {
-    "@halvaradop/eslint-config": "workspace:*",
-    "@halvaradop/ts-config": "workspace:*",
+    "@ui/eslint-config": "workspace:*",
+    "@ui/ts-config": "workspace:*",
     "@playwright/test": "^1.51.0",
     "@storybook/blocks": "^8.6.4",
     "@storybook/react": "^8.6.12",

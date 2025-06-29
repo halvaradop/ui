@@ -57,8 +57,8 @@
     "class-variance-authority": "catalog:"
   },
   "devDependencies": {
-    "@halvaradop/ts-config": "workspace:*",
-    "@halvaradop/tsup-config": "workspace:*"
+    "@ui/ts-config": "workspace:*",
+    "@ui/tsup-config": "workspace:*"
   },
   "peerDependencies": {
     "react": "catalog:",

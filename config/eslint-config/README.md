@@ -1,4 +1,4 @@
-# @halvaradop/eslint-config
+# @ui/eslint-config
 
 A comprehensive ESLint configuration package for the @ui library monorepo, built with modern ESLint flat config format.
 
@@ -18,7 +18,7 @@ A comprehensive ESLint configuration package for the @ui library monorepo, built
 This package is designed to be used within the @ui monorepo workspace:
 
 ```bash
-pnpm add -D @halvaradop/eslint-config
+pnpm add -D @ui/eslint-config
 ```
 
 ## Usage
@@ -28,7 +28,7 @@ pnpm add -D @halvaradop/eslint-config
 Create an `eslint.config.js` file in your package root:
 
 ```javascript
-import eslintConfig from "@halvaradop/eslint-config"
+import eslintConfig from "@ui/eslint-config"
 
 export default [
   ...eslintConfig,
@@ -39,7 +39,7 @@ export default [
 ### With Package-Specific Overrides
 
 ```javascript
-import eslintConfig from "@halvaradop/eslint-config"
+import eslintConfig from "@ui/eslint-config"
 
 export default [
   ...eslintConfig,
@@ -61,14 +61,14 @@ export default [
 For the monorepo root, extend the config with root-specific rules:
 
 ```javascript
-import eslintConfig from "@halvaradop/eslint-config"
+import eslintConfig from "@ui/eslint-config"
 
 export default [
   ...eslintConfig,
   {
     files: ["*.{js,ts}", "scripts/**/*.{js,ts}"],
     rules: {
-      "no-console": "off", // Allow console in root scripts
+      "no-console": "off",
       "turbo/no-undeclared-env-vars": "off",
     },
   },

@@ -43,6 +43,6 @@
     "./docs-page": "./src/docs-page.tsx"
   },
   "devDependencies": {
-    "@halvaradop/ts-config": "workspace:*"
+    "@ui/ts-config": "workspace:*"
   }
 }

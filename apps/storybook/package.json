@@ -1,5 +1,5 @@
 {
-  "name": "storybook",
+  "name": "@ui/storybook",
   "version": "0.0.0",
   "description": "A Storybook application for developing and showcasing components from the @halvaradop/ui library.",
   "type": "module",
@@ -19,8 +19,8 @@
   "license": "MIT",
   "devDependencies": {
     "@chromatic-com/storybook": "1.9.0",
-    "@halvaradop/ts-config": "workspace:*",
-    "@halvaradop/tailwind-config": "workspace:*",
+    "@ui/ts-config": "workspace:*",
+    "@ui/tailwind-config": "workspace:*",
     "@storybook/addon-essentials": "^8.6.4",
     "@storybook/addon-interactions": "^8.6.4",
     "@storybook/addon-links": "^8.6.4",
