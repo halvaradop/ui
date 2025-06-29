@@ -7,9 +7,6 @@ export const tsupConfig: Options = {
     format: ["esm", "cjs"],
     dts: true,
     clean: true,
-    //sourcemap: env !== "production",
-    //minify: env === "production",
-    //bundle: env === "production",
     external: ["vite", "tailwindcss", "react", "react-dom"],
     banner: {
         js: `"use client"`,

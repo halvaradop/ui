@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "tsup --watch",
     "build": "tsup && pnpm clean:cts",
-    "build:release": "sh -c 'export NODE_ENV=production ; tsup' && pnpm clean:cts",
+    "build:release": "tsup --env.NODE_ENV=production && pnpm clean:cts",
     "format": "prettier --write . --cache --cache-location .cache/.prettiercache",
     "format:check": "prettier --check .",
     "lint": "eslint . --cache --cache-location .cache/.eslintcache",
