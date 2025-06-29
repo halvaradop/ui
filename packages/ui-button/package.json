@@ -15,7 +15,8 @@
     "clean:dist": "rm -rf dist",
     "clean:modules": "rm -rf node_modules",
     "clean:turbo": "rm -rf .turbo",
-    "clean:cts": "rm -rf ./dist/*.cts"
+    "clean:cts": "rm -rf ./dist/*.cts",
+    "check-types": "tsc --noEmit"
   },
   "repository": {
     "type": "git",

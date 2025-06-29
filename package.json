@@ -16,6 +16,7 @@
     "lint": "turbo lint lint:root -- --cache --cache-location .cache/.eslintcache",
     "lint:root": "eslint . --ignore-pattern \"packages/**\" . --cache --cache-location .cache/.eslintcache",
     "lint:fix": "eslint . --fix --cache --cache-location .cache/.eslintcache",
+    "check-types": "turbo check-types",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
     "test:e2e:report": "playwright show-report",

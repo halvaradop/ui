@@ -37,6 +37,9 @@
       "inputs": ["$TURBO_DEFAULT$"],
       "outputs": ["./cache/.eslintcache"],
       "outputLogs": "new-only"
+    },
+    "check-types": {
+      "dependsOn": ["^check-types"]
     }
   },
   "ui": "tui",

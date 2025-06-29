@@ -12,7 +12,8 @@
     "lint:fix": "eslint . --fix --cache --cache-location .cache/.eslintcache",
     "clean": "pnpm clean:dist && pnpm clean:modules && pnpm clean:turbo",
     "clean:modules": "rm -rf node_modules",
-    "clean:turbo": "rm -rf .turbo"
+    "clean:turbo": "rm -rf .turbo",
+    "check-types": "tsc --noEmit"
   },
   "keywords": [],
   "author": "",
