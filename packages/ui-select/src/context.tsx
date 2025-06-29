@@ -47,7 +47,14 @@ export const SelectProvider = ({ name, defaultValue, children }: SelectProviderP
 
     return (
         <SelectContext
-            value={{ id: selectId, name, selectedValue, open, onTrigger: handleTrigger, onChange: handleChange }}
+            value={{
+                id: selectId,
+                name,
+                selectedValue,
+                open,
+                onTrigger: handleTrigger,
+                onChange: handleChange,
+            }}
         >
             {children}
         </SelectContext>

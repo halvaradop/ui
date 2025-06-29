@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@source "../../packages/";
 
 @theme {
     --breakpoint-base: 900px;

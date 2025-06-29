@@ -1,5 +1,7 @@
 packages:
   - "packages/*"
+  - "config/*"
+  - "apps/*"
 
 catalog:
   "react": ^19.0.0

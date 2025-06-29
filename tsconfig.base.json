@@ -1,19 +1,9 @@
 {
-  "extends": "./packages/ui-utils/tsconfig.base.json",
+  "extends": "@ui/ts-config/tsconfig.base.json",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
       "@/ui/*": ["./packages/*"]
     }
-  },
-  "include": [
-    "vite.config.{ts,js}",
-    "**/tsup.config.{ts,js}",
-    ".storybook/**/*.{ts,tsx}",
-    "playwright.config.ts",
-    "tests/**/*.{spec,test}.{ts,tsx,js,jsx}",
-    "packages/**/*.{ts,tsx}",
-    "**/*.{js,ts}",
-    "packages/**/tsup.config.ts"
-  ]
+  }
 }

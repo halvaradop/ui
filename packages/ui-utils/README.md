@@ -20,9 +20,8 @@ The `tsconfig` file contains the default configuration used by the packages. It 
 
 ```json
 {
-  "extends": "@halvaradop/ui-utils/tsconfig.base.json",
+  "extends": "@ui/ts-config/tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "dist",
     "jsx": "react-jsx"
   },
   "include": ["src"],
@@ -50,7 +49,7 @@ export default defineConfig((options) => ({
 The `decorator` is a custom decorator used by component stories to apply custom styles to story wrappers. It includes logic and UI to switch between light and dark themes. This decorator is exported from the `/decorator` entry point of the module, which can be imported using `@halvaradop/ui-utils/decorator`.
 
 ```tsx
-import { DecoratorWrapper } from "@halvaradop/ui-utils/decorator"
+import { DecoratorWrapper } from "@ui/ui-utils/src/decorator.js"
 import type { Meta, StoryObj } from "@storybook/react"
 
 const meta: Meta = {
@@ -64,7 +63,7 @@ const meta: Meta = {
 The `DocsPage` component abstracts the default documentation of Base Story using Doc Blocks documentation in Storybook. It includes Doc Blocks such as Title, Subtitle, Canvas, and Controls. This component is exported from the `/docs-page` entry point of the module, which can be imported using `@halvaradop/ui-utils/docs-page`.
 
 ```tsx
-import { DocsPage } from "@halvaradop/ui-utils/docs-page"
+import { DocsPage } from "@ui/ui-utils/src/docs-page.js"
 
 const meta: Meta = {
   title: "ui-component",

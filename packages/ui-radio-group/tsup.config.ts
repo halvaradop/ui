@@ -1,4 +1,13 @@
 import { defineConfig } from "tsup"
-import { tsupConfig } from "@halvaradop/ui-utils/tsup.config.base"
+import { tsupConfig } from "@ui/tsup-config"
 
-export default defineConfig(tsupConfig)
+export default defineConfig((options) => {
+    const env = options.env?.NODE_ENV
+    return {
+        ...tsupConfig,
+        sourcemap: env !== "production",
+        minify: env === "production",
+        bundle: env === "production",
+        ...options,
+    }
+})

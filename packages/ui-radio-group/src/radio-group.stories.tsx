@@ -3,8 +3,8 @@ import type { Meta, StoryObj } from "@storybook/react"
 import { expect, userEvent, within } from "@storybook/test"
 import { RadioGroup, Radio, radioGroupVariants } from "./index.js"
 import { Label } from "@/ui/ui-label/src/index.js"
-import { DecoratorWrapper } from "@halvaradop/ui-utils/decorator"
-import { DocsPage } from "@halvaradop/ui-utils/docs-page"
+import { DecoratorWrapper } from "@/ui/ui-utils/src/decorator.js"
+import { DocsPage } from "@/ui/ui-utils/src/docs-page.js"
 import type { VariantProps } from "class-variance-authority"
 
 const meta: Meta = {
@@ -49,7 +49,9 @@ const meta: Meta = {
 } satisfies Meta<typeof RadioGroup>
 
 type Story = StoryObj<typeof meta>
-type StoryArgs = VariantProps<typeof radioGroupVariants> & { color?: "primary" | "green" | "red" }
+type StoryArgs = VariantProps<typeof radioGroupVariants> & {
+    color?: "primary" | "green" | "red"
+}
 
 export const Base: Story = {
     parameters: {

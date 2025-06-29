@@ -5,8 +5,8 @@ import { Form, formVariants } from "./index.js"
 import { Input } from "@/ui/ui-input/src/index.js"
 import { Label } from "@/ui/ui-label/src/index.js"
 import { Submit } from "@/ui/ui-submit/src/index.js"
-import { DecoratorWrapper } from "@halvaradop/ui-utils/decorator"
-import { DocsPage } from "@halvaradop/ui-utils/docs-page"
+import { DecoratorWrapper } from "@/ui/ui-utils/src/decorator.js"
+import { DocsPage } from "@/ui/ui-utils/src/docs-page.js"
 import type { VariantProps } from "class-variance-authority"
 
 const meta: Meta = {

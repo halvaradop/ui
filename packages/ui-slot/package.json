@@ -7,8 +7,8 @@
   "scripts": {
     "dev": "tsup --watch",
     "build": "tsup && pnpm clean:cts",
-    "build:release": "sh -c 'export NODE_ENV=production ; tsup' && pnpm clean:cts",
-    "format": "prettier --write .",
+    "build:release": "tsup --env.NODE_ENV=production && pnpm clean:cts",
+    "format": "prettier --write . --cache --cache-location .cache/.prettiercache",
     "format:check": "prettier --check .",
     "lint": "eslint . --cache --cache-location .cache/.eslintcache",
     "lint:fix": "eslint . --fix --cache --cache-location .cache/.eslintcache",
@@ -16,7 +16,8 @@
     "clean:dist": "rm -rf dist",
     "clean:modules": "rm -rf node_modules",
     "clean:turbo": "rm -rf .turbo",
-    "clean:cts": "rm -rf ./dist/*.cts"
+    "clean:cts": "rm -rf ./dist/*.cts",
+    "check-types": "tsc --noEmit"
   },
   "repository": {
     "type": "git",
@@ -46,8 +47,12 @@
       "require": "./dist/index.cjs"
     }
   },
+  "dependencies": {
+    "@halvaradop/ui-core": "workspace:*"
+  },
   "devDependencies": {
-    "@halvaradop/ui-core": "workspace:*",
-    "@halvaradop/ui-utils": "workspace:*"
+    "@halvaradop/ui-utils": "workspace:*",
+    "@ui/tsup-config": "workspace:*",
+    "@ui/ts-config": "workspace:*"
   }
 }

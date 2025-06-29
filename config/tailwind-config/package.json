@@ -1,0 +1,27 @@
+{
+  "name": "@ui/tailwind-config",
+  "version": "0.0.0",
+  "private": false,
+  "description": "TailwindCSS configuration package for @ui library components.",
+  "type": "module",
+  "scripts": {
+    "format": "prettier --write . --cache --cache-location .cache/.prettiercache",
+    "format:check": "prettier --check .",
+    "clean": "pnpm clean:modules && pnpm clean:turbo",
+    "clean:modules": "rm -rf node_modules",
+    "clean:turbo": "rm -rf .turbo"
+  },
+  "keywords": [
+    "tailwind",
+    "config",
+    "ui"
+  ],
+  "author": "Hernan Alvarado <hernanvid123@gmail.com>",
+  "license": "MIT",
+  "exports": {
+    ".": "./globals.css"
+  },
+  "devDependencies": {
+    "tailwindcss": "^4.1.11"
+  }
+}

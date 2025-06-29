@@ -1,0 +1,21 @@
+{
+  "name": "@ui/ts-config",
+  "version": "0.0.0",
+  "private": false,
+  "description": "TypeScript configuration package for @ui library components.",
+  "type": "module",
+  "scripts": {
+    "format": "prettier --write . --cache --cache-location .cache/.prettiercache",
+    "format:check": "prettier --check .",
+    "clean": "pnpm clean:modules && pnpm clean:turbo",
+    "clean:modules": "rm -rf node_modules",
+    "clean:turbo": "rm -rf .turbo"
+  },
+  "keywords": [
+    "typescript",
+    "config",
+    "ui"
+  ],
+  "author": "Hernan Alvarado <hernanvid123@gmail.com>",
+  "license": "MIT"
+}

@@ -6,9 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "tsup --watch",
-    "build": "tsup && pnpm clean:cts",
-    "build:release": "sh -c 'export NODE_ENV=production ; tsup' && pnpm clean:cts",
-    "format": "prettier --write .",
+    "format": "prettier --write . --cache --cache-location .cache/.prettiercache",
     "format:check": "prettier --check .",
     "lint": "eslint . --cache --cache-location .cache/.eslintcache",
     "lint:fix": "eslint . --fix --cache --cache-location .cache/.eslintcache",
@@ -42,12 +40,9 @@
   ],
   "exports": {
     "./decorator": "./src/decorator.tsx",
-    "./docs-page": "./src/docs-page.tsx",
-    "./tsup.config.base": {
-      "types": "./dist/tsup.config.base.d.ts",
-      "import": "./dist/tsup.config.base.js",
-      "require": "./dist/tsup.config.base.cjs"
-    },
-    "./tsconfig.base.json": "./tsconfig.base.json"
+    "./docs-page": "./src/docs-page.tsx"
+  },
+  "devDependencies": {
+    "@ui/ts-config": "workspace:*"
   }
 }

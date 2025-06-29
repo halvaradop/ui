@@ -14,8 +14,8 @@ const config: StorybookConfig = {
     stories: [
         "../stories/**/*.mdx",
         "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
-        "../packages/**/*.stories.@(js|jsx|mjs|ts|tsx)",
-        "../packages/**/*.mdx",
+        "../../../packages/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+        "../../../packages/**/*.mdx",
         "!../node_modules/**",
     ],
     addons: [
@@ -32,7 +32,7 @@ const config: StorybookConfig = {
     viteFinal: async (config) => {
         config.resolve = {
             alias: {
-                "@/ui": path.resolve(__dirname, "../packages"),
+                "@/ui": path.resolve(__dirname, "../../../packages"),
             },
         }
         return config
