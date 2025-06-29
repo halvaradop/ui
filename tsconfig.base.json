@@ -5,6 +5,5 @@
     "paths": {
       "@/ui/*": ["./packages/*"]
     }
-  },
-  "include": ["packages/**/*.ts"]
+  }
 }

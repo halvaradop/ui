@@ -22,7 +22,6 @@ The `tsconfig` file contains the default configuration used by the packages. It 
 {
   "extends": "@ui/ts-config/tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "dist",
     "jsx": "react-jsx"
   },
   "include": ["src"],
