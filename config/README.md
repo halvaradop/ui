@@ -21,14 +21,14 @@ Modern ESLint 9.x configuration with React 19, TypeScript, and accessibility sup
 
 Design system foundation with TailwindCSS v4 theme tokens and global styles.
 
-### [`@halvaradop/ts-config`](./ts-config/README.md)
+### [`@ui/ts-config`](./ts-config/README.md)
 
 TypeScript compiler configurations for different project types and environments.
 
 - ✅ **Strict type checking** with modern TypeScript features
 - ✅ **Path mapping support** for monorepo imports
 
-### [`@halvaradop/tsup-config`](./tsup-config/README.md)
+### [`@ui/tsup-config`](./tsup-config/README.md)
 
 Unified build configuration for fast, consistent package bundling.
 
