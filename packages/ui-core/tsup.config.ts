@@ -8,6 +8,7 @@ export default defineConfig((options) => {
         sourcemap: env !== "production",
         minify: env === "production",
         bundle: env === "production",
+        banner: {},
         ...options,
     }
 })
