@@ -26,7 +26,7 @@ pnpm add -D @ui/tailwind-config
 
 Import the global CSS file in your app's entry point or layout:
 
-```typescript
+```ts
 // In your main.tsx, app.tsx, or layout component
 import "@ui/tailwind-config"
 ```

@@ -16,7 +16,7 @@ This package provides standardized TypeScript configurations optimized for React
 ## Installation
 
 ```bash
-pnpm add -D @halvaradop/ts-config
+pnpm add -D @ui/ts-config
 ```
 
 ## Usage
@@ -27,7 +27,7 @@ Most common usage for React components:
 
 ```json
 {
-  "extends": "@halvaradop/ts-config/tsconfig.base.json",
+  "extends": "@ui/ts-config/tsconfig.base.json",
   "compilerOptions": {
     "outDir": "./dist"
   },

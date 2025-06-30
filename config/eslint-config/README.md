@@ -38,7 +38,7 @@ export default config
 
 Extend the configuration with package-specific rules:
 
-```javascript
+```js
 import { config } from "@ui/eslint-config"
 
 export default [

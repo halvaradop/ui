@@ -6,11 +6,11 @@ This package provides a standardized TSup configuration for building TypeScript 
 
 ## Features
 
-- ✅ **Dual Format**: ESM and CommonJS output
-- ✅ **TypeScript Support**: Declaration files (.d.ts) generation
-- ✅ **React Optimized**: "use client" directive for React Server Components
-- ✅ **External Dependencies**: Proper externalization of React and peer deps
-- ✅ **Clean Builds**: Automatic cleanup of output directories
+- **Dual Format**: ESM and CommonJS output
+- **TypeScript Support**: Declaration files (.d.ts) generation
+- **React Optimized**: "use client" directive for React Server Components
+- **External Dependencies**: Proper externalization of React and peer deps
+- **Clean Builds**: Automatic cleanup of output directories
 
 ## Installation
 
@@ -24,18 +24,18 @@ pnpm add -D @ui/tsup-config
 
 Create a `tsup.config.ts` file in your package:
 
-```typescript
+```ts
 import { defineConfig } from "tsup"
-import { tsupConfig } from "@halvaradop/tsup-config"
+import { tsupConfig } from "@ui/tsup-config"
 
 export default defineConfig(tsupConfig)
 ```
 
 ### With Custom Options
 
-```typescript
+```ts
 import { defineConfig } from "tsup"
-import { tsupConfig } from "@halvaradop/tsup-config"
+import { tsupConfig } from "@ui/tsup-config"
 
 export default defineConfig({
   ...tsupConfig,
