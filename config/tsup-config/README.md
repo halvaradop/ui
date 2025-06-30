@@ -2,11 +2,9 @@
 
 > Shared TSup build configuration for the @halvaradop/ui library monorepo
 
-## 📋 Overview
-
 This package provides a standardized TSup configuration for building TypeScript packages in the @halvaradop/ui monorepo. It includes optimized settings for React components, libraries, and modern JavaScript development.
 
-## 🚀 Features
+## Features
 
 - ✅ **Dual Format**: ESM and CommonJS output
 - ✅ **TypeScript Support**: Declaration files (.d.ts) generation
@@ -14,13 +12,13 @@ This package provides a standardized TSup configuration for building TypeScript 
 - ✅ **External Dependencies**: Proper externalization of React and peer deps
 - ✅ **Clean Builds**: Automatic cleanup of output directories
 
-## 📦 Installation
+## Installation
 
 ```bash
 pnpm add -D @ui/tsup-config
 ```
 
-## 🛠️ Usage
+## Usage
 
 ### Basic Usage
 
@@ -47,12 +45,12 @@ export default defineConfig({
 })
 ```
 
-## 🔗 Related Packages
+## Related Packages
 
 - [`@ui/ts-config`](../ts-config) - TypeScript compiler options
 - [`@ui/tsup-config`](../tsup-config) - Build and bundling configuration
 - [`@ui/tailwind-config`](../tailwind-config) - Styling and design tokens
 
-## 📄 License
+## License
 
 MIT - See the [LICENSE](../../LICENSE) file for details.

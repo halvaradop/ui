@@ -2,21 +2,19 @@
 
 > Shared ESLint configuration for the @halvaradop/ui library monorepo
 
-## 📋 Overview
-
 A comprehensive ESLint configuration optimized for React 19, TypeScript, and modern JavaScript development. Designed specifically for component libraries and monorepo environments with accessibility, Prettier integration, and Turbo support.
 
-## 🚀 Features
+## Features
 
-- ✅ **Modern ESLint 9.x** with flat config format
-- ✅ **React 19 Support**: Modern React patterns and JSX runtime
-- ✅ **TypeScript** support with typescript-eslint
-- ✅ **JSX Accessibility** (a11y) rules for inclusive components
-- ✅ **Turbo Integration**: Environment variable validation for monorepos
-- ✅ **Prettier Compatible**: No conflicts with Prettier formatting
-- ✅ **Multiple Environments**: Specific rules for Node.js, tests, and Storybook
+- **Modern ESLint 9.x** with flat config format
+- **React 19 Support**: Modern React patterns and JSX runtime
+- **TypeScript** support with typescript-eslint
+- **JSX Accessibility** (a11y) rules for inclusive components
+- **Turbo Integration**: Environment variable validation for monorepos
+- **Prettier Compatible**: No conflicts with Prettier formatting
+- **Multiple Environments**: Specific rules for Node.js, tests, and Storybook
 
-## 📦 Installation
+## Installation
 
 This package is designed for use within the @ui monorepo workspace:
 
@@ -24,7 +22,7 @@ This package is designed for use within the @ui monorepo workspace:
 pnpm add -D @ui/eslint-config
 ```
 
-## 🛠️ Usage
+## Usage
 
 ### Basic Configuration
 
@@ -67,7 +65,7 @@ Add these recommended scripts to your `package.json`:
 }
 ```
 
-## ⚙️ Configuration Details
+## Configuration Details
 
 ### File Patterns
 
@@ -88,7 +86,7 @@ The configuration automatically applies different rules based on file patterns:
 - **Tests**: Testing framework globals and patterns
 - **Storybook**: Story format and CSF compliance
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### TypeScript Project Service Errors
 
@@ -120,12 +118,12 @@ For large monorepos, use caching:
 eslint . --cache --cache-location .cache/.eslintcache
 ```
 
-## 🔗 Related Packages
+## Related Packages
 
 - [`@ui/ts-config`](../ts-config) - TypeScript compiler options
 - [`@ui/tsup-config`](../tsup-config) - Build and bundling configuration
 - [`@ui/tailwind-config`](../tailwind-config) - Styling and design tokens
 
-## 📄 License
+## License
 
 MIT - See the [LICENSE](../../LICENSE) file for details.

@@ -2,26 +2,24 @@
 
 > Shared TypeScript configurations for the @halvaradop/ui library monorepo
 
-## 📋 Overview
-
 This package provides standardized TypeScript configurations optimized for React component development, Node.js environments, and monorepo structures. It includes multiple configuration presets for different use cases.
 
-## 🚀 Features
+## Features
 
-- ✅ **Multiple Presets**: Base, React, Node.js, and library-specific configs
-- ✅ **Strict Type Checking**: Modern TypeScript with strict mode enabled
-- ✅ **React Optimized**: JSX and TSX support with React 19 compatibility
-- ✅ **Monorepo Ready**: Path mapping and workspace support
-- ✅ **Build Optimized**: Separate configs for development and production
-- ✅ **Modern ES Features**: Latest ECMAScript target support
+- **Multiple Presets**: Base, React, Node.js, and library-specific configs
+- **Strict Type Checking**: Modern TypeScript with strict mode enabled
+- **React Optimized**: JSX and TSX support with React 19 compatibility
+- **Monorepo Ready**: Path mapping and workspace support
+- **Build Optimized**: Separate configs for development and production
+- **Modern ES Features**: Latest ECMAScript target support
 
-## 📦 Installation
+## Installation
 
 ```bash
 pnpm add -D @halvaradop/ts-config
 ```
 
-## 🛠️ Usage
+## Usage
 
 ### Base Configuration
 
@@ -38,12 +36,12 @@ Most common usage for React components:
 }
 ```
 
-## 🔗 Related Packages
+## Related Packages
 
 - [`@ui/ts-config`](../ts-config) - TypeScript compiler options
 - [`@ui/tsup-config`](../tsup-config) - Build and bundling configuration
 - [`@ui/tailwind-config`](../tailwind-config) - Styling and design tokens
 
-## 📄 License
+## License
 
 MIT - See the [LICENSE](../../LICENSE) file for details.

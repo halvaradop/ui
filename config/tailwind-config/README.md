@@ -2,27 +2,25 @@
 
 > Shared TailwindCSS configuration and global styles for the @ui library monorepo
 
-## 📋 Overview
-
 This package provides a comprehensive TailwindCSS v4+ configuration with custom design tokens, dark mode support, and component-optimized styles. It includes a global CSS file with theme variables and responsive design tokens optimized for UI component libraries.
 
-## 🚀 Features
+## Features
 
-- ✅ **TailwindCSS v4+**: Latest Tailwind features and performance
-- ✅ **Design System**: Consistent color palette and sizing tokens
-- ✅ **Dark Mode**: Automatic dark mode support with CSS custom properties
-- ✅ **Component Optimized**: Tailored for UI component development
-- ✅ **Responsive Design**: Mobile-first breakpoint system
-- ✅ **Performance**: Optimized for component library usage
-- ✅ **Type Safety**: Full TypeScript support for theme tokens
+- **TailwindCSS v4+**: Latest Tailwind features and performance
+- **Design System**: Consistent color palette and sizing tokens
+- **Dark Mode**: Automatic dark mode support with CSS custom properties
+- **Component Optimized**: Tailored for UI component development
+- **Responsive Design**: Mobile-first breakpoint system
+- **Performance**: Optimized for component library usage
+- **Type Safety**: Full TypeScript support for theme tokens
 
-## 📦 Installation
+## Installation
 
 ```bash
 pnpm add -D @ui/tailwind-config
 ```
 
-## 🛠️ Usage
+## Usage
 
 ### Import Global Styles
 
@@ -33,7 +31,7 @@ Import the global CSS file in your app's entry point or layout:
 import "@ui/tailwind-config"
 ```
 
-## 🎨 Design Tokens
+## Design Tokens
 
 ### Color Palette
 
@@ -52,12 +50,12 @@ The configuration includes a comprehensive color system using OKLCH color space 
 --color-border: oklch(70% 0.02 260);
 ```
 
-## 🔗 Related Packages
+## Related Packages
 
 - [`@ui/ts-config`](../ts-config) - TypeScript compiler options
 - [`@ui/tsup-config`](../tsup-config) - Build and bundling configuration
 - [`@ui/tailwind-config`](../tailwind-config) - Styling and design tokens
 
-## 📄 License
+## License
 
 MIT - See the [LICENSE](../../LICENSE) file for details.
