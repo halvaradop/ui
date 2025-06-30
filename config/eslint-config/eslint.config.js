@@ -82,9 +82,9 @@ export const config = eslintTs.config(
                 { prefer: "type-imports", fixStyle: "separate-type-imports" },
             ],
             "@typescript-eslint/no-import-type-side-effects": "error",
-            "@typescript-eslint/prefer-nullish-coalescing": "off", // Requires type information
-            "@typescript-eslint/prefer-optional-chain": "off", // Requires type information
-            "@typescript-eslint/no-unnecessary-condition": "off", // Requires type information
+            "@typescript-eslint/prefer-nullish-coalescing": "off",
+            "@typescript-eslint/prefer-optional-chain": "off",
+            "@typescript-eslint/no-unnecessary-condition": "off",
             "@typescript-eslint/no-unused-expressions": "error",
             "@typescript-eslint/prefer-as-const": "error",
             "@typescript-eslint/no-empty-function": "warn",

@@ -49,7 +49,7 @@ pnpm install
 ## ⚙️ Development Workflow
 
 ```bash
-pnpm storybook        # Start Storybook
+pnpm dev:storybook        # Start Storybook
 pnpm test             # Run Playwright tests
 pnpm format           # Format code
 pnpm build            # Build all packages
@@ -107,7 +107,7 @@ pnpm test
 
 We use **Storybook `play` functions** for simulating user interactions as part of our component testing strategy.
 
-Use `pnpm storybook` to preview changes visually.
+Use `pnpm dev:storybook` to preview changes visually.
 
 ---
 
@@ -193,20 +193,30 @@ Responsibilities:
 
 ## 🗂 Project Structure
 
-```txt
+```
 ui/
-├── .github/              # GitHub workflows and contributor files
-├── .storybook/           # Storybook config
-├── packages/             # Component packages
-│   ├── ui-button/        # Component example
-│   ├── ui-core/          # Shared logic and types
-│   ├── ui-utils/         # Internal tooling (tsup, config)
-│   ├── ui-slot/          # Slot logic
-│   └── ui-template/      # Boilerplate for new components
-├── tests/                # Playwright tests
-├── tailwind.css          # Global theme tokens
-├── CHANGELOG.md          # Monorepo-level changelog
-└── turbo.json            # Turborepo config
+├── .github/                    # GitHub automation: CI/CD workflows, issue templates, PR guidelines, CODEOWNERS
+├── apps/                       # Application demos and development environments
+│   └── storybook/              # Interactive component playground and visual documentation
+├── config/                     # Shared configuration packages for consistent tooling across workspace
+│   ├── eslint-config/          # Modern ESLint 9.x rules with React 19, TypeScript, and accessibility support
+│   ├── tailwind-config/        # Design system tokens, theme variables, and TailwindCSS v4 configuration
+│   ├── ts-config/              # TypeScript compiler configurations for different project types
+│   └── tsup-config/            # Unified build configuration for fast, consistent package bundling
+├── packages/                   # Independently versioned UI components and utilities (npm publishable)
+│   ├── ui-core/                # Foundation library: utilities, types, and shared logic for all components
+│   ├── ui-utils/               # Advanced utilities and internal helpers for component development
+│   ├── ui-slot/                # Polymorphic composition component enabling flexible component APIs
+│   ├── ui-template/            # Standardized boilerplate and scaffolding for creating new components
+│   └── ...                     # Component library: ui-button, ui-checkbox, ui-dialog, ui-form, etc.
+├── scripts/                    # Development automation: build orchestration, release management, maintenance
+├── tests/                      # Quality assurance: E2E testing with Playwright, integration test suites
+├── eslint.config.js            # Workspace-level ESLint configuration using flat config format
+├── playwright.config.ts        # End-to-end testing configuration and browser automation setup
+├── pnpm-workspace.yaml         # Workspace package definitions and dependency management rules
+├── prettier.config.js          # Code formatting standards and consistency rules
+└── README.md                   # Project overview, quick start guide, and contribution instructions
+└── turbo.json                  # Turborepo pipeline configuration for optimized build orchestration
 ```
 
 ---
