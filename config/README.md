@@ -39,5 +39,5 @@ Unified build configuration for fast, consistent package bundling.
 
 ## Related Documentation
 
-- [**Architecture Overview**](../ARCHITECTURE.md) - Complete monorepo structure
-- [**Contributing Guide**](../CONTRIBUTING.md) - Development workflow
+- [**Architecture Overview**](../docs/ARCHITECTURE.md) - Complete monorepo structure
+- [**Contributing Guide**](../docs/CONTRIBUTING.md) - Development workflow

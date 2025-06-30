@@ -129,10 +129,6 @@ The library currently supports only a dark theme. To enable it, update the CSS v
 }
 ```
 
-## Notes
-
-The beta version may have minor changes or issues compared to the stable version. Please report any problems via [GitHub Issues](https://github.com/halvaradop/ui/issues).
-
 ## Contributing
 
 We welcome contributions to the `@halvaradop/ui` library! Please read the [Contributing Guide](./CONTRIBUTING.md) for details on our process, code standards, and how to get started. All contributors are expected to follow our [Code of Conduct](https://github.com/halvaradop/.github/blob/master/.github/CODE_OF_CONDUCT.md).

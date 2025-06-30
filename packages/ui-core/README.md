@@ -50,7 +50,3 @@ function Button({ className, children }: PropsWithChildren & { className?: strin
   return <button className={merge("px-4 py-2", className)}>{children}</button>
 }
 ```
-
-## Notes
-
-The beta version may have minor changes or issues compared to the stable version. Please report any problems via [GitHub Issues](https://github.com/halvaradop/ui/issues).

@@ -99,7 +99,3 @@ The library currently supports only a dark theme. To enable it, update the CSS v
   --color-ghost: oklch(25% 0 0);
 }
 ```
-
-## Notes
-
-The beta version may have minor changes or issues compared to the stable version. Please report any problems via [GitHub Issues](https://github.com/halvaradop/ui/issues).
