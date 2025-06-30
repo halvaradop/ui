@@ -11,6 +11,7 @@ ui/
 ├── .github/                    # GitHub automation: CI/CD workflows, issue templates, PR guidelines, CODEOWNERS
 ├── apps/                       # Application demos and development environments
 │   └── storybook/              # Interactive component playground and visual documentation
+├── docs/                       # Project documentation
 ├── config/                     # Shared configuration packages for consistent tooling across workspace
 │   ├── eslint-config/          # Modern ESLint 9.x rules with React 19, TypeScript, and accessibility support
 │   ├── tailwind-config/        # Design system tokens, theme variables, and TailwindCSS v4 configuration
