@@ -40,7 +40,3 @@ export default function Card({ children, asChild, ...props }: SlotProps<"div">) 
 | Prop    | Values      | Default |
 | ------- | ----------- | ------- |
 | asChild | true, false | false   |
-
-## Notes
-
-The beta version may have minor changes or issues compared to the stable version. Please report any problems via [GitHub Issues](https://github.com/halvaradop/ui/issues).

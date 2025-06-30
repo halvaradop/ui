@@ -98,7 +98,3 @@ The library currently supports only a dark theme. To enable it, update the CSS v
   --color-on-surface: oklch(95% 0.01 260);
 }
 ```
-
-## Notes
-
-The beta version may have minor changes or issues compared to the stable version. Please report any problems via [GitHub Issues](https://github.com/halvaradop/ui/issues).

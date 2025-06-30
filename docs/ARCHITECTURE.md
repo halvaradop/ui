@@ -4,33 +4,53 @@
 
 ## Monorepo Structure
 
-The project uses [`Turborepo`](https://turbo.build/repo) with [`pnpm`](https://pnpm.io) to manage isolated, versioned packages efficiently.
+The project utilizes [`Turborepo`](https://turbo.build/repo) and [`pnpm`](https://pnpm.io) to manage a scalable, modular monorepo. Each package is fully isolated, enabling independent versioning, testing, and publishing, while shared tooling and configuration promote consistency and efficiency across the entire codebase.
 
 ```
 ui/
-├── .github/              # GitHub workflows, contribution guidelines, and codeowners
-├── .storybook/           # Storybook configuration files
-├── packages/             # Component and utility packages
-│   ├── ui-core/          # Shared logic, types, merge utilities
-│   ├── ui-utils/         # Shared configuration: tsup, tsconfig
-│   ├── ui-slot/          # Slot component (decoupled from ui-core)
-│   ├── ui-template/      # Boilerplate for new components
-│   └── ...               # More UI packages
-├── scripts/              # Utility scripts (e.g., build, release)
-├── tests/                # E2E tests using Playwright
-├── tailwind.css          # CSS theme and variable declarations
-├── turbo.json            # Turborepo config
-└── CHANGELOG.md          # Global changelog for shared/structural changes
+├── .github/                    # GitHub automation: CI/CD workflows, issue templates, PR guidelines, CODEOWNERS
+├── apps/                       # Application demos and development environments
+│   └── storybook/              # Interactive component playground and visual documentation
+├── docs/                       # Project documentation
+├── config/                     # Shared configuration packages for consistent tooling across workspace
+│   ├── eslint-config/          # Modern ESLint 9.x rules with React 19, TypeScript, and accessibility support
+│   ├── tailwind-config/        # Design system tokens, theme variables, and TailwindCSS v4 configuration
+│   ├── ts-config/              # TypeScript compiler configurations for different project types
+│   └── tsup-config/            # Unified build configuration for fast, consistent package bundling
+├── packages/                   # Independently versioned UI components and utilities (npm publishable)
+│   ├── ui-core/                # Foundation library: utilities, types, and shared logic for all components
+│   ├── ui-utils/               # Advanced utilities and internal helpers for component development
+│   ├── ui-slot/                # Polymorphic composition component enabling flexible component APIs
+│   ├── ui-template/            # Standardized boilerplate and scaffolding for creating new components
+│   └── ...                     # Component library: ui-button, ui-checkbox, ui-dialog, ui-form, etc.
+├── scripts/                    # Development automation: build orchestration, release management, maintenance
+├── tests/                      # Quality assurance: E2E testing with Playwright, integration test suites
+├── eslint.config.js            # Workspace-level ESLint configuration using flat config format
+├── playwright.config.ts        # End-to-end testing configuration and browser automation setup
+├── pnpm-workspace.yaml         # Workspace package definitions and dependency management rules
+├── prettier.config.js          # Code formatting standards and consistency rules
+└── README.md                   # Project overview, quick start guide, and contribution instructions
+└── turbo.json                  # Turborepo pipeline configuration for optimized build orchestration
 ```
 
-### Root
+### Apps Directory
 
-- **README.md**: General documentation and usage instructions.
-- **tailwind.css**: Shared TailwindCSS theme and variables.
-- **turbo.json**: TurboRepo configuration.
-- **pnpm-workspace.yaml**: Declares workspace packages.
-- **playwright.config.ts**: E2E testing configuration.
-- **.storybook/**: Storybook setup for component development.
+The `apps/` directory contains application environments and development tools that consume the UI components:
+
+Key apps:
+
+- `storybook`: Interactive playground for developing, testing, and documenting UI components with live previews and accessibility checks.
+
+### Config Directory
+
+The `config/` directory houses shared configuration packages that ensure consistency across the entire monorepo:
+
+Key packages:
+
+- `@ui/eslint-config`: Centralized ESLint rules for React/TypeScript.
+- `@ui/tailwind-config`: Shared TailwindCSS v4 config and design tokens.
+- `@ui/ts-config`: Base TypeScript configs for apps, packages, and tests.
+- `@ui/tsup-config`: Unified `tsup` build config for all packages.
 
 ### Packages Directory
 
@@ -48,17 +68,6 @@ Key packages:
 - `@halvaradop/ui-button`, `@halvaradop/ui-checkbox`, etc.: Individual UI components.
 - `@halvaradop/ui-slot`, `@halvaradop/ui-utils`: Internal helpers and advanced composition.
 - `@halvaradop/ui-template`: Boilerplate for new components.
-
-#### Example: `@halvaradop/ui-core`
-
-- Exports type helpers and utilities for class name management.
-- Used as a dependency by all other UI packages.
-
-#### Example: `@halvaradop/ui-button`
-
-- Customizable Button component.
-- Depends on `ui-core` for types/utilities and `ui-slot` for composition.
-- Supports variants, sizes, and asChild composition.
 
 ## Component Standards
 
@@ -120,7 +129,7 @@ Although the presence of these [SYNC] prefixes can add some noise to the commit 
 ## Internal Utilities
 
 - `@halvaradop/ui-core`: Shared logic (e.g., `merge`, SlotProps, HTML typing).
-- `@halvaradop/ui-utils`: Internal config (e.g., `tsup.config`, docs helpers).
+- `@halvaradop/ui-utils`: Internal docs helpers.
 
 ## Build & Development
 
@@ -194,6 +203,9 @@ Steps:
 ### Component Structure
 
 ```tsx
+import { type ComponentProps, merge } from "@halvaradop/ui-core"
+import { type VariantProps, cva } from "class-variance-authority"
+
 // 1. Define variants using CVA
 const componentVariants = cva("base-styles", {
   variants: {
@@ -206,13 +218,13 @@ const componentVariants = cva("base-styles", {
   },
 })
 
-// 2. Define component props
-interface ComponentProps extends VariantProps<typeof componentVariants> {}
+// 2. Define component props type
+interface ComponentProps extends VariantProps<typeof componentVariants>, ComponentProps<"div"> {}
 
 // 3. Implement component
-const Component = forwardRef<HTMLDivElement, ComponentProps>(({ className, variant, size, ...props }, ref) => {
+const Component = ({ className, variant, size, ref, ...props }) => {
   return <div className={merge(componentVariants({ variant, size, className }))} ref={ref} {...props} />
-})
+}
 ```
 
 ## Styling System
