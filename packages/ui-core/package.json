@@ -1,6 +1,6 @@
 {
   "name": "@halvaradop/ui-core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The core of the @halvaradop/ui library, providing customizable components with Tailwind CSS styling.",
   "type": "module",
   "scripts": {
