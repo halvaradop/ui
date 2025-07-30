@@ -177,7 +177,7 @@ export const AsAnchor: Story = {
     },
     render: (args) => (
         <Button variant="link" asChild {...args}>
-            <a href="">Link</a>
+            <a href="/">Link</a>
         </Button>
     ),
 }

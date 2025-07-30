@@ -1,7 +1,7 @@
 import { type ComponentProps, merge } from "@halvaradop/ui-core"
 import { SelectProvider, useSelect } from "./context.js"
 
-export type SelectProps = ComponentProps<"ul"> & {
+export type SelectProps = ComponentProps<"div"> & {
     name: string
     defaultValue?: string
 }
@@ -11,11 +11,10 @@ export const Select = ({ className, children, name, defaultValue, ref, ...props 
 
     return (
         <SelectProvider name={name} defaultValue={defaultValue}>
-            <ul
+            <div
                 className={merge("text-on-surface relative", className)}
                 ref={ref}
                 id={id}
-                role="combobox"
                 aria-haspopup="listbox"
                 aria-controls={`${id}-listbox`}
                 aria-expanded={open}
@@ -23,7 +22,7 @@ export const Select = ({ className, children, name, defaultValue, ref, ...props 
                 {...props}
             >
                 {children}
-            </ul>
+            </div>
         </SelectProvider>
     )
 }

@@ -53,7 +53,6 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps<typeof radioVariant
                     className={merge(radioVariants({ className, size }))}
                     ref={ref}
                     type="radio"
-                    role="radio"
                     name={name ?? defaultName}
                     value={value}
                     checked={isSelected}

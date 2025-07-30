@@ -7,8 +7,7 @@ export type SelectItemProps = ComponentProps<"button", "value"> & {
 }
 
 export const SelectOption = ({ className, value, children, ref, ...props }: SelectItemProps) => {
-    const { id, selectedValue, onChange } = useSelect()
-    const isSelected = selectedValue === value
+    const { id, onChange } = useSelect()
 
     return (
         <button
@@ -18,10 +17,8 @@ export const SelectOption = ({ className, value, children, ref, ...props }: Sele
             )}
             ref={ref}
             id={`${id}-option-${value}`}
-            role="option"
             data-value={value}
             tabIndex={0}
-            aria-selected={isSelected}
             aria-labelledby={`${id}-option-${value}`}
             onClick={onChange}
             {...props}

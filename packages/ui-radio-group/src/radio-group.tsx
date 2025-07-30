@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react"
+import { useState, useCallback, useMemo } from "react"
 import { type ComponentProps, type PropsWithChildren, merge } from "@halvaradop/ui-core"
 import { type VariantProps, cva } from "class-variance-authority"
 import { RadioGroupContext } from "./context.js"
@@ -43,15 +43,19 @@ export const RadioGroup = ({
         [onChange]
     )
 
+    const context = useMemo(
+        () => ({ name, selectedValue, onChange: handleChange }),
+        [name, selectedValue, handleChange]
+    )
+
     return (
-        <RadioGroupContext.Provider value={{ name, selectedValue, onChange: handleChange }}>
+        <RadioGroupContext.Provider value={context}>
             <fieldset
                 className={merge(radioGroupVariants({ className, variant }))}
                 ref={ref}
                 name={name}
                 data-value={selectedValue}
                 data-name={name}
-                role="radiogroup"
                 {...props}
             >
                 {children}
