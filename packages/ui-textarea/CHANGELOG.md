@@ -9,8 +9,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Addedd
 
-### Fixed
-
-### Changed
-
-### Removed
+- Added `Textarea` component. Includes support for variants (`base`), sizes (`sm`, `base`, `md`, `lg`), and resizes (`content`, `both`, `vertical`, `horizontal`). Also supports `fullWidth` and `fullRounded` props. [#194](https://github.com/halvaradop/ui/pull/194)

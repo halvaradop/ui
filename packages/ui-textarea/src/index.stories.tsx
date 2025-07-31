@@ -7,30 +7,81 @@ const meta: Meta = {
     title: "ui-textarea",
     tags: ["autodocs"],
     component: Textarea,
-    args: {
-        placeholder: "Enter your message...",
-    },
     argTypes: {
         variant: {
             control: "select",
-            options: ["base", "line", "sensitive"],
+            description: "The variant of the textarea",
+            options: ["base"],
+            table: {
+                type: {
+                    summary: "base",
+                },
+                defaultValue: {
+                    summary: "base",
+                },
+            },
         },
         size: {
             control: "select",
+            description: "The size of the textarea",
             options: ["sm", "base", "md", "lg"],
+            table: {
+                type: {
+                    summary: "sm | base | md | lg",
+                },
+                defaultValue: {
+                    summary: "base",
+                },
+            },
         },
         resize: {
             control: "select",
-            options: ["none", "vertical", "horizontal", "both"],
+            description: "Resize behavior of the textarea",
+            options: ["content", "vertical", "horizontal", "both"],
+            table: {
+                type: {
+                    summary: "content | vertical | horizontal | both",
+                },
+                defaultValue: {
+                    summary: "both",
+                },
+            },
         },
         fullWidth: {
             control: "boolean",
+            description: "Make the textarea full width",
+            table: {
+                type: {
+                    summary: "boolean",
+                },
+                defaultValue: {
+                    summary: "false",
+                },
+            },
         },
         fullRounded: {
             control: "boolean",
+            description: "Make the textarea fully rounded",
+            table: {
+                type: {
+                    summary: "boolean",
+                },
+                defaultValue: {
+                    summary: "false",
+                },
+            },
         },
         disabled: {
             control: "boolean",
+            description: "Disable the textarea",
+            table: {
+                type: {
+                    summary: "boolean",
+                },
+                defaultValue: {
+                    summary: "false",
+                },
+            },
         },
     },
     parameters: {
@@ -53,6 +104,23 @@ type Story = StoryObj<typeof meta>
 export const Base: Story = {
     parameters: {
         skipDecorator: true,
+    },
+    args: {
+        placeholder: "Enter your message...",
+    },
+    argTypes: {
+        placeholder: {
+            control: "text",
+            description: "Placeholder text for the textarea",
+            table: {
+                type: {
+                    summary: "string",
+                },
+                defaultValue: {
+                    summary: "Enter your message...",
+                },
+            },
+        },
     },
 }
 
