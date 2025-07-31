@@ -439,6 +439,28 @@ importers:
         specifier: workspace:*
         version: link:../../config/tsup-config
 
+  packages/ui-textarea:
+    dependencies:
+      "@halvaradop/ui-core":
+        specifier: workspace:*
+        version: link:../ui-core
+      class-variance-authority:
+        specifier: "catalog:"
+        version: 0.7.0
+      react:
+        specifier: "catalog:"
+        version: 19.1.0
+      react-dom:
+        specifier: "catalog:"
+        version: 19.1.0(react@19.1.0)
+    devDependencies:
+      "@ui/ts-config":
+        specifier: workspace:*
+        version: link:../../config/ts-config
+      "@ui/tsup-config":
+        specifier: workspace:*
+        version: link:../../config/tsup-config
+
   packages/ui-toggle:
     dependencies:
       "@halvaradop/ui-core":
