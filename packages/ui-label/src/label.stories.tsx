@@ -96,7 +96,7 @@ export const Sizes: Story = {
     ),
 }
 
-export const Error: Story = {
+export const Required: Story = {
     render: () => (
         <div className="relative">
             <Label htmlFor="error-story">Name</Label>

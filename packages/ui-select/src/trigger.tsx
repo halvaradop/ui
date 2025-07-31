@@ -17,7 +17,6 @@ export const SelectTrigger = ({ className, children, ref, ...props }: SelectTrig
             ref={ref}
             id={`${id}-trigger`}
             type="button"
-            role="combobox"
             aria-haspopup="listbox"
             aria-expanded={open}
             aria-controls={`${id}-listbox`}
@@ -34,7 +33,6 @@ export const SelectTrigger = ({ className, children, ref, ...props }: SelectTrig
                 className="text-on-surface fill-current"
                 aria-hidden="true"
                 focusable="false"
-                role="img"
             >
                 <path d="M480-357.85 253.85-584 296-626.15l184 184 184-184L706.15-584 480-357.85Z" />
             </svg>

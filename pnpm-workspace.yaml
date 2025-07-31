@@ -1,6 +1,6 @@
 packages:
   - "packages/*"
-  - "config/*"
+  - "configs/*"
   - "apps/*"
 
 catalog:

@@ -13,7 +13,7 @@ export const SelectList = ({ children, className, ref, ...props }: ComponentProp
             )}
             ref={ref}
             id={`${id}-listbox`}
-            role="listbox"
+            role="tablist"
             aria-labelledby={`${id}-list`}
             {...props}
         >

@@ -48,10 +48,10 @@ importers:
         version: 19.1.6(@types/react@19.1.6)
       "@ui/eslint-config":
         specifier: workspace:*
-        version: link:config/eslint-config
+        version: link:configs/eslint-config
       "@ui/ts-config":
         specifier: workspace:*
-        version: link:config/ts-config
+        version: link:configs/ts-config
       eslint:
         specifier: ^9.29.0
         version: 9.30.0(jiti@2.4.2)
@@ -105,10 +105,10 @@ importers:
         version: 4.1.11(vite@6.3.5(@types/node@22.15.34)(jiti@2.4.2)(lightningcss@1.30.1))
       "@ui/tailwind-config":
         specifier: workspace:*
-        version: link:../../config/tailwind-config
+        version: link:../../configs/tailwind-config
       "@ui/ts-config":
         specifier: workspace:*
-        version: link:../../config/ts-config
+        version: link:../../configs/ts-config
       "@vitejs/plugin-react-swc":
         specifier: ^3.8.0
         version: 3.10.2(vite@6.3.5(@types/node@22.15.34)(jiti@2.4.2)(lightningcss@1.30.1))
@@ -119,7 +119,7 @@ importers:
         specifier: ^6.3.5
         version: 6.3.5(@types/node@22.15.34)(jiti@2.4.2)(lightningcss@1.30.1)
 
-  config/eslint-config:
+  configs/eslint-config:
     devDependencies:
       "@eslint-react/eslint-plugin":
         specifier: ^1.52.2
@@ -161,15 +161,15 @@ importers:
         specifier: ^8.35.0
         version: 8.35.0(eslint@9.30.0(jiti@2.4.2))(typescript@5.8.3)
 
-  config/tailwind-config:
+  configs/tailwind-config:
     devDependencies:
       tailwindcss:
         specifier: ^4.1.11
         version: 4.1.11
 
-  config/ts-config: {}
+  configs/ts-config: {}
 
-  config/tsup-config:
+  configs/tsup-config:
     devDependencies:
       "@ui/ts-config":
         specifier: workspace:*
@@ -195,10 +195,10 @@ importers:
     devDependencies:
       "@ui/ts-config":
         specifier: workspace:*
-        version: link:../../config/ts-config
+        version: link:../../configs/ts-config
       "@ui/tsup-config":
         specifier: workspace:*
-        version: link:../../config/tsup-config
+        version: link:../../configs/tsup-config
 
   packages/ui-checkbox:
     dependencies:
@@ -217,10 +217,10 @@ importers:
     devDependencies:
       "@ui/ts-config":
         specifier: workspace:*
-        version: link:../../config/ts-config
+        version: link:../../configs/ts-config
       "@ui/tsup-config":
         specifier: workspace:*
-        version: link:../../config/tsup-config
+        version: link:../../configs/tsup-config
 
   packages/ui-core:
     dependencies:
@@ -236,10 +236,10 @@ importers:
     devDependencies:
       "@ui/ts-config":
         specifier: workspace:*
-        version: link:../../config/ts-config
+        version: link:../../configs/ts-config
       "@ui/tsup-config":
         specifier: workspace:*
-        version: link:../../config/tsup-config
+        version: link:../../configs/tsup-config
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -261,10 +261,10 @@ importers:
     devDependencies:
       "@ui/ts-config":
         specifier: workspace:*
-        version: link:../../config/ts-config
+        version: link:../../configs/ts-config
       "@ui/tsup-config":
         specifier: workspace:*
-        version: link:../../config/tsup-config
+        version: link:../../configs/tsup-config
 
   packages/ui-form:
     dependencies:
@@ -283,10 +283,10 @@ importers:
     devDependencies:
       "@ui/ts-config":
         specifier: workspace:*
-        version: link:../../config/ts-config
+        version: link:../../configs/ts-config
       "@ui/tsup-config":
         specifier: workspace:*
-        version: link:../../config/tsup-config
+        version: link:../../configs/tsup-config
 
   packages/ui-input:
     dependencies:
@@ -305,10 +305,10 @@ importers:
     devDependencies:
       "@ui/ts-config":
         specifier: workspace:*
-        version: link:../../config/ts-config
+        version: link:../../configs/ts-config
       "@ui/tsup-config":
         specifier: workspace:*
-        version: link:../../config/tsup-config
+        version: link:../../configs/tsup-config
 
   packages/ui-label:
     dependencies:
@@ -330,10 +330,10 @@ importers:
     devDependencies:
       "@ui/ts-config":
         specifier: workspace:*
-        version: link:../../config/ts-config
+        version: link:../../configs/ts-config
       "@ui/tsup-config":
         specifier: workspace:*
-        version: link:../../config/tsup-config
+        version: link:../../configs/tsup-config
 
   packages/ui-radio-group:
     dependencies:
@@ -352,10 +352,10 @@ importers:
     devDependencies:
       "@ui/ts-config":
         specifier: workspace:*
-        version: link:../../config/ts-config
+        version: link:../../configs/ts-config
       "@ui/tsup-config":
         specifier: workspace:*
-        version: link:../../config/tsup-config
+        version: link:../../configs/tsup-config
 
   packages/ui-select:
     dependencies:
@@ -374,10 +374,10 @@ importers:
     devDependencies:
       "@ui/ts-config":
         specifier: workspace:*
-        version: link:../../config/ts-config
+        version: link:../../configs/ts-config
       "@ui/tsup-config":
         specifier: workspace:*
-        version: link:../../config/tsup-config
+        version: link:../../configs/tsup-config
 
   packages/ui-slot:
     dependencies:
@@ -390,10 +390,10 @@ importers:
         version: link:../ui-utils
       "@ui/ts-config":
         specifier: workspace:*
-        version: link:../../config/ts-config
+        version: link:../../configs/ts-config
       "@ui/tsup-config":
         specifier: workspace:*
-        version: link:../../config/tsup-config
+        version: link:../../configs/tsup-config
 
   packages/ui-submit:
     dependencies:
@@ -412,10 +412,10 @@ importers:
     devDependencies:
       "@ui/ts-config":
         specifier: workspace:*
-        version: link:../../config/ts-config
+        version: link:../../configs/ts-config
       "@ui/tsup-config":
         specifier: workspace:*
-        version: link:../../config/tsup-config
+        version: link:../../configs/tsup-config
 
   packages/ui-template:
     dependencies:
@@ -434,10 +434,10 @@ importers:
     devDependencies:
       "@ui/ts-config":
         specifier: workspace:*
-        version: link:../../config/ts-config
+        version: link:../../configs/ts-config
       "@ui/tsup-config":
         specifier: workspace:*
-        version: link:../../config/tsup-config
+        version: link:../../configs/tsup-config
 
   packages/ui-textarea:
     dependencies:
@@ -456,10 +456,10 @@ importers:
     devDependencies:
       "@ui/ts-config":
         specifier: workspace:*
-        version: link:../../config/ts-config
+        version: link:../../configs/ts-config
       "@ui/tsup-config":
         specifier: workspace:*
-        version: link:../../config/tsup-config
+        version: link:../../configs/tsup-config
 
   packages/ui-toggle:
     dependencies:
@@ -478,16 +478,16 @@ importers:
     devDependencies:
       "@ui/ts-config":
         specifier: workspace:*
-        version: link:../../config/ts-config
+        version: link:../../configs/ts-config
       "@ui/tsup-config":
         specifier: workspace:*
-        version: link:../../config/tsup-config
+        version: link:../../configs/tsup-config
 
   packages/ui-utils:
     devDependencies:
       "@ui/ts-config":
         specifier: workspace:*
-        version: link:../../config/ts-config
+        version: link:../../configs/ts-config
 
 packages:
   "@adobe/css-tools@4.4.3":
