@@ -49,6 +49,9 @@ importers:
       "@ui/eslint-config":
         specifier: workspace:*
         version: link:configs/eslint-config
+      "@ui/prettier-config":
+        specifier: workspace:*
+        version: link:configs/prettier-config
       "@ui/ts-config":
         specifier: workspace:*
         version: link:configs/ts-config
@@ -160,6 +163,8 @@ importers:
       typescript-eslint:
         specifier: ^8.35.0
         version: 8.35.0(eslint@9.30.0(jiti@2.4.2))(typescript@5.8.3)
+
+  configs/prettier-config: {}
 
   configs/tailwind-config:
     devDependencies:

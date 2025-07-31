@@ -1,6 +1,6 @@
 # @ui/ts-config
 
-> Shared TypeScript configurations for the @halvaradop/ui library monorepo
+> Shared TypeScript configurations for the [`@halvaradop/ui`](https://github.com/halvaradop/ui) monorepo
 
 This package provides standardized TypeScript configurations optimized for React component development, Node.js environments, and monorepo structures. It includes multiple configuration presets for different use cases.
 
@@ -38,9 +38,10 @@ Most common usage for React components:
 
 ## Related Packages
 
-- [`@ui/ts-config`](../ts-config) - TypeScript compiler options
-- [`@ui/tsup-config`](../tsup-config) - Build and bundling configuration
-- [`@ui/tailwind-config`](../tailwind-config) - Styling and design tokens
+- [`@ui/eslint-config`](../eslint-config/) — Shared ESLint configuration
+- [`@ui/prettier-config`](../prettier-config/) — Shared Prettier configuration
+- [`@ui/tailwind-config`](../tailwind-config) — Tailwind CSS and design tokens
+- [`@ui/tsup-config`](../tsup-config) — Build and bundling setup
 
 ## License
 

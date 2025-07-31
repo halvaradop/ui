@@ -1,6 +1,6 @@
 # @ui/eslint-config
 
-> Shared ESLint configuration for the @halvaradop/ui library monorepo
+> Shared ESLint configuration for the [`@halvaradop/ui`](https://github.com/halvaradop/ui) monorepo
 
 A comprehensive ESLint configuration optimized for React 19, TypeScript, and modern JavaScript development. Designed specifically for component libraries and monorepo environments with accessibility, Prettier integration, and Turbo support.
 
@@ -120,9 +120,10 @@ eslint . --cache --cache-location .cache/.eslintcache
 
 ## Related Packages
 
-- [`@ui/ts-config`](../ts-config) - TypeScript compiler options
-- [`@ui/tsup-config`](../tsup-config) - Build and bundling configuration
-- [`@ui/tailwind-config`](../tailwind-config) - Styling and design tokens
+- [`@ui/prettier-config`](../prettier-config/) — Shared Prettier configuration
+- [`@ui/tailwind-config`](../tailwind-config) — Tailwind CSS and design tokens
+- [`@ui/ts-config`](../ts-config) — TypeScript compiler settings
+- [`@ui/tsup-config`](../tsup-config) — Build and bundling setup
 
 ## License
 
