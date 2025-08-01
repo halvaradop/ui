@@ -26,7 +26,7 @@ export default function App() {
 
 | Prop     | Values                   | Default |
 | -------- | ------------------------ | ------- |
-| variant  | "base"                   | base    |
+| variant  | "base"                   | "base"  |
 | size     | "sm", "base", "md", "lg" | "base"  |
 | checked  | true, false              | false   |
 | disabled | true, false              | false   |
