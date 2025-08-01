@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 
 export type CardProps<T extends VoidFunction> = VariantProps<T> & ComponentProps<"div">
 
-export const cardVariants = cva("border border-solid border-border rounded-(--rounded) shadow-ghost", {
+export const cardVariants = cva("text-on-surface border border-solid border-border rounded-(--rounded) shadow-ghost", {
     variants: {
         variant: {
             base: "bg-surface",
@@ -22,9 +22,9 @@ export const cardVariants = cva("border border-solid border-border rounded-(--ro
     },
 })
 
-export const Card = ({ className, size, children, ref }: CardProps<typeof cardVariants>) => {
+export const Card = ({ className, size, children, ref, ...props }: CardProps<typeof cardVariants>) => {
     return (
-        <div className={merge(cardVariants({ size }), className)} ref={ref}>
+        <div className={merge(cardVariants({ size }), className)} ref={ref} {...props}>
             {children}
         </div>
     )

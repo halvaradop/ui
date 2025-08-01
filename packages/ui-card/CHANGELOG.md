@@ -9,8 +9,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Addedd
 
-### Fixed
-
-### Changed
-
-### Removed
+- Added `Card` component. Includes support for variants (`base`, `outline`), sizes (`sm`, `base`, `md`, `lg`). [#199](https://github.com/halvaradop/ui/pull/197)

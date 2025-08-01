@@ -11,6 +11,19 @@ const meta: Meta = {
         size: "base",
     },
     argTypes: {
+        variant: {
+            description: "Variant of the card",
+            control: "select",
+            options: ["base", "outline"],
+            table: {
+                type: {
+                    summary: "base | outline",
+                },
+                defaultValue: {
+                    summary: "base",
+                },
+            },
+        },
         size: {
             description: "Size of the card",
             control: "select",
@@ -46,6 +59,15 @@ export const Base: Story = {
     },
 }
 
-export const Variants: Story = {}
+export const Variants: Story = {
+    render: ({ variant }) => (
+        <Card variant={variant}>
+            <div className="p-4">
+                <h2 className="text-lg font-semibold">Card Title</h2>
+                <p className="mt-2 text-sm text-gray-600">This is a description of the card content.</p>
+            </div>
+        </Card>
+    ),
+}
 
 export default meta

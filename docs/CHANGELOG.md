@@ -13,6 +13,8 @@ Per-package version history is maintained inside each package’s own `CHANGELOG
 ### Added
 
 - [`@halvaradop/ui-toggle`](https://github.com/halvaradop/ui/pull/184)
+- [`@halvaradop/ui-textarea`](https://github.com/halvaradop/ui/pull/194)
+- [`@halvaradop/ui-card`](https://github.com/halvaradop/ui/pull/198)
 
 ---
 
