@@ -60,7 +60,6 @@ export const Button = ({
         <SlotComponent
             className={merge(buttonVariants({ className, variant, size, fullWidth, fullRounded }))}
             ref={ref}
-            role={isButton ? "button" : undefined}
             type={isButton ? "button" : undefined}
             tabIndex={isButton ? 0 : undefined}
             {...props}
