@@ -32,12 +32,33 @@ export default function App() {
 }
 ```
 
+### Advanced Usage
+
+`Card` uses the `Slot` component from [`@halvaradop/ui-slot`](https://github.com/halvaradop/ui/blob/master/packages/ui-slot/src/index.ts), allowing you to render a different HTML tag by setting the `asChild` prop:
+
+```tsx
+import { Card } from "@halvaradop/ui-card"
+import { Link } from "react-router-dom|next/link"
+
+export default function CardLinkExample() {
+  return (
+    <Card asChild>
+      <Link to="/dashboard" className="block hover:shadow-lg transition-shadow">
+        <h3 className="text-lg font-bold mb-2">Go to Dashboard</h3>
+        <p className="text-muted">Click to navigate to your dashboard.</p>
+      </Link>
+    </Card>
+  )
+}
+```
+
 ### Prop Reference
 
 | Prop    | Values                   | Default |
 | ------- | ------------------------ | ------- |
 | variant | "base", "outline"        | "base"  |
 | size    | "sm", "base", "md", "lg" | "base"  |
+| asChild | true, false              | false   |
 
 ## Styling
 

@@ -1,7 +1,8 @@
-import { merge, type ComponentProps } from "@halvaradop/ui-core"
+import { merge } from "@halvaradop/ui-core"
+import { Slot, type SlotProps } from "@halvaradop/ui-slot"
 import { cva, type VariantProps } from "class-variance-authority"
 
-export type CardProps<T extends VoidFunction> = VariantProps<T> & ComponentProps<"div">
+export type CardProps<T extends VoidFunction> = VariantProps<T> & SlotProps<"div">
 
 export const cardVariants = cva("text-on-surface border border-solid border-border rounded-(--rounded) shadow-ghost", {
     variants: {
@@ -22,10 +23,19 @@ export const cardVariants = cva("text-on-surface border border-solid border-bord
     },
 })
 
-export const Card = ({ className, size, children, ref, ...props }: CardProps<typeof cardVariants>) => {
+export const Card = ({
+    className,
+    variant,
+    size,
+    children,
+    ref,
+    asChild,
+    ...props
+}: CardProps<typeof cardVariants>) => {
+    const SlotComponent = asChild ? Slot : "div"
     return (
-        <div className={merge(cardVariants({ size }), className)} ref={ref} {...props}>
+        <SlotComponent className={merge(cardVariants({ variant, size }), className)} ref={ref} {...props}>
             {children}
-        </div>
+        </SlotComponent>
     )
 }
