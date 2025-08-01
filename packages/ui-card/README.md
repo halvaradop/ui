@@ -1,0 +1,110 @@
+# @halvaradop/ui-card
+
+`@halvaradop/ui-card` is an accessible, reusable, and customizable `Card` component from the `@halvaradop/ui` React library. Built with React and styled using TailwindCSS v4, it provides pre-styled components to accelerate UI development.
+
+> [!WARNING]
+> This is not a real component provided by the `@halvaradop/ui` library. It is a card to facilitate the creation of new components within the library, offering default configurations and documentation. This package helps reduce the time required to build a component from scratch, allowing you to focus on adding new styles and features. For more information, please read the [Contributing Guide](https://github.com/halvaradop/ui/blob/master/.github/CONTRIBUTING.md).
+
+## Installation
+
+There are two versions available: one for React 19 (stable) and one for React 18 (legacy)..
+
+### React 19 (Stable)
+
+```bash
+npm install @halvaradop/ui-card
+yarn add @halvaradop/ui-card
+pnpm add @halvaradop/ui-card
+```
+
+### React 18 (Legacy)
+
+```bash
+npm install @halvaradop/ui-card@legacy
+yarn add @halvaradop/ui-card@legacy
+pnpm add @halvaradop/ui-card@legacy
+```
+
+## Usage
+
+The `Card` component offers several additional props for customization. Import the `Card` component as shown below:
+
+```tsx
+import { card } from "@halvaradop/ui-card"
+
+export default function App() {
+  return <card />
+}
+```
+
+### Prop Reference
+
+| Prop    | Values                   | Default |
+| ------- | ------------------------ | ------- |
+| variant |                          |         |
+| size    | "sm", "base", "md", "lg" | "base"  |
+
+## Styling
+
+The component supports TailwindCSS v4. To customize colors, use the following CSS variables. For the full theme, see [the theme file](https://github.com/halvaradop/ui/blob/master/tailwind.css).
+
+```css
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-base: 900px;
+
+  --opacity-cursor: 80%;
+
+  --color-muted: oklch(65% 0.01 260);
+  --color-border: oklch(70% 0.02 260);
+  --color-overlay: oklch(30% 0.02 260 / 0.3);
+
+  --color-success: oklch(75% 0.18 140);
+  --color-danger: oklch(65% 0.2 25);
+
+  --color-surface: oklch(98% 0 0);
+  --color-on-surface: oklch(20% 0.02 260);
+
+  --color-primary: oklch(30% 0 270);
+  --color-on-primary: oklch(95% 0 0);
+
+  --color-secondary: oklch(60% 0 270);
+  --color-on-secondary: oklch(10% 0 0);
+
+  --color-ghost: oklch(94% 0.01 260);
+
+  --color-disabled: oklch(92% 0 0);
+  --color-on-disabled: oklch(60% 0.01 260);
+}
+```
+
+### Dark Theme Support
+
+The library currently supports only a dark theme. To enable it, update the CSS variables as follows:
+
+```css
+:is(html, body).dark {
+  --opacity-cursor: 80%;
+
+  --color-muted: oklch(70% 0.01 260);
+  --color-border: oklch(35% 0.01 260);
+
+  --color-success: oklch(70% 0.19 150);
+  --color-danger: oklch(65% 0.22 25);
+
+  --color-overlay: oklch(0% 0 0 / 0.6);
+
+  --color-surface: oklch(15% 0.005 260);
+  --color-on-surface: oklch(95% 0.01 260);
+
+  --color-primary: oklch(90% 0 0);
+  --color-on-primary: oklch(20% 0 270);
+
+  --color-secondary: oklch(60% 0 0);
+  --color-on-secondary: oklch(10% 0 270);
+
+  --color-ghost: oklch(25% 0 0);
+  --color-disabled: oklch(30% 0 0);
+}
+```

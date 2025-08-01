@@ -1,0 +1,62 @@
+{
+  "name": "@halvaradop/ui-card",
+  "version": "1.0.0",
+  "private": false,
+  "description": "A customizable Card component for @halvaradop/ui library with Tailwind CSS styling.",
+  "type": "module",
+  "scripts": {
+    "dev": "tsup --watch",
+    "build": "tsup && pnpm clean:cts",
+    "build:release": "tsup --env.NODE_ENV=production && pnpm clean:cts",
+    "format": "prettier --write . --cache --cache-location .cache/.prettiercache",
+    "format:check": "prettier --check .",
+    "lint": "eslint . --cache --cache-location .cache/.eslintcache",
+    "lint:fix": "eslint . --fix --cache --cache-location .cache/.eslintcache",
+    "clean": "pnpm clean:dist && pnpm clean:modules && pnpm clean:turbo",
+    "clean:dist": "rm -rf dist",
+    "clean:modules": "rm -rf node_modules",
+    "clean:turbo": "rm -rf .turbo",
+    "clean:cts": "rm -rf ./dist/*.cts",
+    "check-types": "tsc --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/halvaradop/ui.git"
+  },
+  "keywords": [
+    "react",
+    "component",
+    "tailwindcss",
+    "react",
+    "ui",
+    "ui library"
+  ],
+  "author": "Hernan Alvarado <hernanvid123@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/halvaradop/ui/issues"
+  },
+  "homepage": "https://github.com/halvaradop/ui#readme",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "dependencies": {
+    "@halvaradop/ui-core": "workspace:*",
+    "class-variance-authority": "catalog:"
+  },
+  "devDependencies": {
+    "@ui/ts-config": "workspace:*",
+    "@ui/tsup-config": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:"
+  }
+}
