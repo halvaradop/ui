@@ -1,0 +1,27 @@
+{
+  "name": "@ui/prettier-config",
+  "version": "0.0.0",
+  "private": false,
+  "description": "Prettier configuration package for @ui library components.",
+  "type": "module",
+  "scripts": {
+    "format": "prettier --write . --cache --cache-location .cache/.prettiercache",
+    "format:check": "prettier --check .",
+    "lint": "eslint . --cache --cache-location .cache/.eslintcache",
+    "lint:fix": "eslint . --fix --cache --cache-location .cache/.eslintcache",
+    "clean": "pnpm clean:modules && pnpm clean:turbo",
+    "clean:modules": "rm -rf node_modules",
+    "clean:turbo": "rm -rf .turbo"
+  },
+  "keywords": [
+    "prettier",
+    "config",
+    "ui"
+  ],
+  "author": "Hernan Alvarado <hernanvid123@gmail.com>",
+  "license": "MIT",
+  "exports": {
+    ".": "./prettier.config.js",
+    "./prettier.config.js": "./prettier.config.js"
+  }
+}

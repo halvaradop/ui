@@ -1,6 +1,6 @@
 # @ui/tsup-config
 
-> Shared TSup build configuration for the @halvaradop/ui library monorepo
+> Shared TSup build configuration for the [`@halvaradop/ui`](https://github.com/halvaradop/ui) monorepo
 
 This package provides a standardized TSup configuration for building TypeScript packages in the @halvaradop/ui monorepo. It includes optimized settings for React components, libraries, and modern JavaScript development.
 
@@ -47,9 +47,10 @@ export default defineConfig({
 
 ## Related Packages
 
-- [`@ui/ts-config`](../ts-config) - TypeScript compiler options
-- [`@ui/tsup-config`](../tsup-config) - Build and bundling configuration
-- [`@ui/tailwind-config`](../tailwind-config) - Styling and design tokens
+- [`@ui/eslint-config`](../eslint-config/) — Shared ESLint configuration
+- [`@ui/prettier-config`](../prettier-config/) — Shared Prettier configuration
+- [`@ui/tailwind-config`](../tailwind-config) — Tailwind CSS and design tokens
+- [`@ui/ts-config`](../ts-config) — TypeScript compiler settings
 
 ## License
 

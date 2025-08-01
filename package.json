@@ -58,6 +58,7 @@
   "homepage": "https://github.com/halvaradop/ui#readme",
   "devDependencies": {
     "@ui/eslint-config": "workspace:*",
+    "@ui/prettier-config": "workspace:*",
     "@ui/ts-config": "workspace:*",
     "@playwright/test": "^1.51.0",
     "@storybook/blocks": "^8.6.4",

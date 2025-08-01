@@ -1,6 +1,6 @@
 # @ui/tailwind-config
 
-> Shared TailwindCSS configuration and global styles for the @ui library monorepo
+> Shared TailwindCSS configuration and global styles for the [`@halvaradop/ui`](https://github.com/halvaradop/ui) monorepo
 
 This package provides a comprehensive TailwindCSS v4+ configuration with custom design tokens, dark mode support, and component-optimized styles. It includes a global CSS file with theme variables and responsive design tokens optimized for UI component libraries.
 
@@ -52,9 +52,10 @@ The configuration includes a comprehensive color system using OKLCH color space 
 
 ## Related Packages
 
-- [`@ui/ts-config`](../ts-config) - TypeScript compiler options
-- [`@ui/tsup-config`](../tsup-config) - Build and bundling configuration
-- [`@ui/tailwind-config`](../tailwind-config) - Styling and design tokens
+- [`@ui/eslint-config`](../eslint-config/) — Shared ESLint configuration
+- [`@ui/prettier-config`](../prettier-config/) — Shared Prettier configuration
+- [`@ui/ts-config`](../ts-config) — TypeScript compiler settings
+- [`@ui/tsup-config`](../tsup-config) — Build and bundling setup
 
 ## License
 
