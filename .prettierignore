@@ -1,0 +1,32 @@
+# Dependencies
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# Cache
+.cache
+
+# Modules
+node_modules
+
+# Misc
+*.DS_Store
+*.env
+
+# Coverage
+coverage
+
+# turborepo
+.turbo
+*storybook.log
+
+# Playwright
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+
+# Storybook build outputs
+out/
+storybook-static
+storybook-static-*
