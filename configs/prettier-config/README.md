@@ -21,10 +21,10 @@ pnpm add -D @ui/prettier-config
 Create a `prettier.config.js` file in your package root:
 
 ```js
-import { config } from "@ui/prettier-config";
+import { config } from "@ui/prettier-config"
 
 /** @type {import("prettier").Config} */
-export default config;
+export default config
 ```
 
 ### Customization
@@ -32,14 +32,14 @@ export default config;
 You can extend the shared config with your own overrides:
 
 ```js
-import { config } from "@ui/prettier-config";
+import { config } from "@ui/prettier-config"
 
 export default {
   ...config,
   overrides: [
     // Add custom rules here
   ],
-};
+}
 ```
 
 > **Note:** The property is `overrides`, not `overides`.
