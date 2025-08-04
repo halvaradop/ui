@@ -21,7 +21,12 @@
   "author": "Hernan Alvarado <hernanvid123@gmail.com>",
   "license": "MIT",
   "exports": {
-    ".": "./prettier.config.js",
-    "./prettier.config.js": "./prettier.config.js"
+    ".": "./prettier.config.js"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2"
+  },
+  "peerDependencies": {
+    "prettier": "^2.0.0"
   }
 }
