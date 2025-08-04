@@ -7,6 +7,7 @@ import {
     useId,
     useMemo,
     useCallback,
+    useEffect,
 } from "react"
 
 export interface SelectContextType {
@@ -37,24 +38,36 @@ interface SelectProviderProps {
     children: React.ReactNode
     name: string
     defaultValue?: string
+    open?: boolean
+    onValueChange?: (value: string) => void
+    onOpenChange?: (value: boolean) => void
 }
 
-export const SelectProvider = ({ name, defaultValue, children }: SelectProviderProps) => {
+export const SelectProvider = ({
+    name,
+    defaultValue,
+    children,
+    open,
+    onValueChange,
+    onOpenChange,
+}: SelectProviderProps) => {
     const selectId = useId()
-    const [open, setOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(open ?? false)
     const [selectedValue, setSelectedValue] = useState<string>(defaultValue ?? "")
 
     const handleTrigger = useCallback(() => {
-        setOpen((prev) => !prev)
-    }, [])
+        setIsOpen((prev) => !prev)
+        onOpenChange?.(!isOpen)
+    }, [isOpen, onOpenChange])
 
     const handleChange = useCallback(
         (event: MouseEvent<HTMLButtonElement>) => {
             const value = event.currentTarget.dataset.value ?? ""
             handleTrigger()
             setSelectedValue(value)
+            onValueChange?.(value)
         },
-        [handleTrigger]
+        [handleTrigger, onValueChange]
     )
 
     const context = useMemo(
@@ -62,12 +75,19 @@ export const SelectProvider = ({ name, defaultValue, children }: SelectProviderP
             id: selectId,
             name,
             selectedValue,
-            open,
+            open: isOpen,
             onTrigger: handleTrigger,
             onChange: handleChange,
         }),
-        [name, handleChange, handleTrigger, open, selectId, selectedValue]
+        [name, handleChange, handleTrigger, isOpen, selectId, selectedValue]
     )
+
+    useEffect(() => {
+        if (open === undefined) {
+            return
+        }
+        setIsOpen(open)
+    }, [open])
 
     return <SelectContext value={context}>{children}</SelectContext>
 }

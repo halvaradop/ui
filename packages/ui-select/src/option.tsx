@@ -12,7 +12,7 @@ export const SelectOption = ({ className, value, children, ref, ...props }: Sele
     return (
         <button
             className={merge(
-                "w-full h-9 px-[calc(var(--size-base)*0.4)] flex items-center transition-colors rounded-(--rounded) hover:cursor-pointer hover:bg-ghost aria-selected:text-on-primary aria-selected:bg-primary disabled:text-on-surface disabled:bg-disabled disabled:cursor-not-allowed",
+                "w-full h-(--size-base) px-[calc(var(--size-base)*0.4)] flex items-center transition-colors rounded-(--rounded) hover:cursor-pointer hover:bg-ghost aria-selected:text-on-primary aria-selected:bg-primary disabled:text-on-surface disabled:bg-disabled disabled:cursor-not-allowed",
                 className
             )}
             ref={ref}

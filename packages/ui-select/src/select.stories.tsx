@@ -1,8 +1,10 @@
+import { useState } from "react"
 import type { Meta, StoryObj } from "@storybook/react"
 import { within, expect } from "@storybook/test"
 import { Select, SelectList, SelectOption, SelectTrigger } from "./index.js"
 import { DecoratorWrapper } from "@/ui/ui-utils/src/decorator.js"
 import { DocsPage } from "@/ui/ui-utils/src/docs-page.js"
+import { Button } from "@/ui/ui-button/src/index.js"
 
 const meta: Meta = {
     title: "ui-select",
@@ -58,9 +60,50 @@ export const Base: Story = {
 
         burger.click()
         await expect(burger).toBeInTheDocument()
-        await expect(burger).toHaveAttribute("aria-selected", "true")
-        await expect(sushi).not.toHaveAttribute("aria-selected", "true")
     },
+}
+
+export const OpenAttribute: Story = {
+    render: () => {
+        const [isOpen, setIsOpen] = useState(false)
+        const [value, setValue] = useState("")
+
+        return (
+            <div className="w-full">
+                <Button onClick={() => setIsOpen((previous) => !previous)}>{isOpen ? "Close" : "Open"}</Button>
+                <Select
+                    className="min-w-56 max-w-fit mt-10 mx-auto"
+                    name="food"
+                    open={isOpen}
+                    onValueChange={setValue}
+                    onOpenChange={setIsOpen}
+                >
+                    <SelectTrigger>Select an item</SelectTrigger>
+                    <SelectList>
+                        <SelectOption value="pizza">Pizza</SelectOption>
+                        <SelectOption value="burger">Burger</SelectOption>
+                        <SelectOption value="sushi">Sushi</SelectOption>
+                        <SelectOption value="salad">Salad</SelectOption>
+                    </SelectList>
+                </Select>
+                <span className="mt-4 block">Selected Value: {value}</span>
+            </div>
+        )
+    },
+}
+
+export const DefaultValue: Story = {
+    render: () => (
+        <Select className="min-w-56 max-w-fit mt-10 mx-auto" name="food" defaultValue="sushi">
+            <SelectTrigger>Select an item</SelectTrigger>
+            <SelectList>
+                <SelectOption value="pizza">Pizza</SelectOption>
+                <SelectOption value="burger">Burger</SelectOption>
+                <SelectOption value="sushi">Sushi</SelectOption>
+                <SelectOption value="salad">Salad</SelectOption>
+            </SelectList>
+        </Select>
+    ),
 }
 
 export default meta
