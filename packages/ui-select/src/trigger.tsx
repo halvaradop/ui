@@ -30,10 +30,11 @@ export const SelectTrigger = ({ className, children, ref, ...props }: SelectTrig
                 height="24px"
                 viewBox="0 -960 960 960"
                 width="24px"
-                className="text-on-surface fill-current transition data-[open]:rotate-90"
+                className={merge("text-on-surface fill-current transition ease-in-out duration-200", {
+                    "rotate-180": open,
+                })}
                 aria-hidden="true"
                 focusable="false"
-                data-expanded={open}
             >
                 <path d="M480-357.85 253.85-584 296-626.15l184 184 184-184L706.15-584 480-357.85Z" />
             </svg>
