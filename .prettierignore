@@ -1,13 +1,31 @@
 # Dependencies
+node_modules/
+**/node_modules/
+
+# Build outputs
+dist/
+build/
+out/
+**/dist/
+**/build/
+**/out/
+
+# Package manager files
 pnpm-lock.yaml
-package-lock.json
 yarn.lock
+package-lock.json
 
-# Cache
-.cache
+# Generated files
+*.generated.*
+**/*.generated.*
 
-# Modules
-node_modules
+# Cache and temporary files
+.cache/
+**/.cache/
+*.tmp
+*.temp
+**/*.tmp
+**/*.temp
 
 # Misc
 *.DS_Store
