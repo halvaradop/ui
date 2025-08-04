@@ -106,4 +106,18 @@ export const DefaultValue: Story = {
     ),
 }
 
+export const DotNotation: Story = {
+    render: () => (
+        <Select className="min-w-56 max-w-fit mt-10 mx-auto" name="food">
+            <Select.Trigger>Select an item</Select.Trigger>
+            <Select.List>
+                <Select.Option value="pizza">Pizza</Select.Option>
+                <Select.Option value="burger">Burger</Select.Option>
+                <Select.Option value="sushi">Sushi</Select.Option>
+                <Select.Option value="salad">Salad</Select.Option>
+            </Select.List>
+        </Select>
+    ),
+}
+
 export default meta
