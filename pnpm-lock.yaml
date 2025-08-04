@@ -210,6 +210,31 @@ importers:
         specifier: workspace:*
         version: link:../../configs/tsup-config
 
+  packages/ui-card:
+    dependencies:
+      '@halvaradop/ui-core':
+        specifier: workspace:*
+        version: link:../ui-core
+      '@halvaradop/ui-slot':
+        specifier: workspace:*
+        version: link:../ui-slot
+      class-variance-authority:
+        specifier: 'catalog:'
+        version: 0.7.0
+      react:
+        specifier: 'catalog:'
+        version: 19.1.1
+      react-dom:
+        specifier: 'catalog:'
+        version: 19.1.1(react@19.1.1)
+    devDependencies:
+      '@ui/ts-config':
+        specifier: workspace:*
+        version: link:../../configs/ts-config
+      '@ui/tsup-config':
+        specifier: workspace:*
+        version: link:../../configs/tsup-config
+
   packages/ui-checkbox:
     dependencies:
       '@halvaradop/ui-core':
