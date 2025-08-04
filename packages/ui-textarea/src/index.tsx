@@ -52,7 +52,16 @@ export const Textarea = ({
 }: TextareaProps<typeof textareaVariants>) => {
     return (
         <textarea
-            className={merge(textareaVariants({ className, variant, size, resize, fullWidth, fullRounded }))}
+            className={merge(
+                textareaVariants({
+                    className,
+                    variant,
+                    size,
+                    resize,
+                    fullWidth,
+                    fullRounded,
+                })
+            )}
             ref={ref}
             {...props}
         />
