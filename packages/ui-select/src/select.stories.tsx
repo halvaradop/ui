@@ -203,4 +203,26 @@ export const DotNotation: Story = {
     ),
 }
 
+export const WithSlot: Story = {
+    render: (args) => (
+        <Select className="min-w-56 max-w-fit mt-10 mx-auto" name="food" {...args}>
+            <Select.Trigger>Select an item</Select.Trigger>
+            <Select.List>
+                <Select.Option value="pizza" asChild>
+                    <a href="#">Pizza</a>
+                </Select.Option>
+                <Select.Option value="burger" asChild>
+                    <a href="#">Burger</a>
+                </Select.Option>
+                <Select.Option value="sushi" asChild>
+                    <a href="#">Sushi</a>
+                </Select.Option>
+                <Select.Option value="salad" asChild>
+                    <a href="#">Salad</a>
+                </Select.Option>
+            </Select.List>
+        </Select>
+    ),
+}
+
 export default meta
