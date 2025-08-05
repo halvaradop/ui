@@ -7,6 +7,12 @@ and adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Added
+
+- Introduced a new `open` attribute, along with `onValueChange` and `onOpenChange` handlers, enabling external control and monitoring of internal state changes in response to user interactions. [#199](https://github.com/halvaradop/ui/pull/199)
+
+- Implemented the Dot Notation pattern, allowing access to all compound components via the main `Select` component. This eliminates the need to import each subcomponent individually when using the `Select` suite. [#199](https://github.com/halvaradop/ui/pull/199)
+
 ---
 
 ## [1.0.0] - 2025-06-09

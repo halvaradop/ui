@@ -1,5 +1,9 @@
+import type { FunctionComponent } from "react"
 import { type ComponentProps, merge } from "@halvaradop/ui-core"
 import { SelectProvider, useSelect } from "./context.js"
+import { SelectList } from "./list.js"
+import { SelectOption } from "./option.js"
+import { SelectTrigger } from "./trigger.js"
 
 export type SelectProps = ComponentProps<"div"> & {
     name: string
@@ -9,7 +13,13 @@ export type SelectProps = ComponentProps<"div"> & {
     onOpenChange?: (value: boolean) => void
 }
 
-export const Select = ({
+interface SelectComponent extends FunctionComponent<SelectProps> {
+    List: typeof SelectList
+    Option: typeof SelectOption
+    Trigger: typeof SelectTrigger
+}
+
+const SelectRoot = ({
     className,
     children,
     name,
@@ -46,4 +56,12 @@ export const Select = ({
     )
 }
 
+const Select = SelectRoot as SelectComponent
+
+Select.List = SelectList
+Select.Option = SelectOption
+Select.Trigger = SelectTrigger
+
 Select.displayName = "Select"
+
+export { Select }
