@@ -1,13 +1,13 @@
 import { type ComponentProps, merge } from "@halvaradop/ui-core"
 import { useSelect } from "./context.js"
 
-export type SelectItemProps = ComponentProps<"button", "value"> & {
+export type SelectOptionProps = ComponentProps<"button", "value"> & {
     value?: string | number
     disabled?: boolean
 }
 
-export const SelectOption = ({ className, value, children, ref, ...props }: SelectItemProps) => {
-    const { id, onChange } = useSelect()
+export const SelectOption = ({ className, value, children, ref, ...props }: SelectOptionProps) => {
+    const { id, onValueChange } = useSelect()
 
     return (
         <button
@@ -20,7 +20,7 @@ export const SelectOption = ({ className, value, children, ref, ...props }: Sele
             data-value={value}
             tabIndex={0}
             aria-labelledby={`${id}-option-${value}`}
-            onClick={onChange}
+            onClick={onValueChange}
             {...props}
         >
             {children}

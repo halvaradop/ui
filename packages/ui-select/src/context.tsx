@@ -9,22 +9,23 @@ import {
     useCallback,
     useEffect,
 } from "react"
+import type { PropsWithChildren } from "@halvaradop/ui-core"
+import type { SelectProps } from "./select.js"
 
-export interface SelectContextType {
+export interface SelectContextType extends Required<Pick<SelectProps, "name" | "open" | "value">> {
     id: string
-    open: boolean
-    onTrigger: () => void
-    name: string
-    selectedValue: string
-    onChange: MouseEventHandler<HTMLButtonElement>
+    onOpenChange: () => void
+    onValueChange: MouseEventHandler<HTMLButtonElement>
 }
 
 export const SelectContext = createContext<SelectContextType>({
     id: "select-id",
-    open: false,
     name: "default",
-    selectedValue: "",
-} as SelectContextType)
+    open: false,
+    onOpenChange: () => undefined,
+    value: "",
+    onValueChange: () => undefined,
+})
 
 export const useSelect = () => {
     const context = use(SelectContext)
@@ -34,52 +35,44 @@ export const useSelect = () => {
     return context
 }
 
-interface SelectProviderProps {
-    children: React.ReactNode
-    name: string
-    defaultValue?: string
-    open?: boolean
-    onValueChange?: (value: string) => void
-    onOpenChange?: (value: boolean) => void
-}
-
 export const SelectProvider = ({
+    children,
     name,
     defaultValue,
-    children,
-    open,
+    value,
+    open = false,
     onValueChange,
     onOpenChange,
-}: SelectProviderProps) => {
+}: PropsWithChildren<SelectProps>) => {
     const selectId = useId()
-    const [isOpen, setIsOpen] = useState(open ?? false)
-    const [selectedValue, setSelectedValue] = useState<string>(defaultValue ?? "")
+    const [isOpen, setIsOpen] = useState<boolean>(open)
+    const [selectedValue, setSelectedValue] = useState<string>(defaultValue ?? value ?? "")
 
-    const handleTrigger = useCallback(() => {
+    const handleOpenChange = useCallback(() => {
         setIsOpen((prev) => !prev)
         onOpenChange?.(!isOpen)
     }, [isOpen, onOpenChange])
 
-    const handleChange = useCallback(
+    const handleValueChange = useCallback(
         (event: MouseEvent<HTMLButtonElement>) => {
             const value = event.currentTarget.dataset.value ?? ""
-            handleTrigger()
+            handleOpenChange()
             setSelectedValue(value)
             onValueChange?.(value)
         },
-        [handleTrigger, onValueChange]
+        [handleOpenChange, onValueChange]
     )
 
-    const context = useMemo(
+    const context = useMemo<SelectContextType>(
         () => ({
             id: selectId,
             name,
-            selectedValue,
             open: isOpen,
-            onTrigger: handleTrigger,
-            onChange: handleChange,
+            onOpenChange: handleOpenChange,
+            value: selectedValue,
+            onValueChange: handleValueChange,
         }),
-        [name, handleChange, handleTrigger, isOpen, selectId, selectedValue]
+        [selectId, name, isOpen, selectedValue, handleValueChange, handleOpenChange]
     )
 
     useEffect(() => {
@@ -88,6 +81,13 @@ export const SelectProvider = ({
         }
         setIsOpen(open)
     }, [open])
+
+    useEffect(() => {
+        if (!value) {
+            return
+        }
+        setSelectedValue(value)
+    }, [value])
 
     return <SelectContext value={context}>{children}</SelectContext>
 }

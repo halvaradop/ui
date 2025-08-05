@@ -4,7 +4,7 @@ import { useSelect } from "./context.js"
 export type SelectTriggerProps = ComponentProps<"button">
 
 export const SelectTrigger = ({ className, children, ref, ...props }: SelectTriggerProps) => {
-    const { id, selectedValue, onTrigger, open } = useSelect()
+    const { id, value, open, onOpenChange } = useSelect()
 
     const capitalize = (value: string) => (value ? value.charAt(0).toUpperCase() + value.slice(1) : "")
 
@@ -21,10 +21,10 @@ export const SelectTrigger = ({ className, children, ref, ...props }: SelectTrig
             aria-expanded={open}
             aria-controls={`${id}-listbox`}
             aria-labelledby={`${id}-trigger`}
-            onClick={onTrigger}
+            onClick={onOpenChange}
             {...props}
         >
-            {selectedValue ? capitalize(selectedValue) : children}
+            {value ? capitalize(value) : children}
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 height="24px"

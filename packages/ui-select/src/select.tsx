@@ -1,4 +1,3 @@
-import type { FunctionComponent } from "react"
 import { type ComponentProps, merge } from "@halvaradop/ui-core"
 import { SelectProvider, useSelect } from "./context.js"
 import { SelectList } from "./list.js"
@@ -8,23 +7,19 @@ import { SelectTrigger } from "./trigger.js"
 export type SelectProps = ComponentProps<"div"> & {
     name: string
     defaultValue?: string
+    value?: string
     open?: boolean
     onValueChange?: (value: string) => void
     onOpenChange?: (value: boolean) => void
 }
 
-interface SelectComponent extends FunctionComponent<SelectProps> {
-    List: typeof SelectList
-    Option: typeof SelectOption
-    Trigger: typeof SelectTrigger
-}
-
-const SelectRoot = ({
+export const Select = ({
     className,
     children,
     name,
     defaultValue,
     ref,
+    value,
     open,
     onValueChange,
     onOpenChange,
@@ -37,11 +32,12 @@ const SelectRoot = ({
             name={name}
             defaultValue={defaultValue}
             open={open}
+            value={value}
             onValueChange={onValueChange}
             onOpenChange={onOpenChange}
         >
             <div
-                className={merge("text-on-surface relative", className)}
+                className={merge("text-on-surface relative z-auto", className)}
                 ref={ref}
                 id={id}
                 aria-haspopup="listbox"
@@ -56,12 +52,8 @@ const SelectRoot = ({
     )
 }
 
-const Select = SelectRoot as SelectComponent
-
 Select.List = SelectList
 Select.Option = SelectOption
 Select.Trigger = SelectTrigger
 
 Select.displayName = "Select"
-
-export { Select }
