@@ -3,11 +3,11 @@ import { type SlotProps, Slot } from "@halvaradop/ui-slot"
 import { useSelect } from "./context.js"
 
 export type SelectOptionProps = Omit<SlotProps<"button">, "value"> & {
-    value?: string | number
+    value: string
     disabled?: boolean
 }
 
-export const SelectOption = ({ className, value, children, ref, asChild, ...props }: SelectOptionProps) => {
+export const SelectOption = ({ className, value, children, ref, disabled, asChild, ...props }: SelectOptionProps) => {
     const { id, onValueChange } = useSelect()
     const SlotComponent = asChild ? Slot : "button"
 
@@ -19,10 +19,12 @@ export const SelectOption = ({ className, value, children, ref, asChild, ...prop
             )}
             ref={ref}
             id={`${id}-option-${value}`}
+            disabled={disabled}
             data-value={value}
+            data-slot="select-option"
             tabIndex={0}
             aria-labelledby={`${id}-option-${value}`}
-            onClick={onValueChange}
+            onClick={() => onValueChange(value)}
             {...props}
         >
             {children}

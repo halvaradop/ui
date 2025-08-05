@@ -19,6 +19,7 @@ export const SelectTrigger = ({ className, children, ref, asChild, ...props }: S
             ref={ref}
             id={`${id}-trigger`}
             type="button"
+            data-slot="select-trigger"
             aria-haspopup="listbox"
             aria-expanded={open}
             aria-controls={`${id}-listbox`}

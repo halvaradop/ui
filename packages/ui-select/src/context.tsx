@@ -1,21 +1,11 @@
-import {
-    type MouseEventHandler,
-    type MouseEvent,
-    createContext,
-    use,
-    useState,
-    useId,
-    useMemo,
-    useCallback,
-    useEffect,
-} from "react"
+import { createContext, use, useState, useId, useMemo, useCallback, useEffect } from "react"
 import type { PropsWithChildren } from "@halvaradop/ui-core"
 import type { SelectProps } from "./select.js"
 
 export interface SelectContextType extends Required<Pick<SelectProps, "name" | "open" | "value">> {
     id: string
     onOpenChange: () => void
-    onValueChange: MouseEventHandler<HTMLButtonElement>
+    onValueChange: (value: string) => void
 }
 
 export const SelectContext = createContext<SelectContextType>({
@@ -39,13 +29,14 @@ export const SelectProvider = ({
     children,
     name,
     defaultValue,
+    defaultOpen,
     value,
-    open = false,
+    open,
     onValueChange,
     onOpenChange,
 }: PropsWithChildren<SelectProps>) => {
     const selectId = useId()
-    const [isOpen, setIsOpen] = useState<boolean>(open)
+    const [isOpen, setIsOpen] = useState<boolean>(defaultOpen ?? open ?? false)
     const [selectedValue, setSelectedValue] = useState<string>(defaultValue ?? value ?? "")
 
     const handleOpenChange = useCallback(() => {
@@ -54,8 +45,7 @@ export const SelectProvider = ({
     }, [isOpen, onOpenChange])
 
     const handleValueChange = useCallback(
-        (event: MouseEvent<HTMLButtonElement>) => {
-            const value = event.currentTarget.dataset.value ?? ""
+        (value: string) => {
             handleOpenChange()
             setSelectedValue(value)
             onValueChange?.(value)

@@ -1,12 +1,13 @@
-import { type ComponentProps, merge } from "@halvaradop/ui-core"
+import { type ComponentProps, type PropsWithChildren, merge } from "@halvaradop/ui-core"
 import { SelectProvider, useSelect } from "./context.js"
 import { SelectList } from "./list.js"
 import { SelectOption } from "./option.js"
 import { SelectTrigger } from "./trigger.js"
 
-export type SelectProps = ComponentProps<"div"> & {
+export type SelectProps = PropsWithChildren<ComponentProps<"div">> & {
     name: string
     defaultValue?: string
+    defaultOpen?: boolean
     value?: string
     open?: boolean
     onValueChange?: (value: string) => void
@@ -40,6 +41,7 @@ export const Select = ({
                 className={merge("text-on-surface relative z-auto", className)}
                 ref={ref}
                 id={id}
+                data-slot="select"
                 aria-haspopup="listbox"
                 aria-controls={`${id}-listbox`}
                 aria-expanded={isOpen}

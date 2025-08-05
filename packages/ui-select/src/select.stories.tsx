@@ -169,6 +169,7 @@ export const DefaultValue: Story = {
                 <Select
                     className="min-w-56 max-w-fit mt-10 mx-auto"
                     name="food"
+                    defaultValue="salad"
                     open={isOpen}
                     value={value}
                     onValueChange={setValue}
@@ -187,6 +188,24 @@ export const DefaultValue: Story = {
             </div>
         )
     },
+}
+
+export const DisabledOption: Story = {
+    render: (args) => (
+        <Select className="min-w-56 max-w-fit mt-10 mx-auto" name="food" {...args}>
+            <SelectTrigger>Select an item</SelectTrigger>
+            <SelectList>
+                <SelectOption value="pizza">Pizza</SelectOption>
+                <SelectOption value="burger" disabled>
+                    Burger
+                </SelectOption>
+                <SelectOption value="sushi" disabled>
+                    Sushi
+                </SelectOption>
+                <SelectOption value="salad">Salad</SelectOption>
+            </SelectList>
+        </Select>
+    ),
 }
 
 export const DotNotation: Story = {

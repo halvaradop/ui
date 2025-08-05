@@ -117,14 +117,16 @@ export default function App() {
 | Component       | Prop            | Accepted Values            | Default     |
 | --------------- | --------------- | -------------------------- | ----------- |
 | `Select`        | `name`          | `string`                   | `default`   |
-| `Select`        | `defaultValue`  | `string` or `number`       | `undefined` |
-| `Select`        | `value`         | `string`                   | `undefined` |
+| `Select`        | `defaultValue`  | `string`                   | `undefined` |
+| `Select`        | `defaultOpen`   | `boolean`                  | `false`     |
+| `Select`        | `value`         | `string`                   | `""`        |
 | `Select`        | `onValueChange` | `(value: string) => void`  | `undefined` |
-| `Select`        | `open`          | `boolean`                  | `undefined` |
+| `Select`        | `open`          | `boolean`                  | `false`     |
 | `Select`        | `onOpenChange`  | `(value: boolean) => void` | `undefined` |
 | `SelectTrigger` | `children`      | `ReactNode`                | `undefined` |
 | `SelectList`    | `children`      | `ReactNode`                | `undefined` |
-| `SelectOption`  | `value`         | `string` or `number`       | `undefined` |
+| `SelectOption`  | `value`         | `string`                   | `undefined` |
+| `SelectOption`  | `disabled`      | `boolean`                  | `false`     |
 
 ## Styling
 
