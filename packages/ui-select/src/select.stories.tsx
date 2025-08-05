@@ -6,12 +6,71 @@ import { DecoratorWrapper } from "@/ui/ui-utils/src/decorator.js"
 import { DocsPage } from "@/ui/ui-utils/src/docs-page.js"
 import { Button } from "@/ui/ui-button/src/index.js"
 
-const meta: Meta = {
+const meta: Meta<typeof Select> = {
     title: "ui-select",
-    tags: ["autodocs"],
     component: Select,
+    tags: ["autodocs"],
     args: {},
-    argTypes: {},
+    argTypes: {
+        name: {
+            control: { type: "text" },
+            description: "Name attribute for the select element.",
+            table: {
+                type: { summary: "string" },
+                defaultValue: { summary: "" },
+            },
+        },
+        defaultValue: {
+            control: {
+                type: "text",
+            },
+            description: "The initial selected value.",
+            table: {
+                type: {
+                    summary: "string",
+                },
+                defaultValue: {
+                    summary: "",
+                },
+            },
+        },
+        open: {
+            control: {
+                type: "boolean",
+            },
+            description: "Controls the open state of the select dropdown.",
+            table: {
+                type: {
+                    summary: "boolean",
+                },
+                defaultValue: {
+                    summary: "false",
+                },
+            },
+        },
+        onOpenChange: {
+            description: "Callback fired when the open state changes.",
+            table: {
+                type: {
+                    summary: "(open: boolean) => void",
+                },
+                defaultValue: {
+                    summary: "undefined",
+                },
+            },
+        },
+        onValueChange: {
+            description: "Callback fired when the selected value changes.",
+            table: {
+                type: {
+                    summary: "(value: string) => void",
+                },
+                defaultValue: {
+                    summary: "undefined",
+                },
+            },
+        },
+    },
     parameters: {
         layout: "centered",
         backgrounds: {
@@ -23,13 +82,13 @@ const meta: Meta = {
         },
     },
     decorators: [DecoratorWrapper],
-} satisfies Meta<typeof Select>
+}
 
 type Story = StoryObj<typeof meta>
 
 export const Base: Story = {
-    render: () => (
-        <Select className="min-w-56 mx-auto" name="food">
+    render: (args) => (
+        <Select className="min-w-56 mx-auto" name="food" {...args}>
             <SelectTrigger>Select an item</SelectTrigger>
             <SelectList>
                 <SelectOption value="pizza">Pizza</SelectOption>
@@ -64,7 +123,7 @@ export const Base: Story = {
 }
 
 export const OpenAttribute: Story = {
-    render: () => {
+    render: (args) => {
         const [isOpen, setIsOpen] = useState(false)
         const [value, setValue] = useState("")
 
@@ -74,9 +133,11 @@ export const OpenAttribute: Story = {
                 <Select
                     className="min-w-56 max-w-fit mt-10 mx-auto"
                     name="food"
+                    value={value}
                     open={isOpen}
                     onValueChange={setValue}
                     onOpenChange={setIsOpen}
+                    {...args}
                 >
                     <SelectTrigger>Select an item</SelectTrigger>
                     <SelectList>
@@ -93,22 +154,44 @@ export const OpenAttribute: Story = {
 }
 
 export const DefaultValue: Story = {
-    render: () => (
-        <Select className="min-w-56 max-w-fit mt-10 mx-auto" name="food" defaultValue="sushi">
-            <SelectTrigger>Select an item</SelectTrigger>
-            <SelectList>
-                <SelectOption value="pizza">Pizza</SelectOption>
-                <SelectOption value="burger">Burger</SelectOption>
-                <SelectOption value="sushi">Sushi</SelectOption>
-                <SelectOption value="salad">Salad</SelectOption>
-            </SelectList>
-        </Select>
-    ),
+    render: (args) => {
+        const [value, setValue] = useState("")
+        const [isOpen, setIsOpen] = useState(false)
+
+        const handleChange = () => {
+            setValue("burger")
+            setIsOpen(false)
+        }
+
+        return (
+            <div className="w-full">
+                <Button onClick={handleChange}>Shortcut for select burger</Button>
+                <Select
+                    className="min-w-56 max-w-fit mt-10 mx-auto"
+                    name="food"
+                    open={isOpen}
+                    value={value}
+                    onValueChange={setValue}
+                    onOpenChange={setIsOpen}
+                    {...args}
+                >
+                    <SelectTrigger>Select an item</SelectTrigger>
+                    <SelectList>
+                        <SelectOption value="pizza">Pizza</SelectOption>
+                        <SelectOption value="burger">Burger</SelectOption>
+                        <SelectOption value="sushi">Sushi</SelectOption>
+                        <SelectOption value="salad">Salad</SelectOption>
+                    </SelectList>
+                </Select>
+                <span className="mt-4 block">Selected Value: {value}</span>
+            </div>
+        )
+    },
 }
 
 export const DotNotation: Story = {
-    render: () => (
-        <Select className="min-w-56 max-w-fit mt-10 mx-auto" name="food">
+    render: (args) => (
+        <Select className="min-w-56 max-w-fit mt-10 mx-auto" name="food" {...args}>
             <Select.Trigger>Select an item</Select.Trigger>
             <Select.List>
                 <Select.Option value="pizza">Pizza</Select.Option>
