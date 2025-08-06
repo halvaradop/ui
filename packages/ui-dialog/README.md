@@ -64,10 +64,10 @@ export default function App() {
 
 ### Prop Reference
 
-| Prop      | Accepted Values                  | Default  |
-| --------- | -------------------------------- | -------- |
-| `variant` | `"base" \| "inner" \| "fixed"`   | `"base"` |
-| `size`    | `"sm" \| "base" \| "md" \| "lg"` | `"base"` |
+| Prop      | Accepted Values                  | Default  | Description                                                    |
+| --------- | -------------------------------- | -------- | -------------------------------------------------------------- |
+| `variant` | `"base" \| "inner" \| "fixed"`   | `"base"` | Defines the positioning and backdrop style of the dialog modal |
+| `size`    | `"sm" \| "base" \| "md" \| "lg"` | `"base"` | Controls the width and padding of the dialog content           |
 
 ## Styling
 

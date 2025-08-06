@@ -114,19 +114,19 @@ export default function App() {
 
 ### Prop Reference
 
-| Component       | Prop            | Accepted Values            | Default     |
-| --------------- | --------------- | -------------------------- | ----------- |
-| `Select`        | `name`          | `string`                   | `default`   |
-| `Select`        | `defaultValue`  | `string`                   | `undefined` |
-| `Select`        | `defaultOpen`   | `boolean`                  | `false`     |
-| `Select`        | `value`         | `string`                   | `""`        |
-| `Select`        | `onValueChange` | `(value: string) => void`  | `undefined` |
-| `Select`        | `open`          | `boolean`                  | `false`     |
-| `Select`        | `onOpenChange`  | `(value: boolean) => void` | `undefined` |
-| `SelectTrigger` | `children`      | `ReactNode`                | `undefined` |
-| `SelectList`    | `children`      | `ReactNode`                | `undefined` |
-| `SelectOption`  | `value`         | `string`                   | `undefined` |
-| `SelectOption`  | `disabled`      | `boolean`                  | `false`     |
+| Component       | Prop            | Accepted Values            | Default     | Description                                |
+| --------------- | --------------- | -------------------------- | ----------- | ------------------------------------------ |
+| `Select`        | `name`          | `string`                   | `default`   | HTML name attribute for the select element |
+| `Select`        | `defaultValue`  | `string`                   | `undefined` | Initially selected option value            |
+| `Select`        | `defaultOpen`   | `boolean`                  | `false`     | Whether the select is initially open       |
+| `Select`        | `value`         | `string`                   | `""`        | Current selected value (controlled)        |
+| `Select`        | `onValueChange` | `(value: string) => void`  | `undefined` | Callback when selection changes            |
+| `Select`        | `open`          | `boolean`                  | `false`     | Whether the select is open (controlled)    |
+| `Select`        | `onOpenChange`  | `(value: boolean) => void` | `undefined` | Callback when open state changes           |
+| `SelectTrigger` | `children`      | `ReactNode`                | `undefined` | Content to display in the trigger button   |
+| `SelectList`    | `children`      | `ReactNode`                | `undefined` | List of select options                     |
+| `SelectOption`  | `value`         | `string`                   | `undefined` | Value of the individual option             |
+| `SelectOption`  | `disabled`      | `boolean`                  | `false`     | Whether the option is disabled             |
 
 ## Styling
 

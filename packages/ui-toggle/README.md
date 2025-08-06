@@ -24,12 +24,12 @@ export default function App() {
 
 ### Prop Reference
 
-| Prop       | Accepted Values                  | Default  |
-| ---------- | -------------------------------- | -------- |
-| `variant`  | `"base"`                         | `"base"` |
-| `size`     | `"sm" \| "base" \| "md" \| "lg"` | `"base"` |
-| `checked`  | `true \| false`                  | `false`  |
-| `disabled` | `true \| false`                  | `false`  |
+| Prop       | Accepted Values                                | Default     | Description                                    |
+| ---------- | ---------------------------------------------- | ----------- | ---------------------------------------------- |
+| `color`    | `"green" \| "primary" \| "secondary" \| "red"` | `"primary"` | Defines the color theme of the toggle switch   |
+| `size`     | `"sm" \| "base" \| "md" \| "lg"`               | `"base"`    | Controls the size of the toggle switch         |
+| `checked`  | `true \| false`                                | `false`     | Whether the toggle is currently checked/active |
+| `disabled` | `true \| false`                                | `false`     | Whether the toggle is disabled for interaction |
 
 ## Styling
 

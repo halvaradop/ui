@@ -39,10 +39,11 @@ export default function App() {
 
 ### Prop Reference
 
-| Prop      | Accepted Values                  | Default  |
-| --------- | -------------------------------- | -------- |
-| `variant` |                                  |          |
-| `size`    | `"sm" \| "base" \| "md" \| "lg"` | `"base"` |
+This component is currently a template/placeholder and does not have implemented props yet.
+
+| Prop | Accepted Values | Default | Description              |
+| ---- | --------------- | ------- | ------------------------ |
+| -    | -               | -       | No props implemented yet |
 
 ## Styling
 

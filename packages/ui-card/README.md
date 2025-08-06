@@ -54,11 +54,11 @@ export default function CardLinkExample() {
 
 ### Prop Reference
 
-| Prop      | Accepted Values                  | Default  |
-| --------- | -------------------------------- | -------- |
-| `variant` | `"base" \| "outline"`            | `"base"` |
-| `size`    | `"sm" \| "base" \| "md" \| "lg"` | `"base"` |
-| `asChild` | `true \| false`                  | `false`  |
+| Prop      | Accepted Values                  | Default  | Description                                                                        |
+| --------- | -------------------------------- | -------- | ---------------------------------------------------------------------------------- |
+| `variant` | `"base" \| "outline"`            | `"base"` | Defines the visual style - base has background, outline is transparent with border |
+| `size`    | `"sm" \| "base" \| "md" \| "lg"` | `"base"` | Controls the padding and shadow size of the card                                   |
+| `asChild` | `true \| false`                  | `false`  | Renders the card as a different HTML element while keeping the styling             |
 
 ## Styling
 

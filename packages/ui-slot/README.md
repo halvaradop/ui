@@ -37,9 +37,9 @@ export default function Card({ children, asChild, ...props }: SlotProps<"div">) 
 
 ### Prop Reference
 
-| Prop      | Accepted Values | Default |
-| --------- | --------------- | ------- |
-| `asChild` | `true \| false` | `false` |
+| Prop      | Accepted Values | Default | Description                                                                |
+| --------- | --------------- | ------- | -------------------------------------------------------------------------- |
+| `asChild` | `true \| false` | `false` | When true, renders the child element instead of creating a wrapper element |
 
 ## About
 

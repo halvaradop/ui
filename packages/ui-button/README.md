@@ -56,13 +56,13 @@ export default function App() {
 
 ### Prop Reference
 
-| Prop          | Accepted Values                                                                       | Default  |
-| ------------- | ------------------------------------------------------------------------------------- | -------- |
-| `variant`     | `"base" \| "secondary" \| "ghost" \| "link" \| "destructive" \| "outline" \| "plain"` | `"base"` |
-| `size`        | `"sm" \| "base" \| "md" \| "lg"`                                                      | `"base"` |
-| `fullWidth`   | `true \| false`                                                                       | `false`  |
-| `fullRounded` | `true \| false`                                                                       | `false`  |
-| `asChild`     | `true \| false`                                                                       | `false`  |
+| Prop          | Accepted Values                                                                       | Default  | Description                                                              |
+| ------------- | ------------------------------------------------------------------------------------- | -------- | ------------------------------------------------------------------------ |
+| `variant`     | `"base" \| "secondary" \| "ghost" \| "link" \| "destructive" \| "outline" \| "plain"` | `"base"` | Defines the visual style and color scheme of the button                  |
+| `size`        | `"sm" \| "base" \| "md" \| "lg"`                                                      | `"base"` | Controls the size and padding of the button                              |
+| `fullWidth`   | `true \| false`                                                                       | `false`  | Makes the button take the full width of its container                    |
+| `fullRounded` | `true \| false`                                                                       | `false`  | Applies fully rounded corners to the button                              |
+| `asChild`     | `true \| false`                                                                       | `false`  | Renders the button as a different HTML element while keeping the styling |
 
 ## Styling
 

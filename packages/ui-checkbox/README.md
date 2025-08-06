@@ -41,11 +41,11 @@ export default function App() {
 
 ### Prop Reference
 
-| Prop          | Accepted Values                                       | Default   |
-| ------------- | ----------------------------------------------------- | --------- |
-| `color`       | `"green" \| "blue" \| "red" \| "yellow" \| "primary"` | `"green"` |
-| `size`        | `"sm" \| "base" \| "md" \| "lg"`                      | `"base"`  |
-| `fullRounded` | `true \| false`                                       | `false`   |
+| Prop          | Accepted Values                                | Default     | Description                                                    |
+| ------------- | ---------------------------------------------- | ----------- | -------------------------------------------------------------- |
+| `color`       | `"primary" \| "secondary" \| "green" \| "red"` | `"primary"` | Defines the color theme for the checked state of the checkbox  |
+| `size`        | `"sm" \| "base" \| "md" \| "lg"`               | `"base"`    | Controls the size of the checkbox                              |
+| `fullRounded` | `true \| false`                                | `false`     | Applies fully rounded corners instead of slightly rounded ones |
 
 ## Styling
 

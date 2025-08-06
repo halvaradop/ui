@@ -24,13 +24,13 @@ export default function App() {
 
 ### Prop Reference
 
-| Prop          | Type                                             | Default      |
-| ------------- | ------------------------------------------------ | ------------ |
-| `variant`     | `"base" \| "line" \| "sensitive"`                | `"base"`     |
-| `size`        | `"sm" \| "base" \| "md" \| "lg"`                 | `"base"`     |
-| `resize`      | `"none" \| "vertical" \| "horizontal" \| "both"` | `"vertical"` |
-| `fullWidth`   | `boolean`                                        | `true`       |
-| `fullRounded` | `boolean`                                        | `false`      |
+| Prop          | Type                                                | Default      | Description                                             |
+| ------------- | --------------------------------------------------- | ------------ | ------------------------------------------------------- |
+| `variant`     | `"base"`                                            | `"base"`     | Defines the visual style of the textarea                |
+| `size`        | `"sm" \| "base" \| "md" \| "lg"`                    | `"base"`     | Controls the height and padding of the textarea         |
+| `resize`      | `"content" \| "both" \| "horizontal" \| "vertical"` | `"vertical"` | Defines which directions the textarea can be resized    |
+| `fullWidth`   | `boolean`                                           | `true`       | Makes the textarea take the full width of its container |
+| `fullRounded` | `boolean`                                           | `false`      | Applies fully rounded corners to the textarea           |
 
 ## Styling
 

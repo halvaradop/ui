@@ -46,13 +46,13 @@ export default function App() {
 
 ### Prop Reference
 
-| Component    | Prop           | Accepted Values      | Default     |
-| ------------ | -------------- | -------------------- | ----------- |
-| `RadioGroup` | `variant`      | `"row", "column"`    | `"column"`  |
-| `RadioGroup` | `name`         | `string`             | `""`        |
-| `RadioGroup` | `defaultValue` | `string`             | `undefined` |
-| `RadioGroup` | `onChange`     | `(e: Event) => void` | `undefined` |
-| `Radio `     | `value`        | `string`             | `undefined` |
+| Component    | Prop           | Accepted Values      | Default     | Description                                       |
+| ------------ | -------------- | -------------------- | ----------- | ------------------------------------------------- |
+| `RadioGroup` | `variant`      | `"row" \| "column"`  | `"column"`  | Defines the layout direction of the radio buttons |
+| `RadioGroup` | `name`         | `string`             | `""`        | HTML name attribute for the radio group           |
+| `RadioGroup` | `defaultValue` | `string`             | `undefined` | Initially selected radio button value             |
+| `RadioGroup` | `onChange`     | `(e: Event) => void` | `undefined` | Callback function when selection changes          |
+| `Radio `     | `value`        | `string`             | `undefined` | Value of the individual radio button              |
 
 ## Styling
 

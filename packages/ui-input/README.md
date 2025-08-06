@@ -44,12 +44,12 @@ export default function App() {
 
 ### Prop Reference
 
-| Prop          | Accepted Values                   | Default  |
-| ------------- | --------------------------------- | -------- |
-| `variant`     | `"base" \| "line" \| "sensitive"` | `"base"` |
-| `size`        | `"sm" \| "base" \| "md" \| "lg"`  | `"base"` |
-| `fullWidth`   | `true \| false`                   | `true`   |
-| `fullRounded` | `true \| false`                   | `false`  |
+| Prop          | Accepted Values                   | Default  | Description                                                                           |
+| ------------- | --------------------------------- | -------- | ------------------------------------------------------------------------------------- |
+| `variant`     | `"base" \| "line" \| "sensitive"` | `"base"` | Defines the visual style - base is standard, line is minimal, sensitive for passwords |
+| `size`        | `"sm" \| "base" \| "md" \| "lg"`  | `"base"` | Controls the height and padding of the input field                                    |
+| `fullWidth`   | `true \| false`                   | `true`   | Makes the input take the full width of its container                                  |
+| `fullRounded` | `true \| false`                   | `false`  | Applies fully rounded corners to the input field                                      |
 
 ## Styling
 

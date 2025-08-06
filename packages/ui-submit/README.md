@@ -47,12 +47,12 @@ export default function App() {
 
 ### Prop Reference
 
-| Prop          | Accepted Values                  | Default  |
-| ------------- | -------------------------------- | -------- |
-| `variant`     | `"base" \| "inverted"`           | `"base"` |
-| `size`        | `"sm" \| "base" \| "md" \| "lg"` | `"base"` |
-| `fullWidth`   | `true \| false`                  | `false`  |
-| `fullRounded` | `true \| false`                  | `false`  |
+| Prop          | Accepted Values                  | Default  | Description                                                                  |
+| ------------- | -------------------------------- | -------- | ---------------------------------------------------------------------------- |
+| `variant`     | `"base" \| "secondary"`          | `"base"` | Defines the visual style - base is primary, secondary is alternative styling |
+| `size`        | `"sm" \| "base" \| "md" \| "lg"` | `"base"` | Controls the size and padding of the submit button                           |
+| `fullWidth`   | `true \| false`                  | `false`  | Makes the button take the full width of its container                        |
+| `fullRounded` | `true \| false`                  | `false`  | Applies fully rounded corners to the button                                  |
 
 ## Styling
 

@@ -49,10 +49,10 @@ export default function App() {
 
 ### Prop Reference
 
-| Prop      | Accepted Values                            | Default  |
-| --------- | ------------------------------------------ | -------- |
-| `variant` | `"base" \| "outline" \| "filled"`          | `"base"` |
-| `size`    | `"sm" \| "base" \| "md" \| "lg" \| "full"` | `"base"` |
+| Prop      | Accepted Values                            | Default  | Description                                                                            |
+| --------- | ------------------------------------------ | -------- | -------------------------------------------------------------------------------------- |
+| `variant` | `"base" \| "outline" \| "filled"`          | `"base"` | Defines the visual style - base is standard, outline has border, filled has background |
+| `size`    | `"sm" \| "base" \| "md" \| "lg" \| "full"` | `"base"` | Controls the width and spacing of the form container                                   |
 
 ## Styling
 

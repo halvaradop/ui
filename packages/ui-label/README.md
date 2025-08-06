@@ -57,11 +57,11 @@ export default function App() {
 
 ### Prop Reference
 
-| Prop      | Accepted Values           | Default  |
-| --------- | ------------------------- | -------- |
-| `variant` | `"base", "error", "flex"` | `"base"` |
-| `size`    | `"sm", "base", "md"`      | `"base"` |
-| `asChild` | `true, false`             | `false`  |
+| Prop      | Accepted Values           | Default  | Description                                                                                 |
+| --------- | ------------------------- | -------- | ------------------------------------------------------------------------------------------- |
+| `variant` | `"base", "error", "flex"` | `"base"` | Defines the visual style - base is standard, error shows validation issues, flex for layout |
+| `size`    | `"sm", "base", "md"`      | `"base"` | Controls the font size and spacing of the label                                             |
+| `asChild` | `true, false`             | `false`  | Renders the label as a different HTML element while keeping the styling                     |
 
 ## Styling
 
