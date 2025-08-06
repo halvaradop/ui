@@ -51,6 +51,7 @@ export default function App() {
 ## Components
 
 - [Button](https://github.com/halvaradop/ui/tree/master/packages/ui-button)
+- [Card](https://github.com/halvaradop/ui/tree/master/packages/ui-card)
 - [Checkbox](https://github.com/halvaradop/ui/tree/master/packages/ui-checkbox)
 - [Core](https://github.com/halvaradop/ui/tree/master/packages/ui-core)
 - [Dialog](https://github.com/halvaradop/ui/tree/master/packages/ui-dialog)
@@ -61,6 +62,7 @@ export default function App() {
 - [Select](https://github.com/halvaradop/ui/tree/master/packages/ui-select)
 - [Slot](https://github.com/halvaradop/ui/tree/master/packages/ui-slot)
 - [Submit](https://github.com/halvaradop/ui/tree/master/packages/ui-submit)
+- [Textarea](https://github.com/halvaradop/ui/tree/master/packages/ui-textarea)
 - [Toggle](https://github.com/halvaradop/ui/tree/master/packages/ui-toggle)
 
 ### Versioning and Releasing

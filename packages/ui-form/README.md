@@ -49,10 +49,10 @@ export default function App() {
 
 ### Prop Reference
 
-| Prop    | Values                           | Default |
-| ------- | -------------------------------- | ------- |
-| variant | "base", "outline", "filled"      | "base"  |
-| size    | "sm", "base", "md", "lg", "full" | "base"  |
+| Prop      | Accepted Values                            | Default  | Description                                                                            |
+| --------- | ------------------------------------------ | -------- | -------------------------------------------------------------------------------------- |
+| `variant` | `"base" \| "outline" \| "filled"`          | `"base"` | Defines the visual style - base is standard, outline has border, filled has background |
+| `size`    | `"sm" \| "base" \| "md" \| "lg" \| "full"` | `"base"` | Controls the width and spacing of the form container                                   |
 
 ## Styling
 
@@ -88,3 +88,21 @@ The library currently supports only a dark theme. To enable it, update the CSS v
   --color-on-surface: oklch(95% 0.01 260);
 }
 ```
+
+## About
+
+This component is part of the [`@halvaradop/ui`](https://github.com/halvaradop/ui) library, a collection of production-ready React components built with [TypeScript](https://www.typescriptlang.org/) and [React](https://react.dev/), and styled using [Tailwind CSS](https://tailwindcss.com/) and [Class Variance Authority (CVA)](https://cva.style/). Designed for modern web applications, it aims to deliver accessible, customizable, and maintainable UI building blocks to accelerate your development workflow.
+
+### License
+
+This project is licensed under the `MIT License`. For full details, see the [LICENSE](https://github.com/halvaradop/ui/blob/master/LICENSE) file.
+
+### Contributing
+
+We welcome and appreciate contributions to the `@halvaradop/ui` library!
+
+To get started, please read our [Contributing Guide](https://github.com/halvaradop/ui/blob/master/docs/CONTRIBUTING.md). All contributors are expected to follow our [Code of Conduct](https://github.com/halvaradop/.github/blob/master/.github/CODE_OF_CONDUCT.md).
+
+---
+
+Made with ❤️ by the `@halvaradop/ui` team.

@@ -199,8 +199,12 @@ ui/
 ├── apps/                       # Application demos and development environments
 │   └── storybook/              # Interactive component playground and visual documentation
 ├── docs/                       # Project documentation
+│   ├── ARCHITECTURE.md         # Architecture overview, monorepo structure, branching/versioning, standards
+│   ├── CHANGELOG.md            # Project-wide changelog, release notes, and migration guides
+│   └── CONTRIBUTING.md         # Contribution guidelines, code standards, and onboarding instructions
 ├── config/                     # Shared configuration packages for consistent tooling across workspace
 │   ├── eslint-config/          # Modern ESLint 9.x rules with React 19, TypeScript, and accessibility support
+│   ├── prettier-config/        # Prettier formatting rules and style conventions
 │   ├── tailwind-config/        # Design system tokens, theme variables, and TailwindCSS v4 configuration
 │   ├── ts-config/              # TypeScript compiler configurations for different project types
 │   └── tsup-config/            # Unified build configuration for fast, consistent package bundling
@@ -212,10 +216,11 @@ ui/
 │   └── ...                     # Component library: ui-button, ui-checkbox, ui-dialog, ui-form, etc.
 ├── scripts/                    # Development automation: build orchestration, release management, maintenance
 ├── tests/                      # Quality assurance: E2E testing with Playwright, integration test suites
+├── .prettierignore             # Ignoring files by Prettier
 ├── eslint.config.js            # Workspace-level ESLint configuration using flat config format
+├── LICENSE                     # License used in the project
 ├── playwright.config.ts        # End-to-end testing configuration and browser automation setup
 ├── pnpm-workspace.yaml         # Workspace package definitions and dependency management rules
-├── prettier.config.js          # Code formatting standards and consistency rules
 └── README.md                   # Project overview, quick start guide, and contribution instructions
 └── turbo.json                  # Turborepo pipeline configuration for optimized build orchestration
 ```

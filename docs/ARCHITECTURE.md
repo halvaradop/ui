@@ -12,8 +12,12 @@ ui/
 ├── apps/                       # Application demos and development environments
 │   └── storybook/              # Interactive component playground and visual documentation
 ├── docs/                       # Project documentation
+│   ├── ARCHITECTURE.md         # Architecture overview, monorepo structure, branching/versioning, standards
+│   ├── CHANGELOG.md            # Project-wide changelog, release notes, and migration guides
+│   └── CONTRIBUTING.md         # Contribution guidelines, code standards, and onboarding instructions
 ├── config/                     # Shared configuration packages for consistent tooling across workspace
 │   ├── eslint-config/          # Modern ESLint 9.x rules with React 19, TypeScript, and accessibility support
+│   ├── prettier-config/        # Prettier formatting rules and style conventions
 │   ├── tailwind-config/        # Design system tokens, theme variables, and TailwindCSS v4 configuration
 │   ├── ts-config/              # TypeScript compiler configurations for different project types
 │   └── tsup-config/            # Unified build configuration for fast, consistent package bundling
@@ -25,10 +29,11 @@ ui/
 │   └── ...                     # Component library: ui-button, ui-checkbox, ui-dialog, ui-form, etc.
 ├── scripts/                    # Development automation: build orchestration, release management, maintenance
 ├── tests/                      # Quality assurance: E2E testing with Playwright, integration test suites
+├── .prettierignore             # Ignoring files by Prettier
 ├── eslint.config.js            # Workspace-level ESLint configuration using flat config format
+├── LICENSE                     # License used in the project
 ├── playwright.config.ts        # End-to-end testing configuration and browser automation setup
 ├── pnpm-workspace.yaml         # Workspace package definitions and dependency management rules
-├── prettier.config.js          # Code formatting standards and consistency rules
 └── README.md                   # Project overview, quick start guide, and contribution instructions
 └── turbo.json                  # Turborepo pipeline configuration for optimized build orchestration
 ```
@@ -48,6 +53,7 @@ The `config/` directory houses shared configuration packages that ensure consist
 Key packages:
 
 - `@ui/eslint-config`: Centralized ESLint rules for React/TypeScript.
+- `@ui/prettier-config`: Shared Prettier formatting rules for consistent code style across all packages.
 - `@ui/tailwind-config`: Shared TailwindCSS v4 config and design tokens.
 - `@ui/ts-config`: Base TypeScript configs for apps, packages, and tests.
 - `@ui/tsup-config`: Unified `tsup` build config for all packages.
@@ -65,8 +71,9 @@ Each package in `packages/` is independently published and follows this conventi
 Key packages:
 
 - `@halvaradop/ui-core`: Shared types/utilities (e.g., `merge`, type helpers).
-- `@halvaradop/ui-button`, `@halvaradop/ui-checkbox`, etc.: Individual UI components.
-- `@halvaradop/ui-slot`, `@halvaradop/ui-utils`: Internal helpers and advanced composition.
+- `@halvaradop/ui-button`, `@halvaradop/ui-checkbox`, etc.: Standalone, reusable UI components, each following consistent API and accessibility standards.
+- `@halvaradop/ui-slot`: Implements the slot composition pattern for flexible, polymorphic component APIs.
+- `@halvaradop/ui-utils`: Provides advanced utilities and internal helpers to streamline component development and documentation.
 - `@halvaradop/ui-template`: Boilerplate for new components.
 
 ## Component Standards
@@ -78,10 +85,10 @@ Key packages:
 
 ## Branching & Versioning Strategy
 
-| Branch          | React Version | Tailwind Version | Status |
-| --------------- | ------------- | ---------------- | ------ |
-| master          | React 19      | Tailwind v4      | Stable |
-| legacy/react-18 | React 18      | Tailwind v4      | Legacy |
+| Branch            | React Version | Tailwind Version | Status   |
+| ----------------- | ------------- | ---------------- | -------- |
+| `master`          | `React 19`    | `Tailwind v4`    | `Stable` |
+| `legacy/react-18` | `React 18`    | `Tailwind v4`    | `Legacy` |
 
 - `master`: This is the **primary development branch** for the library. It is currently optimized for **React 19** and leverages **Tailwind CSS v4**. All new features, major improvements, and active development efforts are focused here.
 - `legacy/react-18`: This branch serves as a **legacy support line** for **React 18**. It will receive critical bug fixes and security updates but is not intended for new feature development.
@@ -259,4 +266,4 @@ const Component = ({ className, variant, size, ref, ...props }) => {
 
 ---
 
-For more details, see individual package READMEs and the master [README.md](./README.md).
+For more details, see individual package READMEs and the master [README.md](/README.md).

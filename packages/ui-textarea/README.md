@@ -24,13 +24,13 @@ export default function App() {
 
 ### Prop Reference
 
-| Prop          | Type                                             | Default      | Description                          |
-| ------------- | ------------------------------------------------ | ------------ | ------------------------------------ |
-| `variant`     | `"base" \| "line" \| "sensitive"`                | `"base"`     | Visual style variant                 |
-| `size`        | `"sm" \| "base" \| "md" \| "lg"`                 | `"base"`     | Size of the textarea                 |
-| `resize`      | `"none" \| "vertical" \| "horizontal" \| "both"` | `"vertical"` | Resize behavior                      |
-| `fullWidth`   | `boolean`                                        | `true`       | Whether textarea takes full width    |
-| `fullRounded` | `boolean`                                        | `false`      | Whether to use fully rounded corners |
+| Prop          | Type                                                | Default      | Description                                             |
+| ------------- | --------------------------------------------------- | ------------ | ------------------------------------------------------- |
+| `variant`     | `"base"`                                            | `"base"`     | Defines the visual style of the textarea                |
+| `size`        | `"sm" \| "base" \| "md" \| "lg"`                    | `"base"`     | Controls the height and padding of the textarea         |
+| `resize`      | `"content" \| "both" \| "horizontal" \| "vertical"` | `"vertical"` | Defines which directions the textarea can be resized    |
+| `fullWidth`   | `boolean`                                           | `true`       | Makes the textarea take the full width of its container |
+| `fullRounded` | `boolean`                                           | `false`      | Applies fully rounded corners to the textarea           |
 
 ## Styling
 
@@ -67,3 +67,21 @@ The component automatically supports dark mode when the `dark` class is applied 
   --color-border: oklch(35% 0.01 260);
 }
 ```
+
+## About
+
+This component is part of the [`@halvaradop/ui`](https://github.com/halvaradop/ui) library, a collection of production-ready React components built with [TypeScript](https://www.typescriptlang.org/) and [React](https://react.dev/), and styled using [Tailwind CSS](https://tailwindcss.com/) and [Class Variance Authority (CVA)](https://cva.style/). Designed for modern web applications, it aims to deliver accessible, customizable, and maintainable UI building blocks to accelerate your development workflow.
+
+### License
+
+This project is licensed under the `MIT License`. For full details, see the [LICENSE](https://github.com/halvaradop/ui/blob/master/LICENSE) file.
+
+### Contributing
+
+We welcome and appreciate contributions to the `@halvaradop/ui` library!
+
+To get started, please read our [Contributing Guide](https://github.com/halvaradop/ui/blob/master/docs/CONTRIBUTING.md). All contributors are expected to follow our [Code of Conduct](https://github.com/halvaradop/.github/blob/master/.github/CODE_OF_CONDUCT.md).
+
+---
+
+Made with ❤️ by the `@halvaradop/ui` team.
