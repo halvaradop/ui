@@ -226,10 +226,10 @@ const componentVariants = cva("base-styles", {
 })
 
 // 2. Define component props type
-interface ComponentProps extends VariantProps<typeof componentVariants>, ComponentProps<"div"> {}
+type ComponentProps<T extends VoidFunction> = VariantProps<T> & ComponentProps<"div">
 
 // 3. Implement component
-const Component = ({ className, variant, size, ref, ...props }) => {
+const Component = ({ className, variant, size, ref, ...props }: ComponentProp<typeof componentVariants>) => {
   return <div className={merge(componentVariants({ variant, size, className }))} ref={ref} {...props} />
 }
 ```

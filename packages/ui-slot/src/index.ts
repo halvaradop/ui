@@ -14,11 +14,30 @@ import type { HTMLTag, PropsWithChildren } from "@halvaradop/ui-core"
  *
  * @param {ComponentProps<Element>} props - The props to pass to the children.
  * @example
- * ```tsx
- * <Slot className="text-red-500">
- *   <span>Hello</span>
- * </Slot>
- * ```
+ * import { type SlotProps, Slot } from "@halvaradop/ui-slot"
+ *
+ * const Item = ({ children, asChild, ...props }: SlotProps<"div">) => {
+ *   const SlotComponent = asChild ? Slot : "li"
+ *
+ *   return (
+ *     <SlotComponent className="text-red-500">
+ *       {children}
+ *     </SlotComponent>
+ *   )
+ * }
+ *
+ * const List = () => {
+ *   return (
+ *     <ul>
+ *       <Item asChild>
+ *         <a href="#">Home</a>
+ *       </Item>
+ *       <Item asChild>
+ *         <a href="#">About</a>
+ *       </Item>
+ *     </ul>
+ *   )
+ * }
  */
 export const Slot = ({ children, ...props }: WithChildren) => {
     if (isValidElement(children)) {
@@ -39,7 +58,15 @@ type SlotWithAsChild<Component extends HTMLTag, Element extends HTMLElement = ne
     | PropsWithChildren<{ asChild: true; ref?: Ref<Element> }>
 
 /**
- * SlotProps is a type that represents the props of a Slot component. This type is
- * used to define the props of a Slot component that can be used with the `asChild`
+ * `SlotProps` describes the props for the `Slot` component, supporting the `asChild` pattern.
+ * This allows you to pass props directly to child components or render a native element.
+ *
+ * @example
+ * import type { SlotProps } from "@halvaradop/ui-slot"
+ *
+ * // Example usage for a button element:
+ * export type ButtonProps = SlotProps<"button">
  */
-export type SlotProps<Component extends HTMLTag> = SlotWithAsChild<Component> & { className?: string }
+export type SlotProps<Component extends HTMLTag> = SlotWithAsChild<Component> & {
+    className?: string
+}

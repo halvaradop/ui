@@ -78,7 +78,7 @@ const meta: Meta<typeof Select> = {
             grid: true,
         },
         docs: {
-            page: () => <DocsPage subtitle="Template component powered by React & TailwindCSS" />,
+            page: () => <DocsPage subtitle="Select component powered by React & TailwindCSS" />,
         },
     },
     decorators: [DecoratorWrapper],

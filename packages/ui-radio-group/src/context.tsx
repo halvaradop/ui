@@ -9,7 +9,7 @@ export interface RadioGroupContextType {
 export const RadioGroupContext = createContext<RadioGroupContextType>({
     name: "default",
     selectedValue: "",
-} as RadioGroupContextType)
+})
 
 export const useRadioGroup = () => {
     const context = useContext(RadioGroupContext)
