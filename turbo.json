@@ -39,7 +39,8 @@
       "outputLogs": "new-only"
     },
     "check-types": {
-      "dependsOn": ["^check-types"]
+      "dependsOn": ["^check-types"],
+      "cache": false
     }
   },
   "ui": "tui",
