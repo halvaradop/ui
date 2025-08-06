@@ -2,13 +2,10 @@ import { useFormStatus } from "react-dom"
 import { type ComponentProps, merge } from "@halvaradop/ui-core"
 import { type VariantProps, cva } from "class-variance-authority"
 
-interface InternalSubmitProps {
-    pending?: string
-}
-
 export type SubmitProps<T extends VoidFunction> = VariantProps<T> &
-    ComponentProps<"input", "type" | "size"> &
-    InternalSubmitProps
+    ComponentProps<"input", "type" | "size"> & {
+        pending?: string
+    }
 
 export const submitVariants = cva(
     "inline-flex items-center justify-center font-semibold border border-solid rounded-(--rounded) transition-colors focus-visible:outline-solid focus-visible:outline-3 focus-visible:outline-offset-3 hover:cursor-pointer disabled:text-on-surface disabled:border-disabled disabled:bg-disabled disabled:hover:cursor-progress",
@@ -59,7 +56,6 @@ export const Submit = ({
             className={merge(submitVariants({ className, variant, size, fullWidth, fullRounded }))}
             ref={ref}
             type="submit"
-            role="button"
             value={message}
             disabled={status}
             aria-disabled={status}

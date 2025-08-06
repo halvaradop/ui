@@ -4,7 +4,7 @@ import { SelectList } from "./list.js"
 import { SelectOption } from "./option.js"
 import { SelectTrigger } from "./trigger.js"
 
-export type SelectProps = PropsWithChildren<ComponentProps<"div">> & {
+export type SelectProps = PropsWithChildren<ComponentProps<"div", "defaultValue" | "onChange">> & {
     name: string
     defaultValue?: string
     defaultOpen?: boolean

@@ -3,14 +3,11 @@ import { type ComponentProps, merge } from "@halvaradop/ui-core"
 import { type VariantProps, cva } from "class-variance-authority"
 import { useRadioGroup } from "./context.js"
 
-interface InternalRadioProps {
-    value: string
-}
-
 export type RadioProps<T extends VoidFunction> = VariantProps<T> &
     VariantProps<typeof internalVariants> &
-    ComponentProps<"input", "type" | "size" | "color" | "value" | "onChange"> &
-    InternalRadioProps
+    ComponentProps<"input", "type" | "size" | "color" | "value" | "onChange"> & {
+        value: string
+    }
 
 export const radioVariants = cva(
     "peer relative z-10 border-border appearance-none rounded-full focus:outline-none hover:cursor-pointer disabled:cursor-not-allowed",
