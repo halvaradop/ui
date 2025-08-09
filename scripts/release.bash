@@ -22,6 +22,7 @@ DRY_RUN=false
 PUBLISH_CURRENT=false
 PREPUBLISH_TAG=""
 
+# Validate the environment checking that the necessary tools are installed like jq and git
 validate_environment() {
   if [ ! -d "${PACKAGES_DIR}" ]; then
     echo -e "${RED}Error: 'packages' directory not found.${NC}"
@@ -38,35 +39,49 @@ validate_environment() {
   fi
 }
 
+# Get the package name from package.json
 get_package_name() {
   local pkg_dir="$1"
   jq -r '.name' "${pkg_dir}/package.json"
 }
 
+# Get the package version from package.json
 get_package_version() {
   local pkg_dir="$1"
   jq -r '.version' "${pkg_dir}/package.json"
 }
 
-get_package_display_name() {
-  local pkg_dir="$1"
-  local full_name
-  full_name=$(get_package_name "$pkg_dir")
-  echo "${full_name#@halvaradop/}"
+# Increment only the pre-release if exist in the version from package.json
+increment_prerelease_version() {
+  local version="$1"
+  if [[ ! $version =~ - ]]; then
+    echo -e "${RED}Error: Current version ${version} is not a pre-release version.${NC}"
+    return
+  fi
+  name=$(echo "$version" | cut -d '-' -f 2 | cut -d '.' -f 1)
+  preversion=$(echo "$version" | cut -d '-' -f 2 | cut -d '.' -f 2)
+  if [ -n "$name" ] && [ -n "$preversion" ]; then
+    new_version="${version%%-*}"
+    echo "$new_version-$name.$((preversion + 1))"
+  fi
 }
 
+# Increment the version of a package following the SemVer versioning standards
+# Structure: Major.Minor.Patch | Major.Minor.Patch-PreRelease
 increment_version() {
   local version="$1"
   local component="$2"
-  IFS='.' read -r major minor patch <<< "$version"
+  IFS='.' read -r major minor patch prerelease <<< "$version"
   case "$component" in
     major) echo "$((major + 1)).0.0" ;;
     minor) echo "${major}.$((minor + 1)).0" ;;
     patch) echo "${major}.${minor}.$((patch + 1))" ;;
+    prerelease) increment_prerelease_version "$version" ;;
     *) echo -e "${RED}Error: Invalid version type${NC}"; exit 1 ;;
   esac
 }
 
+# Update the package version in package.json and CHANGELOG.md files
 update_package_version() {
   local pkg_dir="$1"
   local new_version="$2"
@@ -82,13 +97,6 @@ update_package_version() {
   jq --arg v "$new_version" '.version = $v' "${pkg_dir}/package.json" > "${pkg_dir}/temp.json"
   mv "${pkg_dir}/temp.json" "${pkg_dir}/package.json"
 
-  # Update workspace dependencies with more precise regex to avoid false matches
-  find "$PACKAGES_DIR" -name "package.json" -exec sed -i.bak \
-    -e "s#\"${pkg_name}\": \"workspace:\\*\"#\"${pkg_name}\": \"workspace:*\"#g" \
-    -e "s#\"${pkg_name}\": \"\\^[0-9]\\+\\.[0-9]\\+\\.[0-9]\\+[^\"]*\"#\"${pkg_name}\": \"^${new_version}\"#g" \
-    {} \;
-  find "$PACKAGES_DIR" -name "*.bak" -delete
-
   if [ -f "${pkg_dir}/CHANGELOG.md" ]; then
     sed -i.bak "s|## \\[Unreleased\\]|## [Unreleased]\n\n## [${new_version}] - ${TODAY}|" "${pkg_dir}/CHANGELOG.md"
     rm -f "${pkg_dir}/CHANGELOG.md.bak"
@@ -100,31 +108,17 @@ publish_package() {
   local pkg_name="$2"
   local publish_version="$3"
   local publish_tag="$4"
-  cd "$pkg_dir"
+  if [[ -z $publish_tag ]]; then
+    publish_tag="latest"
+  fi
+
   if [ "$DRY_RUN" = true ]; then
     echo -e "${YELLOW}[DRY RUN] Would publish ${pkg_name} from ${pkg_dir} (version: ${publish_version}, tag: ${publish_tag})${NC}"
-  else
-    echo -e "${GREEN}Publishing ${pkg_name} from ${pkg_dir} (version: ${publish_version}, tag: ${publish_tag})${NC}"
-    if [ -n "$publish_tag" ]; then
-      pnpm publish --access public --no-git-checks --tag "$publish_tag"
-    else
-      pnpm publish --access public --no-git-checks
-    fi
+    return
   fi
-  cd "$ROOT_DIR"
-}
-
-publish_package_with_tag() {
-  local pkg_dir="$1"
-  local pkg_name="$2"
-  local tag="$3"
   cd "$pkg_dir"
-  if [ "$DRY_RUN" = true ]; then
-    echo -e "${YELLOW}[DRY RUN] Would publish ${pkg_name} with tag ${tag} from ${pkg_dir}${NC}"
-  else
-    echo -e "${GREEN}Publishing ${pkg_name} with tag ${tag} from ${pkg_dir}${NC}"
-    pnpm publish --access public --no-git-checks --tag "$tag"
-  fi
+    echo -e "${GREEN}Publishing ${pkg_name} from ${pkg_dir} (version: ${publish_version}, tag: ${publish_tag})${NC}"
+    pnpm publish --access public --no-git-checks --tag "$publish_tag"
   cd "$ROOT_DIR"
 }
 
@@ -136,10 +130,8 @@ process_package() {
     return
   fi
 
-  local pkg_name
-  pkg_name=$(get_package_name "$pkg_dir")
-  local current_version
-  current_version=$(get_package_version "$pkg_dir")
+  local pkg_name=$(get_package_name "$pkg_dir")
+  local current_version=$(get_package_version "$pkg_dir")
 
   echo -e "\n${YELLOW}Processing: ${pkg_name} (${pkg_folder})${NC}"
   echo "Current version: ${current_version}"
@@ -177,12 +169,13 @@ process_package() {
   fi
 
   PS3="Select the update type: "
-  options=("Major (x.0.0)" "Minor (x.y.0)" "Patch (x.y.z)" "Skip this package" "Cancel all")
+  options=("Major (1.y.z)" "Minor (x.1.z)" "Patch (x.y.1)" "Prerelease (x.y.z-pre.1)" "Skip this package" "Cancel all")
   select opt in "${options[@]}"; do
     case $opt in
-      "Major (x.0.0)") new_version=$(increment_version "$current_version" "major"); break ;;
-      "Minor (x.y.0)") new_version=$(increment_version "$current_version" "minor"); break ;;
-      "Patch (x.y.z)") new_version=$(increment_version "$current_version" "patch"); break ;;
+      "Major (1.y.z)") new_version=$(increment_version "$current_version" "major"); break ;;
+      "Minor (x.1.z)") new_version=$(increment_version "$current_version" "minor"); break ;;
+      "Patch (x.y.1)") new_version=$(increment_version "$current_version" "patch"); break ;;
+      "Prerelease (x.y.z-pre.1)") new_version=$(increment_version "$current_version" "prerelease"); break ;;
       "Skip this package") return ;;
       "Cancel all") exit 0 ;;
       *) echo -e "${RED}Invalid option${NC}" ;;
@@ -252,4 +245,3 @@ main() {
 }
 
 main
-
