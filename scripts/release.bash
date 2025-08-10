@@ -2,9 +2,10 @@
 
 # Script: release.bash
 # Description: Automated version management and publishing for packages in @halvaradop/ui
-# Usage: ./release.bash [--publish] [--dry-run]
+# Usage: ./release.bash [--publish] [--dry-run] [--publish-current] [--prerelease <tag>]
 # By default, only updates versions without publishing. The --publish and --dry-run options control publishing behavior.
 # --publish will publish the packages, and --dry-run simulates publishing without making changes.
+# --prerelease <tag> will create prerelease versions with the specified tag (e.g., rc, beta, next).
 
 set -eo pipefail
 
@@ -20,7 +21,7 @@ NC='\033[0m'
 PUBLISH=false
 DRY_RUN=false
 PUBLISH_CURRENT=false
-PREPUBLISH_TAG=""
+PRERELEASE_TAG=""
 
 # Validate the environment checking that the necessary tools are installed like jq and git
 validate_environment() {
@@ -51,12 +52,22 @@ get_package_version() {
   jq -r '.version' "${pkg_dir}/package.json"
 }
 
+# Get the package tag from the version
+get_package_tag() {
+  local version="$1"
+  if [[ ! $version =~ - ]]; then
+    echo "latest"
+  else
+    echo "$version" | cut -d '-' -f 2 | cut -d '.' -f 1
+  fi
+}
+
 # Increment only the pre-release if exist in the version from package.json
 increment_prerelease_version() {
   local version="$1"
   if [[ ! $version =~ - ]]; then
     echo -e "${RED}Error: Current version ${version} is not a pre-release version.${NC}"
-    return
+    exit 0
   fi
   name=$(echo "$version" | cut -d '-' -f 2 | cut -d '.' -f 1)
   preversion=$(echo "$version" | cut -d '-' -f 2 | cut -d '.' -f 2)
@@ -103,14 +114,13 @@ update_package_version() {
   fi
 }
 
+
+# Publish the package to npm registry
 publish_package() {
   local pkg_dir="$1"
   local pkg_name="$2"
   local publish_version="$3"
   local publish_tag="$4"
-  if [[ -z $publish_tag ]]; then
-    publish_tag="latest"
-  fi
 
   if [ "$DRY_RUN" = true ]; then
     echo -e "${YELLOW}[DRY RUN] Would publish ${pkg_name} from ${pkg_dir} (version: ${publish_version}, tag: ${publish_tag})${NC}"
@@ -122,6 +132,7 @@ publish_package() {
   cd "$ROOT_DIR"
 }
 
+# Process each package with the specified options like --publish, --prerelease and --dry-run
 process_package() {
   local pkg_folder="$1"
   local pkg_dir="${PACKAGES_DIR}/${pkg_folder}"
@@ -130,40 +141,33 @@ process_package() {
     return
   fi
 
-  local pkg_name=$(get_package_name "$pkg_dir")
-  local current_version=$(get_package_version "$pkg_dir")
+  local pkg_name
+  pkg_name=$(get_package_name "$pkg_dir")
+  local current_version
+  current_version=$(get_package_version "$pkg_dir")
+  tag_name=$(get_package_tag "$current_version")
 
   echo -e "\n${YELLOW}Processing: ${pkg_name} (${pkg_folder})${NC}"
   echo "Current version: ${current_version}"
 
   if [ "$PUBLISH_CURRENT" = true ]; then
     if [ "$PUBLISH" = true ]; then
-      publish_package "$pkg_dir" "$pkg_name" "$current_version" ""
+      publish_package "$pkg_dir" "$pkg_name" "$current_version" "$tag_name"
     fi
     return
   fi
 
-  if [ -n "$PREPUBLISH_TAG" ]; then
-    # Detect if current version already has a pre-release tag
-    if [[ "$current_version" =~ -$PREPUBLISH_TAG\.([0-9]+)$ ]]; then
-      # Extract the current pre-release number and increment it
-      pre_num=${BASH_REMATCH[1]}
-      base_version=${current_version%%-$PREPUBLISH_TAG.*}
-      next_pre_num=$((pre_num + 1))
-      pre_version="${base_version}-${PREPUBLISH_TAG}.${next_pre_num}"
+  if [ -n "$PRERELEASE_TAG" ]; then
+    if [[ $current_version =~ - ]]; then
+      new_version="${current_version/$tag_name/$PRERELEASE_TAG}"
     else
-      pre_version="${current_version}-${PREPUBLISH_TAG}.0"
+      new_version="${current_version}-${PRERELEASE_TAG}.0"
     fi
-
     if [ "$DRY_RUN" = true ]; then
-      echo -e "${YELLOW}[DRY RUN] Would prepare pre-release: ${pre_version} (tag: ${PREPUBLISH_TAG})${NC}"
+      echo -e "${YELLOW}[DRY RUN] Selected version: ${new_version}${NC}"
     else
-      echo -e "${GREEN}Preparing pre-release: ${pre_version} (tag: ${PREPUBLISH_TAG})${NC}"
-    fi
-
-    update_package_version "$pkg_dir" "$pre_version"
-    if [ "$PUBLISH" = true ]; then
-      publish_package "$pkg_dir" "$pkg_name" "$pre_version" "$PREPUBLISH_TAG"
+      update_package_version "$pkg_dir" "$new_version"
+      publish_package "$pkg_dir" "$pkg_name" "$new_version" "$PRERELEASE_TAG"
     fi
     return
   fi
@@ -188,7 +192,7 @@ process_package() {
 
   update_package_version "$pkg_dir" "$new_version"
   if [ "$PUBLISH" = true ]; then
-    publish_package "$pkg_dir" "$pkg_name" "$new_version" ""
+    publish_package "$pkg_dir" "$pkg_name" "$new_version" "$tag_name"
   fi
 }
 
@@ -197,11 +201,11 @@ while [[ $# -gt 0 ]]; do
     --publish) PUBLISH=true; shift ;;
     --dry-run) DRY_RUN=true; shift ;;
     --publish-current) PUBLISH=true; PUBLISH_CURRENT=true; shift ;;
-    --prepublish)
+    --prerelease)
       PUBLISH=true
-      PREPUBLISH_TAG="$2"
-      if [ -z "$PREPUBLISH_TAG" ]; then
-        echo -e "${RED}Error: --prepublish requires a tag (e.g., rc, beta, next)${NC}"
+      PRERELEASE_TAG="$2"
+      if [ -z "$PRERELEASE_TAG" ]; then
+        echo -e "${RED}Error: --prerelease requires a tag (e.g., rc, beta, next)${NC}"
         exit 1
       fi
       shift 2 ;;
@@ -223,8 +227,19 @@ main() {
   done
 
   for pkg_dir in "${PACKAGES_DIR}"/*; do
-    if [ -d "$pkg_dir" ]; then
+    if [ -d "$pkg_dir" ] && [ -f "$pkg_dir/package.json" ]; then
       pkg_folder=$(basename "$pkg_dir")
+      version=$(get_package_version "$pkg_dir")
+      is_private=$(jq -r '.private // false' "$pkg_dir/package.json")
+
+      if [[ "$version" == "0.0.0" ]]; then
+        echo -e "${YELLOW}Skipping ${pkg_folder}: version is 0.0.0${NC}"
+        continue
+      fi
+      if [[ "$is_private" == "true" ]]; then
+        echo -e "${YELLOW}Skipping ${pkg_folder}: package is private${NC}"
+        continue
+      fi
       process_package "$pkg_folder"
     fi
   done
