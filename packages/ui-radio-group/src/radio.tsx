@@ -41,7 +41,7 @@ const internalVariants = cva("size-3/5 block absolute z-0 rounded-full bg-surfac
 
 export const Radio = forwardRef<HTMLInputElement, RadioProps<typeof radioVariants>>(
     ({ className, size, color, name, value, ...props }, ref) => {
-        const { name: defaultName, selectedValue, onChange } = useRadioGroup()
+        const { name: defaultName, value: selectedValue, onValueChange } = useRadioGroup()
         const isSelected = selectedValue === value
 
         return (
@@ -55,7 +55,7 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps<typeof radioVariant
                     checked={isSelected}
                     tabIndex={isSelected ? 0 : -1}
                     aria-checked={isSelected}
-                    onChange={() => onChange?.(value)}
+                    onChange={() => onValueChange?.(value)}
                     {...props}
                 />
                 <span className={internalVariants({ color })} />
