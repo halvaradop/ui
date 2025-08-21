@@ -1,6 +1,6 @@
 {
   "name": "@halvaradop/ui-select",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": false,
   "description": "A customizable Select component for @halvaradop/ui library with Tailwind CSS styling.",
   "type": "module",

@@ -7,6 +7,8 @@ and adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.1.0] - 2025-08-21
+
 ### Added
 
 - Introduced new `open` and `value` attributes, along with `onValueChange` and `onOpenChange` handlers, enabling external control and monitoring of internal state changes in response to user interactions. [#199](https://github.com/halvaradop/ui/pull/199)
