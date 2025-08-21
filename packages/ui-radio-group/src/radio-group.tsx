@@ -1,13 +1,13 @@
-import { useState, useCallback, useMemo } from "react"
 import { type ComponentProps, type PropsWithChildren, merge } from "@halvaradop/ui-core"
 import { type VariantProps, cva } from "class-variance-authority"
-import { RadioGroupContext } from "./context.js"
+import { RadioGroupProvider, useRadioGroup } from "./context.js"
 
 export type RadioGroupProps<T extends VoidFunction> = VariantProps<T> &
     PropsWithChildren<ComponentProps<"fieldset", "defaultValue" | "onChange">> & {
+        name: string
         value?: string
         defaultValue?: string
-        onChange?: (value: string) => void
+        onValueChange?: (value: string) => void
     }
 
 export const radioGroupVariants = cva("flex", {
@@ -30,37 +30,25 @@ export const RadioGroup = ({
     defaultValue,
     children,
     ref,
-    onChange,
+    onValueChange,
     ...props
 }: RadioGroupProps<typeof radioGroupVariants>) => {
-    const [selectedValue, setSelectedValue] = useState(defaultValue ?? value)
-
-    const handleChange = useCallback(
-        (value: string) => {
-            setSelectedValue(value)
-            onChange?.(value)
-        },
-        [onChange]
-    )
-
-    const context = useMemo(
-        () => ({ name, selectedValue, onChange: handleChange }),
-        [name, selectedValue, handleChange]
-    )
+    const { id } = useRadioGroup()
 
     return (
-        <RadioGroupContext.Provider value={context}>
+        <RadioGroupProvider name={name} value={value} defaultValue={defaultValue} onValueChange={onValueChange}>
             <fieldset
                 className={merge(radioGroupVariants({ className, variant }))}
                 ref={ref}
+                id={id}
                 name={name}
-                data-value={selectedValue}
                 data-name={name}
+                data-slot="radio-group"
                 {...props}
             >
                 {children}
             </fieldset>
-        </RadioGroupContext.Provider>
+        </RadioGroupProvider>
     )
 }
 

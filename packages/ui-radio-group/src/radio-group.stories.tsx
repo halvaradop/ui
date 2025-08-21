@@ -60,7 +60,7 @@ export const Base: Story = {
     render: ({ variant, color }: StoryArgs) => {
         const [food, setFood] = useState<string>("")
         return (
-            <RadioGroup value={food} name="food" variant={variant} onChange={(value) => setFood(value)}>
+            <RadioGroup value={food} name="food" variant={variant} onValueChange={(value) => setFood(value)}>
                 <Label className="flex items-center gap-x-2">
                     <Radio value="pizza" name="food" color={color} />
                     Pizza
