@@ -7,6 +7,10 @@ and adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed
+
+- Update the handler to update the state from `onChange` to `onValueChange` in the `RadioGroup` component, enabling external control and synchronization with the component's internal state. [#204](https://github.com/halvaradop/ui/pull/204)
+
 ---
 
 ## [1.0.0] - 2025-06-09
