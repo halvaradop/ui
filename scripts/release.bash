@@ -2,10 +2,11 @@
 
 # Script: release.bash
 # Description: Automated version management and publishing for packages in @halvaradop/ui
-# Usage: ./release.bash [--publish] [--dry-run] [--publish-current] [--prerelease <tag>]
+# Usage: ./release.bash [--publish] [--dry-run] [--publish-current] [--prerelease <tag>] [--filter <package-name>...]
 # By default, only updates versions without publishing. The --publish and --dry-run options control publishing behavior.
 # --publish will publish the packages, and --dry-run simulates publishing without making changes.
 # --prerelease <tag> will create prerelease versions with the specified tag (e.g., rc, beta, next).
+# --filter <package-name>... will process only the specified packages in the given order.
 
 set -eo pipefail
 
@@ -22,6 +23,7 @@ PUBLISH=false
 DRY_RUN=false
 PUBLISH_CURRENT=false
 PRERELEASE_TAG=""
+FILTERED_PACKAGES=() # Nueva variable para almacenar los paquetes filtrados
 
 # Validate the environment checking that the necessary tools are installed like jq and git
 validate_environment() {
@@ -209,24 +211,37 @@ while [[ $# -gt 0 ]]; do
         exit 1
       fi
       shift 2 ;;
+    --filter)
+      shift
+      while [[ $# -gt 0 ]] && [[ "$1" != --* ]]; do
+        FILTERED_PACKAGES+=("$1")
+        shift
+      done
+      ;;
     *) echo -e "${RED}Unrecognized argument: $1${NC}"; exit 1 ;;
   esac
 done
 
 main() {
-  # validate_environment
+  validate_environment
   echo -e "${GREEN}=== Version Manager for @halvaradop/ui ===${NC}\n"
   echo -e "${YELLOW}Detected packages:${NC}"
 
-  for pkg_dir in "${PACKAGES_DIR}"/*; do
-    if [ -f "${pkg_dir}/package.json" ]; then
-      pkg_name=$(get_package_name "$pkg_dir")
-      current_version=$(get_package_version "$pkg_dir")
-      echo " - ${pkg_name} (v${current_version})"
-    fi
-  done
+  local packages_to_process=()
+  if [ ${#FILTERED_PACKAGES[@]} -gt 0 ]; then
+    for pkg_name in "${FILTERED_PACKAGES[@]}"; do
+      if [ -d "${PACKAGES_DIR}/${pkg_name}" ]; then
+        packages_to_process+=("${PACKAGES_DIR}/${pkg_name}")
+      else
+        echo -e "${RED}Warning: Package '${pkg_name}' not found. Skipping.${NC}"
+      fi
+    done
+    echo -e "${GREEN}Processing only filtered packages: ${FILTERED_PACKAGES[@]}${NC}"
+  else
+    packages_to_process=("${PACKAGES_DIR}"/*)
+  fi
 
-  for pkg_dir in "${PACKAGES_DIR}"/*; do
+  for pkg_dir in "${packages_to_process[@]}"; do
     if [ -d "$pkg_dir" ] && [ -f "$pkg_dir/package.json" ]; then
       pkg_folder=$(basename "$pkg_dir")
       version=$(get_package_version "$pkg_dir")
@@ -240,6 +255,7 @@ main() {
         echo -e "${YELLOW}Skipping ${pkg_folder}: package is private${NC}"
         continue
       fi
+      
       process_package "$pkg_folder"
     fi
   done
