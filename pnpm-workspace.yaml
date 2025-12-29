@@ -6,6 +6,6 @@ packages:
 catalog:
   "react": ^19.2.3
   "react-dom": ^19.2.3
-  "@types/react": 19.1.6
-  "@types/react-dom": 19.1.6
+  "@types/react": 19.2.7
+  "@types/react-dom": 19.2.3
   "class-variance-authority": 0.7.0
